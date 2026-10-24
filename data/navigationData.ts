@@ -87,6 +87,12 @@ export const footerData = {
     { href: "https://huggingface.co/spaces", label: "Hugging Face Spaces", external: true },
     { href: "/faqs", label: "Admissions FAQ & Knowledge Base", external: false }
   ],
+  sections: {
+    roadmap: "Roadmap Navigation",
+    tools: "Programs & Toolkits",
+    databases: "Key Databases"
+  },
+  subtext: "Crafted for ambitious AI & ML researchers worldwide",
   copyright: "© 2026 Scholarship AI Roadmap. Open-access public good licensed under CC BY-SA 4.0 & MIT."
 };
 

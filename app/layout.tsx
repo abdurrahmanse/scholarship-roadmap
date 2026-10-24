@@ -25,10 +25,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { AmbientBackground } from "@/components/ui/AmbientBackground";
 
 export const metadata: Metadata = {
   title: "100% Fully Funded AI & Machine Learning Postgraduate Roadmap",
-  description: "The canonical zero-to-landing blueprint for Computer Science, AI, and Machine Learning students securing 100% fully funded PhD and Master's research assistantships abroad.",
+  description: "The canonical zero-to-landing blueprint for Computer Science, AI, and Machine Learning stude nts securing 100% fully funded PhD and Master's research assistantships abroad.",
 };
 
 export default function RootLayout({
@@ -41,9 +42,10 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col bg-[#030712] text-slate-100 selection:bg-indigo-500/30 selection:text-indigo-300 font-sans">
+      <body className="min-h-full flex flex-col bg-[#030712] text-slate-100 selection:bg-indigo-500/30 selection:text-indigo-300 font-sans relative">
+        <AmbientBackground />
         <Navbar />
-        <div className="flex-1 relative overflow-hidden">{children}</div>
+        <div className="flex-1 relative z-10">{children}</div>
         <Footer />
       </body>
     </html>

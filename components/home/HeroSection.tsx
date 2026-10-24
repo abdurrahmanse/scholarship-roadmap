@@ -9,103 +9,144 @@ import {
   GraduationCap,
   Sparkles,
   DollarSign,
-  Award
+  Award,
+  Activity
 } from "lucide-react";
-import { homeMetricsData } from "@/data/homeData";
+import { homeMetricsData, heroEqualizerData } from "@/data/homeData";
 import { homePageData } from "@/data/pagesData";
 import { MetricItem } from "@/data/types";
+import { GlassCard } from "@/components/ui/GlassCard";
 
 export function HeroSection() {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case "DollarSign":
-        return <DollarSign className="w-4 h-4 text-emerald-400" />;
+        return <DollarSign className="w-5 h-5 text-emerald-400" />;
       case "Award":
-        return <Award className="w-4 h-4 text-cyan-400" />;
+        return <Award className="w-5 h-5 text-cyan-400" />;
       case "GraduationCap":
-        return <GraduationCap className="w-4 h-4 text-indigo-400" />;
+        return <GraduationCap className="w-5 h-5 text-indigo-400" />;
       case "Cpu":
-        return <Cpu className="w-4 h-4 text-purple-400" />;
+        return <Cpu className="w-5 h-5 text-purple-400" />;
       default:
-        return <Sparkles className="w-4 h-4 text-indigo-400" />;
+        return <Sparkles className="w-5 h-5 text-indigo-400" />;
+    }
+  };
+
+  const getGlowVariant = (iconName: string): "indigo" | "cyan" | "emerald" | "purple" => {
+    switch (iconName) {
+      case "DollarSign":
+        return "emerald";
+      case "Award":
+        return "cyan";
+      case "Cpu":
+        return "purple";
+      default:
+        return "indigo";
     }
   };
 
   return (
-    <section className="relative overflow-hidden pt-32 pb-24 border-b border-slate-800/80 bg-radial-vignette">
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/3 left-1/3 w-[450px] h-[250px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-
+    <section className="relative overflow-hidden pt-28 pb-20 border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        {/* Top Floating Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-950/80 border border-indigo-800/60 text-indigo-300 text-xs font-semibold uppercase tracking-wider mb-8 shadow-inner shadow-indigo-950">
-          <Sparkles className="w-4 h-4 text-indigo-400 animate-pulse" />
-          <span>{homePageData.hero.badge}</span>
+        {/* Top Creative Telemetry Pill with Equalizer Visualizer */}
+        <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-900/80 border border-indigo-500/40 text-indigo-300 text-xs font-semibold mb-8 shadow-xl shadow-indigo-950/60 backdrop-blur-xl group hover:border-indigo-400 transition-all duration-300">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-radar-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+          </span>
+          <span className="uppercase tracking-wider font-mono text-[11px] font-bold">
+            {homePageData.hero.badge}
+          </span>
+          <span className="text-slate-600 hidden sm:inline">|</span>
+          {/* Animated Equalizer Bars */}
+          <div className="hidden sm:flex items-center gap-0.5 h-3">
+            {heroEqualizerData.bars.slice(0, 7).map((height, idx) => (
+              <span
+                key={idx}
+                className="w-0.5 bg-gradient-to-t from-indigo-500 to-cyan-400 rounded-full animate-pulse"
+                style={{
+                  height: `${height}%`,
+                  animationDuration: `${0.6 + (idx % 4) * 0.25}s`
+                }}
+              />
+            ))}
+          </div>
         </div>
 
-        {/* Main Hero Title */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 max-w-5xl mx-auto leading-[1.1]">
+        {/* Main Hero Headline with High-Impact Gradient & Font Heading */}
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 max-w-5xl mx-auto leading-[1.08] font-heading">
           {homePageData.hero.title}{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400 drop-shadow-sm">
             {homePageData.hero.highlightWord}
           </span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+        <p className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-sans font-normal">
           {homePageData.hero.subtitle}
         </p>
 
-        {/* Primary and Secondary Action Buttons */}
+        {/* Primary, Secondary, and Tertiary Action CTAs */}
         <div className="flex flex-wrap justify-center items-center gap-4 mb-16">
           <Link
             href={homePageData.hero.primaryCta.href}
-            className="px-7 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-bold text-sm tracking-wide shadow-xl shadow-indigo-600/30 transition-all flex items-center gap-2.5 group"
+            className="relative group px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white font-bold text-sm tracking-wide shadow-2xl shadow-indigo-600/35 transition-all duration-300 hover:scale-103 hover:shadow-indigo-500/50 flex items-center gap-2.5 overflow-hidden"
           >
-            <span>{homePageData.hero.primaryCta.label}</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            <span className="relative z-10">{homePageData.hero.primaryCta.label}</span>
+            <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-200" />
+            <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
           </Link>
+
           {homePageData.hero.secondaryCta && (
             <Link
               href={homePageData.hero.secondaryCta.href}
-              className="px-7 py-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold text-sm transition-all flex items-center gap-2"
+              className="px-7 py-4 rounded-xl bg-[#0b102b]/90 hover:bg-[#121942] border border-white/[0.12] hover:border-indigo-500/50 text-slate-200 font-semibold text-sm transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-indigo-500/20 hover:-translate-y-0.5"
             >
               <Sparkles className="w-4 h-4 text-indigo-400" />
               <span>{homePageData.hero.secondaryCta.label}</span>
             </Link>
           )}
-          <Link
-            href="/programs"
-            className="px-6 py-4 rounded-xl bg-slate-900/50 hover:bg-slate-800/80 border border-slate-800 text-slate-300 font-medium text-sm transition-all flex items-center gap-2"
-          >
-            <Cpu className="w-4 h-4 text-cyan-400" />
-            <span>Funded Labs Directory</span>
-          </Link>
+
+          {homePageData.hero.tertiaryCta && (
+            <Link
+              href={homePageData.hero.tertiaryCta.href}
+              className="px-6 py-4 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-white/[0.08] hover:border-cyan-500/40 text-slate-300 font-medium text-sm transition-all duration-300 flex items-center gap-2 hover:-translate-y-0.5"
+            >
+              <Cpu className="w-4 h-4 text-cyan-400" />
+              <span>{homePageData.hero.tertiaryCta.label}</span>
+            </Link>
+          )}
         </div>
 
-        {/* Enterprise Metrics Ribbon */}
+        {/* Enterprise Metrics Ribbon Powered by Dynamic Cursor Spotlight GlassCards */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
           {homeMetricsData.map((m: MetricItem) => (
-            <div
+            <GlassCard
               key={m.label}
-              className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md text-left hover:border-slate-700 transition-all"
+              borderGlow={getGlowVariant(m.iconName)}
+              className="p-5 sm:p-6 text-left"
+              enableSpotlight={true}
             >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider font-mono">
                   {m.label}
                 </span>
-                {getIcon(m.iconName)}
+                <div className="p-2 rounded-xl bg-white/[0.04] border border-white/[0.06]">
+                  {getIcon(m.iconName)}
+                </div>
               </div>
-              <div className="text-2xl font-black text-white font-mono tracking-tight">
+              <div className="text-2xl sm:text-3xl font-black text-white font-mono tracking-tight">
                 {m.value}
               </div>
-              <div className="text-xs text-slate-400 mt-1">
+              <div className="text-xs text-slate-400 mt-1.5 font-sans">
                 {m.sublabel}
               </div>
-            </div>
+            </GlassCard>
           ))}
         </div>
       </div>
     </section>
   );
 }
+

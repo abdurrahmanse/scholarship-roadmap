@@ -11,7 +11,8 @@ export const homePageData: MultiPageData = {
     highlightWord: "Scholarship Roadmap",
     subtitle: "Navigate the hyper-competitive world of AI research admissions. Master mathematical diagnostics, conference workshop publications, CSRankings lab targeting, cold email outreach, and visa defense from square one to landing abroad.",
     primaryCta: { label: "Explore Step-by-Step Roadmap", href: "/roadmap" },
-    secondaryCta: { label: "Browse Funded AI Labs", href: "/programs" }
+    secondaryCta: { label: "Browse Funded AI Labs", href: "/programs" },
+    tertiaryCta: { label: "Funded Labs Directory", href: "/programs" }
   },
   sections: [
     {

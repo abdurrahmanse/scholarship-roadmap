@@ -3,8 +3,15 @@ import {
   FundingPillar,
   DiagnosticOption,
   GlobalFundingModel,
-  CityFinancialProfile
+  CityFinancialProfile,
+  HeroEqualizerData
 } from "./types";
+
+export const heroEqualizerData: HeroEqualizerData = {
+  badge: "Compute Infrastructure",
+  status: "NVIDIA H100 SXM5 Quota Live",
+  bars: [45, 80, 60, 95, 70, 85, 50, 100, 75, 90, 65, 85]
+};
 
 export const homeMetricsData: MetricItem[] = [
   {
@@ -278,3 +285,12 @@ export const stipendCitiesData: CityFinancialProfile[] = [
     notes: "Almost zero income tax. Airfare allowance and thesis grants included in SINGA fellowship."
   }
 ];
+
+export const stipendCalculatorMetadata = {
+  badge: "Global Financial Reality",
+  title: "Interactive Net Stipend & Cost-of-Living Calculator",
+  subtitle: "Compare real monthly purchasing power across world AI hubs: gross stipends, mandatory deductions, housing costs, and actual student savings.",
+  summerInternshipAlert: "The Summer Internship Boost: AI PhD candidates at top labs routinely take 3-month summer research internships at Meta FAIR, Google DeepMind, OpenAI, or Microsoft Research, earning an additional $10,000–$15,000/month, elevating true annual compensation past $65,000–$80,000.",
+  exploreCtaText: "View full laboratory details in Programs Directory"
+};
+

@@ -158,9 +158,17 @@ export interface MultiPageData {
     subtitle: string;
     primaryCta: { label: string; href: string };
     secondaryCta?: { label: string; href: string };
+    tertiaryCta?: { label: string; href: string };
   };
   sections: PageSection[];
 }
+
+export interface HeroEqualizerData {
+  badge: string;
+  status: string;
+  bars: number[];
+}
+
 
 // ==========================================
 // SECTION & WIDGET SPECIFIC TYPED DATA

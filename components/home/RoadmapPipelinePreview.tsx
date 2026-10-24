@@ -13,17 +13,21 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { phasesData } from "@/data/phases";
+import { homePageData } from "@/data/pagesData";
 
 export function RoadmapPipelinePreview() {
+  const sectionMeta = homePageData.sections[1];
+
   return (
-    <section id="pipeline-preview" className="py-20 border-b border-slate-800/80 bg-slate-900/40">
+    <section id="pipeline-preview" className="py-20 border-b border-white/[0.06] bg-slate-900/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="End-to-End Pipeline"
+          badge={sectionMeta?.badge || "End-to-End Pipeline"}
           badgeVariant="purple"
+          pulsingBadge={true}
           badgeIcon={<Layers className="w-3.5 h-3.5 text-purple-400" />}
-          title="The 7-Phase Execution Timeline"
-          subtitle="A battle-tested zero-to-landing sequence designed to systematically build your research capital, contact faculty, and secure fully funded offers."
+          title={sectionMeta?.title || "The 7-Phase Execution Timeline"}
+          subtitle={sectionMeta?.subtitle || "A battle-tested zero-to-landing sequence designed to systematically build your research capital, contact faculty, and secure fully funded offers."}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
