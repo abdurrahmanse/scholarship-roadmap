@@ -77,7 +77,7 @@ export function InteractiveProfileDiagnostic() {
   const audit = computeAudit();
 
   return (
-    <section id="profile-diagnostic" className="py-20 relative overflow-hidden border-b border-white/5 bg-[#0b101c]">
+    <section id="profile-diagnostic" className="py-20 relative overflow-hidden border-b border-white/10 bg-[#090d16]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge={sectionMeta?.badge || "Interactive Self-Assessment"}

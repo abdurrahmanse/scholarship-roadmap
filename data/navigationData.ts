@@ -52,11 +52,11 @@ export const liveIndicatorData = {
 };
 
 export const navLinksData: NavLinkItem[] = [
-  { href: "/", label: "Overview", iconName: "Cpu" },
+  { href: "/", label: "Home", iconName: "Cpu" },
   { href: "/roadmap", label: "Roadmap", iconName: "Map" },
-  { href: "/programs", label: "Funded Programs", iconName: "GraduationCap" },
-  { href: "/toolkit", label: "Dossier & Toolkit", iconName: "Wrench" },
-  { href: "/interviews", label: "Technical Defense", iconName: "ShieldAlert" },
+  { href: "/programs", label: "Programs", iconName: "GraduationCap" },
+  { href: "/toolkit", label: "Toolkit", iconName: "Wrench" },
+  { href: "/interviews", label: "Interviews", iconName: "ShieldAlert" },
   { href: "/faqs", label: "FAQs", iconName: "HelpCircle" }
 ];
 
@@ -67,11 +67,11 @@ export const footerData = {
     badge: "100% Full-Ride Standard"
   },
   roadmapNavigation: [
-    { href: "/", label: "Master Overview" },
-    { href: "/roadmap", label: "7-Phase Step-by-Step Roadmap" },
+    { href: "/", label: "Home" },
+    { href: "/roadmap", label: "7-Phase Roadmap" },
     { href: "/roadmap#phase-0", label: "Phase 0: Math & Compute" },
     { href: "/roadmap#phase-1", label: "Phase 1: Workshops & arXiv" },
-    { href: "/roadmap#phase-2", label: "Phase 2: CSRankings & PI Outreach" }
+    { href: "/roadmap#phase-2", label: "Phase 2: CSRankings & Outreach" }
   ],
   directoryAndTools: [
     { href: "/programs", label: "Funded AI Programs & Labs" },

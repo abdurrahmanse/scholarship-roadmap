@@ -11,7 +11,7 @@ export function CsrankingsGuideSection() {
   const sectionMeta = programsPageData.sections[2];
 
   return (
-    <section id="csrankings-guide" className="py-20 border-b border-white/5 bg-[#0b101c]">
+    <section id="csrankings-guide" className="py-20 border-b border-white/10 bg-[#090d16]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={sectionMeta?.badge || "Faculty Intelligence"}

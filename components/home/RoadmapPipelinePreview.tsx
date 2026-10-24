@@ -17,7 +17,7 @@ export function RoadmapPipelinePreview() {
   const sectionMeta = homePageData.sections[1];
 
   return (
-    <section id="pipeline-preview" className="py-20 border-b border-white/5 bg-[#0b101c]">
+    <section id="pipeline-preview" className="py-20 border-b border-white/10 bg-[#090d16]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={sectionMeta?.badge || "End-to-End Pipeline"}

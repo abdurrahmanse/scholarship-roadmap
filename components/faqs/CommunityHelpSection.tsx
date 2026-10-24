@@ -24,7 +24,7 @@ export function CommunityHelpSection() {
   };
 
   return (
-    <section className="py-20 bg-slate-950">
+    <section id="community-help" className="py-20 bg-[#090d16] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Launchpad"
@@ -35,15 +35,15 @@ export function CommunityHelpSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {communityLaunchpadData.map((c) => (
-            <GlassCard key={c.title} borderGlow="none" className="p-6 flex flex-col justify-between group hover:border-slate-700">
+            <GlassCard key={c.title} borderGlow="none" className="p-6 flex flex-col justify-between group bg-[#0f1422] border border-white/10 hover:border-cyan-500/40 transition-all">
               <div>
-                <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/80 w-fit mb-4">
+                <div className="p-3 rounded-xl bg-[#090d16] border border-white/10 w-fit mb-4">
                   {getIcon(c.iconName)}
                 </div>
-                <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors mb-2">
+                <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors mb-2 font-heading">
                   {c.title}
                 </h3>
-                <p className="text-xs text-slate-400 leading-relaxed mb-6">{c.desc}</p>
+                <p className="text-xs text-slate-400 leading-relaxed mb-6 font-sans">{c.desc}</p>
               </div>
 
               <Link

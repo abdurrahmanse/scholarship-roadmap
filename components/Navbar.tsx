@@ -113,7 +113,7 @@ export default function Navbar() {
                 href="/roadmap"
                 className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-bold tracking-wide bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white shadow-lg shadow-indigo-600/25 transition-all duration-200 hover:scale-102 hover:shadow-indigo-500/40"
               >
-                <span>Launch Roadmap</span>
+                <span>Start Roadmap</span>
               </Link>
 
               <button

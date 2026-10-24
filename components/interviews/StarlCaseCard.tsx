@@ -50,13 +50,13 @@ export function StarlCaseCard({ defenseCase, isExpanded, onToggle }: StarlCaseCa
   };
 
   return (
-    <GlassCard borderGlow="none" className="p-0 overflow-hidden shadow-xl">
+    <GlassCard borderGlow="none" className="p-0 overflow-hidden shadow-xl bg-[#0f1422] border border-white/10">
       <div
         onClick={onToggle}
-        className="p-6 cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-4 select-none hover:bg-slate-850/60 transition-colors"
+        className="p-6 cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-4 select-none hover:bg-white/[0.02] transition-colors"
       >
         <div className="flex items-start gap-4">
-          <div className="p-3 rounded-xl bg-slate-800/90 border border-slate-700/80 shrink-0">
+          <div className="p-3 rounded-xl bg-[#090d16] border border-white/10 shrink-0">
             {getCategoryIcon(defenseCase.category)}
           </div>
           <div>
@@ -68,7 +68,7 @@ export function StarlCaseCard({ defenseCase, isExpanded, onToggle }: StarlCaseCa
                 {defenseCase.id}
               </span>
             </div>
-            <h3 className="text-lg font-bold text-white hover:text-cyan-300 transition-colors">
+            <h3 className="text-lg font-bold text-white hover:text-cyan-300 transition-colors font-heading">
               {defenseCase.technicalChallenge}
             </h3>
           </div>
@@ -82,24 +82,24 @@ export function StarlCaseCard({ defenseCase, isExpanded, onToggle }: StarlCaseCa
       </div>
 
       {isExpanded && (
-        <div className="px-6 pb-6 pt-2 border-t border-slate-800/80 bg-slate-950/60 space-y-5">
+        <div className="px-6 pb-6 pt-2 border-t border-white/10 bg-[#090d16]/70 space-y-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-400 block mb-1">
+            <div className="p-4 rounded-xl bg-[#0f1422] border border-white/10">
+              <span className="text-xs font-bold uppercase tracking-wider text-amber-400 block mb-1 font-mono">
                 Situation & Context
               </span>
-              <p className="text-xs text-slate-300 leading-relaxed">{defenseCase.context}</p>
+              <p className="text-xs text-slate-300 leading-relaxed font-sans">{defenseCase.context}</p>
             </div>
-            <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-              <span className="text-xs font-bold uppercase tracking-wider text-cyan-400 block mb-1">
+            <div className="p-4 rounded-xl bg-[#0f1422] border border-white/10">
+              <span className="text-xs font-bold uppercase tracking-wider text-cyan-400 block mb-1 font-mono">
                 Engineering Task & Goal
               </span>
-              <p className="text-xs text-slate-300 leading-relaxed">{defenseCase.task}</p>
+              <p className="text-xs text-slate-300 leading-relaxed font-sans">{defenseCase.task}</p>
             </div>
           </div>
 
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-            <span className="text-xs font-bold uppercase tracking-wider text-indigo-400 block mb-1">
+          <div className="p-4 rounded-xl bg-[#0f1422] border border-white/10">
+            <span className="text-xs font-bold uppercase tracking-wider text-indigo-400 block mb-1 font-mono">
               Action Taken (Mathematical & Code Weaponry)
             </span>
             <p className="text-xs text-slate-200 leading-relaxed font-mono">

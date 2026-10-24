@@ -11,7 +11,7 @@ export function LatexCvStandardsSection() {
   const sectionMeta = toolkitPageData.sections[1];
 
   return (
-    <section id="cv-standards" className="py-20 border-b border-white/5 bg-[#0b101c]">
+    <section id="cv-standards" className="py-20 border-b border-white/10 bg-[#090d16]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={sectionMeta?.badge || "LaTeX Standard"}

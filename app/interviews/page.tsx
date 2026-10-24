@@ -36,7 +36,7 @@ export default function InterviewsPage() {
       <FiveSlideDeckSimulator />
 
       {/* 4. STAR-L Deep Learning Technical Defense Case Studies */}
-      <section id="starl-cases" className="py-20 border-b border-white/5 bg-[#090d16]">
+      <section id="starl-defense" className="py-20 border-b border-white/10 bg-[#090d16]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="STAR-L Defense Cases"

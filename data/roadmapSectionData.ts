@@ -1,4 +1,10 @@
-import { GpuTactic, DeliverableAuditItem } from "./types";
+import { GpuTactic, DeliverableAuditItem, NavAnchorItem } from "./types";
+
+export const roadmapNavAnchors: NavAnchorItem[] = [
+  { id: "steps-pipeline", label: "7-Phase Pipeline", count: "14 Steps" },
+  { id: "gpu-blueprint", label: "Zero-Budget GPU Blueprint", count: "3 Tactics" },
+  { id: "deliverables-audit", label: "Deliverables Audit", count: "6 Items" }
+];
 
 export const roadmapMetricsData = [
   { label: "Structured Phases", value: "7 Phases" },

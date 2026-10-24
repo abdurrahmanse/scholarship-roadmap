@@ -21,7 +21,7 @@ export function FiveSlideDeckSimulator() {
   const sectionMeta = interviewsPageData.sections[0];
 
   return (
-    <section id="5slide-deck-simulator" className="py-20 border-b border-slate-800/80 bg-slate-900/30">
+    <section id="five-slide-simulator" className="py-20 border-b border-white/10 bg-[#090d16]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={sectionMeta?.badge || "Interactive Presentation Simulator"}
@@ -71,9 +71,9 @@ export function FiveSlideDeckSimulator() {
 
         {/* Interactive Slide Viewer Canvas */}
         <div className="max-w-5xl mx-auto">
-          <GlassCard borderGlow="purple" className="p-6 sm:p-10 bg-slate-950/90 shadow-2xl relative">
+          <GlassCard borderGlow="purple" className="p-6 sm:p-10 bg-[#0f1422] border border-white/10 shadow-2xl relative">
             {/* Top Slide Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-6 border-b border-slate-800 gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-6 border-b border-white/10 gap-4">
               <div>
                 <div className="flex items-center gap-2 mb-1.5">
                   <Badge variant="purple" size="sm">
@@ -84,8 +84,8 @@ export function FiveSlideDeckSimulator() {
                     Target Timing: {slide.timing}
                   </span>
                 </div>
-                <h3 className="text-2xl font-black text-white">{slide.title}</h3>
-                <p className="text-xs text-slate-400 mt-1">{slide.subtitle}</p>
+                <h3 className="text-2xl font-black text-white font-heading">{slide.title}</h3>
+                <p className="text-xs text-slate-400 mt-1 font-sans">{slide.subtitle}</p>
               </div>
 
               {/* Prev / Next Controls */}
@@ -93,14 +93,14 @@ export function FiveSlideDeckSimulator() {
                 <button
                   disabled={currentSlideIndex === 0}
                   onClick={() => setCurrentSlideIndex(currentSlideIndex - 1)}
-                  className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white disabled:opacity-40 transition-all"
+                  className="p-2.5 rounded-xl bg-[#090d16] border border-white/10 text-slate-300 hover:text-white disabled:opacity-40 transition-all cursor-pointer"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
                 <button
                   disabled={currentSlideIndex === fiveSlideDeckData.length - 1}
                   onClick={() => setCurrentSlideIndex(currentSlideIndex + 1)}
-                  className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white disabled:opacity-40 transition-all"
+                  className="p-2.5 rounded-xl bg-[#090d16] border border-white/10 text-slate-300 hover:text-white disabled:opacity-40 transition-all cursor-pointer"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>
@@ -108,7 +108,7 @@ export function FiveSlideDeckSimulator() {
             </div>
 
             {/* Slide Body Visual Mockup */}
-            <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 mb-6">
+            <div className="p-5 rounded-2xl bg-[#090d16] border border-white/10 mb-6">
               <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block mb-2">
                 Recommended Visual Layout on Screen:
               </span>
