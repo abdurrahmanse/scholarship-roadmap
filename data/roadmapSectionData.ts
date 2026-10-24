@@ -1,15 +1,16 @@
 import { GpuTactic, DeliverableAuditItem, NavAnchorItem } from "./types";
 
 export const roadmapNavAnchors: NavAnchorItem[] = [
-  { id: "steps-pipeline", label: "7-Phase Pipeline", count: "14 Steps" },
+  { id: "levels-overview", label: "5 Strategic Levels", count: "5 Levels" },
+  { id: "levels-matrix", label: "Readiness Matrix", count: "5 Tiers" },
   { id: "gpu-blueprint", label: "Zero-Budget GPU Blueprint", count: "3 Tactics" },
   { id: "deliverables-audit", label: "Deliverables Audit", count: "6 Items" }
 ];
 
 export const roadmapMetricsData = [
-  { label: "Structured Phases", value: "7 Phases" },
-  { label: "Actionable Steps", value: "14 Deep Steps" },
-  { label: "Target Scope", value: "PhD & MS Thesis" }
+  { label: "Structured Levels", value: "5 Distinct Levels" },
+  { label: "Granular Tasks", value: "26 Deep Steps" },
+  { label: "Target Scope", value: "100% Fully Funded MS & PhD" }
 ];
 
 export const gpuTacticsData: GpuTactic[] = [

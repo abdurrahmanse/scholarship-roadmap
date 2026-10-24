@@ -197,11 +197,11 @@ export const roadmapPageData: MultiPageData = {
   title: "Step-by-Step AI/ML Scholarship Roadmap",
   metaDescription: "Detailed chronological phase-by-phase execution guide for winning fully funded AI research positions abroad.",
   hero: {
-    badge: "24-Month Master's & PhD Execution Pipeline",
-    title: "Phase-by-Phase Computer Science",
-    highlightWord: "Scholarship Roadmap",
-    subtitle: "Navigate the entire Computer Science funding journey: from Phase 0 mathematical diagnostics and workshop papers to CSRankings lab targeting, faculty cold outreach, December priority deadlines, and visa defense.",
-    primaryCta: { label: "Jump to Phase 0", href: "#phase-0" },
+    badge: "5-Level Structured Postgraduate Architecture",
+    title: "5 Distinct Levels to Full-Ride",
+    highlightWord: "Computer Science Funding",
+    subtitle: "Navigate the entire Computer Science funding journey through 5 structured levels: from foundational mathematics and workshop preprints to strategic professor mapping, priority December dossiers, and live faculty defense. Select any level below to open its dedicated deep-dive blueprint.",
+    primaryCta: { label: "Explore Level 1", href: "/roadmap/level-1" },
     secondaryCta: { label: "Application Toolkit", href: "/toolkit" }
   },
   sections: [
