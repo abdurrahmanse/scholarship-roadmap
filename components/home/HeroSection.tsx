@@ -50,17 +50,17 @@ export function HeroSection() {
     <section className="relative overflow-hidden pt-28 pb-20 border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Top Creative Telemetry Pill with Equalizer Visualizer */}
-        <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-900/80 border border-indigo-500/40 text-indigo-300 text-xs font-semibold mb-8 shadow-xl shadow-indigo-950/60 backdrop-blur-xl group hover:border-indigo-400 transition-all duration-300">
-          <span className="relative flex h-2 w-2">
+        <div className="inline-flex items-center gap-2 sm:gap-3 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#0f1422] border border-indigo-500/40 text-indigo-300 text-xs font-semibold mb-8 shadow-xl shadow-indigo-950/60 backdrop-blur-xl group hover:border-indigo-400 transition-all duration-300 max-w-[calc(100vw-32px)]">
+          <span className="relative flex h-2 w-2 shrink-0">
             <span className="animate-radar-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
           </span>
-          <span className="uppercase tracking-wider font-mono text-[11px] font-bold">
+          <span className="uppercase tracking-wider font-mono text-[10px] sm:text-[11px] font-bold truncate">
             {homePageData.hero.badge}
           </span>
-          <span className="text-slate-600 hidden sm:inline">|</span>
+          <span className="text-slate-600 hidden md:inline">|</span>
           {/* Animated Equalizer Bars */}
-          <div className="hidden sm:flex items-center gap-0.5 h-3">
+          <div className="hidden md:flex items-center gap-0.5 h-3">
             {heroEqualizerData.bars.slice(0, 7).map((height, idx) => (
               <span
                 key={idx}
@@ -75,7 +75,7 @@ export function HeroSection() {
         </div>
 
         {/* Main Hero Headline with High-Impact Gradient & Font Heading */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 max-w-5xl mx-auto leading-[1.08] font-heading">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 max-w-5xl mx-auto leading-[1.12] sm:leading-[1.08] font-heading break-words">
           {homePageData.hero.title}{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400 drop-shadow-sm">
             {homePageData.hero.highlightWord}
@@ -83,7 +83,7 @@ export function HeroSection() {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-sans font-normal">
+        <p className="text-sm sm:text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-sans font-normal px-2 sm:px-0">
           {homePageData.hero.subtitle}
         </p>
 

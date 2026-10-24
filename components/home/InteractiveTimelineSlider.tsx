@@ -47,14 +47,14 @@ export function InteractiveTimelineSlider() {
 
         {/* Interactive Slider Controller Container */}
         <div className="max-w-4xl mx-auto mb-10">
-          <div className="p-6 rounded-2xl bg-[#0f1422] border border-white/10 backdrop-blur-xl shadow-xl shadow-black/30">
+          <div className="p-4 sm:p-6 rounded-2xl bg-[#0f1422] border border-white/10 backdrop-blur-xl shadow-xl shadow-black/30">
             {/* Quick Milestone Stepper Pills */}
             <div className="grid grid-cols-7 gap-1 sm:gap-2 mb-6">
               {timelineSliderData.map((item, idx) => (
                 <button
                   key={item.id}
                   onClick={() => setPhaseIndex(idx)}
-                  className={`flex flex-col items-center justify-center p-2 rounded-xl transition-all duration-200 ${
+                  className={`flex flex-col items-center justify-center p-1.5 sm:p-2 rounded-xl transition-all duration-200 cursor-pointer ${
                     phaseIndex === idx
                       ? "bg-indigo-600/30 border border-indigo-500/60 text-white shadow-md shadow-indigo-950"
                       : "bg-white/[0.03] border border-transparent text-slate-400 hover:text-slate-200 hover:bg-white/[0.06]"
@@ -108,7 +108,7 @@ export function InteractiveTimelineSlider() {
         <div className="max-w-4xl mx-auto">
           <GlassCard
             borderGlow={activePhase.accentVariant}
-            className="p-7 sm:p-9 transition-all duration-300"
+            className="p-5 sm:p-8 transition-all duration-300"
           >
             {/* Header with Time Window & Badge */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-white/[0.08] mb-6">

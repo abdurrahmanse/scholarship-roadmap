@@ -6,10 +6,9 @@ import { ProgramsFilterBar } from "@/components/programs/ProgramsFilterBar";
 import { ProgramCard } from "@/components/programs/ProgramCard";
 import { CsrankingsGuideSection } from "@/components/programs/CsrankingsGuideSection";
 import { CostOfLivingMatrixSection } from "@/components/programs/CostOfLivingMatrixSection";
-import { QuickScrollNavigator } from "@/components/ui/QuickScrollNavigator";
 import { fundedProgramsData } from "@/data/programs";
 import { FundedProgram } from "@/data/types";
-import { programsStipendSliderConfig, programsNavAnchors } from "@/data/programsSectionData";
+import { programsStipendSliderConfig } from "@/data/programsSectionData";
 
 export default function ProgramsPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -58,12 +57,7 @@ export default function ProgramsPage() {
       {/* 1. Hero Section */}
       <ProgramsHero />
 
-      {/* 2. Quick-Scroll Anchor Bar for Intuitive Scrolling */}
-      <div className="my-6">
-        <QuickScrollNavigator anchors={programsNavAnchors} />
-      </div>
-
-      {/* 3. Sticky Multi-Parameter Filter & Slider Bar */}
+      {/* 2. Sticky Multi-Parameter Filter & Slider Bar with Integrated Quick-Scroll Navigator */}
       <ProgramsFilterBar
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
