@@ -18,6 +18,7 @@ export * from "./programsSectionData";
 export * from "./toolkitSectionData";
 export * from "./interviewsSectionData";
 export * from "./faqsSectionData";
+export * from "./stepWidgetsData";
 
 import { phasesData } from "./phases";
 import { stepsData } from "./steps";

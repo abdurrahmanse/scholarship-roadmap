@@ -395,3 +395,53 @@ export interface LaunchpadCard {
   href: string;
   iconName: string;
 }
+
+// ==========================================
+// ROADMAP STEP INTERACTIVE WIDGET INTERFACES
+// ==========================================
+
+export interface MathTopicDiagnostic {
+  id: string;
+  name: string;
+  icon: string;
+  badge: string;
+  concepts: string[];
+  admissionsExpectation: string;
+  sampleProof: string;
+}
+
+export interface SystemsCodeTab {
+  id: string;
+  label: string;
+  fileName: string;
+  language: string;
+  description: string;
+  code: string;
+  highlights: string[];
+}
+
+export interface SystemsBenchmarkMetric {
+  id: string;
+  label: string;
+  value: string;
+  iconName: string;
+  variant: "cyan" | "emerald" | "purple" | "amber";
+}
+
+export interface DegreeRouteComparison {
+  id: string;
+  title: string;
+  shortLabel: string;
+  tag: string;
+  badgeVariant: "emerald" | "cyan" | "rose";
+  financialOutcome: string;
+  fundingGuarantee: string;
+  stipendAmount: string;
+  tuitionStatus: string;
+  timeline: string;
+  undergradDirectEntry: boolean;
+  masterOutOption: boolean;
+  facultyPriority: string;
+  verdict: string;
+  targetRegions: string[];
+}
