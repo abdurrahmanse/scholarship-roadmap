@@ -123,7 +123,7 @@ export function InteractiveStipendCalculator() {
 
               {/* Monthly Ledger Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
-                <div className="p-4 rounded-xl bg-[#080d1a] border border-white/[0.08]">
+                <div className="p-4 rounded-xl bg-[#0f1422] border border-white/10">
                   <div className="text-xs text-slate-400 flex items-center gap-1.5 mb-1 font-mono">
                     <DollarSign className="w-3.5 h-3.5 text-cyan-400" />
                     Monthly Net Inflow
@@ -136,7 +136,7 @@ export function InteractiveStipendCalculator() {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#080d1a] border border-white/[0.08]">
+                <div className="p-4 rounded-xl bg-[#0f1422] border border-white/10">
                   <div className="text-xs text-slate-400 flex items-center gap-1.5 mb-1 font-mono">
                     <Home className="w-3.5 h-3.5 text-amber-400" />
                     Living Outflow
@@ -149,7 +149,7 @@ export function InteractiveStipendCalculator() {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#080d1a] border border-white/[0.08]">
+                <div className="p-4 rounded-xl bg-[#0f1422] border border-white/10">
                   <div className="text-xs text-slate-400 flex items-center gap-1.5 mb-1 font-mono">
                     <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                     Tuition Remission
