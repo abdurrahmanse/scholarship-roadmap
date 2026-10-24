@@ -14,13 +14,13 @@ interface FaqAccordionItemProps {
 
 export function FaqAccordionItem({ faq, isOpen, onToggle }: FaqAccordionItemProps) {
   return (
-    <GlassCard borderGlow="none" className="p-0 overflow-hidden shadow-md">
+    <GlassCard borderGlow="none" className="p-0 overflow-hidden shadow-lg bg-[#0f1422] border border-white/10 hover:border-cyan-500/30 transition-all">
       <button
         onClick={onToggle}
-        className="w-full p-6 text-left flex items-start justify-between gap-4 select-none hover:bg-slate-850/60 transition-colors"
+        className="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 select-none hover:bg-white/[0.02] transition-colors cursor-pointer"
       >
         <div className="flex items-start gap-3">
-          <div className="p-2 rounded-lg bg-slate-800 border border-slate-700 shrink-0 mt-0.5">
+          <div className="p-2 rounded-lg bg-[#090d16] border border-white/10 shrink-0 mt-0.5">
             <HelpCircle className="w-4 h-4 text-cyan-400" />
           </div>
           <div>
@@ -29,26 +29,26 @@ export function FaqAccordionItem({ faq, isOpen, onToggle }: FaqAccordionItemProp
                 {faq.category}
               </Badge>
             </div>
-            <h3 className="text-base sm:text-lg font-bold text-white leading-snug">
+            <h3 className="text-base sm:text-lg font-heading font-bold text-white leading-snug">
               {faq.question}
             </h3>
           </div>
         </div>
-        <div className="p-1 rounded-lg bg-slate-800/80 border border-slate-700 shrink-0 text-slate-400 mt-1">
-          {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+        <div className="p-1 rounded-lg bg-[#090d16] border border-white/10 shrink-0 text-slate-400 mt-1">
+          {isOpen ? <ChevronUp className="w-4 h-4 text-cyan-400" /> : <ChevronDown className="w-4 h-4" />}
         </div>
       </button>
 
       {isOpen && (
-        <div className="px-6 pb-6 pt-2 border-t border-slate-800/80 bg-slate-950/60">
+        <div className="px-6 pb-6 pt-2 border-t border-white/5 bg-[#090d16]/60">
           <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
             {faq.answer}
           </p>
-          <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800/60">
+          <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
             {faq.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-[11px] px-2.5 py-0.5 rounded-md bg-slate-900 text-slate-400 border border-slate-800 font-mono"
+                className="text-[11px] px-2.5 py-0.5 rounded-md bg-[#0f1422] text-slate-400 border border-white/5 font-mono"
               >
                 #{tag}
               </span>

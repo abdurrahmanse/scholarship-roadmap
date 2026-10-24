@@ -183,6 +183,46 @@ export interface TimelineSliderItem {
   accentVariant: "indigo" | "cyan" | "emerald" | "amber" | "purple";
 }
 
+export interface NavAnchorItem {
+  id: string;
+  label: string;
+  count?: string;
+  iconName?: string;
+}
+
+export interface EmailPreset {
+  id: string;
+  name: string;
+  badge: string;
+  profName: string;
+  institution: string;
+  paperTitle: string;
+  limitation: string;
+  myWeaponry: string;
+  githubUrl: string;
+  subjectPrefix: string;
+}
+
+export interface CsProfilePillar {
+  title: string;
+  badge: string;
+  iconName: string;
+  summary: string;
+  mustHavePoints: string[];
+  competitiveAdvantage: string;
+  variant: "indigo" | "cyan" | "emerald" | "purple" | "amber";
+}
+
+export interface CsProfileTier {
+  id: string;
+  label: string;
+  badge: string;
+  targetDegree: string;
+  fundingModel: string;
+  typicalStipend: string;
+  pillars: CsProfilePillar[];
+}
+
 
 // ==========================================
 // SECTION & WIDGET SPECIFIC TYPED DATA

@@ -3,11 +3,8 @@
 import React from "react";
 import {
   ExternalLink,
-  ShieldCheck,
   Cpu,
-  Calendar,
   Users,
-  Award,
   Sparkles
 } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -20,23 +17,26 @@ interface ProgramCardProps {
 
 export function ProgramCard({ program }: ProgramCardProps) {
   return (
-    <GlassCard borderGlow="cyan" className="p-6 sm:p-7 flex flex-col justify-between">
+    <GlassCard
+      borderGlow="cyan"
+      className="p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:shadow-cyan-950/30 hover:shadow-2xl"
+    >
       <div>
         {/* Top Header */}
         <div className="flex items-start justify-between gap-4 mb-3">
           <div>
-            <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+            <div className="flex items-center gap-2 mb-2 flex-wrap">
               <Badge variant="cyan" size="sm">
                 {program.country}
               </Badge>
-              <span className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300">
+              <span className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">
                 {program.degreeType}
               </span>
               <span className="text-[11px] text-slate-400 font-mono">
                 GRE: {program.requirements.grePolicy}
               </span>
             </div>
-            <h3 className="text-xl font-bold text-white tracking-tight">
+            <h3 className="text-xl font-heading font-bold text-white tracking-tight">
               {program.institution}
             </h3>
             <div className="text-xs text-cyan-300 font-semibold mt-0.5">
@@ -54,9 +54,9 @@ export function ProgramCard({ program }: ProgramCardProps) {
         </div>
 
         {/* Financial Stipend Ribbon */}
-        <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800/80 my-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div className="p-3.5 rounded-xl bg-[#090d16] border border-white/10 my-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <span className="text-[10px] uppercase font-bold text-slate-400 block">
+            <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">
               Guaranteed Annual Living Stipend / Salary
             </span>
             <span className="text-base font-extrabold text-emerald-400 font-mono">
@@ -64,7 +64,7 @@ export function ProgramCard({ program }: ProgramCardProps) {
             </span>
           </div>
           <div className="text-left sm:text-right">
-            <span className="text-[10px] uppercase font-bold text-slate-400 block">
+            <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">
               Funding Mechanism
             </span>
             <span className="text-xs font-semibold text-slate-300">
@@ -82,7 +82,7 @@ export function ProgramCard({ program }: ProgramCardProps) {
             {program.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-[11px] px-2 py-0.5 rounded-md bg-slate-900 text-slate-300 border border-slate-800"
+                className="text-[11px] px-2.5 py-0.5 rounded-md bg-[#090d16] text-slate-300 border border-white/5"
               >
                 {tag}
               </span>
@@ -110,7 +110,7 @@ export function ProgramCard({ program }: ProgramCardProps) {
       </div>
 
       {/* Footer Application Button */}
-      <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+      <div className="pt-4 border-t border-white/10 flex items-center justify-between">
         <span className="text-[11px] text-slate-400">
           {program.fundingDetails.tuitionCoverage}
         </span>
@@ -118,7 +118,7 @@ export function ProgramCard({ program }: ProgramCardProps) {
           href={program.portalUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-xs transition-all shadow-md shadow-cyan-600/20 flex items-center gap-1.5"
+          className="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-xs transition-all shadow-md shadow-cyan-600/20 flex items-center gap-1.5 cursor-pointer"
         >
           <span>Official Portal</span>
           <ExternalLink className="w-3.5 h-3.5" />

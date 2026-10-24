@@ -1,5 +1,11 @@
 import { FaqCategoryCard, LaunchpadCard } from "./types";
 
+export const faqsNavAnchors = [
+  { id: "readiness-checklist", label: "Pre-Flight Readiness", count: "5 Checks" },
+  { id: "faq-list", label: "Master FAQ Directory", count: "16 Answers" },
+  { id: "community-help", label: "Roadmap Launchpad", count: "4 Tracks" }
+];
+
 export const faqsHeroHighlightsData = [
   { label: "Direct PhD vs MS Clarity", iconName: "CheckCircle2", variant: "emerald" },
   { label: "Low GPA Research Offset Strategies", iconName: "CheckCircle2", variant: "cyan" },

@@ -1,5 +1,30 @@
 import { SlideData, RedFlagRule, OfferFinancialMetric } from "./types";
 
+export const interviewsNavAnchors = [
+  { id: "five-slide-simulator", label: "5-Slide Deck Simulator", count: "5 Slides" },
+  { id: "starl-defense", label: "STAR-L Defense Cases", count: "4 Deep Dives" },
+  { id: "visa-tal-checker", label: "TAL Export Control Analyzer", count: "Live Scanner" },
+  { id: "offer-negotiation", label: "CGS Rights & Offer Negotiation", count: "April 15 Rules" }
+];
+
+export const sampleTalStatements = [
+  {
+    id: "flagged",
+    label: "High TAL Risk Sample",
+    text: "Developing deep reinforcement learning models for autonomous drone navigation and visual tracking surveillance with multi-camera biometric sensors."
+  },
+  {
+    id: "safe-theory",
+    label: "Safe Theory Sample",
+    text: "Fundamental mathematical research on open-source machine learning optimization algorithms, analyzing gradient descent convergence on synthetic convex benchmarks."
+  },
+  {
+    id: "safe-climate",
+    label: "Safe Applied Science Sample",
+    text: "Spatiotemporal neural operator architectures for modeling partial differential equations in atmospheric climate physics, published openly in public proceedings."
+  }
+];
+
 export const interviewsHeroHighlightsData = [
   { label: "Interactive 5-Slide Presentation Simulator", iconName: "Presentation", variant: "purple" },
   { label: "STAR-L Deep Learning Technical Defense", iconName: "CheckCircle2", variant: "cyan" },

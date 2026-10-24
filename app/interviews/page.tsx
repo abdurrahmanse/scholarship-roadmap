@@ -6,8 +6,10 @@ import { FiveSlideDeckSimulator } from "@/components/interviews/FiveSlideDeckSim
 import { StarlCaseCard } from "@/components/interviews/StarlCaseCard";
 import { VisaTalCheckerWidget } from "@/components/interviews/VisaTalCheckerWidget";
 import { OfferNegotiationSection } from "@/components/interviews/OfferNegotiationSection";
+import { QuickScrollNavigator } from "@/components/ui/QuickScrollNavigator";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { interviewCasesData } from "@/data/interviews";
+import { interviewsNavAnchors } from "@/data/interviewsSectionData";
 import { Activity } from "lucide-react";
 
 export default function InterviewsPage() {
@@ -21,15 +23,20 @@ export default function InterviewsPage() {
     : interviewCasesData.filter((c) => c.category === selectedCategory);
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100">
+    <main className="min-h-screen bg-[#090d16] text-slate-100">
       {/* 1. Hero Section */}
       <InterviewsHero />
 
-      {/* 2. Creative Interactive 5-Slide Presentation Simulator */}
+      {/* 2. Quick-Scroll Anchor Bar for Intuitive Scrolling */}
+      <div className="my-6">
+        <QuickScrollNavigator anchors={interviewsNavAnchors} />
+      </div>
+
+      {/* 3. Creative Interactive 5-Slide Presentation Simulator */}
       <FiveSlideDeckSimulator />
 
-      {/* 3. STAR-L Deep Learning Technical Defense Case Studies */}
-      <section id="starl-cases" className="py-20 border-b border-slate-800/80 bg-slate-950">
+      {/* 4. STAR-L Deep Learning Technical Defense Case Studies */}
+      <section id="starl-cases" className="py-20 border-b border-white/5 bg-[#090d16]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="STAR-L Defense Cases"
@@ -45,10 +52,10 @@ export default function InterviewsPage() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                   selectedCategory === cat
                     ? "bg-cyan-600 text-white shadow-lg shadow-cyan-600/30"
-                    : "bg-slate-900 text-slate-400 hover:text-white border border-slate-800"
+                    : "bg-[#0f1422] text-slate-400 hover:text-white border border-white/10"
                 }`}
               >
                 {cat}
@@ -70,10 +77,10 @@ export default function InterviewsPage() {
         </div>
       </section>
 
-      {/* 4. Creative Interactive Visa TAL Export Control Risk Analyzer */}
+      {/* 5. Creative Interactive Visa TAL Export Control Risk Analyzer */}
       <VisaTalCheckerWidget />
 
-      {/* 5. Graduate Funding Offer Evaluation & Counter-Offer Playbook */}
+      {/* 6. Graduate Funding Offer Evaluation & Counter-Offer Playbook */}
       <OfferNegotiationSection />
     </main>
   );

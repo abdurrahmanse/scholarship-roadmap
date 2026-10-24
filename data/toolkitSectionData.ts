@@ -62,14 +62,53 @@ export const xyzExamplesData: XyzExample[] = [
   }
 ];
 
-export const emailBuilderDefaults = {
-  profName: "Prof. Chelsea Finn",
-  institution: "Stanford University (SAIL)",
-  paperTitle: "Generalist Robot Policies via Speculative Action Tokens",
-  limitation: "high autoregressive decoding latency (800ms) under multi-camera visual inputs",
-  myWeaponry: "distilled speculative draft networks with FlashAttention-2 kernels cutting latency to 84ms",
-  githubUrl: "https://github.com/my-username/vla-fast-inference"
-};
+export const toolkitNavAnchors = [
+  { id: "sop-blueprint", label: "5-Movement SOP Blueprint", count: "5 Movements" },
+  { id: "cv-standards", label: "LaTeX CV Standards", count: "Google XYZ" },
+  { id: "interactive-email-builder", label: "Cold Email Generator", count: "3 Scenarios" },
+  { id: "proposal-blueprint", label: "Research Proposal Structure", count: "5 Modules" }
+];
+
+export const emailPresetsData = [
+  {
+    id: "cold-outreach",
+    name: "Cold Lab Outreach",
+    badge: "First Contact",
+    profName: "Prof. Chelsea Finn",
+    institution: "Stanford University (SAIL)",
+    paperTitle: "Generalist Robot Policies via Speculative Action Tokens",
+    limitation: "high autoregressive decoding latency (800ms) under multi-camera visual inputs",
+    myWeaponry: "distilled speculative draft networks with FlashAttention-2 kernels cutting latency to 84ms",
+    githubUrl: "https://github.com/my-username/vla-fast-inference",
+    subjectPrefix: "Prospective PhD Applicant (Fall 2026)"
+  },
+  {
+    id: "ablation-fix",
+    name: "Preprint Algorithmic Fix",
+    badge: "Technical Contribution",
+    profName: "Prof. Sergey Levine",
+    institution: "UC Berkeley (BAIR)",
+    paperTitle: "Offline RL via Conservative Q-Learning",
+    limitation: "severe value function collapse under extreme out-of-distribution state transitions",
+    myWeaponry: "energy-bounded Dirichlet regularized policy operators improving OOD safety margins by 24.8%",
+    githubUrl: "https://github.com/my-username/safe-offline-cql",
+    subjectPrefix: "Research Feedback & Prospective PhD Applicant"
+  },
+  {
+    id: "polite-bump",
+    name: "7-Day Polite Follow-Up",
+    badge: "Gentle Ping",
+    profName: "Prof. Zico Kolter",
+    institution: "Carnegie Mellon University (SCS)",
+    paperTitle: "Provable Robustness in Deep Neural Architectures",
+    limitation: "computational intractability of certified convex relaxation bounds beyond 4 layers",
+    myWeaponry: "sparse low-rank semidefinite relaxations reducing verification time by 6.2x",
+    githubUrl: "https://github.com/my-username/certified-sparse-sdp",
+    subjectPrefix: "Brief Follow-Up: Prospective Graduate Research"
+  }
+];
+
+export const emailBuilderDefaults = emailPresetsData[0];
 
 export const proposalStructureData = [
   {

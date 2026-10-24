@@ -11,7 +11,7 @@ export function LatexCvStandardsSection() {
   const sectionMeta = toolkitPageData.sections[1];
 
   return (
-    <section id="cv-standards" className="py-20 border-b border-slate-800/80 bg-slate-950">
+    <section id="cv-standards" className="py-20 border-b border-white/5 bg-[#0b101c]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={sectionMeta?.badge || "LaTeX Standard"}
@@ -24,7 +24,7 @@ export function LatexCvStandardsSection() {
         {/* 4 Benchmarks */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           {cvBenchmarksData.map((b) => (
-            <GlassCard key={b.label} borderGlow="indigo" className="p-5 text-center">
+            <GlassCard key={b.label} borderGlow="indigo" className="p-5 text-center bg-[#0f1422] border border-white/10">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
                 {b.label}
               </span>
@@ -37,9 +37,9 @@ export function LatexCvStandardsSection() {
         </div>
 
         {/* Google XYZ Formula Examples */}
-        <GlassCard borderGlow="none" className="p-6 sm:p-8">
+        <GlassCard borderGlow="none" className="p-6 sm:p-8 bg-[#0f1422] border border-white/10">
           <div className="mb-6">
-            <h3 className="text-lg font-bold text-white mb-1">
+            <h3 className="text-lg font-heading font-bold text-white mb-1">
               The Google XYZ Formula for Technical Publications & Projects
             </h3>
             <p className="text-xs text-slate-400">
@@ -49,7 +49,7 @@ export function LatexCvStandardsSection() {
 
           <div className="space-y-4">
             {xyzExamplesData.map((ex, idx) => (
-              <div key={idx} className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2 text-xs">
+              <div key={idx} className="p-4 rounded-xl bg-[#090d16] border border-white/10 space-y-2 text-xs">
                 <div className="flex items-start gap-2 text-rose-400">
                   <XCircle className="w-4 h-4 shrink-0 mt-0.5" />
                   <span className="font-mono line-through opacity-80">{ex.bad}</span>

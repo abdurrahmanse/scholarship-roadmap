@@ -446,4 +446,189 @@ export const stipendCalculatorMetadata = {
   exploreCtaText: "View full laboratory details in Programs Directory"
 };
 
+export const csProfileRequirementsMetadata = {
+  badge: "Profile Architecture",
+  title: "What Your Computer Science Profile Must Look Like",
+  subtitle: "Top universities do not award 100% full-ride funding based on high GPAs alone. Admissions committees and professors hire graduate research assistants based on verified research output, open-source code velocity, and mathematical foundations.",
+  guidanceNote: "Select your target academic degree below to see the exact profile standards, deliverables, and competitive advantages required to secure full funding."
+};
+
+export const csProfileRequirementsData = [
+  {
+    id: "ms-thesis",
+    label: "Master's by Research (MS Thesis)",
+    badge: "100% Funded MS Track",
+    targetDegree: "Master of Science in Computer Science (Thesis / Research)",
+    fundingModel: "Graduate Teaching Assistantship (GTA) / Research Assistantship (GRA)",
+    typicalStipend: "$28,000 – $38,000 / year + 100% Tuition Waiver",
+    pillars: [
+      {
+        title: "Research Proof-of-Work",
+        badge: "Core Metric",
+        iconName: "FileCode",
+        summary: "1 public arXiv preprint, an undergrad honors thesis, or a workshop submission (ICML/NeurIPS Tiny Papers).",
+        mustHavePoints: [
+          "Demonstrate ability to define a problem, design an ablation experiment, and write scientific prose.",
+          "Clear benchmark comparison against 2 standard baselines on public datasets."
+        ],
+        competitiveAdvantage: "Having 1 verified arXiv preprint places you ahead of 90% of applicants applying with only course grades.",
+        variant: "cyan" as const
+      },
+      {
+        title: "Clean Open-Source PyTorch Code",
+        badge: "Systems Proof",
+        iconName: "Cpu",
+        summary: "A public GitHub repository implementing a modern machine learning architecture with clean documentation.",
+        mustHavePoints: [
+          "Modular code structure (`model.py`, `train.py`, `config.yaml`, `dataset.py`).",
+          "Reproducible 1-click execution script with Conda / Docker environment and Weights & Biases telemetry."
+        ],
+        competitiveAdvantage: "Faculty look at your GitHub to verify you can write bug-free research code without hand-holding.",
+        variant: "indigo" as const
+      },
+      {
+        title: "High Spoken English Score (GTA Key)",
+        badge: "Funding Trigger",
+        iconName: "Award",
+        summary: "Most funded MS students are supported via Graduate Teaching Assistantships (GTA) funded by the department.",
+        mustHavePoints: [
+          "TOEFL Speaking score >= 26 or IELTS Speaking score >= 8.0.",
+          "Meeting institutional threshold unlocks automatic teaching assistantship lines that pay full tuition + stipend."
+        ],
+        competitiveAdvantage: "Departments often reject 4.0 GPA students for funding if their spoken English is below GTA thresholds.",
+        variant: "emerald" as const
+      },
+      {
+        title: "Strong Academic LORs & 3.5+ GPA",
+        badge: "Credential Anchor",
+        iconName: "CheckCircle2",
+        summary: "3 academic letters from CS professors who can speak to your algorithmic skills and independent curiosity.",
+        mustHavePoints: [
+          "Cumulative GPA of 3.5/4.0 in core CS/Math courses (Algorithms, Linear Algebra, Probability).",
+          "If GPA is between 3.0–3.4, first-author research code and arXiv preprints successfully offset the deficit."
+        ],
+        competitiveAdvantage: "Detailed letters comparing you to past students who went to top PhD programs carry 5x more weight than generic praise.",
+        variant: "purple" as const
+      }
+    ]
+  },
+  {
+    id: "direct-phd",
+    label: "Direct PhD (From Bachelor's)",
+    badge: "5-Year Full Fellowship",
+    targetDegree: "Doctor of Philosophy in Computer Science (Direct-Entry)",
+    fundingModel: "Guaranteed 5-Year GRA / GTA / Presidential University Fellowship",
+    typicalStipend: "$36,000 – $52,000 / year + 100% Tuition Waiver + Health Insurance",
+    pillars: [
+      {
+        title: "Peer-Reviewed Workshop or Conference Paper",
+        badge: "Primary Currency",
+        iconName: "FileCode",
+        summary: "1+ workshop paper at a Tier-1 venue (NeurIPS, ICML, ICLR, CVPR) or a strong co-authored conference paper.",
+        mustHavePoints: [
+          "Demonstrate you can independently run multi-seed experiments and write a 4–6 page scientific manuscript.",
+          "Preprint posted to arXiv with code release and Hugging Face demo."
+        ],
+        competitiveAdvantage: "Admissions committees evaluate PhD applicants on research taste and paper delivery, not coursework.",
+        variant: "emerald" as const
+      },
+      {
+        title: "Distributed GPU Training Stack",
+        badge: "Compute Mastery",
+        iconName: "Cpu",
+        summary: "Hands-on experience with multi-GPU training, memory optimization, and cluster execution.",
+        mustHavePoints: [
+          "Familiarity with PyTorch DDP, mixed precision (bf16/fp16), and FlashAttention-2.",
+          "Experience scheduling jobs via Slurm on university or cloud GPU clusters (RunPod, Lambda, AWS)."
+        ],
+        competitiveAdvantage: "Proves you will not drain the professor's grant budget by producing GPU out-of-memory crashes.",
+        variant: "indigo" as const
+      },
+      {
+        title: "Precision Faculty Synergy & Outreach",
+        badge: "Advisor Match",
+        iconName: "Target",
+        summary: "Clear alignment with 2–3 faculty members whose recent 12-month papers you have analyzed in detail.",
+        mustHavePoints: [
+          "Target junior Assistant Professors (1–4 years on tenure track) with fresh $500k–$1.2M startup grants.",
+          "Send personalized 5-point cold emails highlighting an open limitation in their recent paper and offering your code solution."
+        ],
+        competitiveAdvantage: "An endorsement from a prospective PI who wants you in their lab guarantees PhD admission with full funding.",
+        variant: "cyan" as const
+      },
+      {
+        title: "3 Glowing Research LORs (FERPA Waived)",
+        badge: "Vetting Gold Standard",
+        iconName: "ShieldCheck",
+        summary: "Letters from publishing researchers stating you operate at the level of a top graduate student.",
+        mustHavePoints: [
+          "All 3 letters must come from research supervisors or collaborators, not classroom instructors.",
+          "Must check 'I waive my right to access this letter' (FERPA) to ensure 100% credibility with the committee."
+        ],
+        competitiveAdvantage: "A single sentence from a known researcher saying 'Applicant is among the top 2% I have mentored' secures admission.",
+        variant: "purple" as const
+      }
+    ]
+  },
+  {
+    id: "postms-phd",
+    label: "Post-Master's PhD (Europe / Flagship Labs)",
+    badge: "Salaried Researcher",
+    targetDegree: "Doctoral Researcher / PhD Candidate (Europe & Top US Labs)",
+    fundingModel: "Salaried Employment Contract (TV-L E13 in Germany, SNF in Switzerland, Salaried GRA)",
+    typicalStipend: "€50,000–€55,000 (Germany) / CHF 78,000–85,000 (ETH/EPFL) / $42,000–$55,000 (US)",
+    pillars: [
+      {
+        title: "Main Conference Publications",
+        badge: "Proven Record",
+        iconName: "FileCode",
+        summary: "1+ first-author papers accepted at NeurIPS, ICML, ICLR, CVPR, ACL, or equivalent Tier-1 conferences.",
+        mustHavePoints: [
+          "Demonstrated track record of taking an empirical research project from conception to acceptance.",
+          "Public GitHub repo with 50+ stars and verified reproducible benchmark numbers."
+        ],
+        competitiveAdvantage: "Qualifies you immediately for top global institutes (Max Planck, ETH Zurich, Oxford, Stanford).",
+        variant: "emerald" as const
+      },
+      {
+        title: "Formal 3–5 Page Research Proposal",
+        badge: "European Requirement",
+        iconName: "BookOpen",
+        summary: "In Europe and Asia (ELLIS, ETH, SINGA, MEXT), funding is attached to specific research proposals.",
+        mustHavePoints: [
+          "Include problem statement, mathematical objective functions, state-of-the-art critique, and compute budget.",
+          "Provide a realistic 3-year Gantt milestone chart targeting specific conference submission cycles."
+        ],
+        competitiveAdvantage: "Proves you are ready to produce research from Day 1 without requiring 1–2 years of basic training.",
+        variant: "cyan" as const
+      },
+      {
+        title: "Advanced System & Algorithmic Depth",
+        badge: "HPC Experience",
+        iconName: "Cpu",
+        summary: "Mastery over distributed large-scale model training, custom CUDA kernels, and scaling laws.",
+        mustHavePoints: [
+          "Experience training on 8x–64x GPU nodes with DeepSpeed / Megatron-LM / FSDP.",
+          "Understanding of computational complexity, sample efficiency, and mathematical convergence proofs."
+        ],
+        competitiveAdvantage: "Essential for winning top laboratory lines where millions of dollars in compute are entrusted to doctoral researchers.",
+        variant: "purple" as const
+      },
+      {
+        title: "Direct PI Alignment & Grants Synergy",
+        badge: "Hiring Match",
+        iconName: "Target",
+        summary: "Direct connection with European Chairs or US Lab Directors with open funded project positions.",
+        mustHavePoints: [
+          "Identify specific funded project positions (e.g. EU Horizon, ERC Starting Grants, DFG projects).",
+          "Interview with the PI demonstrating intellectual autonomy and willingness to co-supervise junior students."
+        ],
+        competitiveAdvantage: "European PhD positions are salaried employment contracts with pension, social security, and zero tuition.",
+        variant: "indigo" as const
+      }
+    ]
+  }
+];
+
+
 

@@ -6,7 +6,7 @@ import { footerData } from "@/data/navigationData";
 
 export default function Footer() {
   return (
-    <footer className="mt-auto border-t border-white/[0.08] bg-[#02050f]/90 text-slate-400 text-xs backdrop-blur-xl relative z-10">
+    <footer className="mt-auto border-t border-white/10 bg-[#090d16]/95 text-slate-400 text-xs backdrop-blur-xl relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
           {/* Brand Info */}

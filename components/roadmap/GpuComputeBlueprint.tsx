@@ -12,7 +12,7 @@ export function GpuComputeBlueprint() {
   const sectionMeta = roadmapPageData.sections[2];
 
   return (
-    <section id="gpu-blueprint" className="py-20 border-b border-slate-800/80 bg-slate-900/30">
+    <section id="gpu-blueprint" className="py-20 border-b border-white/5 bg-[#0b101c]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={sectionMeta?.badge || "Zero-Budget Engineering"}
@@ -24,7 +24,7 @@ export function GpuComputeBlueprint() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           {gpuTacticsData.map((t) => (
-            <GlassCard key={t.title} borderGlow="cyan" className="flex flex-col justify-between">
+            <GlassCard key={t.title} borderGlow="cyan" className="flex flex-col justify-between bg-[#0f1422] border border-white/10 hover:border-cyan-500/30 transition-all p-6">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <Badge variant="cyan" size="sm">
@@ -32,11 +32,11 @@ export function GpuComputeBlueprint() {
                   </Badge>
                   <Terminal className="w-4 h-4 text-slate-500" />
                 </div>
-                <h3 className="text-base font-bold text-white mb-2">{t.title}</h3>
+                <h3 className="text-base font-heading font-bold text-white mb-2">{t.title}</h3>
                 <p className="text-xs text-slate-400 leading-relaxed mb-4">{t.desc}</p>
               </div>
 
-              <div className="p-3 rounded-xl bg-slate-950 font-mono text-[11px] text-cyan-300 border border-slate-800 overflow-x-auto whitespace-pre">
+              <div className="p-3.5 rounded-xl bg-[#090d16] font-mono text-[11px] text-cyan-300 border border-white/10 overflow-x-auto whitespace-pre">
                 {t.code}
               </div>
             </GlassCard>

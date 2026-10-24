@@ -46,7 +46,7 @@ export default function Navbar() {
       <LiveStatusTicker />
 
       {/* Main Glass Navigation Bar */}
-      <div className="backdrop-blur-xl bg-[#030712]/85 border-b border-white/[0.08] shadow-2xl shadow-black/60">
+      <div className="backdrop-blur-xl bg-[#090d16]/90 border-b border-white/10 shadow-2xl shadow-black/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Brand Logo with Creative Ambient Halo */}
@@ -129,7 +129,7 @@ export default function Navbar() {
 
         {/* Mobile Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-800 bg-[#060a1d]/95 backdrop-blur-2xl px-4 pt-3 pb-5 space-y-1.5 shadow-2xl">
+          <div className="lg:hidden border-t border-white/10 bg-[#090d16]/95 backdrop-blur-2xl px-4 pt-3 pb-5 space-y-1.5 shadow-2xl">
             {navLinksData.map((link) => {
               const Icon = getNavIcon(link.iconName);
               const isActive = pathname === link.href;

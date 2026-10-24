@@ -1,6 +1,7 @@
 import React from "react";
 import { HeroSection } from "@/components/home/HeroSection";
 import { InteractiveTimelineSlider } from "@/components/home/InteractiveTimelineSlider";
+import { CsProfileRequirementsSection } from "@/components/home/CsProfileRequirementsSection";
 import { FundingStandardSection } from "@/components/home/FundingStandardSection";
 import { InteractiveProfileDiagnostic } from "@/components/home/InteractiveProfileDiagnostic";
 import { RoadmapPipelinePreview } from "@/components/home/RoadmapPipelinePreview";
@@ -16,19 +17,22 @@ export default function HomePage() {
       {/* 2. Innovative 24-Month Chronological Timeline Slider */}
       <InteractiveTimelineSlider />
 
-      {/* 3. The 100% Fully Funded AI Research Standard (4 Pillars) */}
+      {/* 3. Explicit Profile Standards: What Your CS Profile Must Look Like */}
+      <CsProfileRequirementsSection />
+
+      {/* 4. The 100% Fully Funded AI Research Standard (4 Pillars & Traps) */}
       <FundingStandardSection />
 
-      {/* 4. Creative Interactive Profile Diagnostic & Lab Matcher */}
+      {/* 5. Creative Interactive Profile Diagnostic & Lab Matcher */}
       <InteractiveProfileDiagnostic />
 
-      {/* 5. The 7-Phase Execution Pipeline */}
+      {/* 6. The 7-Phase Execution Pipeline */}
       <RoadmapPipelinePreview />
 
-      {/* 6. The 4 Global Graduate Funding Models */}
+      {/* 7. The 4 Global Graduate Funding Models */}
       <GlobalModelsComparison />
 
-      {/* 7. Creative Interactive Net Stipend & Cost-of-Living Calculator */}
+      {/* 8. Creative Interactive Net Stipend & Cost-of-Living Calculator */}
       <InteractiveStipendCalculator />
     </main>
   );

@@ -11,7 +11,7 @@ export function CsrankingsGuideSection() {
   const sectionMeta = programsPageData.sections[2];
 
   return (
-    <section id="csrankings-guide" className="py-20 border-b border-slate-800/80 bg-slate-900/30">
+    <section id="csrankings-guide" className="py-20 border-b border-white/5 bg-[#0b101c]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={sectionMeta?.badge || "Faculty Intelligence"}
@@ -23,12 +23,18 @@ export function CsrankingsGuideSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {csrankingsStepsData.map((s) => (
-            <GlassCard key={s.num} borderGlow="indigo" className="p-6">
-              <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-indigo-950 text-indigo-400 border border-indigo-800/50 block w-fit mb-3">
-                STEP {s.num}
-              </span>
-              <h3 className="text-base font-bold text-white mb-2">{s.title}</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">{s.desc}</p>
+            <GlassCard key={s.num} borderGlow="indigo" className="p-6 bg-[#0f1422]/90 flex flex-col justify-between">
+              <div>
+                <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-indigo-950 text-indigo-300 border border-indigo-800/50 block w-fit mb-3">
+                  STEP {s.num}
+                </span>
+                <h3 className="text-base font-heading font-bold text-white mb-2 leading-snug">
+                  {s.title}
+                </h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  {s.desc}
+                </p>
+              </div>
             </GlassCard>
           ))}
         </div>
@@ -38,7 +44,7 @@ export function CsrankingsGuideSection() {
             href="https://csrankings.org"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-850 text-indigo-300 font-semibold text-xs border border-indigo-800/60 shadow-lg shadow-indigo-950 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#0f1422] hover:bg-slate-800 text-indigo-300 font-semibold text-xs border border-indigo-500/40 shadow-lg shadow-indigo-950/40 transition-all cursor-pointer"
           >
             <Globe className="w-4 h-4 text-indigo-400" />
             <span>Launch CSRankings.org Live Database</span>
