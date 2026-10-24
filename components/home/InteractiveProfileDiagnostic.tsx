@@ -1,0 +1,280 @@
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import {
+  Sparkles,
+  Target,
+  ArrowRight,
+  CheckCircle2,
+  AlertCircle,
+  TrendingUp,
+  Cpu,
+  GraduationCap
+} from "lucide-react";
+import { GlassCard } from "@/components/ui/GlassCard";
+import { Badge } from "@/components/ui/Badge";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+
+export function InteractiveProfileDiagnostic() {
+  const [degree, setDegree] = useState<"phd-direct" | "phd-postms" | "ms-thesis">("phd-direct");
+  const [gpa, setGpa] = useState<"high" | "good" | "medium" | "low">("good");
+  const [papers, setPapers] = useState<"conf" | "workshop" | "thesis" | "none">("workshop");
+  const [engineering, setEngineering] = useState<"multi-gpu" | "pytorch-colab" | "basic">("multi-gpu");
+
+  // Calculate score and recommendations
+  const computeAudit = () => {
+    let score = 50;
+
+    // Degree readiness baseline
+    if (degree === "phd-direct") score += 10;
+    if (degree === "phd-postms") score += 12;
+    if (degree === "ms-thesis") score += 8;
+
+    // GPA
+    if (gpa === "high") score += 15;
+    else if (gpa === "good") score += 12;
+    else if (gpa === "medium") score += 8;
+    else score += 4;
+
+    // Papers
+    if (papers === "conf") score += 20;
+    else if (papers === "workshop") score += 15;
+    else if (papers === "thesis") score += 10;
+    else score += 3;
+
+    // Engineering Stack
+    if (engineering === "multi-gpu") score += 15;
+    else if (engineering === "pytorch-colab") score += 10;
+    else score += 4;
+
+    // Recommendations based on score
+    let reach = "CMU SCS, Stanford SAIL, UC Berkeley BAIR, MIT CSAIL";
+    let target = "Mila, Vector Institute, UT Austin, UW Madison, ETH Zurich AI";
+    let safe = "Singapore SINGA (NUS/NTU), Max Planck IMPRS, CSIRO Data61, RIKEN AIP";
+    let priorityAction = "Draft your 5-point cold email scripts and target faculty in September.";
+    let recommendedPhase = "/roadmap#phase-2";
+    let phaseName = "Phase 2: CSRankings & PI Outreach";
+
+    if (score < 75) {
+      reach = "Mila, University of Toronto, Georgia Tech, TU Munich";
+      target = "SINGA Singapore, RIKEN AIP Japan, Alberta AMII, Edinburgh AI";
+      safe = "European TV-L E13 Projects, Australian CSIRO, KAIST AI";
+      priorityAction = "Fast-track an empirical NeurIPS/ICLR workshop paper or citable arXiv preprint to solidify research capital.";
+      recommendedPhase = "/roadmap#phase-1";
+      phaseName = "Phase 1: Workshops & arXiv Fast-Track";
+    }
+
+    if (gpa === "low" || gpa === "medium") {
+      priorityAction = "Target newly hired Assistant Professors with active NSF/ERC grants who prioritize code velocity and PyTorch skills over raw GPA.";
+    }
+
+    return { score: Math.min(score, 99), reach, target, safe, priorityAction, recommendedPhase, phaseName };
+  };
+
+  const audit = computeAudit();
+
+  return (
+    <section id="profile-diagnostic" className="py-20 relative overflow-hidden border-b border-slate-800/80">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <SectionHeading
+          badge="Interactive Self-Assessment"
+          badgeVariant="indigo"
+          badgeIcon={<Sparkles className="w-3.5 h-3.5 text-indigo-400" />}
+          title="International AI Applicant Diagnostic & Lab Matcher"
+          subtitle="Select your current academic profile to generate an instant competitiveness rating, custom lab tier mapping, and high-leverage immediate action steps."
+        />
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Controls Column (7 cols) */}
+          <div className="lg:col-span-7 space-y-6">
+            <GlassCard borderGlow="indigo" className="space-y-6">
+              {/* Question 1: Target Degree */}
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">
+                  1. Target Postgraduate Path
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  {[
+                    { id: "phd-direct", label: "Direct PhD (from BS)", sub: "US / Canada 100% Full-Ride" },
+                    { id: "phd-postms", label: "PhD (after Master's)", sub: "Europe / Global Salaried" },
+                    { id: "ms-thesis", label: "Master's (Thesis / GRA)", sub: "Tuition Waiver + Stipend" }
+                  ].map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => setDegree(item.id as any)}
+                      className={`p-3 rounded-xl border text-left transition-all ${
+                        degree === item.id
+                          ? "bg-indigo-600/20 border-indigo-500 text-white shadow-md shadow-indigo-950"
+                          : "bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                      }`}
+                    >
+                      <div className="text-xs font-bold">{item.label}</div>
+                      <div className="text-[10px] text-slate-400 mt-0.5">{item.sub}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Question 2: Academic GPA */}
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-cyan-400 mb-2">
+                  2. Cumulative Academic GPA (Scale of 4.0)
+                </label>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  {[
+                    { id: "high", label: "3.8 – 4.0", desc: "Top 5% Honors" },
+                    { id: "good", label: "3.5 – 3.79", desc: "Competitive" },
+                    { id: "medium", label: "3.2 – 3.49", desc: "Research offset" },
+                    { id: "low", label: "< 3.2", desc: "Heavy code focus" }
+                  ].map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => setGpa(item.id as any)}
+                      className={`p-2.5 rounded-xl border text-center transition-all ${
+                        gpa === item.id
+                          ? "bg-cyan-600/20 border-cyan-500 text-white shadow-md shadow-cyan-950"
+                          : "bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                      }`}
+                    >
+                      <div className="text-xs font-bold">{item.label}</div>
+                      <div className="text-[10px] text-slate-400">{item.desc}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Question 3: Research Capital & Publications */}
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">
+                  3. Peer-Reviewed Research & Preprints
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {[
+                    { id: "conf", label: "1+ Main Conference Paper", sub: "NeurIPS / ICML / ICLR / CVPR / ACL" },
+                    { id: "workshop", label: "Workshop Paper or arXiv Preprint", sub: "Verified preprint with code repo" },
+                    { id: "thesis", label: "Undergraduate / MS Thesis", sub: "Empirical study without formal publication" },
+                    { id: "none", label: "Coursework / Class Projects Only", sub: "No public preprints yet" }
+                  ].map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => setPapers(item.id as any)}
+                      className={`p-3 rounded-xl border text-left transition-all ${
+                        papers === item.id
+                          ? "bg-emerald-600/20 border-emerald-500 text-white shadow-md shadow-emerald-950"
+                          : "bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                      }`}
+                    >
+                      <div className="text-xs font-bold">{item.label}</div>
+                      <div className="text-[10px] text-slate-400 mt-0.5">{item.sub}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Question 4: Technical Stack */}
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-purple-400 mb-2">
+                  4. Production AI Stack & Compute Experience
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  {[
+                    { id: "multi-gpu", label: "PyTorch DDP / Slurm / Hugging Face", sub: "Multi-node, vLLM, wandb" },
+                    { id: "pytorch-colab", label: "PyTorch Single GPU / Colab", sub: "Standard training runs" },
+                    { id: "basic", label: "Scikit-Learn / Academic Python", sub: "Basics of machine learning" }
+                  ].map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => setEngineering(item.id as any)}
+                      className={`p-3 rounded-xl border text-left transition-all ${
+                        engineering === item.id
+                          ? "bg-purple-600/20 border-purple-500 text-white shadow-md shadow-purple-950"
+                          : "bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                      }`}
+                    >
+                      <div className="text-xs font-bold">{item.label}</div>
+                      <div className="text-[10px] text-slate-400 mt-0.5">{item.sub}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </GlassCard>
+          </div>
+
+          {/* Results Diagnostic Card (5 cols) */}
+          <div className="lg:col-span-5 space-y-4">
+            <GlassCard borderGlow="emerald" className="p-6 sm:p-8 bg-gradient-to-b from-slate-900/90 to-slate-950">
+              <div className="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+                <div>
+                  <span className="text-xs uppercase font-bold tracking-wider text-slate-400">
+                    Calculated Readiness
+                  </span>
+                  <div className="text-3xl font-black text-white font-mono flex items-center gap-2 mt-1">
+                    <span>{audit.score}</span>
+                    <span className="text-sm font-normal text-slate-500">/ 100</span>
+                    <Badge
+                      variant={audit.score >= 85 ? "emerald" : audit.score >= 70 ? "cyan" : "amber"}
+                      size="sm"
+                    >
+                      {audit.score >= 85 ? "Top Tier Competitive" : audit.score >= 70 ? "Solid Candidate" : "Build Focus Required"}
+                    </Badge>
+                  </div>
+                </div>
+                <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+                  <TrendingUp className="w-7 h-7" />
+                </div>
+              </div>
+
+              {/* Lab Tier Breakdown */}
+              <div className="space-y-4 mb-6 text-xs">
+                <div className="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80">
+                  <div className="font-bold text-indigo-300 flex items-center gap-1.5 mb-1">
+                    <Target className="w-3.5 h-3.5 text-indigo-400" />
+                    Reach Tier Labs:
+                  </div>
+                  <p className="text-slate-300 leading-relaxed">{audit.reach}</p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80">
+                  <div className="font-bold text-cyan-300 flex items-center gap-1.5 mb-1">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
+                    Target Tier Labs:
+                  </div>
+                  <p className="text-slate-300 leading-relaxed">{audit.target}</p>
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80">
+                  <div className="font-bold text-emerald-300 flex items-center gap-1.5 mb-1">
+                    <GraduationCap className="w-3.5 h-3.5 text-emerald-400" />
+                    Solid Foundation Labs:
+                  </div>
+                  <p className="text-slate-300 leading-relaxed">{audit.safe}</p>
+                </div>
+              </div>
+
+              {/* Priority Action Recommendation */}
+              <div className="p-4 rounded-xl bg-amber-950/30 border border-amber-800/40 mb-6">
+                <div className="text-xs font-bold text-amber-300 flex items-center gap-1.5 mb-1">
+                  <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />
+                  Immediate High-Leverage Strategic Move:
+                </div>
+                <p className="text-xs text-amber-100/90 leading-relaxed">
+                  {audit.priorityAction}
+                </p>
+              </div>
+
+              {/* CTA to Roadmap Phase */}
+              <Link
+                href={audit.recommendedPhase}
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white font-bold text-xs uppercase tracking-wider text-center shadow-lg shadow-indigo-600/30 transition-all flex items-center justify-center gap-2"
+              >
+                <span>Jump to {audit.phaseName}</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </GlassCard>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
