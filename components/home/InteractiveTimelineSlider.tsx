@@ -35,7 +35,7 @@ export function InteractiveTimelineSlider() {
   };
 
   return (
-    <section id="roadmap-timeline-slider" className="py-20 relative overflow-hidden border-b border-white/[0.06] bg-[#070b14]/90">
+    <section id="roadmap-timeline-slider" className="py-20 relative overflow-hidden border-b border-white/10 bg-[#090d16]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge={timelineSliderMetadata.badge}
@@ -47,7 +47,7 @@ export function InteractiveTimelineSlider() {
 
         {/* Interactive Slider Controller Container */}
         <div className="max-w-4xl mx-auto mb-10">
-          <div className="p-6 rounded-2xl bg-[#0d1322]/80 border border-white/[0.08] backdrop-blur-xl shadow-xl shadow-black/30">
+          <div className="p-6 rounded-2xl bg-[#0f1422] border border-white/10 backdrop-blur-xl shadow-xl shadow-black/30">
             {/* Quick Milestone Stepper Pills */}
             <div className="grid grid-cols-7 gap-1 sm:gap-2 mb-6">
               {timelineSliderData.map((item, idx) => (

@@ -29,7 +29,7 @@ export function InteractiveStipendCalculator() {
   const monthlySavings = monthlyNet - totalExpenses;
 
   return (
-    <section id="stipend-calculator" className="py-20 relative overflow-hidden border-b border-white/[0.06] bg-[#070b14]/90">
+    <section id="stipend-calculator" className="py-20 relative overflow-hidden border-b border-white/10 bg-[#090d16]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge={stipendCalculatorMetadata.badge}
@@ -56,7 +56,7 @@ export function InteractiveStipendCalculator() {
                 className={`w-full p-3.5 rounded-xl border text-left transition-all flex items-center justify-between ${
                   selectedCityIndex === idx
                     ? "bg-emerald-950/60 border-emerald-500/80 text-white shadow-xl shadow-emerald-950/50"
-                    : "bg-[#0d1322]/80 border-white/[0.08] text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                    : "bg-[#0f1422] border-white/10 text-slate-400 hover:border-slate-700 hover:text-slate-200"
                 }`}
               >
                 <div>
