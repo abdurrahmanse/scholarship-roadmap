@@ -4,6 +4,53 @@ export interface NavLinkItem {
   iconName: string;
 }
 
+export interface StatusTickerItem {
+  id: string;
+  badge: string;
+  text: string;
+  variant: "indigo" | "cyan" | "emerald" | "amber" | "purple";
+}
+
+export const liveStatusTickerData: StatusTickerItem[] = [
+  {
+    id: "funding-standard",
+    badge: "100% Full-Ride",
+    text: "Full Tuition Remission + Monthly Living Stipend ($30k–$85k) Standard",
+    variant: "emerald"
+  },
+  {
+    id: "compute-baseline",
+    badge: "Compute Infrastructure",
+    text: "Dedicated Multi-A100 / H100 SXM5 GPU Lab Nodes Included",
+    variant: "cyan"
+  },
+  {
+    id: "cgs-charter",
+    badge: "CGS Resolution",
+    text: "April 15 Binding Acceptance Window Enforced Across 400+ Institutions",
+    variant: "indigo"
+  },
+  {
+    id: "visa-tal",
+    badge: "TAL Protocol",
+    text: "Technology Alert List Consular Defense & Advisor Open-Science Protocols",
+    variant: "amber"
+  },
+  {
+    id: "peer-review",
+    badge: "Top-Tier Venues",
+    text: "Targeting NeurIPS, ICML, ICLR, CVPR & Flagship Workshops",
+    variant: "purple"
+  }
+];
+
+export const liveIndicatorData = {
+  status: "ONLINE",
+  label: "100% Fully Funded",
+  detail: "2026–2027 Admissions Cycle Open",
+  activePillText: "Fully Funded Research Only"
+};
+
 export const navLinksData: NavLinkItem[] = [
   { href: "/", label: "Overview", iconName: "Cpu" },
   { href: "/roadmap", label: "Roadmap", iconName: "Map" },
@@ -42,3 +89,4 @@ export const footerData = {
   ],
   copyright: "© 2026 Scholarship AI Roadmap. Open-access public good licensed under CC BY-SA 4.0 & MIT."
 };
+
