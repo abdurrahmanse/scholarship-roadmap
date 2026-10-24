@@ -48,22 +48,22 @@ export default function Navbar() {
       {/* Main Glass Navigation Bar */}
       <div className="backdrop-blur-xl bg-[#090d16]/90 border-b border-white/10 shadow-2xl shadow-black/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-16 gap-2 sm:gap-4">
             {/* Brand Logo with Creative Ambient Halo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-all duration-300">
-                <Cpu className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+            <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+              <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-all duration-300 shrink-0">
+                <Cpu className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-12 transition-transform duration-300" />
                 <span className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-indigo-500 to-cyan-500 opacity-0 group-hover:opacity-40 blur transition-opacity duration-300 pointer-events-none" />
               </div>
               <div>
-                <div className="font-heading font-extrabold text-base tracking-tight flex items-center gap-1.5">
+                <div className="font-heading font-extrabold text-sm sm:text-base tracking-tight flex items-center gap-1 sm:gap-1.5">
                   <span className="text-white">Scholarship</span>
                   <span className="bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
                     AI Roadmap
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5 -mt-0.5">
-                  <span className="text-[10px] text-slate-400 font-mono tracking-wide">
+                  <span className="text-[10px] text-slate-400 font-mono tracking-wide hidden sm:inline">
                     {liveIndicatorData.activePillText}
                   </span>
                 </div>

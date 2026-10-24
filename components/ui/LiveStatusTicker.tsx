@@ -32,38 +32,38 @@ export function LiveStatusTicker() {
   return (
     <div className="relative z-30 border-b border-white/[0.06] bg-[#05091a]/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-        <div className="flex flex-wrap items-center justify-between gap-3 text-xs">
+        <div className="flex items-center justify-between gap-2 sm:gap-3 text-xs w-full overflow-hidden">
           {/* Live Online Telemetry Indicator */}
-          <div className="flex items-center gap-2 shrink-0">
-            <span className="relative flex h-2.5 w-2.5">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
               <span className="animate-radar-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-emerald-500"></span>
             </span>
-            <span className="font-mono font-bold text-emerald-400 tracking-wider text-[11px]">
+            <span className="font-mono font-bold text-emerald-400 tracking-wider text-[10px] sm:text-[11px]">
               {liveIndicatorData.status}
             </span>
-            <span className="text-slate-500">|</span>
-            <span className="font-semibold text-slate-300 hidden sm:inline">
+            <span className="text-slate-500 hidden sm:inline">|</span>
+            <span className="font-semibold text-slate-300 hidden md:inline text-xs">
               {liveIndicatorData.detail}
             </span>
           </div>
 
           {/* Dynamic Interactive Ticker Item */}
-          <div className="flex items-center gap-2 overflow-hidden flex-1 max-w-2xl justify-center sm:justify-start">
+          <div className="flex items-center gap-2 overflow-hidden flex-1 min-w-0 max-w-2xl justify-start">
             <span
-              className={`px-2 py-0.5 rounded-full border text-[10px] font-mono font-bold uppercase tracking-wider shrink-0 transition-colors ${getVariantStyles(
+              className={`px-2 py-0.5 rounded-full border text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-wider shrink-0 transition-colors ${getVariantStyles(
                 currentItem.variant
               )}`}
             >
               {currentItem.badge}
             </span>
-            <span className="text-slate-300 truncate font-medium text-xs sm:text-[13px]">
+            <span className="text-slate-300 truncate font-medium text-[11px] sm:text-xs">
               {currentItem.text}
             </span>
           </div>
 
           {/* Fast Navigation Buttons through Ticker Items */}
-          <div className="flex items-center gap-1 shrink-0">
+          <div className="hidden md:flex items-center gap-1 shrink-0">
             {liveStatusTickerData.map((item, idx) => (
               <button
                 key={item.id}

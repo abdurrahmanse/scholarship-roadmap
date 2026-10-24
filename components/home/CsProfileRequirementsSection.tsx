@@ -63,7 +63,7 @@ export function CsProfileRequirementsSection() {
               <button
                 key={tier.id}
                 onClick={() => setActiveTierId(tier.id)}
-                className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2.5 ${
+                className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 ${
                   isActive
                     ? "bg-indigo-600 text-white shadow-xl shadow-indigo-600/30 border border-indigo-400/50 font-bold"
                     : "bg-[#0f1422] text-slate-400 hover:text-white hover:bg-slate-800/60 border border-white/10"
