@@ -68,7 +68,7 @@ export function GlobalModelsComparison() {
                   </Badge>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3 p-3.5 rounded-xl bg-[#090d16] border border-white/10 mb-5 text-xs">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3.5 rounded-xl bg-[#090d16] border border-white/10 mb-5 text-xs">
                   <div>
                     <span className="text-slate-400 block text-[11px]">Living Stipend / Salary:</span>
                     <span className="font-bold text-white font-mono">{m.stipend}</span>

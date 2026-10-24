@@ -45,9 +45,13 @@ export function CostOfLivingMatrixSection() {
           </button>
         </div>
 
+        <div className="text-[11px] font-mono text-slate-400 mb-2 flex items-center justify-end gap-1 md:hidden">
+          <span>Scroll table horizontally &rarr;</span>
+        </div>
+
         <div className="bg-[#0f1422] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs text-slate-300">
+            <table className="w-full min-w-[680px] text-left text-xs text-slate-300">
               <thead className="bg-[#090d16] text-[11px] font-bold uppercase tracking-wider text-slate-400 border-b border-white/10">
                 <tr>
                   <th className="py-4 px-6">Graduate AI Hub & Institution</th>

@@ -23,8 +23,8 @@ export function ProgramCard({ program }: ProgramCardProps) {
     >
       <div>
         {/* Top Header */}
-        <div className="flex items-start justify-between gap-4 mb-3">
-          <div>
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4 mb-3">
+          <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2 mb-2 flex-wrap">
               <Badge variant="cyan" size="sm">
                 {program.country}
@@ -36,26 +36,26 @@ export function ProgramCard({ program }: ProgramCardProps) {
                 GRE: {program.requirements.grePolicy}
               </span>
             </div>
-            <h3 className="text-xl font-heading font-bold text-white tracking-tight">
+            <h3 className="text-xl font-heading font-bold text-white tracking-tight break-words">
               {program.institution}
             </h3>
             <div className="text-xs text-cyan-300 font-semibold mt-0.5">
               {program.department}
             </div>
           </div>
-          <div className="text-right shrink-0">
+          <div className="text-left sm:text-right shrink-0 sm:max-w-[210px]">
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
               Priority Deadline
             </span>
-            <span className="text-xs font-mono font-bold text-amber-400">
+            <span className="text-xs font-mono font-bold text-amber-400 leading-tight block mt-0.5">
               {program.deadlinePriority}
             </span>
           </div>
         </div>
 
         {/* Financial Stipend Ribbon */}
-        <div className="p-3.5 rounded-xl bg-[#090d16] border border-white/10 my-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <div>
+        <div className="p-3.5 rounded-xl bg-[#090d16] border border-white/10 my-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+          <div className="min-w-0 flex-1">
             <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">
               Guaranteed Annual Living Stipend / Salary
             </span>
@@ -63,7 +63,7 @@ export function ProgramCard({ program }: ProgramCardProps) {
               {program.fundingDetails.stipendAnnualUSD} ({program.fundingDetails.stipendMonthlyLocal})
             </span>
           </div>
-          <div className="text-left sm:text-right">
+          <div className="text-left sm:text-right shrink-0">
             <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">
               Funding Mechanism
             </span>

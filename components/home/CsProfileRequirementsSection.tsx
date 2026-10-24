@@ -83,12 +83,12 @@ export function CsProfileRequirementsSection() {
         </div>
 
         {/* Active Degree Overview Banner */}
-        <div className="p-5 sm:p-6 rounded-2xl bg-[#0f1422] border border-white/10 mb-8 shadow-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div>
+        <div className="p-5 sm:p-6 rounded-2xl bg-[#0f1422] border border-white/10 mb-8 shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="min-w-0 flex-1">
             <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-400 block mb-1">
               Target Degree & Institutional Pathway:
             </span>
-            <h3 className="text-xl font-heading font-extrabold text-white">
+            <h3 className="text-xl font-heading font-extrabold text-white break-words">
               {activeTier.targetDegree}
             </h3>
             <p className="text-xs text-slate-400 mt-0.5">
@@ -96,7 +96,7 @@ export function CsProfileRequirementsSection() {
             </p>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-[#090d16] border border-white/10 shrink-0 text-left md:text-right">
+          <div className="p-3.5 rounded-xl bg-[#090d16] border border-white/10 shrink-0 text-left lg:text-right max-w-full">
             <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">
               Guaranteed Compensation Standard:
             </span>
