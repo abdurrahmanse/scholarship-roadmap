@@ -17,16 +17,19 @@ import { stipendCitiesData, stipendCalculatorMetadata } from "@/data/homeData";
 
 export function InteractiveStipendCalculator() {
   const [selectedCityIndex, setSelectedCityIndex] = useState(0);
+  const [rentAdjustment, setRentAdjustment] = useState(0);
+
   const city = stipendCitiesData[selectedCityIndex] || stipendCitiesData[0];
 
   const monthlyGross = Math.round(city.annualGrossStipend / 12);
   const monthlyTax = Math.round(monthlyGross * (city.taxRatePercent / 100));
   const monthlyNet = monthlyGross - monthlyTax;
-  const totalExpenses = city.avgMonthlyRentShared + city.avgMonthlyFood + city.monthlyHealthInsurance;
+  const effectiveRent = Math.max(200, city.avgMonthlyRentShared + rentAdjustment);
+  const totalExpenses = effectiveRent + city.avgMonthlyFood + city.monthlyHealthInsurance;
   const monthlySavings = monthlyNet - totalExpenses;
 
   return (
-    <section id="stipend-calculator" className="py-20 relative overflow-hidden border-b border-white/[0.06] bg-slate-900/30">
+    <section id="stipend-calculator" className="py-20 relative overflow-hidden border-b border-white/[0.06] bg-[#070b14]/90">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge={stipendCalculatorMetadata.badge}
@@ -46,11 +49,14 @@ export function InteractiveStipendCalculator() {
             {stipendCitiesData.map((c, idx) => (
               <button
                 key={c.name}
-                onClick={() => setSelectedCityIndex(idx)}
+                onClick={() => {
+                  setSelectedCityIndex(idx);
+                  setRentAdjustment(0);
+                }}
                 className={`w-full p-3.5 rounded-xl border text-left transition-all flex items-center justify-between ${
                   selectedCityIndex === idx
                     ? "bg-emerald-950/60 border-emerald-500/80 text-white shadow-xl shadow-emerald-950/50"
-                    : "bg-[#090e24]/70 border-white/[0.08] text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                    : "bg-[#0d1322]/80 border-white/[0.08] text-slate-400 hover:border-slate-700 hover:text-slate-200"
                 }`}
               >
                 <div>
@@ -81,16 +87,43 @@ export function InteractiveStipendCalculator() {
                   <span className="text-xs uppercase font-bold text-slate-400 block font-mono">
                     Estimated Net Savings
                   </span>
-                  <span className="text-3xl font-black text-emerald-400 font-mono">
-                    +{city.symbol} {monthlySavings.toLocaleString()}
+                  <span className={`text-3xl font-black font-mono ${monthlySavings >= 0 ? "text-emerald-400" : "text-rose-400"}`}>
+                    {monthlySavings >= 0 ? "+" : ""}{city.symbol} {monthlySavings.toLocaleString()}
                     <span className="text-xs font-normal text-slate-400">/mo</span>
                   </span>
                 </div>
               </div>
 
+              {/* Interactive Housing Budget Slider */}
+              <div className="my-6 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                <div className="flex items-center justify-between text-xs mb-2">
+                  <span className="font-mono text-slate-300 font-bold">
+                    {stipendCalculatorMetadata.housingSliderLabel}
+                  </span>
+                  <span className="font-mono font-bold text-indigo-300">
+                    {city.symbol} {effectiveRent.toLocaleString()}/mo ({rentAdjustment > 0 ? `+${rentAdjustment}` : rentAdjustment})
+                  </span>
+                </div>
+                <input
+                  type="range"
+                  min="-300"
+                  max="500"
+                  step="50"
+                  value={rentAdjustment}
+                  onChange={(e) => setRentAdjustment(parseInt(e.target.value, 10))}
+                  className="range-slider"
+                  aria-label="Housing budget adjustment slider"
+                />
+                <div className="flex justify-between text-[10px] text-slate-500 font-mono mt-1.5">
+                  <span>{stipendCalculatorMetadata.rentOffsetFrugalLabel}</span>
+                  <span>{stipendCalculatorMetadata.rentOffsetStandardLabel}</span>
+                  <span>{stipendCalculatorMetadata.rentOffsetStudioLabel}</span>
+                </div>
+              </div>
+
               {/* Monthly Ledger Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
-                <div className="p-4 rounded-xl bg-slate-950/70 border border-white/[0.08]">
+                <div className="p-4 rounded-xl bg-[#080d1a] border border-white/[0.08]">
                   <div className="text-xs text-slate-400 flex items-center gap-1.5 mb-1 font-mono">
                     <DollarSign className="w-3.5 h-3.5 text-cyan-400" />
                     Monthly Net Inflow
@@ -103,23 +136,23 @@ export function InteractiveStipendCalculator() {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-slate-950/70 border border-white/[0.08]">
+                <div className="p-4 rounded-xl bg-[#080d1a] border border-white/[0.08]">
                   <div className="text-xs text-slate-400 flex items-center gap-1.5 mb-1 font-mono">
                     <Home className="w-3.5 h-3.5 text-amber-400" />
-                    Rent & Food Outflow
+                    Living Outflow
                   </div>
                   <div className="text-xl font-bold text-white font-mono">
-                    {city.symbol} {(city.avgMonthlyRentShared + city.avgMonthlyFood).toLocaleString()}
+                    {city.symbol} {(effectiveRent + city.avgMonthlyFood).toLocaleString()}
                   </div>
                   <div className="text-[11px] text-slate-500 mt-1 font-mono">
-                    Rent: {city.symbol} {city.avgMonthlyRentShared} • Food: {city.symbol} {city.avgMonthlyFood}
+                    Rent: {city.symbol} {effectiveRent} • Food: {city.symbol} {city.avgMonthlyFood}
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-slate-950/70 border border-white/[0.08]">
+                <div className="p-4 rounded-xl bg-[#080d1a] border border-white/[0.08]">
                   <div className="text-xs text-slate-400 flex items-center gap-1.5 mb-1 font-mono">
                     <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                    Tuition Remission Benefit
+                    Tuition Remission
                   </div>
                   <div className="text-xl font-bold text-emerald-300 font-mono">
                     +{city.symbol} {city.tuitionCovered.toLocaleString()}

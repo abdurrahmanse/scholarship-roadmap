@@ -31,24 +31,42 @@ export function FiveSlideDeckSimulator() {
           subtitle={sectionMeta?.subtitle || "Top AI faculty use screening calls to stress-test your scientific thinking, not your slides. Walk through the 5-slide deck structure, timing, and defensive answers below."}
         />
 
-        {/* Slide Navigation Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-          {fiveSlideDeckData.map((s, idx) => (
-            <button
-              key={s.number}
-              onClick={() => setCurrentSlideIndex(idx)}
-              className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
-                currentSlideIndex === idx
-                  ? "bg-purple-600 text-white shadow-lg shadow-purple-600/30"
-                  : "bg-slate-900 text-slate-400 hover:text-white border border-slate-800"
-              }`}
-            >
-              <span className="w-5 h-5 rounded-md bg-slate-950 flex items-center justify-center text-[10px] font-mono">
-                {s.number}
-              </span>
-              <span>Slide {s.number}: {s.title.split("&")[0]?.trim()}</span>
-            </button>
-          ))}
+        {/* Interactive Slide Scrubber Range Slider & Buttons */}
+        <div className="max-w-xl mx-auto mb-8 space-y-4">
+          <div className="flex items-center justify-between text-xs font-mono text-slate-400">
+            <span>Slide 1: Problem</span>
+            <span className="text-purple-300 font-bold">Slide {currentSlideIndex + 1} of {fiveSlideDeckData.length}</span>
+            <span>Slide 5: Horizons</span>
+          </div>
+
+          <div className="relative py-2">
+            <input
+              type="range"
+              min="0"
+              max={fiveSlideDeckData.length - 1}
+              step="1"
+              value={currentSlideIndex}
+              onChange={(e) => setCurrentSlideIndex(parseInt(e.target.value, 10))}
+              className="range-slider"
+              aria-label="Slide scrubber slider from Slide 1 to Slide 5"
+            />
+          </div>
+
+          <div className="grid grid-cols-5 gap-1 sm:gap-2">
+            {fiveSlideDeckData.map((s, idx) => (
+              <button
+                key={s.number}
+                onClick={() => setCurrentSlideIndex(idx)}
+                className={`py-2 px-1 rounded-xl text-xs font-bold transition-all text-center ${
+                  currentSlideIndex === idx
+                    ? "bg-purple-600/30 border border-purple-500 text-white shadow-lg shadow-purple-950/60"
+                    : "bg-white/[0.03] border border-white/[0.08] text-slate-400 hover:text-white hover:bg-white/[0.06]"
+                }`}
+              >
+                <span className="block font-mono text-[11px]">S0{s.number}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Interactive Slide Viewer Canvas */}

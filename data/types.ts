@@ -169,6 +169,20 @@ export interface HeroEqualizerData {
   bars: number[];
 }
 
+export interface TimelineSliderItem {
+  id: string;
+  monthIndex: number;
+  phaseNumber: number;
+  timeWindow: string;
+  stageName: string;
+  priorityTitle: string;
+  badge: string;
+  actionBullets: string[];
+  deliverable: string;
+  deadlineTarget: string;
+  accentVariant: "indigo" | "cyan" | "emerald" | "amber" | "purple";
+}
+
 
 // ==========================================
 // SECTION & WIDGET SPECIFIC TYPED DATA
