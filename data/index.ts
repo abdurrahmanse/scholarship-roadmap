@@ -9,6 +9,7 @@ export * from "./programs";
 export * from "./templates";
 export * from "./interviews";
 export * from "./faqs";
+export * from "./pagesData";
 
 import { phasesData } from "./phases";
 import { stepsData } from "./steps";
@@ -16,6 +17,7 @@ import { fundedProgramsData } from "./programs";
 import { emailTemplatesData } from "./templates";
 import { interviewCasesData } from "./interviews";
 import { faqsData } from "./faqs";
+import { allMultiPages } from "./pagesData";
 
 export const roadmapMasterData = {
   phases: phasesData,
