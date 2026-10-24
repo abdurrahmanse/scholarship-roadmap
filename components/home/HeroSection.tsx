@@ -120,7 +120,7 @@ export function HeroSection() {
         </div>
 
         {/* Enterprise Metrics Ribbon Powered by Dynamic Cursor Spotlight GlassCards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full">
           {homeMetricsData.map((m: MetricItem) => (
             <GlassCard
               key={m.label}

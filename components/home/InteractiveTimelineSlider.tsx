@@ -46,7 +46,7 @@ export function InteractiveTimelineSlider() {
         />
 
         {/* Interactive Slider Controller Container */}
-        <div className="max-w-4xl mx-auto mb-10">
+        <div className="w-full mb-10">
           <div className="p-4 sm:p-6 rounded-2xl bg-[#0f1422] border border-white/10 backdrop-blur-xl shadow-xl shadow-black/30">
             {/* Quick Milestone Stepper Pills */}
             <div className="grid grid-cols-7 gap-1 sm:gap-2 mb-6">
@@ -105,7 +105,7 @@ export function InteractiveTimelineSlider() {
         </div>
 
         {/* Phase Details Card Display */}
-        <div className="max-w-4xl mx-auto">
+        <div className="w-full">
           <GlassCard
             borderGlow={activePhase.accentVariant}
             className="p-5 sm:p-8 transition-all duration-300"

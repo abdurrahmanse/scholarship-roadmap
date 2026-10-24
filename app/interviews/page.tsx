@@ -64,7 +64,7 @@ export default function InterviewsPage() {
           </div>
 
           {/* STAR-L Cards */}
-          <div className="space-y-6 max-w-5xl mx-auto">
+          <div className="space-y-6">
             {filteredCases.map((c) => (
               <StarlCaseCard
                 key={c.id}

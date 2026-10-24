@@ -70,7 +70,7 @@ export function FiveSlideDeckSimulator() {
         </div>
 
         {/* Interactive Slide Viewer Canvas */}
-        <div className="max-w-5xl mx-auto">
+        <div className="w-full">
           <GlassCard borderGlow="purple" className="p-6 sm:p-10 bg-[#0f1422] border border-white/10 shadow-2xl relative">
             {/* Top Slide Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-6 border-b border-white/10 gap-4">

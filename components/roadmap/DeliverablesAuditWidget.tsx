@@ -30,7 +30,7 @@ export function DeliverablesAuditWidget() {
 
   return (
     <section id="deliverables-audit" className="py-20 border-b border-white/5 bg-[#090d16]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={sectionMeta?.badge || "Pre-Submission Audit"}
           badgeVariant="emerald"
