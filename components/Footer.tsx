@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { Cpu, Github, ExternalLink, ShieldCheck, Heart } from "lucide-react";
+import { Cpu, ExternalLink, ShieldCheck, Heart } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -103,7 +105,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-neutral-500">
-          <p>© {new Date().getFullYear()} Scholarship AI Roadmap. Open-access public good licensed under CC BY-SA 4.0 & MIT.</p>
+          <p>© 2026 Scholarship AI Roadmap. Open-access public good licensed under CC BY-SA 4.0 & MIT.</p>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1 text-neutral-400">
               Crafted for ambitious AI researchers worldwide
