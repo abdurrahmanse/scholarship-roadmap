@@ -13,82 +13,12 @@ import {
   ArrowRight
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-
-interface RouteOption {
-  id: string;
-  title: string;
-  shortLabel: string;
-  tag: string;
-  badgeVariant: "emerald" | "cyan" | "rose";
-  financialOutcome: string;
-  fundingGuarantee: string;
-  stipendAmount: string;
-  tuitionStatus: string;
-  timeline: string;
-  undergradDirectEntry: boolean;
-  masterOutOption: boolean;
-  facultyPriority: string;
-  verdict: string;
-  targetRegions: string[];
-}
-
-const routesData: RouteOption[] = [
-  {
-    id: "phd",
-    title: "Direct-Entry PhD (Recommended)",
-    shortLabel: "Direct PhD",
-    tag: "100% Fully Funded Flagship",
-    badgeVariant: "emerald",
-    financialOutcome: "+$180,000 to +$250,000 Net Positive (5-Year)",
-    fundingGuarantee: "Guaranteed 4–5 Years (RA/TA Contract)",
-    stipendAmount: "$34,000 – $52,000 / year (Tax-advantaged)",
-    tuitionStatus: "100% Waived + Health Insurance Covered",
-    timeline: "4–5 Years (Direct from Bachelor's)",
-    undergradDirectEntry: true,
-    masterOutOption: true,
-    facultyPriority: "Maximum: Faculty invest multi-year grants in doctoral candidates.",
-    verdict: "Top choice for CS graduates with at least one research project or thesis experience. Zero debt, guaranteed income, and the golden master-out safety net.",
-    targetRegions: ["United States (NSF/DARPA Grants)", "Canada (Direct PhD)", "Singapore (A*STAR/SINGA)"]
-  },
-  {
-    id: "thesis-ms",
-    title: "Funded Thesis Master's (MSc / MASc)",
-    shortLabel: "Thesis Master's",
-    tag: "Funded Research Runway",
-    badgeVariant: "cyan",
-    financialOutcome: "$0 Debt / Small Positive Net ($15k–$25k/yr)",
-    fundingGuarantee: "Guaranteed 2 Years with Formal Advisor",
-    stipendAmount: "$20,000 – $32,000 CAD/EUR / year",
-    tuitionStatus: "Fully Reimbursed or Nominal ($500–$2,000/yr)",
-    timeline: "2 Years (Thesis Defense Mandatory)",
-    undergradDirectEntry: true,
-    masterOutOption: false,
-    facultyPriority: "High: Faculty need motivated master's students for specific grant deliverables.",
-    verdict: "Ideal stepping stone if your undergraduate profile lacks published preprints. Gives you 2 years of top-tier lab compute to launch into a Top 10 PhD.",
-    targetRegions: ["Canada (Mila, Vector Institute, UBC, Toronto)", "Germany (TUM, MPI - Free Tuition)", "Switzerland (ETH/EPFL - Paid Assistantships)"]
-  },
-  {
-    id: "taught-ms",
-    title: "Coursework / Taught MS (Avoid for Research)",
-    shortLabel: "Taught MS Trap",
-    tag: "High Debt Warning ⚠️",
-    badgeVariant: "rose",
-    financialOutcome: "-$80,000 to -$120,000 Net Loss (Student Loans)",
-    fundingGuarantee: "0% Funding (Tuition is paid entirely by student)",
-    stipendAmount: "$0 (Living expenses not covered)",
-    tuitionStatus: "Full Out-of-State / International Rates ($50k–$80k)",
-    timeline: "1–1.5 Years (Classroom Only)",
-    undergradDirectEntry: true,
-    masterOutOption: false,
-    facultyPriority: "Very Low: Professors rarely hire taught master's students into funded AI labs.",
-    verdict: "Cash-cow program designed for university revenue. You will NOT receive lab funding, and your chances of obtaining a publication are minimal due to heavy course loads.",
-    targetRegions: ["US Professional MS", "UK 1-Year Taught MSc", "Australian Coursework MS"]
-  }
-];
+import { degreeRoutesData, decisionMatrixMeta } from "@/data/stepWidgetsData";
 
 export function StepDecisionMatrixWidget() {
   const [selectedRouteId, setSelectedRouteId] = useState("phd");
-  const selectedRoute = routesData.find((r) => r.id === selectedRouteId) || routesData[0];
+  const selectedRoute =
+    degreeRoutesData.find((r) => r.id === selectedRouteId) || degreeRoutesData[0];
 
   return (
     <div className="my-6 p-5 sm:p-6 rounded-2xl bg-[#090d18] border border-emerald-500/30 shadow-2xl relative overflow-hidden">
@@ -103,21 +33,21 @@ export function StepDecisionMatrixWidget() {
           </div>
           <div>
             <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 block">
-              Step 0.3 Interactive Strategic Matrix
+              {decisionMatrixMeta.stepBadge}
             </span>
             <h4 className="text-base sm:text-lg font-heading font-bold text-white">
-              Direct PhD vs. Thesis Master&apos;s vs. Coursework Traps
+              {decisionMatrixMeta.title}
             </h4>
           </div>
         </div>
         <Badge variant="emerald" size="sm">
-          Admissions Economics
+          {decisionMatrixMeta.headerBadge}
         </Badge>
       </div>
 
       {/* Route Switcher Buttons */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 relative z-10">
-        {routesData.map((route) => {
+        {degreeRoutesData.map((route) => {
           const isSelected = selectedRouteId === route.id;
           return (
             <button
@@ -169,7 +99,7 @@ export function StepDecisionMatrixWidget() {
 
           <div className="p-3 rounded-xl bg-[#090d16] border border-white/10 text-right">
             <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">
-              Estimated Net Financial Balance
+              {decisionMatrixMeta.netFinancialBalanceLabel}
             </span>
             <span
               className={`text-sm sm:text-base font-mono font-bold ${
@@ -186,7 +116,7 @@ export function StepDecisionMatrixWidget() {
           <div className="p-3.5 rounded-lg bg-[#090d16] border border-white/5">
             <div className="text-[10px] font-mono text-slate-400 uppercase mb-1 flex items-center gap-1">
               <DollarSign className="w-3 h-3 text-emerald-400" />
-              Stipend / Income
+              {decisionMatrixMeta.stipendLabel}
             </div>
             <div className="text-xs font-bold text-slate-200">
               {selectedRoute.stipendAmount}
@@ -196,7 +126,7 @@ export function StepDecisionMatrixWidget() {
           <div className="p-3.5 rounded-lg bg-[#090d16] border border-white/5">
             <div className="text-[10px] font-mono text-slate-400 uppercase mb-1 flex items-center gap-1">
               <GraduationCap className="w-3 h-3 text-cyan-400" />
-              Tuition Status
+              {decisionMatrixMeta.tuitionLabel}
             </div>
             <div className="text-xs font-bold text-slate-200">
               {selectedRoute.tuitionStatus}
@@ -206,29 +136,29 @@ export function StepDecisionMatrixWidget() {
           <div className="p-3.5 rounded-lg bg-[#090d16] border border-white/5">
             <div className="text-[10px] font-mono text-slate-400 uppercase mb-1 flex items-center gap-1">
               <CheckCircle2 className="w-3 h-3 text-indigo-400" />
-              Direct Entry from BS?
+              {decisionMatrixMeta.undergradLabel}
             </div>
             <div className="text-xs font-bold text-emerald-400 flex items-center gap-1">
               <CheckCircle2 className="w-3.5 h-3.5" />
-              Yes, 100% Eligible
+              {decisionMatrixMeta.undergradEligibleText}
             </div>
           </div>
 
           <div className="p-3.5 rounded-lg bg-[#090d16] border border-white/5">
             <div className="text-[10px] font-mono text-slate-400 uppercase mb-1 flex items-center gap-1">
               <HelpCircle className="w-3 h-3 text-amber-400" />
-              Master-Out Escape Hatch?
+              {decisionMatrixMeta.masterOutLabel}
             </div>
             <div className="text-xs font-bold text-slate-200 flex items-center gap-1">
               {selectedRoute.masterOutOption ? (
                 <span className="text-emerald-400 flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  Yes (Funded MS Exit)
+                  {decisionMatrixMeta.masterOutAvailableText}
                 </span>
               ) : (
                 <span className="text-slate-400 flex items-center gap-1">
                   <XCircle className="w-3.5 h-3.5 text-slate-500" />
-                  Not Applicable
+                  {decisionMatrixMeta.masterOutNotAvailableText}
                 </span>
               )}
             </div>
@@ -240,7 +170,7 @@ export function StepDecisionMatrixWidget() {
           <div className="p-3.5 rounded-xl bg-[#090d16] border border-white/5 text-xs text-slate-300">
             <div className="font-semibold text-white mb-1 flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-              Strategic Evaluation & Recommendation:
+              {decisionMatrixMeta.evaluationHeader}
             </div>
             <p className="leading-relaxed text-slate-300 font-sans">
               {selectedRoute.verdict}
@@ -251,8 +181,8 @@ export function StepDecisionMatrixWidget() {
             <div className="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-500/30 text-xs text-emerald-200 flex items-start gap-2.5">
               <Sparkles className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
               <p className="leading-relaxed">
-                <strong>The Secret &ldquo;Master-Out&rdquo; Strategy: </strong>
-                Many students do not realize that in top US universities, direct-entry PhD students who decide after 2 years that they prefer industry over research can legally &ldquo;master out&rdquo;. They receive their Master&apos;s degree completely free, having been paid \$80k+ in stipends with zero tuition debt.
+                <strong>{decisionMatrixMeta.secretMasterOutCallout.title}</strong>
+                {decisionMatrixMeta.secretMasterOutCallout.desc}
               </p>
             </div>
           )}
@@ -261,8 +191,8 @@ export function StepDecisionMatrixWidget() {
             <div className="p-3.5 rounded-xl bg-rose-950/40 border border-rose-500/40 text-xs text-rose-200 flex items-start gap-2.5">
               <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
               <p className="leading-relaxed">
-                <strong>The Rejection / Debt Danger: </strong>
-                Over 70% of international applicants falsely believe they can &ldquo;enter an unfunded MS and find an RA position once on campus&rdquo;. In reality, professors have strict grant obligations and reserve almost 100% of their RA funding for incoming doctoral students.
+                <strong>{decisionMatrixMeta.debtTrapWarningCallout.title}</strong>
+                {decisionMatrixMeta.debtTrapWarningCallout.desc}
               </p>
             </div>
           )}
@@ -271,7 +201,7 @@ export function StepDecisionMatrixWidget() {
         {/* Target Institutions Pills */}
         <div className="pt-2 border-t border-white/5 flex flex-wrap items-center gap-2">
           <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">
-            Top Global Hubs:
+            {decisionMatrixMeta.globalHubsLabel}
           </span>
           {selectedRoute.targetRegions.map((region, i) => (
             <span
@@ -287,10 +217,10 @@ export function StepDecisionMatrixWidget() {
       {/* Quick Summary Actionable Advice */}
       <div className="mt-4 p-3.5 rounded-xl bg-[#0f1422] border border-white/5 flex items-center justify-between text-xs text-slate-400">
         <span className="text-slate-300 font-medium">
-          Summary Decision Rule: If you have ANY prior research experience, apply directly to PhD programs.
+          {decisionMatrixMeta.decisionRuleFooter.rule}
         </span>
         <span className="font-mono text-cyan-400 flex items-center gap-1 font-semibold">
-          Step 0.3 Locked <ArrowRight className="w-3.5 h-3.5" />
+          {decisionMatrixMeta.decisionRuleFooter.badge} <ArrowRight className="w-3.5 h-3.5" />
         </span>
       </div>
     </div>

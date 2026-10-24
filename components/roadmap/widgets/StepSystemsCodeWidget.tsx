@@ -5,7 +5,6 @@ import {
   Terminal,
   Copy,
   Check,
-  Cpu,
   Zap,
   Layers,
   Sparkles,
@@ -14,128 +13,11 @@ import {
   Gauge
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-
-interface CodeTab {
-  id: string;
-  label: string;
-  fileName: string;
-  language: string;
-  description: string;
-  code: string;
-  highlights: string[];
-}
-
-const systemsTabsData: CodeTab[] = [
-  {
-    id: "ddp",
-    label: "PyTorch DDP Init",
-    fileName: "distributed_trainer.py",
-    language: "python",
-    description: "Production Distributed Data Parallel (DDP) initialization across multi-GPU nodes with NCCL backend.",
-    highlights: ["Backend NCCL", "torch.cuda.set_device", "DistributedDataParallel"],
-    code: `import os
-import torch
-import torch.distributed as dist
-from torch.nn.parallel import DistributedDataParallel as DDP
-
-def setup_distributed():
-    """Initializes the distributed process group with NCCL backend."""
-    dist.init_process_group(backend="nccl")
-    local_rank = int(os.environ["LOCAL_RANK"])
-    torch.cuda.set_device(local_rank)
-    return local_rank
-
-def wrap_model(model: torch.nn.Module, local_rank: int) -> DDP:
-    """Wraps model in DDP with gradient bucket synchronization."""
-    model = model.to(local_rank)
-    return DDP(
-        model, 
-        device_ids=[local_rank], 
-        output_device=local_rank,
-        find_unused_parameters=False
-    )`
-  },
-  {
-    id: "amp",
-    label: "AMP & Memory Profiling",
-    fileName: "engine_amp.py",
-    language: "python",
-    description: "Automatic Mixed Precision (bfloat16) training loop with Gradient Scaling and CUDA memory telemetry.",
-    highlights: ["torch.amp.autocast", "GradScaler", "memory_allocated"],
-    code: `import torch
-from torch.amp import autocast, GradScaler
-
-scaler = GradScaler("cuda")
-
-def training_step(model, optimizer, data, targets):
-    optimizer.zero_grad(set_to_none=True) # Saves VRAM bandwidth
-    
-    with autocast("cuda", dtype=torch.bfloat16):
-        predictions = model(data)
-        loss = criterion(predictions, targets)
-        
-    scaler.scale(loss).backward()
-    scaler.unscale_(optimizer)
-    torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
-    scaler.step(optimizer)
-    scaler.update()
-    
-    # Track VRAM consumption
-    peak_vram_gb = torch.cuda.max_memory_allocated() / 1e9
-    return loss.item(), peak_vram_gb`
-  },
-  {
-    id: "hydra",
-    label: "Hydra Config Management",
-    fileName: "train_hydra.py",
-    language: "python",
-    description: "Hierarchical YAML configuration with Hydra to eliminate hardcoded hyperparameters in research code.",
-    highlights: ["@hydra.main", "DictConfig", "Reproducible CLI"],
-    code: `import hydra
-from omegaconf import DictConfig, OmegaConf
-import wandb
-
-@hydra.main(version_base=None, config_path="configs", config_name="train")
-def main(cfg: DictConfig) -> None:
-    print(OmegaConf.to_yaml(cfg))
-    
-    # Initialize experiment telemetry
-    wandb.init(
-        project=cfg.experiment.project_name,
-        name=f"{cfg.model.architecture}_{cfg.optimizer.lr}",
-        config=OmegaConf.to_container(cfg, resolve=True)
-    )
-    
-    train_model(cfg)
-
-if __name__ == "__main__":
-    main()`
-  },
-  {
-    id: "reproducibility",
-    label: "Deterministic Seed Harness",
-    fileName: "seed_control.py",
-    language: "python",
-    description: "Deterministic seeding across Python, NumPy, PyTorch, and cuDNN to guarantee exact review reproducibility.",
-    highlights: ["torch.manual_seed", "cudnn.deterministic", "Zero Flakiness"],
-    code: `import os
-import random
-import numpy as np
-import torch
-
-def set_seed(seed: int = 42) -> None:
-    """Enforces 100% deterministic execution for peer review reproduction."""
-    random.seed(seed)
-    os.environ["PYTHONHASHSEED"] = str(seed)
-    np.random.seed(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
-    
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
-    print(f"Deterministic seed locked: {seed}")`
-  }
-];
+import {
+  systemsTabsData,
+  systemsBenchmarkMetricsData,
+  systemsCodeMeta
+} from "@/data/stepWidgetsData";
 
 export function StepSystemsCodeWidget() {
   const [activeTabId, setActiveTabId] = useState("ddp");
@@ -153,6 +35,36 @@ export function StepSystemsCodeWidget() {
     }
   };
 
+  const getMetricIcon = (iconName: string) => {
+    switch (iconName) {
+      case "Zap":
+        return <Zap className="w-4 h-4" />;
+      case "Gauge":
+        return <Gauge className="w-4 h-4" />;
+      case "Layers":
+        return <Layers className="w-4 h-4" />;
+      case "Server":
+        return <Server className="w-4 h-4" />;
+      default:
+        return <Terminal className="w-4 h-4" />;
+    }
+  };
+
+  const getMetricVariantStyles = (variant: string) => {
+    switch (variant) {
+      case "cyan":
+        return "bg-cyan-500/10 text-cyan-400";
+      case "emerald":
+        return "bg-emerald-500/10 text-emerald-400";
+      case "purple":
+        return "bg-purple-500/10 text-purple-400";
+      case "amber":
+        return "bg-amber-500/10 text-amber-400";
+      default:
+        return "bg-slate-500/10 text-slate-400";
+    }
+  };
+
   return (
     <div className="my-6 p-5 sm:p-6 rounded-2xl bg-[#090d18] border border-cyan-500/30 shadow-2xl relative overflow-hidden">
       {/* Ambient glow */}
@@ -166,64 +78,47 @@ export function StepSystemsCodeWidget() {
           </div>
           <div>
             <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-400 block">
-              Step 0.2 Interactive Systems Console
+              {systemsCodeMeta.stepBadge}
             </span>
             <h4 className="text-base sm:text-lg font-heading font-bold text-white">
-              Production PyTorch Research Codebase Architecture
+              {systemsCodeMeta.title}
             </h4>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <Badge variant="cyan" size="sm">
-            Zero-Notebook Standard
+            {systemsCodeMeta.headerBadge}
           </Badge>
           <span className="text-[11px] font-mono text-slate-400 hidden sm:inline">
-            PyTorch 2.x • CUDA 12
+            {systemsCodeMeta.subBadge}
           </span>
         </div>
       </div>
 
       {/* Engineering Benchmarks Banner */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 mb-5 relative z-10">
-        <div className="p-3 rounded-xl bg-[#0f1422] border border-white/5 flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0">
-            <Zap className="w-4 h-4" />
+        {systemsBenchmarkMetricsData.map((metric) => (
+          <div
+            key={metric.id}
+            className="p-3 rounded-xl bg-[#0f1422] border border-white/5 flex items-center gap-3"
+          >
+            <div
+              className={`p-2 rounded-lg shrink-0 ${getMetricVariantStyles(
+                metric.variant
+              )}`}
+            >
+              {getMetricIcon(metric.iconName)}
+            </div>
+            <div className="min-w-0">
+              <div className="text-[10px] font-mono text-slate-400 uppercase">
+                {metric.label}
+              </div>
+              <div className="text-xs font-bold text-white truncate">
+                {metric.value}
+              </div>
+            </div>
           </div>
-          <div className="min-w-0">
-            <div className="text-[10px] font-mono text-slate-400 uppercase">Throughput</div>
-            <div className="text-xs font-bold text-white truncate">Linear DDP Scaling</div>
-          </div>
-        </div>
-
-        <div className="p-3 rounded-xl bg-[#0f1422] border border-white/5 flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
-            <Gauge className="w-4 h-4" />
-          </div>
-          <div className="min-w-0">
-            <div className="text-[10px] font-mono text-slate-400 uppercase">VRAM Efficiency</div>
-            <div className="text-xs font-bold text-white truncate">-65% via bfloat16</div>
-          </div>
-        </div>
-
-        <div className="p-3 rounded-xl bg-[#0f1422] border border-white/5 flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-purple-500/10 text-purple-400 shrink-0">
-            <Layers className="w-4 h-4" />
-          </div>
-          <div className="min-w-0">
-            <div className="text-[10px] font-mono text-slate-400 uppercase">Configs</div>
-            <div className="text-xs font-bold text-white truncate">Modular Hydra YAML</div>
-          </div>
-        </div>
-
-        <div className="p-3 rounded-xl bg-[#0f1422] border border-white/5 flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-amber-500/10 text-amber-400 shrink-0">
-            <Server className="w-4 h-4" />
-          </div>
-          <div className="min-w-0">
-            <div className="text-[10px] font-mono text-slate-400 uppercase">Cluster Ready</div>
-            <div className="text-xs font-bold text-white truncate">Slurm / Multi-GPU</div>
-          </div>
-        </div>
+        ))}
       </div>
 
       {/* Tabs */}
@@ -309,8 +204,10 @@ export function StepSystemsCodeWidget() {
       <div className="mt-4 p-3.5 rounded-xl bg-[#0f1422] border border-white/5 flex items-start gap-2.5 text-xs text-slate-300 relative z-10">
         <Sparkles className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
         <p className="leading-relaxed">
-          <strong className="text-white">Why Faculty Prioritize This: </strong>
-          Advisors do not have time to teach incoming PhD students how to launch multi-GPU jobs or fix OOM errors. Demonstrating a modular PyTorch repository with Hydra and DDP proves you can produce research deliverables from Day 1.
+          <strong className="text-white">
+            {systemsCodeMeta.facultyCallout.title}
+          </strong>
+          {systemsCodeMeta.facultyCallout.desc}
         </p>
       </div>
     </div>
