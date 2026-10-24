@@ -22,11 +22,13 @@
   --foreground: #f8fafc;
 }
 
+html,
 body {
   background-color: #090d16;
   color: #f1f5f9;
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
+  max-width: 100vw;
   selection-background-color: rgba(99, 102, 241, 0.25);
   selection-color: #c7d2fe;
 }

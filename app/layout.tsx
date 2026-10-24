@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -23,14 +23,20 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600"],
 });
 
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AmbientBackground } from "@/components/ui/AmbientBackground";
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#090d16"
+};
+
 export const metadata: Metadata = {
   title: "100% Fully Funded AI & Machine Learning Postgraduate Roadmap",
-  description: "The canonical zero-to-landing blueprint for Computer Science, AI, and Machine Learning stude nts securing 100% fully funded PhD and Master's research assistantships abroad.",
+  description: "The canonical zero-to-landing blueprint for Computer Science, AI, and Machine Learning students securing 100% fully funded PhD and Master's research assistantships abroad.",
 };
 
 export default function RootLayout({
