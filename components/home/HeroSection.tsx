@@ -101,7 +101,7 @@ export function HeroSection() {
           {homePageData.hero.secondaryCta && (
             <Link
               href={homePageData.hero.secondaryCta.href}
-              className="px-7 py-4 rounded-xl bg-[#0b102b]/90 hover:bg-[#121942] border border-white/[0.12] hover:border-indigo-500/50 text-slate-200 font-semibold text-sm transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-indigo-500/20 hover:-translate-y-0.5"
+              className="px-7 py-4 rounded-xl bg-[#0f1422] hover:bg-slate-800 border border-white/10 hover:border-indigo-500/50 text-slate-200 font-semibold text-sm transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-indigo-500/20 hover:-translate-y-0.5"
             >
               <Sparkles className="w-4 h-4 text-indigo-400" />
               <span>{homePageData.hero.secondaryCta.label}</span>
@@ -111,7 +111,7 @@ export function HeroSection() {
           {homePageData.hero.tertiaryCta && (
             <Link
               href={homePageData.hero.tertiaryCta.href}
-              className="px-6 py-4 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-white/[0.08] hover:border-cyan-500/40 text-slate-300 font-medium text-sm transition-all duration-300 flex items-center gap-2 hover:-translate-y-0.5"
+              className="px-6 py-4 rounded-xl bg-[#0f1422] hover:bg-slate-800 border border-white/10 hover:border-cyan-500/40 text-slate-300 font-medium text-sm transition-all duration-300 flex items-center gap-2 hover:-translate-y-0.5"
             >
               <Cpu className="w-4 h-4 text-cyan-400" />
               <span>{homePageData.hero.tertiaryCta.label}</span>
@@ -125,7 +125,7 @@ export function HeroSection() {
             <GlassCard
               key={m.label}
               borderGlow={getGlowVariant(m.iconName)}
-              className="p-5 sm:p-6 text-left"
+              className="p-5 sm:p-6 text-left bg-[#0f1422] border border-white/10"
               enableSpotlight={true}
             >
               <div className="flex items-center justify-between mb-3">

@@ -77,7 +77,7 @@ export function InteractiveProfileDiagnostic() {
   const audit = computeAudit();
 
   return (
-    <section id="profile-diagnostic" className="py-20 relative overflow-hidden border-b border-slate-800/80">
+    <section id="profile-diagnostic" className="py-20 relative overflow-hidden border-b border-white/5 bg-[#0b101c]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge={sectionMeta?.badge || "Interactive Self-Assessment"}
@@ -90,10 +90,10 @@ export function InteractiveProfileDiagnostic() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Controls Column (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
-            <GlassCard borderGlow="indigo" className="space-y-6">
+            <GlassCard borderGlow="indigo" className="space-y-6 bg-[#0f1422] border border-white/10 p-6 sm:p-7">
               {/* Question 1: Target Degree */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">
+                <label className="block text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2 font-mono">
                   1. Target Postgraduate Path
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -101,13 +101,13 @@ export function InteractiveProfileDiagnostic() {
                     <button
                       key={item.id}
                       onClick={() => setDegree(item.id)}
-                      className={`p-3 rounded-xl border text-left transition-all ${
+                      className={`p-3 rounded-xl border text-left transition-all cursor-pointer ${
                         degree === item.id
-                          ? "bg-indigo-600/20 border-indigo-500 text-white shadow-md shadow-indigo-950"
-                          : "bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                          ? "bg-indigo-600/30 border-indigo-400 text-white shadow-md shadow-indigo-950 font-semibold"
+                          : "bg-[#090d16] border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200"
                       }`}
                     >
-                      <div className="text-xs font-bold">{item.label}</div>
+                      <div className="text-xs font-bold font-heading">{item.label}</div>
                       <div className="text-[10px] text-slate-400 mt-0.5">{item.sub}</div>
                     </button>
                   ))}
@@ -116,7 +116,7 @@ export function InteractiveProfileDiagnostic() {
 
               {/* Question 2: Academic GPA */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-cyan-400 mb-2">
+                <label className="block text-xs font-bold uppercase tracking-wider text-cyan-400 mb-2 font-mono">
                   2. Cumulative Academic GPA (Scale of 4.0)
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -124,13 +124,13 @@ export function InteractiveProfileDiagnostic() {
                     <button
                       key={item.id}
                       onClick={() => setGpa(item.id)}
-                      className={`p-2.5 rounded-xl border text-center transition-all ${
+                      className={`p-2.5 rounded-xl border text-center transition-all cursor-pointer ${
                         gpa === item.id
-                          ? "bg-cyan-600/20 border-cyan-500 text-white shadow-md shadow-cyan-950"
-                          : "bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                          ? "bg-cyan-600/30 border-cyan-400 text-white shadow-md shadow-cyan-950 font-semibold"
+                          : "bg-[#090d16] border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200"
                       }`}
                     >
-                      <div className="text-xs font-bold">{item.label}</div>
+                      <div className="text-xs font-bold font-heading">{item.label}</div>
                       <div className="text-[10px] text-slate-400">{item.sub}</div>
                     </button>
                   ))}
@@ -139,7 +139,7 @@ export function InteractiveProfileDiagnostic() {
 
               {/* Question 3: Research Capital & Publications */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">
+                <label className="block text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2 font-mono">
                   3. Peer-Reviewed Research & Preprints
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -147,13 +147,13 @@ export function InteractiveProfileDiagnostic() {
                     <button
                       key={item.id}
                       onClick={() => setPapers(item.id)}
-                      className={`p-3 rounded-xl border text-left transition-all ${
+                      className={`p-3 rounded-xl border text-left transition-all cursor-pointer ${
                         papers === item.id
-                          ? "bg-emerald-600/20 border-emerald-500 text-white shadow-md shadow-emerald-950"
-                          : "bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                          ? "bg-emerald-600/30 border-emerald-400 text-white shadow-md shadow-emerald-950 font-semibold"
+                          : "bg-[#090d16] border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200"
                       }`}
                     >
-                      <div className="text-xs font-bold">{item.label}</div>
+                      <div className="text-xs font-bold font-heading">{item.label}</div>
                       <div className="text-[10px] text-slate-400 mt-0.5">{item.sub}</div>
                     </button>
                   ))}
@@ -162,7 +162,7 @@ export function InteractiveProfileDiagnostic() {
 
               {/* Question 4: Technical Stack */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-purple-400 mb-2">
+                <label className="block text-xs font-bold uppercase tracking-wider text-purple-400 mb-2 font-mono">
                   4. Production AI Stack & Compute Experience
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -170,13 +170,13 @@ export function InteractiveProfileDiagnostic() {
                     <button
                       key={item.id}
                       onClick={() => setEngineering(item.id)}
-                      className={`p-3 rounded-xl border text-left transition-all ${
+                      className={`p-3 rounded-xl border text-left transition-all cursor-pointer ${
                         engineering === item.id
-                          ? "bg-purple-600/20 border-purple-500 text-white shadow-md shadow-purple-950"
-                          : "bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                          ? "bg-purple-600/30 border-purple-400 text-white shadow-md shadow-purple-950 font-semibold"
+                          : "bg-[#090d16] border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200"
                       }`}
                     >
-                      <div className="text-xs font-bold">{item.label}</div>
+                      <div className="text-xs font-bold font-heading">{item.label}</div>
                       <div className="text-[10px] text-slate-400 mt-0.5">{item.sub}</div>
                     </button>
                   ))}
@@ -187,10 +187,10 @@ export function InteractiveProfileDiagnostic() {
 
           {/* Results Diagnostic Card (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
-            <GlassCard borderGlow="emerald" className="p-6 sm:p-8 bg-gradient-to-b from-slate-900/90 to-slate-950">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+            <GlassCard borderGlow="emerald" className="p-6 sm:p-8 bg-[#0f1422] border border-white/10 shadow-2xl">
+              <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
                 <div>
-                  <span className="text-xs uppercase font-bold tracking-wider text-slate-400">
+                  <span className="text-xs uppercase font-bold tracking-wider text-slate-400 font-mono">
                     Calculated Readiness
                   </span>
                   <div className="text-3xl font-black text-white font-mono flex items-center gap-2 mt-1">
@@ -211,24 +211,24 @@ export function InteractiveProfileDiagnostic() {
 
               {/* Lab Tier Breakdown */}
               <div className="space-y-4 mb-6 text-xs">
-                <div className="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80">
-                  <div className="font-bold text-indigo-300 flex items-center gap-1.5 mb-1">
+                <div className="p-3.5 rounded-xl bg-[#090d16] border border-white/10">
+                  <div className="font-bold text-indigo-300 flex items-center gap-1.5 mb-1 font-heading">
                     <Target className="w-3.5 h-3.5 text-indigo-400" />
                     Reach Tier Labs:
                   </div>
                   <p className="text-slate-300 leading-relaxed">{audit.reach}</p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80">
-                  <div className="font-bold text-cyan-300 flex items-center gap-1.5 mb-1">
+                <div className="p-3.5 rounded-xl bg-[#090d16] border border-white/10">
+                  <div className="font-bold text-cyan-300 flex items-center gap-1.5 mb-1 font-heading">
                     <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
                     Target Tier Labs:
                   </div>
                   <p className="text-slate-300 leading-relaxed">{audit.target}</p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80">
-                  <div className="font-bold text-emerald-300 flex items-center gap-1.5 mb-1">
+                <div className="p-3.5 rounded-xl bg-[#090d16] border border-white/10">
+                  <div className="font-bold text-emerald-300 flex items-center gap-1.5 mb-1 font-heading">
                     <GraduationCap className="w-3.5 h-3.5 text-emerald-400" />
                     Solid Foundation Labs:
                   </div>
@@ -237,8 +237,8 @@ export function InteractiveProfileDiagnostic() {
               </div>
 
               {/* Priority Action Recommendation */}
-              <div className="p-4 rounded-xl bg-amber-950/30 border border-amber-800/40 mb-6">
-                <div className="text-xs font-bold text-amber-300 flex items-center gap-1.5 mb-1">
+              <div className="p-4 rounded-xl bg-amber-950/20 border border-amber-800/40 mb-6">
+                <div className="text-xs font-bold text-amber-300 flex items-center gap-1.5 mb-1 font-heading">
                   <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />
                   Immediate High-Leverage Strategic Move:
                 </div>
@@ -250,7 +250,7 @@ export function InteractiveProfileDiagnostic() {
               {/* CTA to Roadmap Phase */}
               <Link
                 href={audit.recommendedPhase}
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white font-bold text-xs uppercase tracking-wider text-center shadow-lg shadow-indigo-600/30 transition-all flex items-center justify-center gap-2"
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white font-bold text-xs uppercase tracking-wider text-center shadow-lg shadow-indigo-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Jump to {audit.phaseName}</span>
                 <ArrowRight className="w-4 h-4" />
