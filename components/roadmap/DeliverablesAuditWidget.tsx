@@ -1,0 +1,103 @@
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import { ShieldCheck, ArrowRight } from "lucide-react";
+import { GlassCard } from "@/components/ui/GlassCard";
+import { Badge } from "@/components/ui/Badge";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { deliverableAuditData } from "@/data/roadmapSectionData";
+import { roadmapPageData } from "@/data/pagesData";
+
+export function DeliverablesAuditWidget() {
+  const [checkedAudit, setCheckedAudit] = useState<{ [key: string]: boolean }>({
+    "item-0": true,
+    "item-1": true
+  });
+
+  const sectionMeta = roadmapPageData.sections[3];
+
+  const toggleAudit = (idx: number) => {
+    const key = `item-${idx}`;
+    setCheckedAudit((prev) => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
+
+  const count = Object.values(checkedAudit).filter(Boolean).length;
+
+  return (
+    <section id="deliverables-audit" className="py-20 border-b border-slate-800/80 bg-slate-950">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          badge={sectionMeta?.badge || "Pre-Submission Audit"}
+          badgeVariant="emerald"
+          badgeIcon={<ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />}
+          title={sectionMeta?.title || "Mandatory Application Deliverables Audit"}
+          subtitle={sectionMeta?.subtitle || "Before paying university application fees or locking deadlines, verify that all core research assets have been assembled."}
+        />
+
+        <GlassCard borderGlow="emerald" className="p-6 sm:p-8">
+          <div className="flex items-center justify-between pb-6 mb-6 border-b border-slate-800">
+            <div>
+              <span className="text-xs uppercase font-bold text-slate-400">Readiness Progress</span>
+              <div className="text-2xl font-bold text-white font-mono mt-0.5">
+                {count} of {deliverableAuditData.length} Deliverables Locked
+              </div>
+            </div>
+            <Badge variant={count === deliverableAuditData.length ? "emerald" : "amber"} size="md">
+              {count === deliverableAuditData.length ? "Dossier 100% Ready" : "In Progress"}
+            </Badge>
+          </div>
+
+          <div className="space-y-3">
+            {deliverableAuditData.map((item, idx) => {
+              const isChecked = !!checkedAudit[`item-${idx}`];
+              return (
+                <div
+                  key={item.title}
+                  onClick={() => toggleAudit(idx)}
+                  className={`p-4 rounded-xl border text-xs cursor-pointer transition-all flex items-start gap-3 select-none ${
+                    isChecked
+                      ? "bg-emerald-950/20 border-emerald-800/40 text-slate-200"
+                      : "bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    checked={isChecked}
+                    onChange={() => {}}
+                    className="mt-0.5 h-4 w-4 rounded border-slate-700 text-emerald-500 focus:ring-0"
+                  />
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between">
+                      <span className={`font-bold ${isChecked ? "text-white" : "text-slate-300"}`}>
+                        {item.title}
+                      </span>
+                      <span className="text-[10px] font-mono text-slate-500">{item.phase}</span>
+                    </div>
+                    <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span className="text-xs text-slate-400">
+              Need copy-ready templates to accelerate your deliverables?
+            </span>
+            <Link
+              href="/toolkit"
+              className="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition-all shadow-md shadow-indigo-600/30 flex items-center gap-1.5"
+            >
+              <span>Explore Application Toolkit</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+        </GlassCard>
+      </div>
+    </section>
+  );
+}

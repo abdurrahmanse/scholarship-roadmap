@@ -11,6 +11,14 @@ export * from "./interviews";
 export * from "./faqs";
 export * from "./pagesData";
 
+// Modular Section Datasets
+export * from "./homeData";
+export * from "./roadmapSectionData";
+export * from "./programsSectionData";
+export * from "./toolkitSectionData";
+export * from "./interviewsSectionData";
+export * from "./faqsSectionData";
+
 import { phasesData } from "./phases";
 import { stepsData } from "./steps";
 import { fundedProgramsData } from "./programs";

@@ -162,3 +162,140 @@ export interface MultiPageData {
   sections: PageSection[];
 }
 
+// ==========================================
+// SECTION & WIDGET SPECIFIC TYPED DATA
+// ==========================================
+
+export interface MetricItem {
+  label: string;
+  value: string;
+  sublabel: string;
+  iconName: string;
+}
+
+export interface FundingPillar {
+  title: string;
+  description: string;
+  iconName: string;
+  tag: string;
+  variant: "emerald" | "cyan" | "rose" | "purple";
+  points: string[];
+}
+
+export interface CityFinancialProfile {
+  name: string;
+  country: string;
+  institution: string;
+  currency: string;
+  symbol: string;
+  annualGrossStipend: number;
+  taxRatePercent: number;
+  avgMonthlyRentShared: number;
+  avgMonthlyFood: number;
+  monthlyHealthInsurance: number;
+  costOfLivingIndex: number;
+  tuitionCovered: number;
+  notes: string;
+}
+
+export interface DiagnosticOption {
+  id: string;
+  label: string;
+  sub: string;
+}
+
+export interface GlobalFundingModel {
+  title: string;
+  region: string;
+  iconName: string;
+  stipend: string;
+  tuition: string;
+  tag: string;
+  variant: "indigo" | "cyan" | "emerald" | "amber";
+  details: string[];
+}
+
+export interface GpuTactic {
+  title: string;
+  desc: string;
+  code: string;
+  benefit: string;
+}
+
+export interface DeliverableAuditItem {
+  title: string;
+  phase: string;
+  desc: string;
+}
+
+export interface CsrankingsStep {
+  num: string;
+  title: string;
+  desc: string;
+}
+
+export interface CostOfLivingRow {
+  hub: string;
+  gross: string;
+  rent: string;
+  savings: string;
+  tier: string;
+  variant: "emerald" | "cyan" | "amber" | "purple";
+}
+
+export interface SopMovement {
+  num: string;
+  pct: string;
+  title: string;
+  desc: string;
+  points: string[];
+}
+
+export interface CvBenchmark {
+  label: string;
+  value: string;
+  sub: string;
+}
+
+export interface XyzExample {
+  bad: string;
+  good: string;
+}
+
+export interface SlideData {
+  number: number;
+  title: string;
+  subtitle: string;
+  timing: string;
+  visualLayout: string;
+  keyPoints: string[];
+  facultyInterruptionQuestion: string;
+  defenseAnswer: string;
+}
+
+export interface RedFlagRule {
+  term: string;
+  danger: string;
+  safeReplacement: string;
+}
+
+export interface OfferFinancialMetric {
+  label: string;
+  value: string;
+  sub: string;
+}
+
+export interface FaqCategoryCard {
+  name: string;
+  desc: string;
+  tag: string;
+  iconName: string;
+  variant: "purple" | "cyan" | "emerald" | "amber";
+}
+
+export interface LaunchpadCard {
+  title: string;
+  desc: string;
+  href: string;
+  iconName: string;
+}

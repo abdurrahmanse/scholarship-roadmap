@@ -9,46 +9,48 @@ import {
   CheckCircle2,
   AlertCircle,
   TrendingUp,
-  Cpu,
   GraduationCap
 } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import {
+  diagnosticDegreeOptions,
+  diagnosticGpaOptions,
+  diagnosticPaperOptions,
+  diagnosticEngineeringOptions
+} from "@/data/homeData";
+import { homePageData } from "@/data/pagesData";
 
 export function InteractiveProfileDiagnostic() {
-  const [degree, setDegree] = useState<"phd-direct" | "phd-postms" | "ms-thesis">("phd-direct");
-  const [gpa, setGpa] = useState<"high" | "good" | "medium" | "low">("good");
-  const [papers, setPapers] = useState<"conf" | "workshop" | "thesis" | "none">("workshop");
-  const [engineering, setEngineering] = useState<"multi-gpu" | "pytorch-colab" | "basic">("multi-gpu");
+  const [degree, setDegree] = useState<string>(diagnosticDegreeOptions[0]?.id || "phd-direct");
+  const [gpa, setGpa] = useState<string>(diagnosticGpaOptions[1]?.id || "good");
+  const [papers, setPapers] = useState<string>(diagnosticPaperOptions[1]?.id || "workshop");
+  const [engineering, setEngineering] = useState<string>(diagnosticEngineeringOptions[0]?.id || "multi-gpu");
 
-  // Calculate score and recommendations
+  const sectionMeta = homePageData.sections[3];
+
   const computeAudit = () => {
     let score = 50;
 
-    // Degree readiness baseline
     if (degree === "phd-direct") score += 10;
     if (degree === "phd-postms") score += 12;
     if (degree === "ms-thesis") score += 8;
 
-    // GPA
     if (gpa === "high") score += 15;
     else if (gpa === "good") score += 12;
     else if (gpa === "medium") score += 8;
     else score += 4;
 
-    // Papers
     if (papers === "conf") score += 20;
     else if (papers === "workshop") score += 15;
     else if (papers === "thesis") score += 10;
     else score += 3;
 
-    // Engineering Stack
     if (engineering === "multi-gpu") score += 15;
     else if (engineering === "pytorch-colab") score += 10;
     else score += 4;
 
-    // Recommendations based on score
     let reach = "CMU SCS, Stanford SAIL, UC Berkeley BAIR, MIT CSAIL";
     let target = "Mila, Vector Institute, UT Austin, UW Madison, ETH Zurich AI";
     let safe = "Singapore SINGA (NUS/NTU), Max Planck IMPRS, CSIRO Data61, RIKEN AIP";
@@ -78,11 +80,11 @@ export function InteractiveProfileDiagnostic() {
     <section id="profile-diagnostic" className="py-20 relative overflow-hidden border-b border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
-          badge="Interactive Self-Assessment"
+          badge={sectionMeta?.badge || "Interactive Self-Assessment"}
           badgeVariant="indigo"
           badgeIcon={<Sparkles className="w-3.5 h-3.5 text-indigo-400" />}
-          title="International AI Applicant Diagnostic & Lab Matcher"
-          subtitle="Select your current academic profile to generate an instant competitiveness rating, custom lab tier mapping, and high-leverage immediate action steps."
+          title={sectionMeta?.title || "Applicant Diagnostic & Readiness Scorecard"}
+          subtitle={sectionMeta?.subtitle || "Select your current academic profile to generate an instant competitiveness rating, custom lab tier mapping, and high-leverage immediate action steps."}
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -95,14 +97,10 @@ export function InteractiveProfileDiagnostic() {
                   1. Target Postgraduate Path
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                  {[
-                    { id: "phd-direct", label: "Direct PhD (from BS)", sub: "US / Canada 100% Full-Ride" },
-                    { id: "phd-postms", label: "PhD (after Master's)", sub: "Europe / Global Salaried" },
-                    { id: "ms-thesis", label: "Master's (Thesis / GRA)", sub: "Tuition Waiver + Stipend" }
-                  ].map((item) => (
+                  {diagnosticDegreeOptions.map((item) => (
                     <button
                       key={item.id}
-                      onClick={() => setDegree(item.id as any)}
+                      onClick={() => setDegree(item.id)}
                       className={`p-3 rounded-xl border text-left transition-all ${
                         degree === item.id
                           ? "bg-indigo-600/20 border-indigo-500 text-white shadow-md shadow-indigo-950"
@@ -122,15 +120,10 @@ export function InteractiveProfileDiagnostic() {
                   2. Cumulative Academic GPA (Scale of 4.0)
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  {[
-                    { id: "high", label: "3.8 – 4.0", desc: "Top 5% Honors" },
-                    { id: "good", label: "3.5 – 3.79", desc: "Competitive" },
-                    { id: "medium", label: "3.2 – 3.49", desc: "Research offset" },
-                    { id: "low", label: "< 3.2", desc: "Heavy code focus" }
-                  ].map((item) => (
+                  {diagnosticGpaOptions.map((item) => (
                     <button
                       key={item.id}
-                      onClick={() => setGpa(item.id as any)}
+                      onClick={() => setGpa(item.id)}
                       className={`p-2.5 rounded-xl border text-center transition-all ${
                         gpa === item.id
                           ? "bg-cyan-600/20 border-cyan-500 text-white shadow-md shadow-cyan-950"
@@ -138,7 +131,7 @@ export function InteractiveProfileDiagnostic() {
                       }`}
                     >
                       <div className="text-xs font-bold">{item.label}</div>
-                      <div className="text-[10px] text-slate-400">{item.desc}</div>
+                      <div className="text-[10px] text-slate-400">{item.sub}</div>
                     </button>
                   ))}
                 </div>
@@ -150,15 +143,10 @@ export function InteractiveProfileDiagnostic() {
                   3. Peer-Reviewed Research & Preprints
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {[
-                    { id: "conf", label: "1+ Main Conference Paper", sub: "NeurIPS / ICML / ICLR / CVPR / ACL" },
-                    { id: "workshop", label: "Workshop Paper or arXiv Preprint", sub: "Verified preprint with code repo" },
-                    { id: "thesis", label: "Undergraduate / MS Thesis", sub: "Empirical study without formal publication" },
-                    { id: "none", label: "Coursework / Class Projects Only", sub: "No public preprints yet" }
-                  ].map((item) => (
+                  {diagnosticPaperOptions.map((item) => (
                     <button
                       key={item.id}
-                      onClick={() => setPapers(item.id as any)}
+                      onClick={() => setPapers(item.id)}
                       className={`p-3 rounded-xl border text-left transition-all ${
                         papers === item.id
                           ? "bg-emerald-600/20 border-emerald-500 text-white shadow-md shadow-emerald-950"
@@ -178,14 +166,10 @@ export function InteractiveProfileDiagnostic() {
                   4. Production AI Stack & Compute Experience
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                  {[
-                    { id: "multi-gpu", label: "PyTorch DDP / Slurm / Hugging Face", sub: "Multi-node, vLLM, wandb" },
-                    { id: "pytorch-colab", label: "PyTorch Single GPU / Colab", sub: "Standard training runs" },
-                    { id: "basic", label: "Scikit-Learn / Academic Python", sub: "Basics of machine learning" }
-                  ].map((item) => (
+                  {diagnosticEngineeringOptions.map((item) => (
                     <button
                       key={item.id}
-                      onClick={() => setEngineering(item.id as any)}
+                      onClick={() => setEngineering(item.id)}
                       className={`p-3 rounded-xl border text-left transition-all ${
                         engineering === item.id
                           ? "bg-purple-600/20 border-purple-500 text-white shadow-md shadow-purple-950"

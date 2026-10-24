@@ -3,20 +3,40 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Cpu, Map, GraduationCap, Wrench, ShieldAlert, HelpCircle, Menu, X } from "lucide-react";
-
-const navLinks = [
-  { href: "/", label: "Overview", icon: Cpu },
-  { href: "/roadmap", label: "Roadmap", icon: Map },
-  { href: "/programs", label: "Funded Programs", icon: GraduationCap },
-  { href: "/toolkit", label: "Dossier & Toolkit", icon: Wrench },
-  { href: "/interviews", label: "Technical Defense", icon: ShieldAlert },
-  { href: "/faqs", label: "FAQs", icon: HelpCircle },
-];
+import {
+  Cpu,
+  Map,
+  GraduationCap,
+  Wrench,
+  ShieldAlert,
+  HelpCircle,
+  Menu,
+  X
+} from "lucide-react";
+import { navLinksData } from "@/data/navigationData";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const getNavIcon = (iconName: string) => {
+    switch (iconName) {
+      case "Cpu":
+        return Cpu;
+      case "Map":
+        return Map;
+      case "GraduationCap":
+        return GraduationCap;
+      case "Wrench":
+        return Wrench;
+      case "ShieldAlert":
+        return ShieldAlert;
+      case "HelpCircle":
+        return HelpCircle;
+      default:
+        return Cpu;
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800/80 text-white">
@@ -38,8 +58,8 @@ export default function Navbar() {
 
           {/* Desktop Nav Items */}
           <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => {
-              const Icon = link.icon;
+            {navLinksData.map((link) => {
+              const Icon = getNavIcon(link.iconName);
               const isActive = pathname === link.href;
               return (
                 <Link
@@ -81,8 +101,8 @@ export default function Navbar() {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-b border-neutral-800 bg-neutral-950 px-4 pt-2 pb-4 space-y-1">
-          {navLinks.map((link) => {
-            const Icon = link.icon;
+          {navLinksData.map((link) => {
+            const Icon = getNavIcon(link.iconName);
             const isActive = pathname === link.href;
             return (
               <Link

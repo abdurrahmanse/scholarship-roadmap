@@ -4,11 +4,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import {
   DollarSign,
-  PiggyBank,
   Home,
-  Utensils,
   ShieldCheck,
-  Cpu,
   ArrowRight,
   Calculator,
   Info
@@ -16,121 +13,12 @@ import {
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-
-interface CityFinancialProfile {
-  name: string;
-  country: string;
-  institution: string;
-  currency: string;
-  symbol: string;
-  annualGrossStipend: number;
-  taxRatePercent: number;
-  avgMonthlyRentShared: number;
-  avgMonthlyFood: number;
-  monthlyHealthInsurance: number;
-  costOfLivingIndex: number; // baseline 100
-  tuitionCovered: number;
-  notes: string;
-}
-
-const CITY_PROFILES: CityFinancialProfile[] = [
-  {
-    name: "Pittsburgh, PA",
-    country: "USA",
-    institution: "Carnegie Mellon University (CMU SCS)",
-    currency: "USD",
-    symbol: "$",
-    annualGrossStipend: 42000,
-    taxRatePercent: 12,
-    avgMonthlyRentShared: 850,
-    avgMonthlyFood: 400,
-    monthlyHealthInsurance: 0, // 100% university paid
-    costOfLivingIndex: 104,
-    tuitionCovered: 58000,
-    notes: "High purchasing power. Low housing costs allow saving $1,200+/month on standard GRA stipend."
-  },
-  {
-    name: "San Francisco Bay Area, CA",
-    country: "USA",
-    institution: "Stanford SAIL / UC Berkeley BAIR",
-    currency: "USD",
-    symbol: "$",
-    annualGrossStipend: 48500,
-    taxRatePercent: 15,
-    avgMonthlyRentShared: 1750,
-    avgMonthlyFood: 550,
-    monthlyHealthInsurance: 0,
-    costOfLivingIndex: 185,
-    tuitionCovered: 62000,
-    notes: "World center of AI. High rent offset by premier tech summer internships ($12k–$15k/mo)."
-  },
-  {
-    name: "Zurich",
-    country: "Switzerland",
-    institution: "ETH Zurich / AI Center",
-    currency: "CHF",
-    symbol: "CHF",
-    annualGrossStipend: 78000,
-    taxRatePercent: 14,
-    avgMonthlyRentShared: 1100,
-    avgMonthlyFood: 700,
-    monthlyHealthInsurance: 280,
-    costOfLivingIndex: 195,
-    tuitionCovered: 1500, // Swiss public tuition is trivial
-    notes: "Highest gross PhD salary in the world. Significant net savings ($2,500+/month) on SNF scale."
-  },
-  {
-    name: "Munich",
-    country: "Germany",
-    institution: "TUM / Max Planck IMPRS-IS",
-    currency: "EUR",
-    symbol: "€",
-    annualGrossStipend: 54000,
-    taxRatePercent: 32, // includes state health & pension
-    avgMonthlyRentShared: 900,
-    avgMonthlyFood: 450,
-    monthlyHealthInsurance: 0, // deducted in TV-L gross-to-net
-    costOfLivingIndex: 130,
-    tuitionCovered: 0, // Zero tuition at public German universities
-    notes: "Full civil service social security, state pension contribution, and zero university tuition."
-  },
-  {
-    name: "Toronto, ON",
-    country: "Canada",
-    institution: "University of Toronto / Vector Institute",
-    currency: "CAD",
-    symbol: "CAD $",
-    annualGrossStipend: 38000,
-    taxRatePercent: 8,
-    avgMonthlyRentShared: 1150,
-    avgMonthlyFood: 450,
-    monthlyHealthInsurance: 0, // UHIP covered
-    costOfLivingIndex: 140,
-    tuitionCovered: 28000,
-    notes: "Vector Institute scholarships provide additional $10k/yr top-ups for top AI researchers."
-  },
-  {
-    name: "Singapore",
-    country: "Singapore",
-    institution: "NUS / NTU / A*STAR (SINGA)",
-    currency: "SGD",
-    symbol: "S$",
-    annualGrossStipend: 38400,
-    taxRatePercent: 2, // near zero tax for scholars
-    avgMonthlyRentShared: 950,
-    avgMonthlyFood: 500,
-    monthlyHealthInsurance: 0,
-    costOfLivingIndex: 150,
-    tuitionCovered: 40000,
-    notes: "Almost zero income tax. Airfare allowance and thesis grants included in SINGA fellowship."
-  }
-];
+import { stipendCitiesData } from "@/data/homeData";
 
 export function InteractiveStipendCalculator() {
   const [selectedCityIndex, setSelectedCityIndex] = useState(0);
-  const city = CITY_PROFILES[selectedCityIndex];
+  const city = stipendCitiesData[selectedCityIndex] || stipendCitiesData[0];
 
-  // Monthly breakdown
   const monthlyGross = Math.round(city.annualGrossStipend / 12);
   const monthlyTax = Math.round(monthlyGross * (city.taxRatePercent / 100));
   const monthlyNet = monthlyGross - monthlyTax;
@@ -154,7 +42,7 @@ export function InteractiveStipendCalculator() {
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
               Select Target Graduate AI Hub:
             </label>
-            {CITY_PROFILES.map((c, idx) => (
+            {stipendCitiesData.map((c, idx) => (
               <button
                 key={c.name}
                 onClick={() => setSelectedCityIndex(idx)}
