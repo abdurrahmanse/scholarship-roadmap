@@ -33,7 +33,7 @@ export function FaqsHero() {
           {faqsHeroHighlightsData.map((h) => (
             <div
               key={h.label}
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/70 border border-white/[0.08] text-slate-300 font-mono text-[11px]"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#0f1422] border border-white/10 text-slate-300 font-mono text-[11px]"
             >
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
               <span>{h.label}</span>

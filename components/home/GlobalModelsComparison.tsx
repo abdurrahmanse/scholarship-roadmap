@@ -35,7 +35,7 @@ export function GlobalModelsComparison() {
   };
 
   return (
-    <section id="funding-models" className="py-20 border-b border-slate-800/80 bg-slate-950">
+    <section id="funding-models" className="py-20 border-b border-white/5 bg-[#090d16]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={sectionMeta?.badge || "Global Intelligence"}
@@ -47,15 +47,19 @@ export function GlobalModelsComparison() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {globalFundingModelsData.map((m) => (
-            <GlassCard key={m.title} borderGlow={m.variant} className="flex flex-col justify-between">
+            <GlassCard
+              key={m.title}
+              borderGlow={m.variant}
+              className="flex flex-col justify-between bg-[#0f1422] border border-white/10 hover:border-cyan-500/30 transition-all p-6"
+            >
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/80 shrink-0">
+                    <div className="p-3 rounded-xl bg-[#090d16] border border-white/10 shrink-0">
                       {getModelIcon(m.iconName)}
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white">{m.title}</h3>
+                      <h3 className="text-lg font-heading font-bold text-white">{m.title}</h3>
                       <span className="text-xs text-slate-400">{m.region}</span>
                     </div>
                   </div>
@@ -64,7 +68,7 @@ export function GlobalModelsComparison() {
                   </Badge>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3 p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80 mb-5 text-xs">
+                <div className="grid grid-cols-2 gap-3 p-3.5 rounded-xl bg-[#090d16] border border-white/10 mb-5 text-xs">
                   <div>
                     <span className="text-slate-400 block text-[11px]">Living Stipend / Salary:</span>
                     <span className="font-bold text-white font-mono">{m.stipend}</span>
@@ -85,12 +89,12 @@ export function GlobalModelsComparison() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-800/80 flex justify-end">
+              <div className="pt-4 border-t border-white/5 flex justify-end">
                 <Link
                   href="/programs"
                   className="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1 transition-colors"
                 >
-                  Explore matching universities
+                  <span>Explore matching laboratories</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

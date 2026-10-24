@@ -6,13 +6,13 @@ export const homePageData: MultiPageData = {
   title: "100% Fully Funded AI & Machine Learning Postgraduate Roadmap",
   metaDescription: "The canonical zero-to-landing blueprint for Computer Science, AI, and Machine Learning students securing 100% fully funded PhD and Master's research assistantships abroad.",
   hero: {
-    badge: "100% Fully Funded Research Studentships Only",
-    title: "The Ultimate Global AI & ML",
+    badge: "100% Full-Ride Master's & PhD Computer Science Roadmap",
+    title: "The Fully Funded Computer Science",
     highlightWord: "Scholarship Roadmap",
-    subtitle: "Navigate the hyper-competitive world of AI research admissions. Master mathematical diagnostics, conference workshop publications, CSRankings lab targeting, cold email outreach, and visa defense from square one to landing abroad.",
+    subtitle: "The canonical end-to-end blueprint for Computer Science students: build a high-impact research profile, identify top universities and labs, connect with funded professors, craft high-yield cold outreach, and secure 100% full-ride funding abroad.",
     primaryCta: { label: "Explore Step-by-Step Roadmap", href: "/roadmap" },
-    secondaryCta: { label: "Browse Funded AI Labs", href: "/programs" },
-    tertiaryCta: { label: "Funded Labs Directory", href: "/programs" }
+    secondaryCta: { label: "What Profile Looks Like", href: "#cs-profile-blueprint" },
+    tertiaryCta: { label: "Browse Funded CS Labs", href: "/programs" }
   },
   sections: [
     {
@@ -197,12 +197,12 @@ export const roadmapPageData: MultiPageData = {
   title: "Step-by-Step AI/ML Scholarship Roadmap",
   metaDescription: "Detailed chronological phase-by-phase execution guide for winning fully funded AI research positions abroad.",
   hero: {
-    badge: "Interactive Chronological Journey",
-    title: "Phase-by-Phase AI Research",
-    highlightWord: "Admissions Roadmap",
-    subtitle: "Navigate every milestone from mathematical self-audit and workshop publications to faculty screening calls, December priority submissions, and Technology Alert List (TAL) visa defense.",
+    badge: "24-Month Master's & PhD Execution Pipeline",
+    title: "Phase-by-Phase Computer Science",
+    highlightWord: "Scholarship Roadmap",
+    subtitle: "Navigate the entire Computer Science funding journey: from Phase 0 mathematical diagnostics and workshop papers to CSRankings lab targeting, faculty cold outreach, December priority deadlines, and visa defense.",
     primaryCta: { label: "Jump to Phase 0", href: "#phase-0" },
-    secondaryCta: { label: "Download Templates", href: "/toolkit" }
+    secondaryCta: { label: "Application Toolkit", href: "/toolkit" }
   },
   sections: [
     {
@@ -338,12 +338,12 @@ export const programsPageData: MultiPageData = {
   title: "100% Fully Funded AI/ML Programs & Labs Directory",
   metaDescription: "Curated catalog of fully funded Computer Science, Artificial Intelligence, and Machine Learning graduate programs across North America, Europe, Asia, and Oceania.",
   hero: {
-    badge: "Verified Full Rides & Research Assistantships",
-    title: "Directory of 100% Funded",
-    highlightWord: "AI Laboratories & Programs",
-    subtitle: "Browse verified graduate programs offering 100% full tuition remission, annual living stipends ($30k–$85k), dedicated GPU compute access, and travel grants. Zero self-funded traps.",
-    primaryCta: { label: "Search by Country / Field", href: "#directory-list" },
-    secondaryCta: { label: "View CSRankings Guide", href: "#csrankings-guide" }
+    badge: "100% Full Tuition Waiver & Living Salaries Only",
+    title: "Directory of Fully Funded",
+    highlightWord: "Computer Science Laboratories",
+    subtitle: "Browse verified graduate programs and AI research laboratories offering 100% full tuition remission, guaranteed annual living stipends ($30,000–$85,000/yr), dedicated GPU compute access, and active faculty grant lines. Zero self-funded traps.",
+    primaryCta: { label: "Filter Funded Labs", href: "#programs-directory" },
+    secondaryCta: { label: "CSRankings Protocol", href: "#csrankings-guide" }
   },
   sections: [
     {
@@ -470,12 +470,12 @@ export const toolkitPageData: MultiPageData = {
   title: "AI Graduate Dossier & Application Toolkit",
   metaDescription: "Ready-to-use communication scripts, LaTeX CV templates, technical SOP blueprints, and research proposal frameworks for AI applicants.",
   hero: {
-    badge: "Battle-Tested Application Arsenal",
-    title: "AI Graduate Dossier &",
-    highlightWord: "Communication Toolkit",
-    subtitle: "Equip yourself with high-conversion cold email templates, 5-movement technical SOP blueprints, LaTeX CV standards, and recommendation brag sheet packets.",
-    primaryCta: { label: "Copy Cold Email Scripts", href: "#email-scripts" },
-    secondaryCta: { label: "SOP Architecture Blueprint", href: "#sop-blueprint" }
+    badge: "Computer Science Application Arsenal",
+    title: "The Computer Science Graduate",
+    highlightWord: "Application Toolkit",
+    subtitle: "Battle-tested application assets for Computer Science applicants: interactive 5-point cold email generators with preset scenarios, 5-movement technical SOP blueprints, LaTeX CV standards, and research proposal frameworks.",
+    primaryCta: { label: "Cold Email Generator", href: "#interactive-email-builder" },
+    secondaryCta: { label: "5-Movement SOP Blueprint", href: "#sop-blueprint" }
   },
   sections: [
     {
@@ -607,12 +607,12 @@ export const interviewsPageData: MultiPageData = {
   title: "AI Interview Defense & Visa TAL Clearance",
   metaDescription: "Master technical faculty interviews, defend empirical deep learning choices, and clear Technology Alert List (TAL) consular scrutiny.",
   hero: {
-    badge: "Technical Defense & Immigration Clearance",
-    title: "AI Faculty Interview Defense &",
-    highlightWord: "Visa TAL Clearance",
-    subtitle: "Prepare your 5-slide technical research walkthrough, master live deep learning stress tests using the STAR-L framework, and clear consular visa export controls with open-science documentation.",
-    primaryCta: { label: "View STAR-L Cases", href: "#starl-cases" },
-    secondaryCta: { label: "Visa TAL Defense Guide", href: "#visa-tal" }
+    badge: "Technical Defense & Offer Rights Protocol",
+    title: "Computer Science Faculty Interviews &",
+    highlightWord: "Funding Negotiation",
+    subtitle: "Defend your research using the 5-slide technical walkthrough simulator, master STAR-L deep learning defense cases, negotiate your 5-year doctoral compensation under the CGS April 15 Resolution, and clear consular TAL export controls.",
+    primaryCta: { label: "5-Slide Deck Simulator", href: "#five-slide-simulator" },
+    secondaryCta: { label: "TAL Risk Analyzer", href: "#visa-tal-checker" }
   },
   sections: [
     {
@@ -730,12 +730,12 @@ export const faqsPageData: MultiPageData = {
   title: "AI/ML Scholarship FAQs & Knowledge Base",
   metaDescription: "Frequently asked questions covering direct PhD entry from bachelor's, low GPAs, compute allocation, visa defense, and summer industry research internships.",
   hero: {
-    badge: "Knowledge Base & Common Queries",
-    title: "Frequently Asked Questions &",
-    highlightWord: "Admissions Intelligence",
-    subtitle: "Clear, authoritative answers to the most common dilemmas faced by international Computer Science, AI, and Machine Learning graduate applicants.",
-    primaryCta: { label: "Search Questions", href: "#faq-list" },
-    secondaryCta: { label: "Read Roadmap", href: "/roadmap" }
+    badge: "Computer Science Admissions Intelligence",
+    title: "Computer Science Full-Ride FAQs &",
+    highlightWord: "Admissions Knowledgebase",
+    subtitle: "Clear, authoritative answers to the most critical Computer Science dilemmas: offsetting low GPAs with first-author preprints, direct PhD from Bachelor's, faculty grant funding cycles, and preflight application verification.",
+    primaryCta: { label: "Pre-Flight Checklist", href: "#readiness-checklist" },
+    secondaryCta: { label: "Search Questions", href: "#faq-list" }
   },
   sections: [
     {
