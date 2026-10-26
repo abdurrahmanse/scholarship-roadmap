@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, CheckCircle2 } from "lucide-react";
+import { Mail, CheckCircle2, Paperclip, Send, MessageSquare, FileText } from "lucide-react";
 import { coldEmailTemplates, professorOutreachControlsData } from "@/data/professorsData";
 import { CopyButton } from "@/components/ui/CopyButton";
 
@@ -33,13 +33,14 @@ export function EmailBlueprintsSection() {
           <button
             key={template.id}
             onClick={() => setActiveTemplateId(template.id)}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
               activeTemplateId === template.id
                 ? "bg-indigo-600 text-white shadow-sm"
                 : "text-slate-400 hover:text-white"
             }`}
           >
-            {template.name}
+            <FileText className={`w-3 h-3 ${activeTemplateId === template.id ? "text-white" : "text-indigo-400"}`} />
+            <span>{template.name}</span>
           </button>
         ))}
       </div>
@@ -58,8 +59,9 @@ export function EmailBlueprintsSection() {
 
         {/* Subject Lines */}
         <div className="space-y-2">
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">
-            Recommended Subject Lines:
+          <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">
+            <MessageSquare className="w-3.5 h-3.5 text-cyan-400" />
+            <span>Recommended Subject Lines:</span>
           </span>
           <div className="space-y-1.5">
             {currentTemplate.subjectLines.map((subj, idx) => (
@@ -76,8 +78,9 @@ export function EmailBlueprintsSection() {
 
         {/* Email Body */}
         <div className="space-y-2">
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">
-            Email Body (Fill Bracketed Placeholders):
+          <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">
+            <Mail className="w-3.5 h-3.5 text-indigo-400" />
+            <span>Email Body (Fill Bracketed Placeholders):</span>
           </span>
           <pre className="p-4 sm:p-5 rounded-xl bg-slate-950 font-mono text-xs text-slate-200 border border-white/5 whitespace-pre-wrap leading-relaxed overflow-x-auto select-all">
             {currentTemplate.body}
@@ -87,8 +90,9 @@ export function EmailBlueprintsSection() {
         {/* Attachments & Tips */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
           <div className="p-3.5 rounded-xl bg-slate-950/60 border border-white/5 space-y-1.5">
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-teal-400 block">
-              Required Attachments:
+            <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-teal-400 block">
+              <Paperclip className="w-3 h-3 text-teal-400" />
+              <span>Required Attachments:</span>
             </span>
             <ul className="space-y-1 text-xs text-slate-300">
               {currentTemplate.recommendedAttachments.map((att, idx) => (
@@ -101,8 +105,9 @@ export function EmailBlueprintsSection() {
           </div>
 
           <div className="p-3.5 rounded-xl bg-slate-950/60 border border-white/5 space-y-1.5">
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-400 block">
-              Sending Guidelines:
+            <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-400 block">
+              <Send className="w-3 h-3 text-indigo-400" />
+              <span>Sending Guidelines:</span>
             </span>
             <ul className="space-y-1 text-xs text-slate-300">
               {currentTemplate.tips.map((tip, idx) => (

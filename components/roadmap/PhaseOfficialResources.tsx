@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Globe2 } from "lucide-react";
 import { PhaseOfficialResource, roadmapControlsData } from "@/data/roadmapPhasesData";
 
 export interface PhaseOfficialResourcesProps {
@@ -13,8 +13,9 @@ export function PhaseOfficialResources({ resources }: PhaseOfficialResourcesProp
 
   return (
     <div className="space-y-3">
-      <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-300">
-        {whereHeading}
+      <h4 className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-teal-400">
+        <Globe2 className="w-3.5 h-3.5" />
+        <span>{whereHeading}</span>
       </h4>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {resources.map((res, idx) => (

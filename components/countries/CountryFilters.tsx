@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Users, Layers, Globe2 } from "lucide-react";
 import { SearchInput } from "@/components/ui/SearchInput";
 import { countryGuidesControlsData } from "@/data/countryGuidesData";
 
@@ -40,13 +41,15 @@ export function CountryFilters({
             <button
               key={reg}
               onClick={() => onSelectedRegionChange(reg)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 selectedRegion === reg
                   ? "bg-teal-600 text-white shadow-sm"
                   : "text-slate-400 hover:text-white"
               }`}
             >
-              {reg} {reg === "All" ? `(${totalCount})` : ""}
+              {reg === "All" && <Globe2 className="w-3 h-3 shrink-0" />}
+              <span>{reg}</span>
+              {reg === "All" && <span className="opacity-75">({totalCount})</span>}
             </button>
           ))}
         </div>
@@ -64,7 +67,10 @@ export function CountryFilters({
       <div className="pt-3 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
         {/* Supervisor Filter Dropdown */}
         <div className="flex items-center gap-2">
-          <span className="text-slate-400 font-mono">Supervisor Outreach:</span>
+          <span className="inline-flex items-center gap-1.5 text-slate-400 font-mono">
+            <Users className="w-3.5 h-3.5 text-teal-400 shrink-0" />
+            <span>Supervisor Outreach:</span>
+          </span>
           <select
             value={supervisorFilter}
             onChange={(e) => onSupervisorFilterChange(e.target.value)}
@@ -79,8 +85,9 @@ export function CountryFilters({
         </div>
 
         {/* Count */}
-        <span className="text-[11px] text-slate-400 font-mono">
-          Showing {filteredCount} of {totalCount} countries
+        <span className="inline-flex items-center gap-1.5 text-[11px] text-slate-400 font-mono">
+          <Layers className="w-3 h-3 text-teal-400" />
+          <span>Showing {filteredCount} of {totalCount} countries</span>
         </span>
       </div>
     </div>

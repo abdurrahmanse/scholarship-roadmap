@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ClipboardCheck } from "lucide-react";
 import { PhaseChecklistItem, roadmapControlsData } from "@/data/roadmapPhasesData";
 
 export interface PhaseChecklistProps {
@@ -17,8 +17,9 @@ export function PhaseChecklist({ checklist, checkedItems, onToggleItem }: PhaseC
   return (
     <div className="p-4 sm:p-5 rounded-xl bg-slate-950/80 border border-white/5 space-y-3">
       <div className="flex items-center justify-between">
-        <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-teal-400">
-          {checklistHeading}
+        <h4 className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-teal-400">
+          <ClipboardCheck className="w-3.5 h-3.5" />
+          <span>{checklistHeading}</span>
         </h4>
         <span className="text-[11px] font-mono text-slate-400">
           {completedCount} of {checklist.length} verified

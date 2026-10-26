@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { ListOrdered } from "lucide-react";
 import { PhaseHowToStep, roadmapControlsData } from "@/data/roadmapPhasesData";
 
 export interface PhaseHowStepsProps {
@@ -12,8 +13,9 @@ export function PhaseHowSteps({ steps }: PhaseHowStepsProps) {
 
   return (
     <div className="space-y-3">
-      <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-300">
-        {howHeading}
+      <h4 className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-teal-400">
+        <ListOrdered className="w-3.5 h-3.5" />
+        <span>{howHeading}</span>
       </h4>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {steps.map((item, idx) => (

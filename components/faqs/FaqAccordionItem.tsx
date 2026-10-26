@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
+import { ChevronDown, ChevronUp, HelpCircle, Tag } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
 import { FAQItem } from "@/data/types";
@@ -48,9 +48,10 @@ export function FaqAccordionItem({ faq, isOpen, onToggle }: FaqAccordionItemProp
             {faq.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-[11px] px-2.5 py-0.5 rounded-md bg-[#0f1422] text-slate-400 border border-white/5 font-mono"
+                className="inline-flex items-center gap-1 text-[11px] px-2.5 py-0.5 rounded-md bg-[#0f1422] text-slate-300 border border-white/5 font-mono"
               >
-                #{tag}
+                <Tag className="w-2.5 h-2.5 text-cyan-400/70" />
+                <span>#{tag}</span>
               </span>
             ))}
           </div>
