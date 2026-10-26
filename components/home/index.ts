@@ -8,3 +8,6 @@ export * from "./InteractiveProfileDiagnostic";
 export * from "./GlobalModelsComparison";
 export * from "./FundingStandardSection";
 export * from "./CsProfileRequirementsSection";
+export * from "./diagnostic";
+export * from "./timeline";
+export * from "./stipend";

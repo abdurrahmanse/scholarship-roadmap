@@ -4,3 +4,4 @@ export * from "./StarlCaseCard";
 export * from "./StarlDefenseSection";
 export * from "./VisaTalCheckerWidget";
 export * from "./OfferNegotiationSection";
+export * from "./deck";

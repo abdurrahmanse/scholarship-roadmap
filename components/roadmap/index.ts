@@ -12,3 +12,4 @@ export * from "./StepCard";
 export * from "./LevelTasksSection";
 export * from "./roadmapConstants";
 export * from "./widgets";
+export * from "./tasks";
