@@ -9,7 +9,7 @@ import { OfferNegotiationSection } from "@/components/interviews/OfferNegotiatio
 import { interviewsNavAnchors } from "@/data/interviewsSectionData";
 
 export const metadata: Metadata = {
-  title: "Professor Interviews & STAR-L Defense | 100% Fully Funded CS Scholarship Roadmap",
+  title: "Professor Interviews & STAR-L Defense",
   description:
     "Master PI technical interviews, 5-slide thesis presentation decks, and STAR-L scientific defense scenarios for competitive PhD/MS CS admissions.",
 };

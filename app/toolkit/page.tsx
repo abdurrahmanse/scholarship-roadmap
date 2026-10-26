@@ -9,7 +9,7 @@ import { QuickScrollNavigator } from "@/components/ui/QuickScrollNavigator";
 import { toolkitNavAnchors } from "@/data/toolkitSectionData";
 
 export const metadata: Metadata = {
-  title: "AI Researcher Application Toolkit | SOP, CV & Cold Email Generator",
+  title: "AI Application Toolkit: SOP, CV & Cold Email",
   description:
     "Open-access templates for 5-movement Statement of Purpose (SOP), academic LaTeX CV with Google XYZ metrics, interactive cold outreach email builder, and research proposals.",
 };

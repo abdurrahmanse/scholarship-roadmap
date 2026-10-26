@@ -16,6 +16,7 @@ interface LevelPageProps {
   }>;
 }
 
+
 export async function generateStaticParams() {
   return roadmapLevelsData.map((lvl) => ({
     level: lvl.slug,
@@ -28,13 +29,13 @@ export async function generateMetadata({ params }: LevelPageProps): Promise<Meta
 
   if (!level) {
     return {
-      title: "Roadmap Level Not Found | Scholarship AI Roadmap",
+      title: "Roadmap Level Not Found",
       description: "The requested roadmap level could not be found.",
     };
   }
 
   return {
-    title: `Level ${level.levelNumber}: ${level.shortTitle} | 100% Fully Funded CS Scholarship Roadmap`,
+    title: `Level ${level.levelNumber}: ${level.shortTitle}`,
     description: level.tagline,
   };
 }
