@@ -42,7 +42,7 @@ const THEME_STYLES: Record<
     radarPing: "bg-indigo-400",
     radarDot: "bg-indigo-500",
     gradient: "from-indigo-400 via-cyan-400 to-emerald-400",
-    defaultHighlightIcon: "text-emerald-400"
+    defaultHighlightIcon: "text-emerald-400",
   },
   cyan: {
     badgeContainer: "bg-cyan-950/80 border-cyan-700/60 shadow-cyan-950/50",
@@ -50,7 +50,7 @@ const THEME_STYLES: Record<
     radarPing: "bg-cyan-400",
     radarDot: "bg-cyan-500",
     gradient: "from-cyan-400 via-blue-400 to-indigo-400",
-    defaultHighlightIcon: "text-cyan-400"
+    defaultHighlightIcon: "text-cyan-400",
   },
   purple: {
     badgeContainer: "bg-purple-950/80 border-purple-700/60 shadow-purple-950/50",
@@ -58,7 +58,7 @@ const THEME_STYLES: Record<
     radarPing: "bg-purple-400",
     radarDot: "bg-purple-500",
     gradient: "from-purple-400 via-pink-400 to-indigo-400",
-    defaultHighlightIcon: "text-purple-400"
+    defaultHighlightIcon: "text-purple-400",
   },
   emerald: {
     badgeContainer: "bg-emerald-950/80 border-emerald-700/60 shadow-emerald-950/50",
@@ -66,7 +66,7 @@ const THEME_STYLES: Record<
     radarPing: "bg-emerald-400",
     radarDot: "bg-emerald-500",
     gradient: "from-emerald-400 via-teal-400 to-cyan-400",
-    defaultHighlightIcon: "text-emerald-400"
+    defaultHighlightIcon: "text-emerald-400",
   },
   amber: {
     badgeContainer: "bg-amber-950/80 border-amber-700/60 shadow-amber-950/50",
@@ -74,7 +74,7 @@ const THEME_STYLES: Record<
     radarPing: "bg-amber-400",
     radarDot: "bg-amber-500",
     gradient: "from-amber-400 via-orange-400 to-rose-400",
-    defaultHighlightIcon: "text-amber-400"
+    defaultHighlightIcon: "text-amber-400",
   },
   blue: {
     badgeContainer: "bg-blue-950/80 border-blue-700/60 shadow-blue-950/50",
@@ -82,13 +82,13 @@ const THEME_STYLES: Record<
     radarPing: "bg-cyan-400",
     radarDot: "bg-cyan-500",
     gradient: "from-blue-400 via-cyan-400 to-emerald-400",
-    defaultHighlightIcon: "text-cyan-400"
-  }
+    defaultHighlightIcon: "text-cyan-400",
+  },
 };
 
 /**
  * Universal PageHero component following DRY architecture.
- * Replaces duplicated hero headers across Roadmap, Programs, Interviews, Toolkit, and FAQs.
+ * Responsive across 5 device categories (mobile, small tablet, tablet, laptop, desktop).
  */
 export function PageHero({
   badge,
@@ -100,7 +100,7 @@ export function PageHero({
   subtitle,
   highlights = [],
   gradientText,
-  children
+  children,
 }: PageHeroProps) {
   const styles = THEME_STYLES[theme] || THEME_STYLES.indigo;
   const gradient = gradientText || styles.gradient;
@@ -110,11 +110,11 @@ export function PageHero({
     (badgeIconName ? renderCommonIcon(badgeIconName, "w-3.5 h-3.5 " + styles.badgeText) : null);
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-16 border-b border-white/[0.06]">
+    <section className="relative overflow-hidden pt-12 sm:pt-16 md:pt-20 pb-12 sm:pb-16 border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Radar Badge Ribbon */}
         <div
-          className={`inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 rounded-full border text-xs font-semibold uppercase tracking-wider mb-6 shadow-xl backdrop-blur-md max-w-[calc(100vw-32px)] ${styles.badgeContainer} ${styles.badgeText}`}
+          className={`inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 rounded-full border text-xs font-semibold uppercase tracking-wider mb-5 sm:mb-6 shadow-xl backdrop-blur-md max-w-[calc(100vw-32px)] ${styles.badgeContainer} ${styles.badgeText}`}
         >
           <span className="relative flex h-2 w-2 shrink-0">
             <span
@@ -127,7 +127,7 @@ export function PageHero({
         </div>
 
         {/* Hero Title with Gradient Text Accent */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white mb-6 max-w-4xl mx-auto leading-[1.12] sm:leading-[1.1] font-heading break-words">
+        <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 sm:mb-6 max-w-4xl mx-auto leading-[1.15] sm:leading-[1.1] font-heading break-words px-1">
           {title}{" "}
           {highlightWord && (
             <span className={`text-transparent bg-clip-text bg-gradient-to-r ${gradient}`}>
@@ -137,16 +137,16 @@ export function PageHero({
         </h1>
 
         {/* Subtitle */}
-        <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed font-sans font-normal px-2 sm:px-0">
+        <p className="text-xs xs:text-sm sm:text-base md:text-lg text-slate-300 max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed font-sans font-normal px-2">
           {subtitle}
         </p>
 
         {/* Optional Action Buttons or Custom Children */}
-        {children && <div className="mb-8">{children}</div>}
+        {children && <div className="mb-6 sm:mb-8">{children}</div>}
 
         {/* Highlights Telemetry Ribbon */}
         {highlights.length > 0 && (
-          <div className="flex flex-wrap justify-center items-center gap-3 text-xs">
+          <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 text-xs">
             {highlights.map((h) => {
               const hIcon =
                 h.icon ||
@@ -159,7 +159,7 @@ export function PageHero({
               return (
                 <div
                   key={h.label}
-                  className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#0f1422] border border-white/10 text-slate-300 font-mono text-[11px]"
+                  className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-xl bg-[#0f1422] border border-white/10 text-slate-300 font-mono text-[10px] sm:text-[11px]"
                 >
                   {hIcon}
                   <span>{h.label}</span>
@@ -172,3 +172,5 @@ export function PageHero({
     </section>
   );
 }
+
+export default PageHero;

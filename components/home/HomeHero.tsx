@@ -29,7 +29,7 @@ export function HomeHero() {
           </div>
 
           {/* Headline — 4 breakpoints */}
-          <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] px-1">
+          <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12] px-1">
             {title}{" "}
             <span className="bg-gradient-to-r from-indigo-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">
               {titleGradient}

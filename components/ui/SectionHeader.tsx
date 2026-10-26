@@ -20,8 +20,8 @@ export interface SectionHeaderProps {
 
 const TITLE_SIZES = {
   sm: "text-xl sm:text-2xl font-bold",
-  md: "text-2xl sm:text-3xl lg:text-4xl font-extrabold",
-  lg: "text-3xl sm:text-4xl lg:text-5xl font-black"
+  md: "text-2xl sm:text-3xl lg:text-4xl font-bold",
+  lg: "text-3xl sm:text-4xl lg:text-5xl font-bold"
 };
 
 /**

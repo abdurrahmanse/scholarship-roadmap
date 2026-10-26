@@ -19,7 +19,7 @@ export default function RoadmapPage() {
             <span className="text-teal-400">100% Free Educational Roadmap</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
             The Complete Scholarship Application Roadmap
           </h1>
 

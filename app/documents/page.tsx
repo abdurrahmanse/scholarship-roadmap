@@ -19,7 +19,7 @@ export default function DocumentsPage() {
             <span className="text-indigo-400">Universal & Degree-Specific Documents</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
             Required Documents Guide & Checklists
           </h1>
 

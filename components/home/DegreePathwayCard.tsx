@@ -2,7 +2,16 @@
 
 import React from "react";
 import Link from "next/link";
-import { GraduationCap, Award, ArrowRight, DollarSign, Users, BookOpen, Briefcase, MailCheck } from "lucide-react";
+import {
+  GraduationCap,
+  Award,
+  ArrowRight,
+  DollarSign,
+  Users,
+  BookOpen,
+  Briefcase,
+  MailCheck,
+} from "lucide-react";
 import { DegreePathway } from "@/data/homeData";
 
 const ICON_MAP = {
@@ -12,7 +21,7 @@ const ICON_MAP = {
   Users,
   BookOpen,
   Briefcase,
-  MailCheck
+  MailCheck,
 };
 
 export interface DegreePathwayCardProps {
@@ -21,14 +30,18 @@ export interface DegreePathwayCardProps {
   onSelect: () => void;
 }
 
-export function DegreePathwayCard({ pathway, isActive, onSelect }: DegreePathwayCardProps) {
+export function DegreePathwayCard({
+  pathway,
+  isActive,
+  onSelect,
+}: DegreePathwayCardProps) {
   const isMasters = pathway.id === "masters";
   const HeaderIcon = isMasters ? GraduationCap : Award;
 
   return (
     <div
       onClick={onSelect}
-      className={`p-6 sm:p-8 rounded-2xl border transition-all duration-300 cursor-pointer relative ${
+      className={`p-5 sm:p-7 md:p-8 rounded-2xl border transition-all duration-300 cursor-pointer relative ${
         isActive
           ? isMasters
             ? "bg-slate-900/90 border-teal-500/50 shadow-2xl shadow-teal-950/30 ring-1 ring-teal-500/30"
@@ -36,30 +49,32 @@ export function DegreePathwayCard({ pathway, isActive, onSelect }: DegreePathway
           : "bg-slate-900/40 border-white/[0.08] hover:border-white/20"
       }`}
     >
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex flex-col xs:flex-row items-start xs:items-center justify-between gap-3 mb-4">
         <div className="flex items-center gap-3">
           <div
-            className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-md ${
+            className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shadow-md shrink-0 ${
               isMasters
                 ? "bg-teal-950/80 border border-teal-500/40 text-teal-300"
                 : "bg-indigo-950/80 border border-indigo-500/40 text-indigo-300"
             }`}
           >
-            <HeaderIcon className="w-6 h-6" />
+            <HeaderIcon className="w-5 h-5 sm:w-6 sm:h-6" />
           </div>
           <div>
             <span
-              className={`text-[11px] font-mono font-bold tracking-wider uppercase ${
+              className={`text-[11px] font-mono font-bold tracking-wider uppercase block ${
                 isMasters ? "text-teal-400" : "text-indigo-400"
               }`}
             >
               {pathway.badge}
             </span>
-            <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">{pathway.title}</h3>
+            <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight leading-snug">
+              {pathway.title}
+            </h3>
           </div>
         </div>
         <span
-          className={`px-2.5 py-1 rounded-full text-[11px] font-mono font-medium ${
+          className={`px-2.5 py-1 rounded-full text-[11px] font-mono font-medium shrink-0 ${
             isActive
               ? isMasters
                 ? "bg-teal-500/20 text-teal-300 border border-teal-500/40"
@@ -71,7 +86,9 @@ export function DegreePathwayCard({ pathway, isActive, onSelect }: DegreePathway
         </span>
       </div>
 
-      <p className="text-sm text-slate-300 leading-relaxed mb-6">{pathway.description}</p>
+      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 font-sans">
+        {pathway.description}
+      </p>
 
       <div className="space-y-3 mb-6 text-xs text-slate-300">
         {pathway.features.map((feat, idx) => {
@@ -79,9 +96,11 @@ export function DegreePathwayCard({ pathway, isActive, onSelect }: DegreePathway
           return (
             <div key={idx} className="flex items-start gap-2.5">
               <FeatIcon
-                className={`w-4 h-4 shrink-0 mt-0.5 ${isMasters ? "text-teal-400" : "text-indigo-400"}`}
+                className={`w-4 h-4 shrink-0 mt-0.5 ${
+                  isMasters ? "text-teal-400" : "text-indigo-400"
+                }`}
               />
-              <div>
+              <div className="leading-relaxed">
                 <strong className="text-white">{feat.label}:</strong> {feat.detail}
               </div>
             </div>

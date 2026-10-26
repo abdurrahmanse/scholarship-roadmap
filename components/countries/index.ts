@@ -5,3 +5,4 @@ export * from "./CountryCard";
 export * from "./CountryFundingModels";
 export * from "./CountryApplicationSteps";
 export * from "./CountryDetailPage";
+export * from "./detail";

@@ -40,7 +40,7 @@ export function SlideDeckCanvasHeader({
             Target Timing: {timing}
           </span>
         </div>
-        <h3 className="text-2xl font-black text-white font-heading">{title}</h3>
+        <h3 className="text-2xl font-bold text-white font-heading">{title}</h3>
         <p className="text-xs text-slate-400 mt-1 font-sans">{subtitle}</p>
       </div>
 

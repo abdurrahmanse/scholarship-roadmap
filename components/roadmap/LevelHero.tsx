@@ -55,7 +55,7 @@ export function LevelHero({ level }: LevelHeroProps) {
         </div>
 
         {/* Level Title */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white mb-6 max-w-4xl leading-[1.12] sm:leading-[1.1] font-heading break-words">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-6 max-w-4xl leading-[1.12] sm:leading-[1.1] font-heading break-words">
           Level {level.levelNumber}:{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400">
             {level.title}

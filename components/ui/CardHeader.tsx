@@ -25,7 +25,7 @@ export function CardHeader({
   icon,
   action,
   className = "",
-  borderBottom = true
+  borderBottom = true,
 }: CardHeaderProps) {
   if (!title && !subtitle && !badge && !icon && !action) return null;
 
@@ -35,9 +35,9 @@ export function CardHeader({
         borderBottom ? "border-b border-white/10" : ""
       } ${className}`}
     >
-      <div className="flex items-center gap-3 min-w-0">
+      <div className="flex items-start sm:items-center gap-3 min-w-0">
         {icon && (
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 shrink-0 text-indigo-400">
+          <div className="p-2 sm:p-2.5 rounded-xl bg-white/[0.04] border border-white/10 shrink-0 text-indigo-400 mt-0.5 sm:mt-0">
             {icon}
           </div>
         )}
@@ -55,7 +55,7 @@ export function CardHeader({
               </div>
             )}
             {title && (
-              <h3 className="text-base sm:text-lg font-heading font-bold text-white tracking-tight truncate">
+              <h3 className="text-base sm:text-lg font-heading font-bold text-white tracking-tight break-words">
                 {title}
               </h3>
             )}
@@ -68,7 +68,7 @@ export function CardHeader({
         </div>
       </div>
 
-      {action && <div className="shrink-0">{action}</div>}
+      {action && <div className="shrink-0 pt-2 sm:pt-0">{action}</div>}
     </div>
   );
 }

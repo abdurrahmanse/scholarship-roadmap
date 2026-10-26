@@ -1,11 +1,7 @@
 "use client";
 
 import React from "react";
-import {
-  ExternalLink,
-  Cpu,
-  Users
-} from "lucide-react";
+import { ExternalLink, Cpu, Users } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -19,7 +15,7 @@ export function ProgramCard({ program }: ProgramCardProps) {
   return (
     <GlassCard
       borderGlow="cyan"
-      className="p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:shadow-cyan-950/30 hover:shadow-2xl"
+      className="p-5 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:shadow-cyan-950/30 hover:shadow-2xl"
     >
       <div>
         {/* Top Header */}
@@ -36,7 +32,7 @@ export function ProgramCard({ program }: ProgramCardProps) {
                 GRE: {program.requirements.grePolicy}
               </span>
             </div>
-            <h3 className="text-xl font-heading font-bold text-white tracking-tight break-words">
+            <h3 className="text-lg sm:text-xl font-heading font-bold text-white tracking-tight break-words">
               {program.institution}
             </h3>
             <div className="text-xs text-cyan-300 font-semibold mt-0.5">
@@ -59,7 +55,7 @@ export function ProgramCard({ program }: ProgramCardProps) {
             <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">
               Guaranteed Annual Living Stipend / Salary
             </span>
-            <span className="text-base font-extrabold text-emerald-400 font-mono">
+            <span className="text-sm sm:text-base font-extrabold text-emerald-400 font-mono">
               {program.fundingDetails.stipendAnnualUSD} ({program.fundingDetails.stipendMonthlyLocal})
             </span>
           </div>
@@ -94,14 +90,14 @@ export function ProgramCard({ program }: ProgramCardProps) {
         <div className="space-y-2 mb-6 text-xs text-slate-300">
           <div className="flex items-start gap-2">
             <Users className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-            <div>
+            <div className="leading-relaxed">
               <strong className="text-slate-200">Key Faculty & Labs: </strong>
               <span className="text-slate-400">{program.keyFacultyOrLabs.join(", ")}</span>
             </div>
           </div>
           <div className="flex items-start gap-2">
             <Cpu className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
-            <div>
+            <div className="leading-relaxed">
               <strong className="text-slate-200">Lab Compute Cluster: </strong>
               <span className="text-slate-400">{program.fundingDetails.computeAccess}</span>
             </div>
@@ -110,8 +106,8 @@ export function ProgramCard({ program }: ProgramCardProps) {
       </div>
 
       {/* Footer Application Button */}
-      <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-        <span className="text-[11px] text-slate-400">
+      <div className="pt-4 border-t border-white/10 flex flex-col xs:flex-row items-start xs:items-center justify-between gap-3">
+        <span className="text-[11px] text-slate-400 font-sans">
           {program.fundingDetails.tuitionCoverage}
         </span>
         <Button
@@ -120,6 +116,7 @@ export function ProgramCard({ program }: ProgramCardProps) {
           rel="noopener noreferrer"
           variant="cyan"
           size="sm"
+          className="w-full xs:w-auto justify-center"
           rightIcon={<ExternalLink className="w-3.5 h-3.5" />}
         >
           Official Portal
@@ -128,3 +125,5 @@ export function ProgramCard({ program }: ProgramCardProps) {
     </GlassCard>
   );
 }
+
+export default ProgramCard;

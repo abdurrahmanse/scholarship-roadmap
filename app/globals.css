@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-heading: var(--font-heading), sans-serif;
+  --font-sans: var(--font-rajdhani), sans-serif;
+  --font-heading: var(--font-rajdhani), sans-serif;
   --font-mono: var(--font-mono), monospace;
 
   --color-canvas-base: #090d16;
@@ -20,19 +20,40 @@
   color-scheme: dark;
   --background: #090d16;
   --foreground: #f8fafc;
+  --font-inter: var(--font-rajdhani);
+  --font-heading: var(--font-rajdhani);
 }
 
 html,
 body {
   background-color: #090d16;
   color: #f1f5f9;
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-rajdhani), sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   overflow-x: hidden;
   max-width: 100vw;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   selection-background-color: rgba(99, 102, 241, 0.25);
   selection-color: #c7d2fe;
+}
+
+/* ───────────────────────────────────────────────────────────
+   Global Typography Rules:
+   - Entire website uses Rajdhani font family (600, 700)
+   - All titles strictly use 700 weight
+   ─────────────────────────────────────────────────────────── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+  font-family: var(--font-rajdhani), sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em;
 }
 
 /* Safe area padding for notch devices */

@@ -7,24 +7,30 @@ import { headerData } from "@/data/navigationData";
 
 export function HeaderBrand() {
   return (
-    <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-      <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-teal-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-all duration-300 shrink-0">
-        <GraduationCap className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-        <span className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 opacity-0 group-hover:opacity-40 blur transition-opacity duration-300 pointer-events-none" />
+    <Link
+      href="/"
+      className="flex items-center gap-2.5 sm:gap-3 group shrink-0"
+      aria-label="Scholarship Roadmap Home"
+    >
+      {/* Sleek Logo Icon */}
+      <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-teal-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 group-hover:shadow-indigo-500/35 transition-all duration-200 shrink-0 border border-white/20">
+        <GraduationCap className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
       </div>
-      <div>
-        <div className="font-heading font-extrabold text-sm sm:text-base tracking-tight flex items-center gap-1 sm:gap-1.5">
-          <span className="text-white">{headerData.brand.primary}</span>
-          <span className="bg-gradient-to-r from-indigo-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+
+      {/* Modern Typographic Wordmark */}
+      <div className="flex items-baseline gap-1.5">
+        <span className="font-heading font-extrabold text-sm sm:text-base tracking-tight text-white group-hover:text-slate-100 transition-colors">
+          {headerData.brand.primary}
+          <span className="text-teal-400 ml-1">
             {headerData.brand.secondary}
           </span>
-        </div>
-        <div className="flex items-center gap-1.5 -mt-0.5">
-          <span className="text-[10px] text-slate-400 font-mono tracking-wide hidden sm:inline">
-            {headerData.brand.badge}
-          </span>
-        </div>
+        </span>
+        <span className="hidden xl:inline-block text-[10px] font-mono text-slate-500 uppercase tracking-wider pl-1.5 border-l border-white/10">
+          Fully Funded
+        </span>
       </div>
     </Link>
   );
 }
+
+export default HeaderBrand;

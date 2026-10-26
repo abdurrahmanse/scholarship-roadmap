@@ -40,7 +40,7 @@ export function LevelCard({ level }: LevelCardProps) {
                   {level.difficulty}
                 </Badge>
               </div>
-              <h3 className="text-xl sm:text-2xl font-heading font-extrabold text-white tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-heading font-bold text-white tracking-tight">
                 {level.title}
               </h3>
             </div>

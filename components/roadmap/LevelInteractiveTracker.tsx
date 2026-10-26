@@ -37,7 +37,7 @@ export function LevelInteractiveTracker({ level }: LevelInteractiveTrackerProps)
               <span className="text-xs uppercase font-mono font-bold text-slate-400 block mb-1">
                 Level 0{level.levelNumber} Progress Tracker
               </span>
-              <h3 className="text-xl sm:text-2xl font-heading font-extrabold text-white">
+              <h3 className="text-xl sm:text-2xl font-heading font-bold text-white">
                 Core Milestones & Tangible Deliverables
               </h3>
             </div>

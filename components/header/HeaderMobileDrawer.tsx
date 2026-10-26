@@ -2,41 +2,146 @@
 
 import React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { navLinksData } from "@/data/navigationData";
+import { ArrowRight, ChevronRight, GraduationCap, Search, X } from "lucide-react";
+import { headerData, navLinksData } from "@/data/navigationData";
 import { getIconComponent } from "@/components/ui/iconUtils";
 
 interface HeaderMobileDrawerProps {
   isOpen: boolean;
   onClose: () => void;
+  pathname: string;
 }
 
-export function HeaderMobileDrawer({ isOpen, onClose }: HeaderMobileDrawerProps) {
-  const pathname = usePathname();
-
-  if (!isOpen) return null;
-
+export function HeaderMobileDrawer({
+  isOpen,
+  onClose,
+  pathname,
+}: HeaderMobileDrawerProps) {
   return (
-    <div className="lg:hidden border-t border-white/10 bg-[#090d16]/95 backdrop-blur-2xl px-4 pt-3 pb-5 space-y-1.5 shadow-2xl">
-      {navLinksData.map((link) => {
-        const Icon = getIconComponent(link.iconName);
-        const isActive = pathname === link.href;
-        return (
-          <Link
-            key={link.href}
-            href={link.href}
-            onClick={onClose}
-            className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all ${
-              isActive
-                ? "bg-indigo-950/80 text-indigo-300 border border-indigo-500/40 font-semibold"
-                : "text-slate-300 hover:text-white hover:bg-white/[0.04]"
-            }`}
-          >
-            <Icon className="w-4 h-4 text-indigo-400" />
-            <span>{link.label}</span>
-          </Link>
-        );
-      })}
-    </div>
+    <>
+      {/* Backdrop */}
+      <div
+        className={`fixed inset-0 z-40 bg-black/70 backdrop-blur-md lg:hidden transition-opacity duration-300 ${
+          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={onClose}
+        aria-hidden="true"
+      />
+
+      {/* Drawer panel */}
+      <aside
+        className={`fixed top-0 right-0 bottom-0 z-50 w-[320px] max-w-[88vw] flex flex-col lg:hidden bg-[#090d16] border-l border-white/[0.08] shadow-2xl transition-transform duration-300 ease-out ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+        aria-label="Mobile Navigation Drawer"
+      >
+        {/* Top radial ambient glow */}
+        <div
+          className="absolute top-0 inset-x-0 h-40 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 120% 60% at 80% 0%, rgba(99,102,241,0.18) 0%, transparent 70%)",
+          }}
+        />
+
+        <div className="relative flex flex-col h-full overflow-y-auto">
+          {/* Drawer Header */}
+          <div className="flex items-center justify-between px-5 py-4 border-b border-white/[0.07]">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-teal-500 flex items-center justify-center text-white shadow-md">
+                <GraduationCap className="w-4 h-4" />
+              </div>
+              <div>
+                <p className="text-sm font-heading font-bold text-white leading-none">
+                  {headerData.mobileDrawer.title}
+                </p>
+                <p className="text-[10px] text-teal-400 mt-1 font-mono">
+                  100% Fully Funded Standard
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={onClose}
+              className="w-8 h-8 rounded-lg bg-white/[0.05] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors cursor-pointer"
+              aria-label="Close menu"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Quick Search Shortcut */}
+          <div className="p-3 border-b border-white/[0.06]">
+            <Link
+              href="/scholarships"
+              onClick={onClose}
+              className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-slate-400 hover:text-white hover:border-teal-500/40 transition-all"
+            >
+              <Search className="w-4 h-4 text-teal-400 shrink-0" />
+              <span className="flex-1">Search scholarships directory...</span>
+            </Link>
+          </div>
+
+          {/* Main Navigation Links */}
+          <nav className="flex-1 px-3 py-3 space-y-1" aria-label="Mobile navigation links">
+            {navLinksData.map((link) => {
+              const Icon = getIconComponent(link.iconName);
+              const isActive =
+                pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={onClose}
+                  className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all duration-150 group ${
+                    isActive
+                      ? "bg-white/[0.08] text-white border border-white/10 shadow-sm"
+                      : "text-slate-400 hover:text-white hover:bg-white/[0.04] border border-transparent"
+                  }`}
+                >
+                  <span
+                    className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                      isActive
+                        ? "bg-teal-500/20 text-teal-300"
+                        : "bg-white/[0.04] text-slate-500 group-hover:text-slate-300"
+                    }`}
+                  >
+                    <Icon className="w-3.5 h-3.5" />
+                  </span>
+                  <span className="flex-1 text-[13px]">{link.label}</span>
+                  {link.badge && (
+                    <span className="text-[9px] font-mono font-bold uppercase px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                      {link.badge}
+                    </span>
+                  )}
+                  <ChevronRight
+                    className={`w-3.5 h-3.5 transition-opacity ${
+                      isActive ? "opacity-100 text-teal-400" : "opacity-30 group-hover:opacity-70"
+                    }`}
+                  />
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Bottom CTA Block */}
+          <div className="p-4 border-t border-white/[0.07] bg-slate-950/50 space-y-2.5">
+            <Link
+              href={headerData.mobileDrawer.ctaButton.href}
+              onClick={onClose}
+              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-gradient-to-r from-teal-400 to-emerald-400 hover:from-teal-300 hover:to-emerald-300 text-slate-950 text-xs font-bold shadow-md shadow-teal-500/20 transition-all group"
+            >
+              <span>{headerData.mobileDrawer.ctaButton.label}</span>
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+            <p className="text-center text-[10px] text-slate-500 font-mono">
+              Free · Open Access · No Account Required
+            </p>
+          </div>
+        </div>
+      </aside>
+    </>
   );
 }
+
+export default HeaderMobileDrawer;

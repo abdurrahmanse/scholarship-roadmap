@@ -27,7 +27,7 @@ export function RoadmapPhaseCard({
   checkedItems,
   onToggleChecklistItem,
   prevPhaseId,
-  onNavigateToPhase
+  onNavigateToPhase,
 }: RoadmapPhaseCardProps) {
   const isMastersOnly = phase.degreeScope === "masters";
   const isPhdOnly = phase.degreeScope === "phd";
@@ -44,10 +44,10 @@ export function RoadmapPhaseCard({
       {/* Phase Card Header / Toggle Button */}
       <button
         onClick={onToggle}
-        className="w-full text-left p-6 sm:p-7 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer"
+        className="w-full text-left p-4 sm:p-6 md:p-7 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer"
         aria-expanded={isExpanded}
       >
-        <div className="flex items-start sm:items-center gap-4">
+        <div className="flex items-start sm:items-center gap-3.5 sm:gap-4">
           <span
             className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-sm sm:text-base font-mono font-black shrink-0 ${
               isExpanded
@@ -82,7 +82,7 @@ export function RoadmapPhaseCard({
               )}
             </div>
 
-            <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight">
+            <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight leading-snug">
               {phase.title}
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed max-w-3xl">
@@ -103,7 +103,7 @@ export function RoadmapPhaseCard({
 
       {/* Expanded Step-by-Step Instructions */}
       {isExpanded && (
-        <div className="px-6 pb-7 sm:px-7 sm:pb-8 pt-2 border-t border-white/5 space-y-6">
+        <div className="px-4 pb-6 sm:px-7 sm:pb-8 pt-2 border-t border-white/5 space-y-6">
           {/* 1. What to do & Why it matters */}
           <PhaseWhatWhy what={phase.what} why={phase.why} />
 

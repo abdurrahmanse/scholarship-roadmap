@@ -19,7 +19,7 @@ export default function CountriesPage() {
             <span className="text-indigo-400">Official Government Portals</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
             Explore 20 Global Scholarship Destinations
           </h1>
 

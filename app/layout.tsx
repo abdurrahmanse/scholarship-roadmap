@@ -1,16 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Rajdhani, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-heading",
+const rajdhani = Rajdhani({
+  variable: "--font-rajdhani",
   subsets: ["latin"],
   display: "swap",
   weight: ["500", "600", "700"],
@@ -33,7 +26,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#090d16"
+  themeColor: "#090d16",
 };
 
 export const metadata: Metadata = rootMetadata;
@@ -46,9 +39,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased dark scroll-smooth`}
+      className={`${rajdhani.variable} ${jetbrainsMono.variable} h-full antialiased dark scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-[#090d16] text-slate-100 selection:bg-indigo-500/25 selection:text-indigo-200 font-sans relative">
+      <body className="min-h-full flex flex-col bg-[#090d16] text-slate-100 selection:bg-indigo-500/25 selection:text-indigo-200 font-sans font-semibold relative">
         <AmbientBackground />
         <Navbar />
         <div className="flex-1 relative z-10">{children}</div>
@@ -57,5 +50,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-

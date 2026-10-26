@@ -2,6 +2,7 @@ export interface NavLinkItem {
   href: string;
   label: string;
   iconName: string;
+  badge?: string;
 }
 
 export interface StatusTickerItem {
@@ -55,10 +56,17 @@ export const headerData = {
   brand: {
     primary: "Scholarship",
     secondary: "Roadmap",
-    badge: "Fully Funded Graduate Roadmap"
+    badge: "Open Access Guide",
+    tagline: "Fully Funded Master's & PhD"
   },
   actions: {
     statusBadge: "Fully Funded Guide",
+    searchButton: {
+      label: "Search scholarships...",
+      shortLabel: "Search...",
+      shortcut: "⌘K",
+      href: "/scholarships"
+    },
     ctaButton: {
       label: "Start Roadmap",
       href: "/roadmap"
@@ -67,21 +75,21 @@ export const headerData = {
   },
   mobileDrawer: {
     title: "Scholarship Roadmap",
-    subtitle: "Navigate the global scholarship process",
+    subtitle: "Navigate fully funded graduate programs worldwide",
     ctaButton: {
-      label: "Open Complete Roadmap",
+      label: "Start 13-Phase Roadmap",
       href: "/roadmap"
     }
   }
 };
 
 export const navLinksData: NavLinkItem[] = [
-  { href: "/", label: "Home", iconName: "BookOpen" },
-  { href: "/roadmap", label: "Complete Roadmap", iconName: "Map" },
-  { href: "/countries", label: "Explore Countries", iconName: "Globe2" },
-  { href: "/scholarships", label: "Find Scholarships", iconName: "Search" },
-  { href: "/professors", label: "Find Professors", iconName: "Users" },
-  { href: "/documents", label: "Required Documents", iconName: "FileCheck" },
+  { href: "/roadmap", label: "Roadmap", iconName: "Map" },
+  { href: "/countries", label: "Countries", iconName: "Globe2" },
+  { href: "/scholarships", label: "Scholarships", iconName: "Search" },
+  { href: "/professors", label: "Professors", iconName: "Users" },
+  { href: "/documents", label: "Documents", iconName: "FileCheck" },
+  { href: "/programs", label: "Programs", iconName: "Award", badge: "Funded" },
   { href: "/faqs", label: "FAQs", iconName: "HelpCircle" }
 ];
 
