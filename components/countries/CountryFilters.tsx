@@ -11,8 +11,10 @@ export interface CountryFiltersProps {
   onSupervisorFilterChange: (filter: string) => void;
   searchQuery: string;
   onSearchQueryChange: (query: string) => void;
-  onExpandAll: () => void;
-  onCollapseAll: () => void;
+  /** @deprecated No longer used — cards link to detail pages */
+  onExpandAll?: () => void;
+  /** @deprecated No longer used — cards link to detail pages */
+  onCollapseAll?: () => void;
   totalCount: number;
   filteredCount: number;
 }
@@ -24,12 +26,10 @@ export function CountryFilters({
   onSupervisorFilterChange,
   searchQuery,
   onSearchQueryChange,
-  onExpandAll,
-  onCollapseAll,
   totalCount,
   filteredCount
 }: CountryFiltersProps) {
-  const { regions, supervisorFilters, searchPlaceholder, actions } = countryGuidesControlsData;
+  const { regions, supervisorFilters, searchPlaceholder } = countryGuidesControlsData;
 
   return (
     <div className="p-4 sm:p-6 rounded-2xl bg-slate-900/80 border border-white/[0.08] backdrop-blur-xl sticky top-20 z-30 shadow-xl space-y-4">
@@ -78,26 +78,10 @@ export function CountryFilters({
           </select>
         </div>
 
-        {/* Action Controls & Count */}
-        <div className="flex items-center gap-3">
-          <span className="text-[11px] text-slate-400 font-mono">
-            Showing {filteredCount} of {totalCount} countries
-          </span>
-          <div className="flex items-center gap-1.5">
-            <button
-              onClick={onExpandAll}
-              className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-semibold text-slate-300 transition-colors cursor-pointer"
-            >
-              {actions.expandAll}
-            </button>
-            <button
-              onClick={onCollapseAll}
-              className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-semibold text-slate-300 transition-colors cursor-pointer"
-            >
-              {actions.collapseAll}
-            </button>
-          </div>
-        </div>
+        {/* Count */}
+        <span className="text-[11px] text-slate-400 font-mono">
+          Showing {filteredCount} of {totalCount} countries
+        </span>
       </div>
     </div>
   );

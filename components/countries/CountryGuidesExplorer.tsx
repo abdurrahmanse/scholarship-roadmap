@@ -10,32 +10,7 @@ export function CountryGuidesExplorer() {
   const [selectedRegion, setSelectedRegion] = useState<string>("All");
   const [supervisorFilter, setSupervisorFilter] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [expandedCountries, setExpandedCountries] = useState<Record<string, boolean>>({
-    germany: true,
-    sweden: true,
-    "united-states": true
-  });
 
-  const toggleCountry = (id: string) => {
-    setExpandedCountries((prev) => ({
-      ...prev,
-      [id]: !prev[id]
-    }));
-  };
-
-  const expandAll = () => {
-    const allExp: Record<string, boolean> = {};
-    countryGuidesData.forEach((c) => {
-      allExp[c.id] = true;
-    });
-    setExpandedCountries(allExp);
-  };
-
-  const collapseAll = () => {
-    setExpandedCountries({});
-  };
-
-  // Filter countries
   const filteredCountries = countryGuidesData.filter((country) => {
     if (selectedRegion !== "All" && country.region !== selectedRegion) return false;
     if (supervisorFilter !== "All" && country.supervisorContactRequirement !== supervisorFilter) {
@@ -56,10 +31,10 @@ export function CountryGuidesExplorer() {
 
   return (
     <div className="space-y-8">
-      {/* 1. Page Header */}
+      {/* Page Header */}
       <CountryHeader />
 
-      {/* 2. Control Bar: Region tabs, search, supervisor filter */}
+      {/* Filters */}
       <CountryFilters
         selectedRegion={selectedRegion}
         onSelectedRegionChange={setSelectedRegion}
@@ -67,14 +42,14 @@ export function CountryGuidesExplorer() {
         onSupervisorFilterChange={setSupervisorFilter}
         searchQuery={searchQuery}
         onSearchQueryChange={setSearchQuery}
-        onExpandAll={expandAll}
-        onCollapseAll={collapseAll}
+        onExpandAll={() => {}}
+        onCollapseAll={() => {}}
         totalCount={countryGuidesData.length}
         filteredCount={filteredCountries.length}
       />
 
-      {/* 3. Filtered Countries List */}
-      <div className="space-y-6">
+      {/* Country Cards Grid */}
+      <div className="space-y-4">
         {filteredCountries.length === 0 ? (
           <div className="text-center py-16 rounded-2xl bg-slate-900/40 border border-white/5 space-y-3">
             <h3 className="text-base font-bold text-white">No countries match your search</h3>
@@ -94,12 +69,7 @@ export function CountryGuidesExplorer() {
           </div>
         ) : (
           filteredCountries.map((country) => (
-            <CountryCard
-              key={country.id}
-              country={country}
-              isExpanded={Boolean(expandedCountries[country.id])}
-              onToggle={() => toggleCountry(country.id)}
-            />
+            <CountryCard key={country.id} country={country} />
           ))
         )}
       </div>
