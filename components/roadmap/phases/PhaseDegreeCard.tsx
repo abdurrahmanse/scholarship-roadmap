@@ -2,6 +2,7 @@
 
 import React from "react";
 import { GraduationCap, Award } from "lucide-react";
+import { phaseDetailUiData } from "@/data/phaseDetailUiData";
 
 export interface PhaseDegreeCardProps {
   type: "masters" | "phd";
@@ -14,8 +15,9 @@ export function PhaseDegreeCard({ type, nuance }: PhaseDegreeCardProps) {
   const borderColor = isMasters ? "border-teal-500/30" : "border-indigo-500/30";
   const badgeColor = isMasters ? "text-teal-400 bg-teal-500/20 border-teal-500/40" : "text-indigo-400 bg-indigo-500/20 border-indigo-500/40";
   const iconColor = isMasters ? "text-teal-300" : "text-indigo-300";
-  const subtitle = isMasters ? "Coursework & Pre-Doctoral Focus" : "Research Employment & Lab Fit";
-  const title = isMasters ? "Master's Degree Consideration" : "PhD Doctoral Consideration";
+  const { degreeNuances } = phaseDetailUiData;
+  const subtitle = isMasters ? degreeNuances.mastersSubheading : degreeNuances.phdSubheading;
+  const title = isMasters ? degreeNuances.mastersHeading : degreeNuances.phdHeading;
 
   return (
     <div className={`p-6 sm:p-7 rounded-2xl bg-[#0f1422] ${borderColor} border shadow-xl space-y-3`}>
