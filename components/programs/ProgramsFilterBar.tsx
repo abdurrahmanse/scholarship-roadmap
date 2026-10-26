@@ -4,6 +4,8 @@ import React from "react";
 import { Search, DollarSign, RotateCcw, SlidersHorizontal, MapPin } from "lucide-react";
 import { programsRegionOptions, programsStipendSliderConfig, programsNavAnchors } from "@/data/programsSectionData";
 import { QuickScrollNavigator } from "@/components/ui/QuickScrollNavigator";
+import { Button } from "@/components/ui/Button";
+import { TabsContainer, TabItem } from "@/components/ui/Tabs";
 
 interface ProgramsFilterBarProps {
   searchQuery: string;
@@ -78,30 +80,29 @@ export function ProgramsFilterBar({
               <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mr-1 shrink-0 hidden sm:inline">
                 Degree:
               </span>
-              {["All", "PhD", "MS Thesis"].map((deg) => (
-                <button
-                  key={deg}
-                  onClick={() => onDegreeChange(deg)}
-                  className={`px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                    selectedDegree === deg
-                      ? "bg-cyan-500 text-slate-950 font-bold shadow-md shadow-cyan-500/25"
-                      : "bg-[#090d16] text-slate-400 hover:text-white border border-white/10"
-                  }`}
-                >
-                  {deg}
-                </button>
-              ))}
+              <TabsContainer variant="pills">
+                {["All", "PhD", "MS Thesis"].map((deg) => (
+                  <TabItem
+                    key={deg}
+                    active={selectedDegree === deg}
+                    onClick={() => onDegreeChange(deg)}
+                    title={deg}
+                    theme="cyan"
+                  />
+                ))}
+              </TabsContainer>
             </div>
 
             {/* Reset Filters Button */}
             {hasActiveFilters && (
-              <button
+              <Button
+                variant="danger"
+                size="sm"
                 onClick={onReset}
-                className="px-3.5 py-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-medium flex items-center gap-1.5 transition-all shrink-0 cursor-pointer"
+                leftIcon={<RotateCcw className="w-3.5 h-3.5" />}
               >
-                <RotateCcw className="w-3.5 h-3.5" />
-                <span>Reset</span>
-              </button>
+                Reset
+              </Button>
             )}
           </div>
 
@@ -113,19 +114,17 @@ export function ProgramsFilterBar({
                 <MapPin className="w-3.5 h-3.5 text-cyan-400" />
                 <span>Hub:</span>
               </div>
-              {programsRegionOptions.map((reg) => (
-                <button
-                  key={reg.id}
-                  onClick={() => onRegionChange(reg.id)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
-                    selectedRegion === reg.id
-                      ? "bg-indigo-600/30 text-indigo-300 border border-indigo-500/50 font-semibold"
-                      : "bg-[#090d16] text-slate-400 hover:text-slate-200 border border-white/5"
-                  }`}
-                >
-                  {reg.label}
-                </button>
-              ))}
+              <TabsContainer variant="pills">
+                {programsRegionOptions.map((reg) => (
+                  <TabItem
+                    key={reg.id}
+                    active={selectedRegion === reg.id}
+                    onClick={() => onRegionChange(reg.id)}
+                    title={reg.label}
+                    theme="indigo"
+                  />
+                ))}
+              </TabsContainer>
             </div>
 
             {/* Interactive Stipend Range Slider (5 Cols) */}

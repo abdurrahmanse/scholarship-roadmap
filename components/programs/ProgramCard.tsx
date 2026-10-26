@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 import { FundedProgram } from "@/data/types";
 
 interface ProgramCardProps {
@@ -114,15 +115,16 @@ export function ProgramCard({ program }: ProgramCardProps) {
         <span className="text-[11px] text-slate-400">
           {program.fundingDetails.tuitionCoverage}
         </span>
-        <a
+        <Button
           href={program.portalUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-xs transition-all shadow-md shadow-cyan-600/20 flex items-center gap-1.5 cursor-pointer"
+          variant="cyan"
+          size="sm"
+          rightIcon={<ExternalLink className="w-3.5 h-3.5" />}
         >
-          <span>Official Portal</span>
-          <ExternalLink className="w-3.5 h-3.5" />
-        </a>
+          Official Portal
+        </Button>
       </div>
     </GlassCard>
   );

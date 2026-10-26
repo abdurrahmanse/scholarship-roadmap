@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { WidgetCallout } from "@/components/roadmap/widgets/common";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { visaTalRulesData, sampleTalStatements } from "@/data/interviewsSectionData";
 import { interviewsPageData } from "@/data/pagesData";
@@ -47,18 +49,19 @@ export function VisaTalCheckerWidget() {
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {sampleTalStatements.map((sample) => (
-                    <button
+                    <Button
                       key={sample.id}
+                      variant="outline"
+                      size="xs"
                       onClick={() => setInputText(sample.text)}
-                      className="px-2.5 py-1 rounded-lg bg-[#090d16] hover:bg-slate-800 text-slate-300 border border-white/10 text-xs font-medium transition-all cursor-pointer"
                     >
                       {sample.label}
-                    </button>
+                    </Button>
                   ))}
                 </div>
               </div>
 
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+              <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 font-mono">
                 Type or Paste Your Proposed Research Summary / Thesis Title:
               </label>
               <textarea
@@ -78,12 +81,11 @@ export function VisaTalCheckerWidget() {
             </GlassCard>
 
             {/* Crucial Window Rule */}
-            <div className="p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/30 text-xs text-emerald-200 flex items-start gap-2.5">
-              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-              <span>
-                <strong>The Golden Embassy Formulation:</strong> When asked at the visa window, state: <em>&ldquo;I am conducting fundamental mathematical research on open-source machine learning algorithms, published entirely in public academic conferences like NeurIPS and ICML.&rdquo;</em>
-              </span>
-            </div>
+            <WidgetCallout
+              variant="positive"
+              title="The Golden Embassy Formulation:"
+              message="When asked at the visa window, state: 'I am conducting fundamental mathematical research on open-source machine learning algorithms, published entirely in public academic conferences like NeurIPS and ICML.'"
+            />
           </div>
 
           {/* Results Analysis (6 cols) */}
@@ -139,15 +141,17 @@ export function VisaTalCheckerWidget() {
                 </div>
               )}
 
-              <div className="mt-6 pt-4 border-t border-white/10 flex justify-between items-center text-xs">
+              <div className="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2 text-xs">
                 <span className="text-slate-400">Need the Advisor Support Letter?</span>
-                <Link
+                <Button
                   href="/toolkit#interactive-email-builder"
-                  className="text-purple-400 hover:text-purple-300 font-semibold flex items-center gap-1"
+                  variant="ghost"
+                  size="sm"
+                  className="text-purple-400 hover:text-purple-300"
+                  rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
                 >
                   View Open-Science Template
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+                </Button>
               </div>
             </GlassCard>
           </div>

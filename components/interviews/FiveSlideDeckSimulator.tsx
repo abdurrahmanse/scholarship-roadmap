@@ -11,6 +11,9 @@ import {
 } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { TabsContainer, TabItem } from "@/components/ui/Tabs";
+import { WidgetCallout } from "@/components/roadmap/widgets/common";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { fiveSlideDeckData } from "@/data/interviewsSectionData";
 import { interviewsPageData } from "@/data/pagesData";
@@ -52,21 +55,19 @@ export function FiveSlideDeckSimulator() {
             />
           </div>
 
-          <div className="grid grid-cols-5 gap-1 sm:gap-2">
+          <TabsContainer variant="cards" columns={5}>
             {fiveSlideDeckData.map((s, idx) => (
-              <button
+              <TabItem
                 key={s.number}
+                active={currentSlideIndex === idx}
                 onClick={() => setCurrentSlideIndex(idx)}
-                className={`py-2 px-1 rounded-xl text-xs font-bold transition-all text-center ${
-                  currentSlideIndex === idx
-                    ? "bg-purple-600/30 border border-purple-500 text-white shadow-lg shadow-purple-950/60"
-                    : "bg-white/[0.03] border border-white/[0.08] text-slate-400 hover:text-white hover:bg-white/[0.06]"
-                }`}
-              >
-                <span className="block font-mono text-[11px]">S0{s.number}</span>
-              </button>
+                variant="cards"
+                badge={`S0${s.number}`}
+                title={s.title.split(":")[0] || s.title}
+                theme="purple"
+              />
             ))}
-          </div>
+          </TabsContainer>
         </div>
 
         {/* Interactive Slide Viewer Canvas */}
@@ -90,20 +91,24 @@ export function FiveSlideDeckSimulator() {
 
               {/* Prev / Next Controls */}
               <div className="flex items-center gap-2 shrink-0">
-                <button
+                <Button
                   disabled={currentSlideIndex === 0}
                   onClick={() => setCurrentSlideIndex(currentSlideIndex - 1)}
-                  className="p-2.5 rounded-xl bg-[#090d16] border border-white/10 text-slate-300 hover:text-white disabled:opacity-40 transition-all cursor-pointer"
+                  variant="secondary"
+                  size="sm"
+                  aria-label="Previous slide"
                 >
                   <ChevronLeft className="w-4 h-4" />
-                </button>
-                <button
+                </Button>
+                <Button
                   disabled={currentSlideIndex === fiveSlideDeckData.length - 1}
                   onClick={() => setCurrentSlideIndex(currentSlideIndex + 1)}
-                  className="p-2.5 rounded-xl bg-[#090d16] border border-white/10 text-slate-300 hover:text-white disabled:opacity-40 transition-all cursor-pointer"
+                  variant="secondary"
+                  size="sm"
+                  aria-label="Next slide"
                 >
                   <ChevronRight className="w-4 h-4" />
-                </button>
+                </Button>
               </div>
             </div>
 
@@ -133,16 +138,16 @@ export function FiveSlideDeckSimulator() {
             </div>
 
             {/* Faculty Stress-Test Question & Defense Answer */}
-            <div className="p-5 rounded-2xl bg-amber-950/20 border border-amber-800/40 space-y-3">
-              <div className="flex items-start gap-2 text-xs font-bold text-amber-300">
-                <HelpCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                <span>Classic Professor Interruption Trap: &ldquo;{slide.facultyInterruptionQuestion}&rdquo;</span>
-              </div>
-              <div className="pl-6 text-xs text-amber-100/90 leading-relaxed font-mono">
-                <strong className="text-amber-400">Your Recommended Defense: </strong>
-                {slide.defenseAnswer}
-              </div>
-            </div>
+            <WidgetCallout
+              variant="tip"
+              title={`Classic Professor Interruption Trap: "${slide.facultyInterruptionQuestion}"`}
+              message={
+                <span>
+                  <strong className="text-amber-400 font-mono">Your Recommended Defense: </strong>
+                  <span className="font-mono text-amber-100/90">{slide.defenseAnswer}</span>
+                </span>
+              }
+            />
           </GlassCard>
         </div>
       </div>
