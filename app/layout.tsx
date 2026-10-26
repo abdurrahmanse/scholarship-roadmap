@@ -39,6 +39,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${rajdhani.variable} ${rajdhani.className} ${jetbrainsMono.variable} h-full antialiased dark scroll-smooth`}
     >
       <body className={`${rajdhani.className} min-h-full flex flex-col bg-[#090d16] text-slate-100 selection:bg-indigo-500/25 selection:text-indigo-200 font-semibold relative`}>

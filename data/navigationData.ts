@@ -89,7 +89,6 @@ export const navLinksData: NavLinkItem[] = [
   { href: "/scholarships", label: "Scholarships", iconName: "Search" },
   { href: "/professors", label: "Professors", iconName: "Users" },
   { href: "/documents", label: "Documents", iconName: "FileCheck" },
-  { href: "/programs", label: "Programs", iconName: "Award", badge: "Funded" },
   { href: "/faqs", label: "FAQs", iconName: "HelpCircle" }
 ];
 

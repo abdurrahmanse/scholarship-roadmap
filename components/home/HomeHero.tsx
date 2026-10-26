@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import { ArrowRight, Globe2 } from "lucide-react";
-import { Button } from "@/components/ui/Button";
 import { homeHeroData } from "@/data/homeData";
+import { HeroCtaButtons } from "./HeroCtaButtons";
 import { HeroValueBadges } from "./HeroValueBadges";
 
 export function HomeHero() {
@@ -42,28 +41,8 @@ export function HomeHero() {
             {description}
           </p>
 
-          {/* CTAs — stacked on mobile, row on sm+ */}
-          <div className="flex flex-col xs:flex-row items-center justify-center gap-3 pt-2 sm:pt-4 px-2">
-            <Button
-              href={primaryCta.href}
-              variant="primary"
-              size="lg"
-              className="w-full xs:w-auto px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-semibold shadow-xl shadow-indigo-600/25 group"
-            >
-              <span>{primaryCta.label}</span>
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-
-            <Button
-              href={secondaryCta.href}
-              variant="outline"
-              size="lg"
-              className="w-full xs:w-auto px-5 sm:px-7 py-3 sm:py-3.5 text-sm font-semibold border-white/15 hover:border-teal-500/40 hover:bg-white/[0.04] text-slate-200"
-            >
-              <Globe2 className="w-4 h-4 mr-2 text-teal-400" />
-              <span>{secondaryCta.label}</span>
-            </Button>
-          </div>
+          {/* Redesigned CTAs — enlarged high-impact buttons with stylized icon badges */}
+          <HeroCtaButtons primaryCta={primaryCta} secondaryCta={secondaryCta} />
 
           {/* Value Badges */}
           <HeroValueBadges badges={valueBadges} />

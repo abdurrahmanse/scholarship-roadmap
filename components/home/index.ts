@@ -1,4 +1,5 @@
 export * from "./HomeHero";
+export * from "./HeroCtaButtons";
 export * from "./HeroValueBadges";
 export * from "./DegreePathwaySelector";
 export * from "./DegreePathwayCard";

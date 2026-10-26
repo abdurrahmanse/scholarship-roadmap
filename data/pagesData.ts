@@ -12,7 +12,7 @@ export const homePageData: MultiPageData = {
     subtitle: "The canonical end-to-end blueprint for Computer Science students: build a high-impact research profile, identify top universities and labs, connect with funded professors, craft high-yield cold outreach, and secure 100% full-ride funding abroad.",
     primaryCta: { label: "Explore Step-by-Step Roadmap", href: "/roadmap" },
     secondaryCta: { label: "What Profile Looks Like", href: "#cs-profile-blueprint" },
-    tertiaryCta: { label: "Browse Funded CS Labs", href: "/programs" }
+    tertiaryCta: { label: "Explore Country Guides", href: "/countries" }
   },
   sections: [
     {
