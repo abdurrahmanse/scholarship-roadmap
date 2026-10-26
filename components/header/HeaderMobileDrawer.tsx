@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, ChevronRight, GraduationCap, Search, X } from "lucide-react";
+import { ChevronRight, GraduationCap, X } from "lucide-react";
 import { headerData, navLinksData } from "@/data/navigationData";
 import { getIconComponent } from "@/components/ui/iconUtils";
 
@@ -30,7 +30,7 @@ export function HeaderMobileDrawer({
 
       {/* Drawer panel */}
       <aside
-        className={`fixed top-0 right-0 bottom-0 z-50 w-[320px] max-w-[88vw] flex flex-col lg:hidden bg-[#090d16] border-l border-white/[0.08] shadow-2xl transition-transform duration-300 ease-out ${
+        className={`fixed top-0 right-0 bottom-0 z-50 w-[300px] max-w-[85vw] flex flex-col lg:hidden bg-[#090d16] border-l border-white/[0.08] shadow-2xl transition-transform duration-300 ease-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-label="Mobile Navigation Drawer"
@@ -44,7 +44,7 @@ export function HeaderMobileDrawer({
           }}
         />
 
-        <div className="relative flex flex-col h-full overflow-y-auto">
+        <div className="relative flex flex-col h-full">
           {/* Drawer Header */}
           <div className="flex items-center justify-between px-5 py-4 border-b border-white/[0.07]">
             <div className="flex items-center gap-2.5">
@@ -69,20 +69,8 @@ export function HeaderMobileDrawer({
             </button>
           </div>
 
-          {/* Quick Search Shortcut */}
-          <div className="p-3 border-b border-white/[0.06]">
-            <Link
-              href="/scholarships"
-              onClick={onClose}
-              className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-slate-400 hover:text-white hover:border-teal-500/40 transition-all"
-            >
-              <Search className="w-4 h-4 text-teal-400 shrink-0" />
-              <span className="flex-1">Search scholarships directory...</span>
-            </Link>
-          </div>
-
           {/* Main Navigation Links */}
-          <nav className="flex-1 px-3 py-3 space-y-1" aria-label="Mobile navigation links">
+          <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto" aria-label="Mobile navigation links">
             {navLinksData.map((link) => {
               const Icon = getIconComponent(link.iconName);
               const isActive =
@@ -124,17 +112,12 @@ export function HeaderMobileDrawer({
             })}
           </nav>
 
-          {/* Bottom CTA Block */}
-          <div className="p-4 border-t border-white/[0.07] bg-slate-950/50 space-y-2.5">
-            <Link
-              href={headerData.mobileDrawer.ctaButton.href}
-              onClick={onClose}
-              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-gradient-to-r from-teal-400 to-emerald-400 hover:from-teal-300 hover:to-emerald-300 text-slate-950 text-xs font-bold shadow-md shadow-teal-500/20 transition-all group"
-            >
-              <span>{headerData.mobileDrawer.ctaButton.label}</span>
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-            </Link>
-            <p className="text-center text-[10px] text-slate-500 font-mono">
+          {/* Bottom Info Note */}
+          <div className="p-4 border-t border-white/[0.07] bg-slate-950/40">
+            <p className="text-center text-[11px] text-slate-400 font-medium">
+              100% Fully Funded Educational Guide
+            </p>
+            <p className="text-center text-[10px] text-slate-500 font-mono mt-1">
               Free · Open Access · No Account Required
             </p>
           </div>

@@ -13,7 +13,7 @@ export function FooterBrandName() {
       aria-label="Scholarship Roadmap Home"
     >
       <FooterLogo />
-      <span className="font-heading font-extrabold text-base tracking-tight text-white group-hover:text-teal-300 transition-colors">
+      <span className="font-heading font-bold text-base tracking-tight text-white group-hover:text-teal-300 transition-colors">
         {footerData.brand.name}
       </span>
     </Link>

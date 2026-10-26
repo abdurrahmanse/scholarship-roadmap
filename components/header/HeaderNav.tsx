@@ -10,7 +10,7 @@ interface HeaderNavProps {
 
 export function HeaderNav({ pathname }: HeaderNavProps) {
   return (
-    <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+    <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2.5" aria-label="Main navigation">
       {navLinksData.map((link) => {
         const isActive =
           pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
@@ -19,9 +19,9 @@ export function HeaderNav({ pathname }: HeaderNavProps) {
           <Link
             key={link.href}
             href={link.href}
-            className={`relative px-3 py-1.5 rounded-lg text-xs xl:text-[13px] font-medium transition-all duration-150 flex items-center gap-1.5 ${
+            className={`relative px-3 py-2 rounded-lg text-xs xl:text-[13px] font-semibold transition-all duration-150 flex items-center gap-1.5 ${
               isActive
-                ? "text-white bg-white/[0.08] font-semibold border border-white/[0.08] shadow-sm"
+                ? "text-white bg-white/[0.08] border border-white/[0.08] shadow-sm"
                 : "text-slate-400 hover:text-slate-100 hover:bg-white/[0.04] border border-transparent"
             }`}
           >

@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-rajdhani), sans-serif;
-  --font-heading: var(--font-rajdhani), sans-serif;
+  --font-sans: var(--font-rajdhani), 'Rajdhani', sans-serif;
+  --font-heading: var(--font-rajdhani), 'Rajdhani', sans-serif;
   --font-mono: var(--font-mono), monospace;
 
   --color-canvas-base: #090d16;
@@ -20,17 +21,48 @@
   color-scheme: dark;
   --background: #090d16;
   --foreground: #f8fafc;
-  --font-inter: var(--font-rajdhani);
-  --font-heading: var(--font-rajdhani);
+  --font-rajdhani: 'Rajdhani', sans-serif;
+  --font-heading: 'Rajdhani', sans-serif;
+}
+
+/* ───────────────────────────────────────────────────────────
+   Global Typography Rules:
+   - Entire website uses Rajdhani font family globally (600, 700)
+   - All titles strictly use 700 weight
+   ─────────────────────────────────────────────────────────── */
+/* Responsive root font size to slightly scale up entire website typography */
+html {
+  font-size: 17px;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 17.5px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 18px;
+  }
 }
 
 html,
+body,
+*,
+*::before,
+*::after {
+  font-family: var(--font-rajdhani), 'Rajdhani', sans-serif;
+}
+
 body {
   background-color: #090d16;
   color: #f1f5f9;
-  font-family: var(--font-rajdhani), sans-serif;
+  font-size: 1.025rem;
   font-weight: 600;
-  letter-spacing: 0.01em;
+  line-height: 1.62;
+  letter-spacing: 0.015em;
   overflow-x: hidden;
   max-width: 100vw;
   -webkit-text-size-adjust: 100%;
@@ -39,21 +71,44 @@ body {
   selection-color: #c7d2fe;
 }
 
-/* ───────────────────────────────────────────────────────────
-   Global Typography Rules:
-   - Entire website uses Rajdhani font family (600, 700)
-   - All titles strictly use 700 weight
-   ─────────────────────────────────────────────────────────── */
+/* Slightly enhance micro-labels for comfortable legibility */
+.text-\[9px\] {
+  font-size: 10.5px !important;
+}
+.text-\[10px\] {
+  font-size: 11.5px !important;
+}
+.text-\[11px\] {
+  font-size: 12.5px !important;
+}
+
+/* All titles and headings strictly use weight 700 */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-.font-heading {
-  font-family: var(--font-rajdhani), sans-serif !important;
+.font-heading,
+.font-title,
+[class*="text-2xl"],
+[class*="text-3xl"],
+[class*="text-4xl"],
+[class*="text-5xl"],
+[class*="text-6xl"],
+[class*="text-7xl"] {
+  font-family: var(--font-rajdhani), 'Rajdhani', sans-serif !important;
   font-weight: 700 !important;
   letter-spacing: -0.01em;
+}
+
+/* Form controls inherit Rajdhani */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: var(--font-rajdhani), 'Rajdhani', sans-serif;
 }
 
 /* Safe area padding for notch devices */
@@ -98,13 +153,14 @@ h6,
   flex-shrink: 0;
 }
 
-h1, h2, h3, h4, .font-heading {
-  font-family: var(--font-heading), sans-serif;
-  letter-spacing: -0.025em;
-}
-
-code, pre, .font-mono {
-  font-family: var(--font-mono), monospace;
+/* Monospace preservation for code and technical data */
+code,
+pre,
+kbd,
+samp,
+.font-mono,
+[class*="font-mono"] {
+  font-family: var(--font-mono), monospace !important;
 }
 
 /* Custom Sleek Scrollbar */

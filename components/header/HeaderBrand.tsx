@@ -19,7 +19,7 @@ export function HeaderBrand() {
 
       {/* Modern Typographic Wordmark */}
       <div className="flex items-baseline gap-1.5">
-        <span className="font-heading font-extrabold text-sm sm:text-base tracking-tight text-white group-hover:text-slate-100 transition-colors">
+        <span className="font-heading font-bold text-sm sm:text-base tracking-tight text-white group-hover:text-slate-100 transition-colors">
           {headerData.brand.primary}
           <span className="text-teal-400 ml-1">
             {headerData.brand.secondary}

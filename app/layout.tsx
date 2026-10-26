@@ -39,9 +39,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${rajdhani.variable} ${jetbrainsMono.variable} h-full antialiased dark scroll-smooth`}
+      className={`${rajdhani.variable} ${rajdhani.className} ${jetbrainsMono.variable} h-full antialiased dark scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-[#090d16] text-slate-100 selection:bg-indigo-500/25 selection:text-indigo-200 font-sans font-semibold relative">
+      <body className={`${rajdhani.className} min-h-full flex flex-col bg-[#090d16] text-slate-100 selection:bg-indigo-500/25 selection:text-indigo-200 font-semibold relative`}>
         <AmbientBackground />
         <Navbar />
         <div className="flex-1 relative z-10">{children}</div>
