@@ -10,6 +10,8 @@ export * from "./templates";
 export * from "./interviews";
 export * from "./faqs";
 export * from "./pagesData";
+export * from "./levelsData";
+export * from "./navigationData";
 
 // Modular Section Datasets
 export * from "./homeData";
@@ -26,10 +28,11 @@ import { fundedProgramsData } from "./programs";
 import { emailTemplatesData } from "./templates";
 import { interviewCasesData } from "./interviews";
 import { faqsData } from "./faqs";
-import { allMultiPages } from "./pagesData";
+import { roadmapLevelsData } from "./levelsData";
 
 export const roadmapMasterData = {
   phases: phasesData,
+  levels: roadmapLevelsData,
   steps: stepsData,
   programs: fundedProgramsData,
   templates: emailTemplatesData,
@@ -38,8 +41,9 @@ export const roadmapMasterData = {
   metadata: {
     title: "The 100% Fully Funded AI & Machine Learning Postgraduate Roadmap",
     targetAudience: "Computer Science (AI/ML) Master's and PhD Candidates",
-    lastUpdated: "2026-10-24",
+    lastUpdated: "2026-10-26",
     totalPhases: phasesData.length,
+    totalLevels: roadmapLevelsData.length,
     totalSteps: stepsData.length,
     totalPrograms: fundedProgramsData.length,
     totalTemplates: emailTemplatesData.length,

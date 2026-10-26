@@ -7,17 +7,36 @@ import {
   Check,
   Zap,
   Layers,
-  Sparkles,
   Server,
   FileCode,
   Gauge
 } from "lucide-react";
-import { Badge } from "@/components/ui/Badge";
 import {
   systemsTabsData,
   systemsBenchmarkMetricsData,
   systemsCodeMeta
 } from "@/data/stepWidgetsData";
+import {
+  WidgetShell,
+  WidgetHeader,
+  WidgetTabs,
+  WidgetTabButton,
+  WidgetCallout
+} from "./common";
+
+const METRIC_ICONS: Record<string, React.ReactNode> = {
+  Zap: <Zap className="w-4 h-4" />,
+  Gauge: <Gauge className="w-4 h-4" />,
+  Layers: <Layers className="w-4 h-4" />,
+  Server: <Server className="w-4 h-4" />
+};
+
+const VARIANT_STYLES: Record<string, string> = {
+  cyan: "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20",
+  emerald: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20",
+  purple: "bg-purple-500/10 text-purple-400 border border-purple-500/20",
+  amber: "bg-amber-500/10 text-amber-400 border border-amber-500/20"
+};
 
 export function StepSystemsCodeWidget() {
   const [activeTabId, setActiveTabId] = useState("ddp");
@@ -35,65 +54,21 @@ export function StepSystemsCodeWidget() {
     }
   };
 
-  const getMetricIcon = (iconName: string) => {
-    switch (iconName) {
-      case "Zap":
-        return <Zap className="w-4 h-4" />;
-      case "Gauge":
-        return <Gauge className="w-4 h-4" />;
-      case "Layers":
-        return <Layers className="w-4 h-4" />;
-      case "Server":
-        return <Server className="w-4 h-4" />;
-      default:
-        return <Terminal className="w-4 h-4" />;
-    }
-  };
-
-  const getMetricVariantStyles = (variant: string) => {
-    switch (variant) {
-      case "cyan":
-        return "bg-cyan-500/10 text-cyan-400";
-      case "emerald":
-        return "bg-emerald-500/10 text-emerald-400";
-      case "purple":
-        return "bg-purple-500/10 text-purple-400";
-      case "amber":
-        return "bg-amber-500/10 text-amber-400";
-      default:
-        return "bg-slate-500/10 text-slate-400";
-    }
-  };
-
   return (
-    <div className="my-6 p-5 sm:p-6 rounded-2xl bg-[#090d18] border border-cyan-500/30 shadow-2xl relative overflow-hidden">
-      {/* Ambient glow */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-600/10 rounded-full blur-[120px] pointer-events-none" />
-
+    <WidgetShell theme="cyan">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-white/10 mb-5 relative z-10">
-        <div className="flex items-center gap-2.5">
-          <div className="p-2.5 rounded-xl bg-cyan-950/80 border border-cyan-500/40 text-cyan-400">
-            <Terminal className="w-5 h-5" />
-          </div>
-          <div>
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-400 block">
-              {systemsCodeMeta.stepBadge}
-            </span>
-            <h4 className="text-base sm:text-lg font-heading font-bold text-white">
-              {systemsCodeMeta.title}
-            </h4>
-          </div>
-        </div>
-        <div className="flex items-center gap-2">
-          <Badge variant="cyan" size="sm">
-            {systemsCodeMeta.headerBadge}
-          </Badge>
+      <WidgetHeader
+        theme="cyan"
+        icon={<Terminal className="w-5 h-5" />}
+        stepBadge={systemsCodeMeta.stepBadge}
+        title={systemsCodeMeta.title}
+        headerBadge={systemsCodeMeta.headerBadge}
+        rightSlot={
           <span className="text-[11px] font-mono text-slate-400 hidden sm:inline">
             {systemsCodeMeta.subBadge}
           </span>
-        </div>
-      </div>
+        }
+      />
 
       {/* Engineering Benchmarks Banner */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 mb-5 relative z-10">
@@ -103,11 +78,11 @@ export function StepSystemsCodeWidget() {
             className="p-3 rounded-xl bg-[#0f1422] border border-white/5 flex items-center gap-3"
           >
             <div
-              className={`p-2 rounded-lg shrink-0 ${getMetricVariantStyles(
-                metric.variant
-              )}`}
+              className={`p-2 rounded-lg shrink-0 ${
+                VARIANT_STYLES[metric.variant] || "bg-slate-500/10 text-slate-400"
+              }`}
             >
-              {getMetricIcon(metric.iconName)}
+              {METRIC_ICONS[metric.iconName] || <Terminal className="w-4 h-4" />}
             </div>
             <div className="min-w-0">
               <div className="text-[10px] font-mono text-slate-400 uppercase">
@@ -122,25 +97,22 @@ export function StepSystemsCodeWidget() {
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 mb-3 scrollbar-none relative z-10">
+      <WidgetTabs scrollable>
         {systemsTabsData.map((tab) => (
-          <button
+          <WidgetTabButton
             key={tab.id}
+            variant="pill"
+            theme="cyan"
+            isActive={activeTabId === tab.id}
             onClick={() => {
               setActiveTabId(tab.id);
               setCopied(false);
             }}
-            className={`px-3 py-2 rounded-xl text-xs font-mono font-medium transition-all whitespace-nowrap cursor-pointer flex items-center gap-2 border ${
-              activeTabId === tab.id
-                ? "bg-cyan-500/20 text-cyan-300 border-cyan-500/40 shadow-sm shadow-cyan-950"
-                : "bg-[#0f1422] text-slate-400 border-white/5 hover:border-white/10 hover:text-slate-200"
-            }`}
-          >
-            <FileCode className="w-3.5 h-3.5" />
-            <span>{tab.label}</span>
-          </button>
+            icon={<FileCode className="w-3.5 h-3.5" />}
+            mainLabel={tab.label}
+          />
         ))}
-      </div>
+      </WidgetTabs>
 
       {/* Code Editor Container */}
       <div className="rounded-xl border border-white/10 bg-[#060910] overflow-hidden relative z-10 shadow-2xl">
@@ -201,15 +173,12 @@ export function StepSystemsCodeWidget() {
       </div>
 
       {/* Systems Engineering Standard Callout */}
-      <div className="mt-4 p-3.5 rounded-xl bg-[#0f1422] border border-white/5 flex items-start gap-2.5 text-xs text-slate-300 relative z-10">
-        <Sparkles className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-        <p className="leading-relaxed">
-          <strong className="text-white">
-            {systemsCodeMeta.facultyCallout.title}
-          </strong>
-          {systemsCodeMeta.facultyCallout.desc}
-        </p>
-      </div>
-    </div>
+      <WidgetCallout
+        variant="cyan"
+        className="mt-4"
+        title={systemsCodeMeta.facultyCallout.title}
+        description={systemsCodeMeta.facultyCallout.desc}
+      />
+    </WidgetShell>
   );
 }

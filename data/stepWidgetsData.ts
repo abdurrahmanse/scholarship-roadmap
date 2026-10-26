@@ -2,7 +2,9 @@ import {
   MathTopicDiagnostic,
   SystemsCodeTab,
   SystemsBenchmarkMetric,
-  DegreeRouteComparison
+  DegreeRouteComparison,
+  GpuQuantPreset,
+  LiteratureMatrixDomain
 } from "./types";
 
 // ============================================================
@@ -252,14 +254,6 @@ export const decisionMatrixMeta = {
   masterOutAvailableText: "Yes (Funded MS Exit)",
   masterOutNotAvailableText: "Not Applicable",
   evaluationHeader: "Strategic Evaluation & Recommendation:",
-  secretMasterOutCallout: {
-    title: "The Secret \"Master-Out\" Strategy: ",
-    desc: "Many students do not realize that in top US universities, direct-entry PhD students who decide after 2 years that they prefer industry over research can legally \"master out\". They receive their Master's degree completely free, having been paid $80k+ in stipends with zero tuition debt."
-  },
-  debtTrapWarningCallout: {
-    title: "The Rejection / Debt Danger: ",
-    desc: "Over 70% of international applicants falsely believe they can \"enter an unfunded MS and find an RA position once on campus\". In reality, professors have strict grant obligations and reserve almost 100% of their RA funding for incoming doctoral students."
-  },
   globalHubsLabel: "Top Global Hubs:",
   decisionRuleFooter: {
     rule: "Summary Decision Rule: If you have ANY prior research experience, apply directly to PhD programs.",
@@ -274,6 +268,7 @@ export const degreeRoutesData: DegreeRouteComparison[] = [
     shortLabel: "Direct PhD",
     tag: "100% Fully Funded Flagship",
     badgeVariant: "emerald",
+    cardTheme: "emerald",
     financialOutcome: "+$180,000 to +$250,000 Net Positive (5-Year)",
     fundingGuarantee: "Guaranteed 4–5 Years (RA/TA Contract)",
     stipendAmount: "$34,000 – $52,000 / year (Tax-advantaged)",
@@ -283,7 +278,12 @@ export const degreeRoutesData: DegreeRouteComparison[] = [
     masterOutOption: true,
     facultyPriority: "Maximum: Faculty invest multi-year grants in doctoral candidates.",
     verdict: "Top choice for CS graduates with at least one research project or thesis experience. Zero debt, guaranteed income, and the golden master-out safety net.",
-    targetRegions: ["United States (NSF/DARPA Grants)", "Canada (Direct PhD)", "Singapore (A*STAR/SINGA)"]
+    targetRegions: ["United States (NSF/DARPA Grants)", "Canada (Direct PhD)", "Singapore (A*STAR/SINGA)"],
+    callout: {
+      type: "positive",
+      title: "The Secret \"Master-Out\" Strategy: ",
+      desc: "Many students do not realize that in top US universities, direct-entry PhD students who decide after 2 years that they prefer industry over research can legally \"master out\". They receive their Master's degree completely free, having been paid $80k+ in stipends with zero tuition debt."
+    }
   },
   {
     id: "thesis-ms",
@@ -291,6 +291,7 @@ export const degreeRoutesData: DegreeRouteComparison[] = [
     shortLabel: "Thesis Master's",
     tag: "Funded Research Runway",
     badgeVariant: "cyan",
+    cardTheme: "cyan",
     financialOutcome: "$0 Debt / Small Positive Net ($15k–$25k/yr)",
     fundingGuarantee: "Guaranteed 2 Years with Formal Advisor",
     stipendAmount: "$20,000 – $32,000 CAD/EUR / year",
@@ -308,6 +309,7 @@ export const degreeRoutesData: DegreeRouteComparison[] = [
     shortLabel: "Taught MS Trap",
     tag: "High Debt Warning ⚠️",
     badgeVariant: "rose",
+    cardTheme: "rose",
     financialOutcome: "-$80,000 to -$120,000 Net Loss (Student Loans)",
     fundingGuarantee: "0% Funding (Tuition is paid entirely by student)",
     stipendAmount: "$0 (Living expenses not covered)",
@@ -317,6 +319,158 @@ export const degreeRoutesData: DegreeRouteComparison[] = [
     masterOutOption: false,
     facultyPriority: "Very Low: Professors rarely hire taught master's students into funded AI labs.",
     verdict: "Cash-cow program designed for university revenue. You will NOT receive lab funding, and your chances of obtaining a publication are minimal due to heavy course loads.",
-    targetRegions: ["US Professional MS", "UK 1-Year Taught MSc", "Australian Coursework MS"]
+    targetRegions: ["US Professional MS", "UK 1-Year Taught MSc", "Australian Coursework MS"],
+    callout: {
+      type: "warning",
+      title: "The Rejection / Debt Danger: ",
+      desc: "Over 70% of international applicants falsely believe they can \"enter an unfunded MS and find an RA position once on campus\". In reality, professors have strict grant obligations and reserve almost 100% of their RA funding for incoming doctoral students."
+    }
+  }
+];
+
+// ============================================================
+// STEP 0.4: NICHE AI RESEARCH FORMULATION & BENCHMARK MATRIX
+// ============================================================
+
+export const literatureMatrixMeta = {
+  stepBadge: "Step 0.4 Research Direction Matrix",
+  title: "AI Subfield Gap Formulation & Venue Targets",
+  headerBadge: "Problem Formulation",
+  advisorsVerdict: "Faculty Filter Principle: ",
+  advisorsQuote: "Top faculty instantly discard candidates who propose generic 'I want to work on LLMs' topics. You must pinpoint a specific algorithmic limitation, benchmark failure mode, or theoretical gap."
+};
+
+// ============================================================
+// STEP 0.5: ZERO-BUDGET GPU COMPUTE & QUANTIZATION BENCHMARKS
+// ============================================================
+
+export const gpuQuantMeta = {
+  stepBadge: "Step 0.5 Interactive Compute Sandbox",
+  title: "Low-Resource GPU VRAM & Fine-Tuning Estimator",
+  headerBadge: "Zero-Budget Architecture",
+  hardwareTipTitle: "Admissions Defense Standard: ",
+  hardwareTipDesc: "Showing professors that you trained a 7B or 14B parameter model on a single free T4 GPU via QLoRA 4-bit proves hardware resourcefulness and deep systems maturity."
+};
+
+export const gpuQuantPresetsData: GpuQuantPreset[] = [
+  {
+    id: "llama-8b",
+    name: "Llama-3.1 8B Instruct",
+    parameters: "8.0 Billion",
+    fp16VramGB: 16.0,
+    quant8bitVramGB: 9.2,
+    qloraVramGB: 5.8,
+    minRecommendedGpu: "Google Colab Free (T4 16GB) or RTX 3060",
+    freeTierCompatible: true,
+    batchSizeLimit: "Batch size 4 with Gradient Accumulation 8",
+    notes: "Fits comfortably inside free 15GB T4 GPU using bitsandbytes 4-bit NormalFloat (NF4)."
+  },
+  {
+    id: "mistral-7b",
+    name: "Mistral 7B v0.3",
+    parameters: "7.2 Billion",
+    fp16VramGB: 14.4,
+    quant8bitVramGB: 8.4,
+    qloraVramGB: 5.2,
+    minRecommendedGpu: "Kaggle 2x T4 (30GB total) or Lightning AI",
+    freeTierCompatible: true,
+    batchSizeLimit: "Batch size 8 with FlashAttention-2",
+    notes: "Sliding window attention reduces KV-cache memory footprint significantly."
+  },
+  {
+    id: "qwen-14b",
+    name: "Qwen 2.5 14B Coder",
+    parameters: "14.7 Billion",
+    fp16VramGB: 29.4,
+    quant8bitVramGB: 17.1,
+    qloraVramGB: 10.4,
+    minRecommendedGpu: "Kaggle Dual-T4 (2x15GB) or RunPod RTX 4090 ($0.39/hr)",
+    freeTierCompatible: true,
+    batchSizeLimit: "Batch size 2 with LoRA rank r=16",
+    notes: "Requires QLoRA 4-bit + CPU offloading for AdamW states or Dual-GPU model parallelism."
+  },
+  {
+    id: "deepseek-coder-6.7b",
+    name: "DeepSeek Coder 6.7B",
+    parameters: "6.7 Billion",
+    fp16VramGB: 13.5,
+    quant8bitVramGB: 7.9,
+    qloraVramGB: 4.8,
+    minRecommendedGpu: "Colab Free T4 (15GB)",
+    freeTierCompatible: true,
+    batchSizeLimit: "Batch size 8 with 4k context window",
+    notes: "Outstanding coding benchmark results achievable with 100% free cloud compute."
+  }
+];
+
+export const literatureMatrixData: LiteratureMatrixDomain[] = [
+  {
+    id: "efficient-llm",
+    domain: "Efficient LLM Reasoning & Speculative Decoding",
+    hotProblems: [
+      "Draft model latency vs. acceptance rate trade-off in Speculative Decoding",
+      "KV-cache compression via attention sink eviction without accuracy degradation",
+      "Sub-quadratic state-space architectures (Mamba-2) vs. Transformer hybrids"
+    ],
+    recommendedVenues: ["ICML", "NeurIPS", "EMNLP", "COLING"],
+    foundationalPapers: [
+      {
+        title: "Fast Inference from Transformers via Speculative Decoding",
+        authorsYear: "Leviathan et al., ICML 2023",
+        coreTakeaway: "Parallel draft generation with target verification speeds up inference by 2x–3x lossless."
+      },
+      {
+        title: "Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention",
+        authorsYear: "Katharopoulos et al., ICML 2020",
+        coreTakeaway: "Kernel trick formulations reducing O(N^2) complexity to O(N)."
+      }
+    ],
+    whiteboardAttackAngle: "Propose an adaptive draft length heuristic conditioned on per-token entropy to minimize target verifier stalls."
+  },
+  {
+    id: "multimodal-world-models",
+    domain: "Multimodal Representation & Embodied World Models",
+    hotProblems: [
+      "Physical commonsense hallucination in visual autoregressive models",
+      "Discrete visual tokenization vs. continuous latent diffusion for action planning",
+      "Sample efficiency in offline reinforcement learning from video demonstrations"
+    ],
+    recommendedVenues: ["CVPR", "ICLR", "CoRL", "RSS"],
+    foundationalPapers: [
+      {
+        title: "Mastering Diverse Domains through World Models (DreamerV3)",
+        authorsYear: "Hafner et al., Nature / ICLR 2023",
+        coreTakeaway: "World models learn physics dynamics in latent space with fixed hyperparameter across domains."
+      },
+      {
+        title: "Visual Instruction Tuning (LLaVA)",
+        authorsYear: "Liu et al., NeurIPS 2023",
+        coreTakeaway: "Linear projection between frozen vision encoder (CLIP) and language backbone (Vicuna)."
+      }
+    ],
+    whiteboardAttackAngle: "Formulate a predictive latent loss enforcing temporal consistency and energy conservation in video world models."
+  },
+  {
+    id: "ai-science-biology",
+    domain: "Geometric Deep Learning for Molecular & Protein Design",
+    hotProblems: [
+      "SE(3)-equivariant graph neural networks for ligand-receptor binding affinity",
+      "Equivariant diffusion models for de novo backbone and sidechain generation",
+      "Out-of-distribution generalization across uncharacterized protein families"
+    ],
+    recommendedVenues: ["NeurIPS AI for Science", "ICLR", "Nature Methods", "Bioinformatics"],
+    foundationalPapers: [
+      {
+        title: "Geometric Vector Perceptrons for Structure-Based Protein Modeling",
+        authorsYear: "Jing et al., ICLR 2021",
+        coreTakeaway: "Rotational and translational invariance on 3D Euclidean coordinates."
+      },
+      {
+        title: "Chroma: A Generative Model for Protein Structures",
+        authorsYear: "Ingraham et al., Nature 2023",
+        coreTakeaway: "Equivariant diffusion process sampling functional protein backbones conditioned on symmetry."
+      }
+    ],
+    whiteboardAttackAngle: "Incorporate physical contact constraints as Lagrangian multipliers into equivariant message passing layers."
   }
 ];

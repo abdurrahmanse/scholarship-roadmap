@@ -18,9 +18,7 @@ import {
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
 import { RoadmapStep } from "@/data/types";
-import { StepMathDiagnosticWidget } from "./widgets/StepMathDiagnosticWidget";
-import { StepSystemsCodeWidget } from "./widgets/StepSystemsCodeWidget";
-import { StepDecisionMatrixWidget } from "./widgets/StepDecisionMatrixWidget";
+import { StepWidgetRenderer } from "./widgets/StepWidgetRegistry";
 
 interface StepCardProps {
   step: RoadmapStep;
@@ -153,10 +151,8 @@ export function StepCard({ step }: StepCardProps) {
         </div>
       </div>
 
-      {/* Contextual Creative Widgets for Steps 0.1, 0.2, 0.3 */}
-      {step.stepNumber === "0.1" && <StepMathDiagnosticWidget />}
-      {step.stepNumber === "0.2" && <StepSystemsCodeWidget />}
-      {step.stepNumber === "0.3" && <StepDecisionMatrixWidget />}
+      {/* Dynamic Contextual Widget via Registry */}
+      <StepWidgetRenderer stepNumber={step.stepNumber} />
 
       {/* Optional Generic Code Snippet (if step has one and is not 0.2) */}
       {step.stepNumber !== "0.2" && step.codeSnippet && (
