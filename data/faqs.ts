@@ -1,87 +1,108 @@
 import { FAQItem } from "./types";
 
+export const faqsHeaderData = {
+  badge: "Admissions & Funding FAQs",
+  title: "Frequently Asked Questions",
+  subtitle:
+    "Clear, realistic answers to the 12 most critical scholarship and postgraduate admissions questions.",
+  searchPlaceholder: "Search questions by topic (e.g., IELTS, GPA, cold email, supervisor)...",
+  categories: ["All", "Eligibility & Tests", "Outreach & Supervisors", "Funding & Finance", "Strategy & Preparation"]
+};
+
 export const faqsData: FAQItem[] = [
   {
     id: "faq-without-ielts",
     question: "Can I obtain a fully funded Master's scholarship without IELTS?",
-    answer: "Yes, in specific cases, but it depends strictly on the country and institution. (1) Official Medium of Instruction (MOI) Waivers: If your undergraduate degree was taught 100% in English, many universities in Germany, France, Sweden, and Asia accept an official institutional MOI certificate from your registrar in lieu of IELTS. (2) Alternative Tests: Many institutions accept TOEFL iBT, the Duolingo English Test (DET), or Cambridge C1 Advanced. (3) National Language Programs: Certain government bilateral awards (e.g., Chinese Government CSC, Korean GKS, Turkish Burslari) provide a mandatory 1-year fully funded preparatory language immersion year in the host nation before degree studies, allowing applications without English test scores. However, for UK Chevening, Australian RTP, and North American institutions, an official standardized English test is mandatory and rarely waived.",
+    answer:
+      "Yes, in specific cases: (1) Medium of Instruction (MOI) waivers: If your undergraduate degree was taught 100% in English, many universities in Germany, France, and Sweden accept an official registrar MOI certificate. (2) Alternative tests: Many programs accept TOEFL iBT, the Duolingo English Test (DET), or Cambridge C1. (3) Language immersion programs: Government scholarships like Chinese CSC, Korean GKS, and Turkish Burslari include a fully funded preparatory language year. Note: UK Chevening, Australian RTP, and US universities strictly require standardized English test scores.",
     category: "Eligibility & Tests",
     tags: ["IELTS", "TOEFL", "MOI Certificate", "Language Waiver", "Duolingo"]
   },
   {
     id: "faq-high-gpa-necessary",
     question: "Is a high GPA always necessary to secure a fully funded scholarship?",
-    answer: "No. While a high GPA (e.g., 3.7+/4.0 or First Class with Distinction) is an advantage for coursework scholarships, it is not an absolute barrier for research-based Master's and PhD funding. Admissions committees evaluate candidates holistically. You can effectively offset an average GPA (e.g., 3.0–3.3/4.0) by: (1) Demonstrating strong research deliverables (a published paper, citable conference preprint, or open-source software repository); (2) Demonstrating an upward grade trajectory in your final two years of upper-level major courses; (3) Achieving exceptional Quantitative scores on the GRE if accepted; (4) Securing enthusiastic recommendation letters from actively publishing researchers; and (5) Applying to European salaried doctoral vacancies where practical laboratory skills carry 70% of hiring committee weight.",
+    answer:
+      "No. While a 3.7+ GPA helps for merit scholarships, research programs evaluate applicants holistically. You can offset an average GPA (3.0–3.3/4.0) with: (1) Tangible research deliverables (a thesis, workshop paper, or preprint); (2) An upward grade trend in upper-level courses; (3) Strong GRE scores if accepted; (4) Enthusiastic faculty recommendation letters; and (5) Targeting European salaried PhD positions where practical lab skills carry significant weight.",
     category: "Eligibility & Tests",
     tags: ["GPA", "Holistic Admissions", "Profile Compensation", "Low GPA"]
   },
   {
     id: "faq-phd-contact-professor",
     question: "Do all PhD applications require contacting a professor beforehand?",
-    answer: "No, this varies fundamentally by the host country's academic governance model. (1) Strictly Required: In Canada, Australia, New Zealand, and traditional individual German doctorates (Individualpromotion), you MUST contact prospective supervisors and obtain written agreement before submitting a formal application. (2) Centralized / Not Required: In the United States, most STEM PhD programs use centralized committee admissions where students undergo first-year lab rotations before choosing a permanent PI; cold outreach is informational only and rarely binding. (3) Direct Vacancy Application: In Sweden, Denmark, the Netherlands, and Norway, PhD positions are advertised as open salaried employment vacancies on university job portals, and you apply directly through the HR recruitment system.",
+    answer:
+      "No, this depends on the country: (1) Strictly Required: In Canada, Australia, New Zealand, and traditional German individual doctorates, you must secure a supervisor before applying. (2) Centralized Admissions: In the US, most STEM PhDs use committee admissions with first-year lab rotations; prior outreach is informational. (3) Direct Vacancies: In Sweden, Denmark, the Netherlands, and Norway, PhDs are salaried jobs advertised on university job boards, and you apply directly through HR.",
     category: "Outreach & Supervisors",
     tags: ["Supervisor Outreach", "PhD Admissions", "Canada vs US", "European Models"]
   },
   {
     id: "faq-apply-without-publications",
     question: "Can I apply for a fully funded graduate position without any publications?",
-    answer: "Yes, absolutely. For Master's scholarships (such as DAAD, Eiffel, Chevening, and Swedish Institute), peer-reviewed publications are rarely expected or required; committees prioritize undergraduate grades, leadership, and professional motivation. For PhD programs, while publications are a strong positive signal in hyper-competitive fields, top universities routinely admit doctoral candidates without published papers if they demonstrate research potential through: a rigorous undergraduate or master's thesis, strong quantitative skills, well-documented code repositories, detailed writing samples, and glowing letters of recommendation from faculty confirming independent problem-solving ability.",
+    answer:
+      "Yes. For Master's scholarships (DAAD, Eiffel, Chevening, Swedish Institute), peer-reviewed papers are rarely expected; committees focus on grades, leadership, and motivation. For PhDs, while papers help in competitive fields, top universities routinely admit candidates based on a rigorous undergraduate thesis, strong quantitative skills, clean code repositories, and strong faculty recommendations.",
     category: "Eligibility & Tests",
     tags: ["Publications", "Undergraduate Research", "Thesis", "First-Time Applicant"]
   },
   {
     id: "faq-multiple-countries",
     question: "Can I apply to multiple countries simultaneously?",
-    answer: "Yes, and strategically, you should. A balanced portfolio strategy protects you against unexpected visa delays, single-institution rejections, and quota fluctuations. A robust application plan typically targets 8–12 institutions across 2–3 different geographic systems (e.g., 4 North American universities with Graduate Assistantships, 3 European salaried doctoral vacancies or tuition-free universities, and 2 Asian flagship government scholarship programs like MEXT or SINGA). Ensure you track distinct deadline time zones, prerequisite credit models (ECTS vs credit hours), and recommendation letter formats for each country.",
+    answer:
+      "Yes, and you should. A balanced portfolio protects you against visa delays, funding quotas, and single-university rejections. A solid strategy targets 8–12 programs across 2–3 geographic systems (e.g., 4 North American universities with assistantships, 3 European salaried positions or tuition-free universities, and 2 Asian government scholarships like MEXT or SINGA).",
     category: "Strategy & Preparation",
     tags: ["Strategy", "Portfolio Approach", "Deadlines", "Multiple Countries"]
   },
   {
     id: "faq-timeline-preparation",
     question: "When should I start preparing my scholarship applications?",
-    answer: "The ideal timeline begins 12 to 18 months before your intended enrollment date. For a Fall (August/September) intake: (1) 12–15 Months Prior (June–August): Identify target countries, take language tests (IELTS/TOEFL) and GRE, audit transcripts; (2) 9–12 Months Prior (September–November): Contact prospective research supervisors, draft Statement of Purpose and Research Proposals, brief academic recommenders; (3) 8–9 Months Prior (December–January): Submit primary university and government scholarship portal applications; (4) 4–6 Months Prior (March–May): Interview with faculty panels, receive funding offers, evaluate packages before the April 15 deadline; (5) 2–4 Months Prior (June–August): Secure visa and arrange housing.",
+    answer:
+      "Start 12 to 18 months before enrollment. For a Fall intake: (1) June–August (12–15 months prior): Identify target countries, take language tests (IELTS/TOEFL), audit transcripts; (2) September–November (9–12 months prior): Contact professors, draft SOP and research proposals, brief recommenders; (3) December–January (8–9 months prior): Submit applications; (4) March–May (4–6 months prior): Complete interviews and evaluate funding offers; (5) June–August (2–4 months prior): Obtain your visa and arrange housing.",
     category: "Strategy & Preparation",
     tags: ["Timeline", "Application Calendar", "Preparation", "Deadlines"]
   },
   {
     id: "faq-fresh-graduate",
     question: "Can a fresh graduate apply directly without full-time work experience?",
-    answer: "Yes. For the majority of research-based Master's (MSc) and PhD programs, fresh graduates are prime candidates because their theoretical and mathematical knowledge is recent. In North America, students routinely enter direct-entry PhD programs immediately following a 4-year Bachelor's degree. However, work experience is mandatory for specific professional awards: the UK Chevening Scholarship requires a minimum of 2,800 hours (~2 years) of work experience, the Swedish Institute (SISGP) mandates 3,000 hours of documented leadership experience, and German DAAD EPOS programs require at least 2 years of professional employment.",
+    answer:
+      "Yes. For research-based Master's and PhD programs, fresh graduates are strong candidates because their academic foundation is current. In North America, students routinely enter direct-entry PhDs straight from a Bachelor's. However, specific bilateral programs require experience: UK Chevening requires 2 years of work experience, Swedish SISGP requires 3,000 hours of leadership experience, and German DAAD EPOS requires 2 years of professional work.",
     category: "Eligibility & Tests",
     tags: ["Fresh Graduate", "Work Experience", "Direct Entry", "Bilateral Rules"]
   },
   {
     id: "faq-tuition-waiver-vs-fully-funded",
     question: "What is the difference between a tuition waiver and a fully funded scholarship?",
-    answer: "This distinction is critical to prevent severe financial distress abroad. (1) Tuition Waiver: Simply cancels or reduces the university's tuition bill (e.g., a 50% or 100% tuition waiver). It does NOT pay for your apartment rent, groceries, mandatory health insurance, textbooks, or flights. You remain personally responsible for $12,000–$25,000 per year in living costs. (2) Fully Funded Scholarship: Covers 100% of tuition and mandatory fees PLUS guarantees a livable monthly cash stipend indexed to local living costs (typically $1,200–$3,500/month depending on the city), along with health insurance, and often international airfare. Never accept an offer labeled 'scholarship' without verifying whether a monthly living stipend is included.",
+    answer:
+      "A tuition waiver only discounts university tuition fees; it does NOT cover rent, groceries, health insurance, or travel, leaving you responsible for $12,000–$25,000/year in living costs. A fully funded scholarship covers 100% of tuition AND provides a livable monthly stipend ($1,200–$3,500/month) plus health insurance, eliminating out-of-pocket costs.",
     category: "Funding & Finance",
     tags: ["Tuition Waiver", "Fully Funded", "Living Stipend", "Financial Audit"]
   },
   {
     id: "faq-supervisor-necessity",
     question: "Is it necessary to have an agreed supervisor before applying?",
-    answer: "It depends strictly on the program: (1) Required: Canada (MSc thesis/PhD), Australia/New Zealand (MPhil/PhD), individual German PhDs, and Hong Kong/Singapore SINGA require an approved supervisor agreement or formal preliminary endorsement prior to application submission. (2) Optional / Not Applicable: US PhD programs (which use centralized admissions committees and 1st-year lab rotations), European taught Master's degrees, and UK centralized Doctoral Training Partnerships (CDTs) do not require finding a supervisor before applying; admissions committees make the decisions collectively.",
+    answer:
+      "It depends on the program: (1) Mandatory: Canada (thesis Master's/PhD), Australia/New Zealand (research degrees), and individual German PhDs require supervisor agreement before applying. (2) Not Required: US PhDs (which use centralized committee admissions and lab rotations), European taught Master's, and UK Doctoral Training Centers do not require pre-application supervisor agreements.",
     category: "Outreach & Supervisors",
     tags: ["Supervisor", "Admissions Rules", "Rotations", "Direct Application"]
   },
   {
     id: "faq-identify-fraud",
     question: "How can I identify and protect myself from fraudulent scholarship offers?",
-    answer: "Follow these 4 inviolable rules: (1) Legitimate scholarships NEVER charge fees to award money. Any agency demanding a 'scholarship claim fee', 'file release payment', or 'processing commission' is a scam. (2) Check email domains: Official university or government communications always come from accredited institutional domains (@ox.ac.uk, @harvard.edu, @daad.de, @campusfrance.org), never from free webmail accounts like Gmail, Outlook, or Yahoo. (3) No agency can guarantee scholarship selection; admissions decisions are made strictly by academic faculty committees. (4) Always verify the scholarship program independently on the accredited university or embassy website.",
+    answer:
+      "Follow 4 rules: (1) Real scholarships NEVER charge fees to award money. Any agency asking for a 'claim fee' or 'file release fee' is a scam. (2) Check email domains: Official communications come from institutional domains (.edu, .ac.uk, .de, .fr), never free webmail like Gmail or Yahoo. (3) No agency can guarantee scholarship selection. (4) Always verify opportunities directly on official university or embassy portals.",
     category: "Funding & Finance",
     tags: ["Scam Prevention", "Safety", "Official Portals", "Fraud Detection"]
   },
   {
     id: "faq-professor-no-reply",
     question: "What should I do if a professor does not reply to my email?",
-    answer: "Do not take it personally. Academic professors receive 50 to 150 emails daily alongside teaching, grant writing, and laboratory management. Follow this protocol: (1) Wait 7 to 10 business days; (2) If no response, send a single, courteous 2-sentence follow-up on the exact same email thread; (3) If there is still no reply after another 7 days, accept it gracefully and move on to other faculty. Never send multiple follow-ups, and never contact a professor through personal phone numbers, WhatsApp, or personal social media accounts.",
+    answer:
+      "Professors receive hundreds of emails weekly. Follow this process: (1) Wait 7 to 10 working days; (2) Send a single, polite 2-sentence follow-up on the same email thread; (3) If there is still no reply after another 7 days, move on to other faculty members. Never call personal numbers, message on WhatsApp, or send multiple follow-ups.",
     category: "Outreach & Supervisors",
     tags: ["Cold Emailing", "Follow-up", "Professor Etiquette", "Email Protocol"]
   },
   {
     id: "faq-rejection-recovery",
     question: "How should I prepare and recover if all my applications are rejected?",
-    answer: "Rejection in graduate admissions is common and often reflects lab funding cycles or cohort quotas rather than your personal intellectual worth. Execute a 4-step recovery plan: (1) Conduct a post-mortem: Did you miss prerequisite courses? Was your SOP too generic? Did recommenders submit weak letters? (2) Spend 6–12 months strengthening tangible deliverables: work as a university lab research assistant, write an extended literature review, co-author a conference workshop paper, or retake language exams to hit higher subscore bands; (3) Expand your geographic and tier scope: include European salaried doctoral positions, Canadian U15 schools, and Asian flagship programs; (4) Completely rewrite your SOP with your new research accomplishments and reapply early in the next cycle.",
+    answer:
+      "Rejection is common and often reflects cohort quotas or grant timing. Recover systematically: (1) Review your dossier for weak research fit, low test scores, or generic SOPs; (2) Spend 6–12 months adding qualifications (lab research assistantship, a workshop paper or preprint, higher language scores); (3) Broaden your target universities across different countries; (4) Rewrite your SOP with updated achievements and apply early in the next cycle.",
     category: "Strategy & Preparation",
     tags: ["Rejection", "Reapplication", "Profile Improvement", "Bridge Year"]
   }

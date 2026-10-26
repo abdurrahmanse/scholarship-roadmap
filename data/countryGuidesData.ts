@@ -1170,6 +1170,39 @@ export const countryGuidesData: CountryGuide[] = [
   }
 ];
 
+export const countryGuidesControlsData = {
+  header: {
+    badge: "20 Destination Dossiers",
+    title: "Country Funding Guides",
+    subtitle:
+      "Explore tuition policies, statutory PhD salaries, government awards, and supervisor rules across 20 global destinations."
+  },
+  regions: ["All", "Europe", "North America", "Asia", "Oceania"],
+  supervisorFilters: [
+    { label: "All Supervisor Rules", value: "All" },
+    { label: "Mandatory Before Applying", value: "Strictly Required Before Application" },
+    { label: "Recommended", value: "Recommended" },
+    { label: "Centralized / Not Required", value: "Centralized / Not Required" }
+  ],
+  searchPlaceholder: "Search by country, scholarship (e.g. DAAD, MEXT, Fulbright)...",
+  actions: {
+    expandAll: "Expand All",
+    collapseAll: "Collapse All"
+  },
+  cardLabels: {
+    routes: "Common Funding Routes",
+    govScholarships: "Government Scholarships",
+    phdModel: "PhD Funding Model",
+    mastersModel: "Master's Funding Model",
+    supervisor: "Supervisor Requirement",
+    language: "Language Requirements",
+    deadlines: "Typical Application Deadlines",
+    limitations: "Important Warnings & Limitations",
+    sequence: "Application Sequence",
+    officialPortals: "Official Portals & Resources"
+  }
+};
+
 export const getCountryById = (id: string): CountryGuide | undefined => {
   return countryGuidesData.find((country) => country.id.toLowerCase() === id.toLowerCase());
 };
@@ -1177,3 +1210,4 @@ export const getCountryById = (id: string): CountryGuide | undefined => {
 export const getCountriesByRegion = (region: "Europe" | "North America" | "Asia" | "Oceania"): CountryGuide[] => {
   return countryGuidesData.filter((country) => country.region === region);
 };
+

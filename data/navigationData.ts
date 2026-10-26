@@ -47,8 +47,32 @@ export const liveStatusTickerData: StatusTickerItem[] = [
 export const liveIndicatorData = {
   status: "ONLINE",
   label: "Fully Funded Guide",
-  detail: "2026–2027 International Admissions Open",
+  detail: "2026–2027 Admissions Open",
   activePillText: "Fully Funded Graduate Roadmap"
+};
+
+export const headerData = {
+  brand: {
+    primary: "Scholarship",
+    secondary: "Roadmap",
+    badge: "Fully Funded Graduate Roadmap"
+  },
+  actions: {
+    statusBadge: "Fully Funded Guide",
+    ctaButton: {
+      label: "Start Roadmap",
+      href: "/roadmap"
+    },
+    menuAriaLabel: "Toggle navigation menu"
+  },
+  mobileDrawer: {
+    title: "Scholarship Roadmap",
+    subtitle: "Navigate the global scholarship process",
+    ctaButton: {
+      label: "Open Complete Roadmap",
+      href: "/roadmap"
+    }
+  }
 };
 
 export const navLinksData: NavLinkItem[] = [

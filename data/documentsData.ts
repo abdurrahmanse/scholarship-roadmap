@@ -406,6 +406,29 @@ export const documentsData: DocumentGuideline[] = [
   }
 ];
 
+export const documentsGuideControlsData = {
+  header: {
+    badge: "Application Dossier Architecture",
+    title: "Required Documents Guide",
+    subtitle:
+      "Comprehensive blueprints for Academic CV, 5-part Statement of Purpose, Motivation Letter, Research Proposal, Transcripts, and Recommendation Letters."
+  },
+  sections: {
+    overviewTitle: "Document Overview & Strategic Purpose",
+    blueprintTitle: "Recommended Structure & Paragraph Blueprint",
+    mistakesTitle: "Critical Mistakes to Avoid",
+    checksTitle: "Official Compliance Checks",
+    checklistTitle: "Interactive Readiness Checklist",
+    checklistProgress: "Document Readiness Progress"
+  },
+  labels: {
+    what: "What it is",
+    why: "Why it matters",
+    selectPrompt: "Select a document from the navigation tabs above to review its full blueprint."
+  }
+};
+
 export const getDocumentById = (id: string): DocumentGuideline | undefined => {
   return documentsData.find((doc) => doc.id.toLowerCase() === id.toLowerCase());
 };
+

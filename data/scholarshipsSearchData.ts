@@ -307,3 +307,42 @@ export const verifiedScholarshipPortals: VerifiedScholarshipPortal[] = [
     notes: "Official Australian government portal for degree search and Research Training Program (RTP) scholarship rules."
   }
 ];
+
+export const scholarshipFinderControlsData = {
+  header: {
+    badge: "Opportunity Discovery Engine",
+    title: "How to Find Fully Funded Scholarships",
+    subtitle:
+      "A systematic 11-step methodology, verified Boolean search queries, and accredited directory of official government and university portals."
+  },
+  sections: {
+    workflowTitle: "11-Step Scholarship Discovery Workflow",
+    workflowSubtitle: "Follow this systematic sequence to locate and verify legitimate graduate funding opportunities.",
+    booleanTitle: "Copyable Boolean Search Formulas",
+    booleanSubtitle: "Paste these exact query strings into Google, Google Scholar, or university search bars.",
+    portalsTitle: "Accredited Official Portals Directory",
+    portalsSubtitle: "Official government and university gateways for verified international graduate funding.",
+    fraudTitle: "Anti-Fraud Verification Guide",
+    fraudBadge: "Zero Tolerance for Scams",
+    copiedFeedback: "Query Copied to Clipboard!"
+  },
+  fraudRules: [
+    {
+      title: "Legitimate scholarships NEVER charge fees",
+      detail: "Any agency asking for a 'claim fee', 'file release fee', or 'processing commission' is fraudulent."
+    },
+    {
+      title: "Verify official email domains",
+      detail: "Official communications come from university (.edu, .ac.uk) or government domains, never free webmail like Gmail or Yahoo."
+    },
+    {
+      title: "No agency can guarantee admission",
+      detail: "Scholarship decisions are made solely by academic faculty committees based on your merit and documents."
+    },
+    {
+      title: "Always cross-verify on official portals",
+      detail: "Before submitting personal documents, verify the scholarship URL on the university's accredited website."
+    }
+  ]
+};
+

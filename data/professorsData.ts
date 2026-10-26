@@ -228,3 +228,43 @@ export const researchFitChecklist = [
   { id: "fit-4", label: "Verified whether their department rules mandate prior supervisor outreach", tip: "Avoid emailing faculty when the website says 'Admissions are centralized'." },
   { id: "fit-5", label: "Drafted a personalized email under 220 words with zero generic flattery", tip: "Customize paragraph 2 completely for each individual academic." }
 ];
+
+export const professorOutreachControlsData = {
+  header: {
+    badge: "Academic Supervisor Protocol",
+    title: "How to Find & Contact Professors",
+    subtitle:
+      "A systematic 8-step outreach workflow, copyable cold email blueprints, follow-up rules, and country-by-country supervisor necessity guidelines."
+  },
+  sections: {
+    workflowTitle: "8-Step Professor Outreach Protocol",
+    workflowSubtitle: "Follow this sequence to identify compatible researchers and reach out professionally.",
+    blueprintsTitle: "Copyable Cold Email Blueprints",
+    blueprintsSubtitle: "Tested, concise email templates tailored for PhD and Master's thesis inquiry.",
+    comparisonTitle: "Weak vs. Strong Outreach Comparison",
+    comparisonSubtitle: "See why generic mass emails are deleted, while personalized emails get video call invites.",
+    necessityTitle: "Supervisor Requirement Rules by Country",
+    necessitySubtitle: "Know when reaching out to a professor is mandatory vs. when admissions are centralized.",
+    checklistTitle: "Research Compatibility Audit Checklist",
+    copiedFeedback: "Template Copied to Clipboard!"
+  },
+  comparison: {
+    weakTitle: "Weak, Generic Mass Email (Deleted in 5 seconds)",
+    weakIssues: [
+      "Vague greeting without professor's name",
+      "Generic praise with no specific paper cited",
+      "No concrete proposal or methodology match",
+      "Over 400 words of autobiographical filler",
+      "Mass-sent to 50 professors at once"
+    ],
+    strongTitle: "Strong, Targeted Email (Invited to video call)",
+    strongAssets: [
+      "Addressed to the specific professor by name",
+      "Cites a recent 2025 paper and identifies an open question",
+      "Connects candidate's thesis and specific lab skills to the paper",
+      "Concise (under 200 words) with clear ask for a 15-minute call",
+      "Includes clean 2-page academic CV as a lightweight PDF"
+    ]
+  }
+};
+
