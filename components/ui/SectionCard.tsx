@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import { BadgeVariant } from "./Badge";
+import { CardHeader } from "./CardHeader";
 
 export type SectionCardGlow = "none" | "indigo" | "cyan" | "emerald" | "amber" | "purple" | "rose";
 export type SectionCardVariant = "default" | "nested" | "bordered" | "subtle";
@@ -9,15 +11,18 @@ export interface SectionCardProps {
   title?: React.ReactNode;
   subtitle?: React.ReactNode;
   badge?: React.ReactNode;
+  badgeVariant?: BadgeVariant | string;
   icon?: React.ReactNode;
   headerAction?: React.ReactNode;
+  headerRight?: React.ReactNode;
   footer?: React.ReactNode;
   variant?: SectionCardVariant;
-  glow?: SectionCardGlow;
+  glow?: SectionCardGlow | string;
+  borderGlow?: SectionCardGlow | string;
   className?: string;
   bodyClassName?: string;
   headerClassName?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   onClick?: () => void;
 }
 
@@ -47,61 +52,46 @@ export function SectionCard({
   title,
   subtitle,
   badge,
+  badgeVariant,
   icon,
   headerAction,
+  headerRight,
   footer,
   variant = "default",
-  glow = "none",
+  glow,
+  borderGlow,
   className = "",
   bodyClassName = "",
   headerClassName = "",
   children,
   onClick
 }: SectionCardProps) {
-  const hasHeader = Boolean(title || subtitle || badge || icon || headerAction);
+  const effectiveGlowKey = (borderGlow || glow || "none") as SectionCardGlow;
+  const glowClass = GLOW_CLASSES[effectiveGlowKey] || GLOW_CLASSES.none;
+  const effectiveAction = headerRight || headerAction;
 
   return (
     <div
       onClick={onClick}
-      className={`relative overflow-hidden transition-all duration-300 ${VARIANT_CLASSES[variant]} ${GLOW_CLASSES[glow]} ${className}`}
+      className={`relative overflow-hidden transition-all duration-300 ${VARIANT_CLASSES[variant]} ${glowClass} ${className}`}
     >
       {/* Top subtle highlight */}
       <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none" />
 
-      {/* Header section */}
-      {hasHeader && (
-        <div
-          className={`flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-5 sm:p-6 border-b border-white/10 ${headerClassName}`}
-        >
-          <div className="flex items-center gap-3 min-w-0">
-            {icon && (
-              <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 shrink-0 text-indigo-400">
-                {icon}
-              </div>
-            )}
-            <div className="min-w-0 flex-1">
-              <div className="flex items-center gap-2 flex-wrap mb-0.5">
-                {badge && <div>{badge}</div>}
-                {title && (
-                  <h3 className="text-base sm:text-lg font-heading font-bold text-white tracking-tight truncate">
-                    {title}
-                  </h3>
-                )}
-              </div>
-              {subtitle && (
-                <p className="text-xs text-slate-400 font-sans leading-relaxed">
-                  {subtitle}
-                </p>
-              )}
-            </div>
-          </div>
-
-          {headerAction && <div className="shrink-0">{headerAction}</div>}
-        </div>
-      )}
+      {/* Individual Card Header */}
+      <CardHeader
+        title={title}
+        subtitle={subtitle}
+        badge={badge}
+        badgeVariant={badgeVariant}
+        icon={icon}
+        action={effectiveAction}
+        className={headerClassName}
+        borderBottom={true}
+      />
 
       {/* Body content */}
-      <div className={`p-5 sm:p-6 ${bodyClassName}`}>{children}</div>
+      {children && <div className={`p-5 sm:p-6 ${bodyClassName}`}>{children}</div>}
 
       {/* Footer section */}
       {footer && (

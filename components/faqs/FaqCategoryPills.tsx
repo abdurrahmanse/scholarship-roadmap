@@ -1,12 +1,20 @@
 "use client";
 
 import React from "react";
-import { Compass, FileCode, DollarSign, ShieldCheck } from "lucide-react";
-import { GlassCard } from "@/components/ui/GlassCard";
+import { Compass } from "lucide-react";
+import { SectionCard } from "@/components/ui/SectionCard";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { renderCommonIcon } from "@/components/ui/iconUtils";
 import { faqCategoryCardsData } from "@/data/faqsSectionData";
 import { faqsPageData } from "@/data/pagesData";
+
+const FAQ_CAT_ICON_COLORS: Record<string, string> = {
+  Compass: "text-purple-400",
+  FileCode: "text-cyan-400",
+  DollarSign: "text-emerald-400",
+  ShieldCheck: "text-amber-400"
+};
 
 interface FaqCategoryPillsProps {
   selectedCategory: string;
@@ -18,21 +26,6 @@ export function FaqCategoryPills({
   onSelectCategory
 }: FaqCategoryPillsProps) {
   const sectionMeta = faqsPageData.sections[0];
-
-  const getCategoryIcon = (iconName: string) => {
-    switch (iconName) {
-      case "Compass":
-        return <Compass className="w-5 h-5 text-purple-400" />;
-      case "FileCode":
-        return <FileCode className="w-5 h-5 text-cyan-400" />;
-      case "DollarSign":
-        return <DollarSign className="w-5 h-5 text-emerald-400" />;
-      case "ShieldCheck":
-        return <ShieldCheck className="w-5 h-5 text-amber-400" />;
-      default:
-        return <Compass className="w-5 h-5 text-purple-400" />;
-    }
-  };
 
   return (
     <section id="faq-categories" className="py-20 border-b border-slate-800/80 bg-slate-900/30">
@@ -49,25 +42,21 @@ export function FaqCategoryPills({
           {faqCategoryCardsData.map((c) => {
             const isSelected = selectedCategory === c.name;
             return (
-              <GlassCard
+              <SectionCard
                 key={c.name}
+                variant="default"
                 borderGlow={isSelected ? c.variant : "none"}
                 onClick={() => onSelectCategory(isSelected ? "All" : c.name)}
                 className={`cursor-pointer transition-all ${
                   isSelected ? "bg-slate-900 border-indigo-500/80 shadow-lg shadow-indigo-950" : ""
                 }`}
+                icon={renderCommonIcon(c.iconName, `w-5 h-5 ${FAQ_CAT_ICON_COLORS[c.iconName] || "text-purple-400"}`)}
+                badge={c.tag}
+                badgeVariant={c.variant}
+                title={c.name}
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/80 shrink-0">
-                    {getCategoryIcon(c.iconName)}
-                  </div>
-                  <Badge variant={c.variant} size="sm">
-                    {c.tag}
-                  </Badge>
-                </div>
-                <h3 className="text-base font-bold text-white mb-2">{c.name}</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">{c.desc}</p>
-              </GlassCard>
+              </SectionCard>
             );
           })}
         </div>

@@ -25,6 +25,7 @@ interface BaseButtonProps {
   iconRight?: React.ReactNode;
   rightIcon?: React.ReactNode;
   isLoading?: boolean;
+  fullWidth?: boolean;
   children: React.ReactNode;
   className?: string;
 }
@@ -80,6 +81,7 @@ export function Button({
   iconRight,
   rightIcon,
   isLoading = false,
+  fullWidth = false,
   children,
   className = "",
   ...props
@@ -88,7 +90,8 @@ export function Button({
     "inline-flex items-center justify-center font-heading transition-all duration-200 select-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500/40 disabled:opacity-50 disabled:pointer-events-none";
   const variantClass = VARIANT_STYLES[variant] || VARIANT_STYLES.primary;
   const sizeClass = SIZE_STYLES[size] || SIZE_STYLES.md;
-  const combinedClasses = `${baseClasses} ${variantClass} ${sizeClass} ${className}`;
+  const widthClass = fullWidth ? "w-full" : "";
+  const combinedClasses = `${baseClasses} ${variantClass} ${sizeClass} ${widthClass} ${className}`;
 
   const startIcon = leftIcon || icon;
   const endIcon = rightIcon || iconRight;

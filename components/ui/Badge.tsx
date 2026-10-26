@@ -1,8 +1,10 @@
 import React from "react";
 
-interface BadgeProps {
+export type BadgeVariant = "indigo" | "cyan" | "emerald" | "amber" | "purple" | "rose" | "slate";
+
+export interface BadgeProps {
   children: React.ReactNode;
-  variant?: "indigo" | "cyan" | "emerald" | "amber" | "purple" | "rose" | "slate";
+  variant?: BadgeVariant;
   size?: "sm" | "md";
   className?: string;
   icon?: React.ReactNode;

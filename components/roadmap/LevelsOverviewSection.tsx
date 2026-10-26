@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { Layers, Sparkles } from "lucide-react";
+import { Layers } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { TabsContainer, TabItem } from "@/components/ui/Tabs";
 import { LevelCard } from "@/components/roadmap/LevelCard";
 import { roadmapLevelsData } from "@/data/levelsData";
 
@@ -26,33 +27,27 @@ export function LevelsOverviewSection() {
         />
 
         {/* Level Quick Filter Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 scrollbar-none justify-start lg:justify-center">
-          <button
-            onClick={() => setSelectedLevelId("all")}
-            className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
-              selectedLevelId === "all"
-                ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 font-bold"
-                : "bg-[#0f1422] text-slate-400 hover:text-white border border-white/10"
-            }`}
-          >
-            All 5 Levels (26 Tasks)
-          </button>
-          {roadmapLevelsData.map((l) => (
-            <button
-              key={l.id}
-              onClick={() => setSelectedLevelId(l.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 ${
-                selectedLevelId === l.id
-                  ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 font-bold"
-                  : "bg-[#0f1422] text-slate-400 hover:text-white border border-white/10"
-              }`}
-            >
-              <span>Level {l.levelNumber}: {l.shortTitle}</span>
-              <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/10">
-                {l.totalSteps}
-              </span>
-            </button>
-          ))}
+        <div className="flex justify-start lg:justify-center mb-10 overflow-x-auto pb-2 scrollbar-none">
+          <TabsContainer variant="pills" className="bg-[#0f1422]/80 border border-white/10 p-1.5">
+            <TabItem
+              active={selectedLevelId === "all"}
+              onClick={() => setSelectedLevelId("all")}
+              label="All 5 Levels (26 Tasks)"
+              colorTheme="indigo"
+              size="md"
+            />
+            {roadmapLevelsData.map((l) => (
+              <TabItem
+                key={l.id}
+                active={selectedLevelId === l.id}
+                onClick={() => setSelectedLevelId(l.id)}
+                label={`Level ${l.levelNumber}: ${l.shortTitle}`}
+                badge={l.totalSteps}
+                colorTheme="indigo"
+                size="md"
+              />
+            ))}
+          </TabsContainer>
         </div>
 
         {/* Level Cards Stack */}

@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 import { InterviewDefenseCase } from "@/data/types";
 
 interface StarlCaseCardProps {
@@ -127,22 +128,14 @@ export function StarlCaseCard({ defenseCase, isExpanded, onToggle }: StarlCaseCa
           </div>
 
           <div className="flex justify-end pt-2">
-            <button
+            <Button
               onClick={handleCopy}
-              className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold flex items-center gap-1.5 transition-all"
+              variant={copied ? "emerald" : "secondary"}
+              size="xs"
+              leftIcon={copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
             >
-              {copied ? (
-                <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-emerald-400">Copied Script!</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-3.5 h-3.5" />
-                  <span>Copy STAR-L Script</span>
-                </>
-              )}
-            </button>
+              {copied ? "Copied Script!" : "Copy STAR-L Script"}
+            </Button>
           </div>
         </div>
       )}

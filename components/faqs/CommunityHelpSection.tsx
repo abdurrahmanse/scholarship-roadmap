@@ -1,28 +1,21 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { Compass, Cpu, FileCode, Presentation, ArrowRight } from "lucide-react";
-import { GlassCard } from "@/components/ui/GlassCard";
+import { ArrowRight } from "lucide-react";
+import { SectionCard } from "@/components/ui/SectionCard";
+import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { renderCommonIcon } from "@/components/ui/iconUtils";
 import { communityLaunchpadData } from "@/data/faqsSectionData";
 
-export function CommunityHelpSection() {
-  const getIcon = (iconName: string) => {
-    switch (iconName) {
-      case "Compass":
-        return <Compass className="w-5 h-5 text-indigo-400" />;
-      case "Cpu":
-        return <Cpu className="w-5 h-5 text-cyan-400" />;
-      case "FileCode":
-        return <FileCode className="w-5 h-5 text-purple-400" />;
-      case "Presentation":
-        return <Presentation className="w-5 h-5 text-pink-400" />;
-      default:
-        return <Compass className="w-5 h-5 text-indigo-400" />;
-    }
-  };
+const ICON_COLORS: Record<string, string> = {
+  Compass: "text-indigo-400",
+  Cpu: "text-cyan-400",
+  FileCode: "text-purple-400",
+  Presentation: "text-pink-400"
+};
 
+export function CommunityHelpSection() {
   return (
     <section id="community-help" className="py-20 bg-[#090d16] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,25 +28,27 @@ export function CommunityHelpSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {communityLaunchpadData.map((c) => (
-            <GlassCard key={c.title} borderGlow="none" className="p-6 flex flex-col justify-between group bg-[#0f1422] border border-white/10 hover:border-cyan-500/40 transition-all">
-              <div>
-                <div className="p-3 rounded-xl bg-[#090d16] border border-white/10 w-fit mb-4">
-                  {getIcon(c.iconName)}
-                </div>
-                <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors mb-2 font-heading">
-                  {c.title}
-                </h3>
-                <p className="text-xs text-slate-400 leading-relaxed mb-6 font-sans">{c.desc}</p>
-              </div>
-
-              <Link
-                href={c.href}
-                className="text-xs font-semibold text-cyan-400 group-hover:text-cyan-300 flex items-center gap-1 group-hover:translate-x-1 transition-all"
-              >
-                <span>Explore section</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </GlassCard>
+            <SectionCard
+              key={c.title}
+              variant="default"
+              borderGlow="cyan"
+              className="flex flex-col justify-between group bg-[#0f1422] p-6"
+              icon={renderCommonIcon(c.iconName, `w-5 h-5 ${ICON_COLORS[c.iconName] || "text-indigo-400"}`)}
+              title={c.title}
+              footer={
+                <Button
+                  href={c.href}
+                  variant="ghost"
+                  size="xs"
+                  rightIcon={<ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />}
+                  className="text-cyan-400 hover:text-cyan-300 p-0 hover:bg-transparent"
+                >
+                  Explore section
+                </Button>
+              }
+            >
+              <p className="text-xs text-slate-400 leading-relaxed font-sans">{c.desc}</p>
+            </SectionCard>
           ))}
         </div>
       </div>

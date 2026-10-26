@@ -8,6 +8,7 @@ export type TabVariant = "pills" | "cards" | "segmented" | "minimal";
 export interface TabsContainerProps {
   children: React.ReactNode;
   variant?: TabVariant;
+  fullWidth?: boolean;
   className?: string;
   columns?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
 }
@@ -35,12 +36,14 @@ const COLUMN_CLASSES: Record<number, string> = {
 export function TabsContainer({
   children,
   variant = "pills",
+  fullWidth = false,
   className = "",
   columns
 }: TabsContainerProps) {
   const colClass = columns ? COLUMN_CLASSES[columns] || "" : "";
+  const widthClass = fullWidth ? "w-full" : "";
   return (
-    <div className={`${CONTAINER_VARIANTS[variant]} ${colClass} ${className}`}>
+    <div className={`${CONTAINER_VARIANTS[variant]} ${colClass} ${widthClass} ${className}`}>
       {children}
     </div>
   );
@@ -49,12 +52,15 @@ export function TabsContainer({
 export interface TabItemProps {
   active: boolean;
   onClick: () => void;
-  title: React.ReactNode;
+  title?: React.ReactNode;
+  label?: React.ReactNode;
   subtitle?: React.ReactNode;
   badge?: React.ReactNode;
   icon?: React.ReactNode;
-  theme?: TabTheme;
+  theme?: TabTheme | string;
+  colorTheme?: TabTheme | string;
   variant?: TabVariant;
+  size?: "xs" | "sm" | "md" | "lg";
   className?: string;
   disabled?: boolean;
 }
@@ -77,15 +83,31 @@ export function TabItem({
   active,
   onClick,
   title,
+  label,
   subtitle,
   badge,
   icon,
-  theme = "indigo",
+  theme,
+  colorTheme,
   variant = "pills",
+  size = "md",
   className = "",
   disabled = false
 }: TabItemProps) {
-  const activeClass = active ? ACTIVE_THEMES[theme] : INACTIVE_STYLES;
+  const effectiveTitle = title || label;
+  const effectiveThemeKey = (colorTheme || theme || "indigo") as TabTheme;
+  const activeClass = active
+    ? ACTIVE_THEMES[effectiveThemeKey] || ACTIVE_THEMES.indigo
+    : INACTIVE_STYLES;
+
+  const sizeClass =
+    size === "xs"
+      ? "px-2.5 py-1 text-[11px]"
+      : size === "sm"
+      ? "px-3 py-1.5 text-xs"
+      : size === "lg"
+      ? "px-5 py-2.5 text-sm"
+      : "px-3.5 py-2 text-xs";
 
   if (variant === "cards") {
     return (
@@ -99,7 +121,7 @@ export function TabItem({
           {badge && <span className="text-[10px] uppercase font-mono font-bold tracking-wider opacity-85">{badge}</span>}
           {icon && <span className="opacity-75 shrink-0">{icon}</span>}
         </div>
-        <div className="text-xs font-bold font-heading truncate">{title}</div>
+        <div className="text-xs font-bold font-heading truncate">{effectiveTitle}</div>
         {subtitle && <div className="text-[10px] opacity-75 mt-0.5 line-clamp-1">{subtitle}</div>}
       </button>
     );
@@ -110,11 +132,11 @@ export function TabItem({
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className={`px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-200 flex items-center gap-2 border cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${activeClass} ${className}`}
+      className={`${sizeClass} rounded-xl font-semibold whitespace-nowrap transition-all duration-200 flex items-center gap-2 border cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${activeClass} ${className}`}
     >
       {icon && <span className="shrink-0">{icon}</span>}
       {badge && <span className="font-mono text-[10px] opacity-80">{badge}</span>}
-      <span>{title}</span>
+      <span>{effectiveTitle}</span>
     </button>
   );
 }

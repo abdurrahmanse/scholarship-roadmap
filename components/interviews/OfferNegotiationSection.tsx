@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
-import { DollarSign, Award, ArrowRight, CheckCircle2, ShieldCheck, Calculator, Sparkles } from "lucide-react";
-import { GlassCard } from "@/components/ui/GlassCard";
+import { DollarSign, Award, ArrowRight, CheckCircle2, ShieldCheck, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { SectionCard } from "@/components/ui/SectionCard";
 import { TabsContainer, TabItem } from "@/components/ui/Tabs";
 import { WidgetStatCard } from "@/components/roadmap/widgets/common";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -48,17 +47,12 @@ export function OfferNegotiationSection() {
         </div>
 
         {/* Interactive Offer Value Simulator */}
-        <div className="p-6 rounded-2xl bg-[#0f1422] border border-white/10 mb-12 shadow-xl">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 mb-6 border-b border-white/5">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5 mb-1">
-                <Calculator className="w-4 h-4" />
-                Interactive 5-Year Doctoral Package Valuation Slider
-              </span>
-              <p className="text-xs text-slate-400">
-                Slide your base stipend offer to compute your true 5-year doctoral package value (tuition remission + health coverage + stipend).
-              </p>
-            </div>
+        <SectionCard
+          variant="default"
+          borderGlow="emerald"
+          className="mb-12"
+          headerClassName="pb-4 mb-6 border-b border-white/5"
+          headerRight={
             <div className="text-right">
               <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">
                 Total 5-Year Package Value
@@ -67,8 +61,11 @@ export function OfferNegotiationSection() {
                 ${fiveYearValue.toLocaleString()}
               </span>
             </div>
-          </div>
-
+          }
+          icon={<Calculator className="w-4 h-4 text-emerald-400" />}
+          title="Interactive 5-Year Doctoral Package Valuation Slider"
+          subtitle="Slide your base stipend offer to compute your true 5-year doctoral package value (tuition remission + health coverage + stipend)."
+        >
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
             <div className="md:col-span-8 space-y-3">
               <div className="flex justify-between items-center text-xs">
@@ -95,28 +92,22 @@ export function OfferNegotiationSection() {
 
             <div className="md:col-span-4 p-4 rounded-xl bg-[#090d16] border border-white/10 space-y-2">
               <div className="text-xs font-semibold text-slate-300">Summer Funding Guarantee:</div>
-              <div className="flex gap-2">
-                <button
+              <TabsContainer variant="segmented" fullWidth className="p-1">
+                <TabItem
+                  active={hasSummerGra}
                   onClick={() => setHasSummerGra(true)}
-                  className={`flex-1 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-all ${
-                    hasSummerGra
-                      ? "bg-emerald-600 text-white shadow-sm"
-                      : "bg-slate-900 text-slate-400 hover:text-white border border-white/5"
-                  }`}
-                >
-                  12-Month GRA
-                </button>
-                <button
+                  label="12-Month GRA"
+                  colorTheme="emerald"
+                  size="sm"
+                />
+                <TabItem
+                  active={!hasSummerGra}
                   onClick={() => setHasSummerGra(false)}
-                  className={`flex-1 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-all ${
-                    !hasSummerGra
-                      ? "bg-amber-600 text-white shadow-sm"
-                      : "bg-slate-900 text-slate-400 hover:text-white border border-white/5"
-                  }`}
-                >
-                  9-Month Only
-                </button>
-              </div>
+                  label="9-Month Only"
+                  colorTheme="amber"
+                  size="sm"
+                />
+              </TabsContainer>
               {!hasSummerGra && (
                 <div className="text-[10px] text-amber-300/90 leading-tight">
                   Warning: 9-month offers require negotiating summer support or landing an industry research internship.
@@ -124,15 +115,16 @@ export function OfferNegotiationSection() {
               )}
             </div>
           </div>
-        </div>
+        </SectionCard>
 
         {/* Rights and Negotiation Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <GlassCard borderGlow="none" className="p-6 sm:p-8 bg-[#0f1422] border border-white/10">
-            <h3 className="text-lg font-heading font-bold text-white mb-3 flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-emerald-400" />
-              The Council of Graduate Schools (CGS) Resolution Rights
-            </h3>
+          <SectionCard
+            variant="nested"
+            title="The Council of Graduate Schools (CGS) Resolution Rights"
+            icon={<ShieldCheck className="w-5 h-5 text-emerald-400" />}
+            className="p-6 sm:p-8 bg-[#0f1422] border border-white/10"
+          >
             <p className="text-xs text-slate-300 leading-relaxed mb-4">
               Over 400 major universities in the United States and Canada subscribe to the CGS April 15 Resolution. Under this agreement:
             </p>
@@ -141,35 +133,37 @@ export function OfferNegotiationSection() {
                 <li key={idx}>{right}</li>
               ))}
             </ul>
-          </GlassCard>
+          </SectionCard>
 
-          <GlassCard borderGlow="none" className="p-6 sm:p-8 flex flex-col justify-between bg-[#0f1422] border border-white/10">
-            <div>
-              <h3 className="text-lg font-heading font-bold text-white mb-3 flex items-center gap-2">
-                <Award className="w-5 h-5 text-cyan-400" />
-                Respectful Negotiation Checklist
-              </h3>
-              <p className="text-xs text-slate-300 leading-relaxed mb-4">
-                If your preferred university offers $34,000 while another offers $42,000, you can politely write to your prospective department chair:
-              </p>
-              <div className="space-y-2 text-xs text-slate-300 mb-6">
-                {negotiationChecklistData.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
+          <SectionCard
+            variant="nested"
+            title="Respectful Negotiation Checklist"
+            icon={<Award className="w-5 h-5 text-cyan-400" />}
+            className="p-6 sm:p-8 flex flex-col justify-between bg-[#0f1422] border border-white/10"
+            footer={
+              <Button
+                href="/toolkit#interactive-email-builder"
+                variant="cyan"
+                size="md"
+                fullWidth
+                rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
+              >
+                View Negotiation Email Template
+              </Button>
+            }
+          >
+            <p className="text-xs text-slate-300 leading-relaxed mb-4">
+              If your preferred university offers $34,000 while another offers $42,000, you can politely write to your prospective department chair:
+            </p>
+            <div className="space-y-2 text-xs text-slate-300 mb-6">
+              {negotiationChecklistData.map((item, idx) => (
+                <div key={idx} className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
             </div>
-
-            <Link
-              href="/toolkit#interactive-email-builder"
-              className="w-full py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-center font-semibold text-xs border border-cyan-500/30 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md shadow-cyan-600/20"
-            >
-              <span>View Negotiation Email Template</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </GlassCard>
+          </SectionCard>
         </div>
       </div>
     </section>

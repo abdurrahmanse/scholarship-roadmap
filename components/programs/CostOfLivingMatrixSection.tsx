@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { TrendingUp, ArrowUpDown } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { costOfLivingComparisonData } from "@/data/programsSectionData";
 import { programsPageData } from "@/data/pagesData";
@@ -32,17 +33,14 @@ export function CostOfLivingMatrixSection() {
         />
 
         <div className="flex justify-end mb-4">
-          <button
+          <Button
+            variant={sortBySavings ? "emerald" : "outline"}
+            size="sm"
             onClick={() => setSortBySavings(!sortBySavings)}
-            className={`px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer ${
-              sortBySavings
-                ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40"
-                : "bg-[#0f1422] text-slate-400 hover:text-white border border-white/10"
-            }`}
+            leftIcon={<ArrowUpDown className="w-3.5 h-3.5" />}
           >
-            <ArrowUpDown className="w-3.5 h-3.5" />
-            <span>{sortBySavings ? "Sorted by Highest Savings" : "Sort by Net Savings"}</span>
-          </button>
+            {sortBySavings ? "Sorted by Highest Savings" : "Sort by Net Savings"}
+          </Button>
         </div>
 
         <div className="text-[11px] font-mono text-slate-400 mb-2 flex items-center justify-end gap-1 md:hidden">

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { FileText, CheckCircle2 } from "lucide-react";
-import { GlassCard } from "@/components/ui/GlassCard";
+import { SectionCard } from "@/components/ui/SectionCard";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { sopMovementsData } from "@/data/toolkitSectionData";
@@ -24,32 +24,34 @@ export function SopBlueprintSection() {
 
         <div className="space-y-4 mb-10">
           {sopMovementsData.map((m) => (
-            <GlassCard key={m.num} borderGlow="purple" className="p-6 bg-[#0f1422] border border-white/10 hover:border-purple-500/30 transition-all">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                <div className="flex items-center gap-3">
-                  <span className="font-mono text-xs font-bold px-2.5 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-800/60">
-                    {m.num}
-                  </span>
-                  <h3 className="text-lg font-heading font-bold text-white">{m.title}</h3>
-                </div>
+            <SectionCard
+              key={m.num}
+              variant="default"
+              borderGlow="purple"
+              className="p-6"
+              badge={m.num}
+              badgeVariant="purple"
+              headerRight={
                 <Badge variant="purple" size="sm">
                   {m.pct}
                 </Badge>
-              </div>
-
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              }
+              title={m.title}
+              footer={
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-3 border-t border-white/5 w-full">
+                  {m.points.map((pt) => (
+                    <div key={pt} className="flex items-center gap-1.5 text-xs text-slate-400">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                      <span>{pt}</span>
+                    </div>
+                  ))}
+                </div>
+              }
+            >
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                 {m.desc}
               </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-3 border-t border-white/5">
-                {m.points.map((pt) => (
-                  <div key={pt} className="flex items-center gap-1.5 text-xs text-slate-400">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0" />
-                    <span>{pt}</span>
-                  </div>
-                ))}
-              </div>
-            </GlassCard>
+            </SectionCard>
           ))}
         </div>
       </div>

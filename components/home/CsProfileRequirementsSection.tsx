@@ -1,48 +1,33 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import {
-  FileCode,
-  Cpu,
-  Target,
-  ShieldCheck,
   CheckCircle2,
-  Sparkles,
-  Award,
-  BookOpen,
   ArrowRight,
   GraduationCap
 } from "lucide-react";
-import { GlassCard } from "@/components/ui/GlassCard";
+import { SectionCard } from "@/components/ui/SectionCard";
+import { TabsContainer, TabItem } from "@/components/ui/Tabs";
+import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { renderCommonIcon } from "@/components/ui/iconUtils";
 import { csProfileRequirementsMetadata, csProfileRequirementsData } from "@/data/homeData";
+
+const PILLAR_ICON_COLORS: Record<string, string> = {
+  FileCode: "text-emerald-400",
+  Cpu: "text-indigo-400",
+  Target: "text-cyan-400",
+  ShieldCheck: "text-purple-400",
+  Award: "text-amber-400",
+  BookOpen: "text-cyan-400"
+};
 
 export function CsProfileRequirementsSection() {
   const [activeTierId, setActiveTierId] = useState<string>(csProfileRequirementsData[1].id); // default to Direct PhD
 
   const activeTier =
     csProfileRequirementsData.find((t) => t.id === activeTierId) || csProfileRequirementsData[1];
-
-  const getPillarIcon = (iconName: string) => {
-    switch (iconName) {
-      case "FileCode":
-        return <FileCode className="w-5 h-5 text-emerald-400" />;
-      case "Cpu":
-        return <Cpu className="w-5 h-5 text-indigo-400" />;
-      case "Target":
-        return <Target className="w-5 h-5 text-cyan-400" />;
-      case "ShieldCheck":
-        return <ShieldCheck className="w-5 h-5 text-purple-400" />;
-      case "Award":
-        return <Award className="w-5 h-5 text-amber-400" />;
-      case "BookOpen":
-        return <BookOpen className="w-5 h-5 text-cyan-400" />;
-      default:
-        return <Sparkles className="w-5 h-5 text-indigo-400" />;
-    }
-  };
 
   return (
     <section id="cs-profile-blueprint" className="py-20 border-b border-white/5 bg-[#090d16]">
@@ -56,84 +41,81 @@ export function CsProfileRequirementsSection() {
         />
 
         {/* Degree Selector Buttons */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {csProfileRequirementsData.map((tier) => {
-            const isActive = activeTierId === tier.id;
-            return (
-              <button
+        <div className="flex justify-center mb-10 overflow-x-auto pb-2 scrollbar-none">
+          <TabsContainer variant="pills" className="bg-[#0f1422]/80 border border-white/10 p-1.5">
+            {csProfileRequirementsData.map((tier) => (
+              <TabItem
                 key={tier.id}
+                active={activeTierId === tier.id}
                 onClick={() => setActiveTierId(tier.id)}
-                className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 ${
-                  isActive
-                    ? "bg-indigo-600 text-white shadow-xl shadow-indigo-600/30 border border-indigo-400/50 font-bold"
-                    : "bg-[#0f1422] text-slate-400 hover:text-white hover:bg-slate-800/60 border border-white/10"
-                }`}
-              >
-                <span>{tier.label}</span>
-                <span
-                  className={`text-[10px] font-mono px-2 py-0.5 rounded-full ${
-                    isActive ? "bg-white/20 text-white" : "bg-white/5 text-slate-400"
-                  }`}
-                >
-                  {tier.badge}
-                </span>
-              </button>
-            );
-          })}
+                label={tier.label}
+                badge={tier.badge}
+                colorTheme="indigo"
+                size="md"
+              />
+            ))}
+          </TabsContainer>
         </div>
 
         {/* Active Degree Overview Banner */}
-        <div className="p-5 sm:p-6 rounded-2xl bg-[#0f1422] border border-white/10 mb-8 shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-          <div className="min-w-0 flex-1">
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-400 block mb-1">
-              Target Degree & Institutional Pathway:
-            </span>
-            <h3 className="text-xl font-heading font-extrabold text-white break-words">
-              {activeTier.targetDegree}
-            </h3>
-            <p className="text-xs text-slate-400 mt-0.5">
-              Primary Funding Mechanism: <span className="text-slate-200 font-semibold">{activeTier.fundingModel}</span>
-            </p>
-          </div>
-
-          <div className="p-3.5 rounded-xl bg-[#090d16] border border-white/10 shrink-0 text-left lg:text-right max-w-full">
-            <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">
-              Guaranteed Compensation Standard:
-            </span>
-            <span className="text-base font-extrabold text-emerald-400 font-mono">
-              {activeTier.typicalStipend}
-            </span>
-          </div>
-        </div>
+        <SectionCard
+          variant="default"
+          borderGlow="indigo"
+          className="mb-8 p-5 sm:p-6"
+          headerRight={
+            <div className="p-3.5 rounded-xl bg-[#090d16] border border-white/10 shrink-0 text-left lg:text-right max-w-full">
+              <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">
+                Guaranteed Compensation Standard:
+              </span>
+              <span className="text-base font-extrabold text-emerald-400 font-mono">
+                {activeTier.typicalStipend}
+              </span>
+            </div>
+          }
+          title={
+            <div>
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-400 block mb-1">
+                Target Degree & Institutional Pathway:
+              </span>
+              <span className="text-xl font-heading font-extrabold text-white break-words block">
+                {activeTier.targetDegree}
+              </span>
+              <p className="text-xs text-slate-400 mt-0.5">
+                Primary Funding Mechanism: <span className="text-slate-200 font-semibold">{activeTier.fundingModel}</span>
+              </p>
+            </div>
+          }
+        />
 
         {/* 4 Pillars of the Profile Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {activeTier.pillars.map((pillar) => (
-            <GlassCard
+            <SectionCard
               key={pillar.title}
-              borderGlow={pillar.variant}
-              className="p-6 sm:p-7 bg-[#0f1422] border border-white/10 flex flex-col justify-between"
+              variant="default"
+              borderGlow={pillar.variant as "indigo" | "cyan" | "emerald" | "amber" | "purple" | "rose" | "none"}
+              className="p-6 sm:p-7 flex flex-col justify-between"
+              icon={renderCommonIcon(pillar.iconName, `w-5 h-5 ${PILLAR_ICON_COLORS[pillar.iconName] || "text-indigo-400"}`)}
+              title={pillar.title}
+              badge={pillar.badge}
+              badgeVariant={pillar.variant as "indigo" | "cyan" | "emerald" | "amber" | "purple" | "rose"}
+              headerRight={
+                <Badge variant={pillar.variant as "indigo" | "cyan" | "emerald" | "amber" | "purple" | "rose"} size="sm">
+                  Verified Metric
+                </Badge>
+              }
+              footer={
+                <div className="p-3.5 rounded-xl bg-[#090d16] border border-white/10 text-xs w-full">
+                  <span className="font-semibold text-cyan-300 mr-1 font-sans">
+                    Why this gets you funded:
+                  </span>
+                  <span className="text-slate-400 leading-relaxed font-sans">
+                    {pillar.competitiveAdvantage}
+                  </span>
+                </div>
+              }
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2.5">
-                    <div className="p-2.5 rounded-xl bg-[#090d16] border border-white/10 shrink-0">
-                      {getPillarIcon(pillar.iconName)}
-                    </div>
-                    <div>
-                      <h4 className="text-base font-heading font-bold text-white">
-                        {pillar.title}
-                      </h4>
-                      <span className="text-[10px] font-mono text-slate-400">
-                        {pillar.badge}
-                      </span>
-                    </div>
-                  </div>
-                  <Badge variant={pillar.variant} size="sm">
-                    Verified Metric
-                  </Badge>
-                </div>
-
                 <p className="text-xs text-slate-300 leading-relaxed mb-4">
                   {pillar.summary}
                 </p>
@@ -151,17 +133,7 @@ export function CsProfileRequirementsSection() {
                   ))}
                 </div>
               </div>
-
-              {/* Competitive Advantage Box */}
-              <div className="p-3.5 rounded-xl bg-[#090d16] border border-white/10 text-xs">
-                <span className="font-semibold text-cyan-300 mr-1 font-sans">
-                  Why this gets you funded:
-                </span>
-                <span className="text-slate-400 leading-relaxed font-sans">
-                  {pillar.competitiveAdvantage}
-                </span>
-              </div>
-            </GlassCard>
+            </SectionCard>
           ))}
         </div>
 
@@ -174,13 +146,14 @@ export function CsProfileRequirementsSection() {
             Follow our 24-month chronological roadmap from Phase 0 (Math Foundations) to Phase 6 (TAL Visa Defense & Arrival).
           </p>
           <div className="pt-2">
-            <Link
+            <Button
               href="/roadmap"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-lg shadow-indigo-600/30 transition-all cursor-pointer"
+              variant="primary"
+              size="md"
+              rightIcon={<ArrowRight className="w-4 h-4" />}
             >
-              <span>Explore Step-by-Step 24-Month Roadmap</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+              Explore Step-by-Step 24-Month Roadmap
+            </Button>
           </div>
         </div>
       </div>

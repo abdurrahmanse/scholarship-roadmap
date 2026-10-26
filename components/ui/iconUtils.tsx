@@ -24,6 +24,9 @@ import {
   ClipboardCheck,
   Search,
   RotateCcw,
+  Globe2,
+  Building2,
+  Crown,
   LucideIcon
 } from "lucide-react";
 
@@ -51,7 +54,10 @@ export const COMMON_ICONS: Record<string, LucideIcon> = {
   BookOpen,
   ClipboardCheck,
   Search,
-  RotateCcw
+  RotateCcw,
+  Globe2,
+  Building2,
+  Crown
 };
 
 /**

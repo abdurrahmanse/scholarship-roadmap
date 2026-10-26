@@ -2,7 +2,8 @@
 
 import React from "react";
 import { FileCode, CheckCircle2, XCircle } from "lucide-react";
-import { GlassCard } from "@/components/ui/GlassCard";
+import { SectionCard } from "@/components/ui/SectionCard";
+import { WidgetStatCard } from "@/components/roadmap/widgets/common";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cvBenchmarksData, xyzExamplesData } from "@/data/toolkitSectionData";
 import { toolkitPageData } from "@/data/pagesData";
@@ -24,29 +25,28 @@ export function LatexCvStandardsSection() {
         {/* 4 Benchmarks */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           {cvBenchmarksData.map((b) => (
-            <GlassCard key={b.label} borderGlow="indigo" className="p-5 text-center bg-[#0f1422] border border-white/10">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
-                {b.label}
-              </span>
-              <span className="text-xl sm:text-2xl font-black text-white font-mono block mb-1">
-                {b.value}
-              </span>
-              <span className="text-[11px] text-slate-400">{b.sub}</span>
-            </GlassCard>
+            <WidgetStatCard
+              key={b.label}
+              label={b.label}
+              value={b.value}
+              sublabel={b.sub}
+              valueColor="text-indigo-400"
+            />
           ))}
         </div>
 
         {/* Google XYZ Formula Examples */}
-        <GlassCard borderGlow="none" className="p-6 sm:p-8 bg-[#0f1422] border border-white/10">
-          <div className="mb-6">
-            <h3 className="text-lg font-heading font-bold text-white mb-1">
-              The Google XYZ Formula for Technical Publications & Projects
-            </h3>
-            <p className="text-xs text-slate-400">
+        <SectionCard
+          variant="default"
+          borderGlow="indigo"
+          className="bg-[#0f1422]"
+          title="The Google XYZ Formula for Technical Publications & Projects"
+          subtitle={
+            <span>
               Formula: <strong>&ldquo;Accomplished [X] as measured by [Y] by doing [Z]&rdquo;</strong>
-            </p>
-          </div>
-
+            </span>
+          }
+        >
           <div className="space-y-4">
             {xyzExamplesData.map((ex, idx) => (
               <div key={idx} className="p-4 rounded-xl bg-[#090d16] border border-white/10 space-y-2 text-xs">
@@ -61,7 +61,7 @@ export function LatexCvStandardsSection() {
               </div>
             ))}
           </div>
-        </GlassCard>
+        </SectionCard>
       </div>
     </section>
   );

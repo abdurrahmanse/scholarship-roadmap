@@ -2,7 +2,7 @@
 
 import React from "react";
 import { BookOpen } from "lucide-react";
-import { GlassCard } from "@/components/ui/GlassCard";
+import { SectionCard } from "@/components/ui/SectionCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { proposalStructureData } from "@/data/toolkitSectionData";
 import { toolkitPageData } from "@/data/pagesData";
@@ -23,13 +23,17 @@ export function ResearchProposalSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {proposalStructureData.map((item, idx) => (
-            <GlassCard key={item.title} borderGlow="cyan" className="p-6 bg-[#0f1422] border border-white/10 hover:border-cyan-500/30 transition-all">
-              <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800/50 block w-fit mb-3">
-                SECTION 0{idx + 1}
-              </span>
-              <h3 className="text-base font-heading font-bold text-white mb-2 leading-snug">{item.title}</h3>
+            <SectionCard
+              key={item.title}
+              variant="default"
+              borderGlow="cyan"
+              className="p-6"
+              badge={`SECTION 0${idx + 1}`}
+              badgeVariant="cyan"
+              title={item.title}
+            >
               <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
-            </GlassCard>
+            </SectionCard>
           ))}
         </div>
       </div>
