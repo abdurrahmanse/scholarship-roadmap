@@ -81,30 +81,30 @@ export function HeaderMobileDrawer({
                   key={link.href}
                   href={link.href}
                   onClick={onClose}
-                  className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all duration-150 group ${
+                  className={`flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm sm:text-base font-bold transition-all duration-150 group ${
                     isActive
                       ? "bg-white/[0.08] text-white border border-white/10 shadow-sm"
                       : "text-slate-400 hover:text-white hover:bg-white/[0.04] border border-transparent"
                   }`}
                 >
                   <span
-                    className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                    className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
                       isActive
                         ? "bg-teal-500/20 text-teal-300"
                         : "bg-white/[0.04] text-slate-500 group-hover:text-slate-300"
                     }`}
                   >
-                    <Icon className="w-3.5 h-3.5" />
+                    <Icon className="w-4 h-4" />
                   </span>
-                  <span className="flex-1 text-[13px]">{link.label}</span>
+                  <span className="flex-1 text-sm sm:text-[15px] font-bold">{link.label}</span>
                   {link.badge && (
-                    <span className="text-[9px] font-mono font-bold uppercase px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    <span className="text-[10px] font-mono font-bold uppercase px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
                       {link.badge}
                     </span>
                   )}
                   <ChevronRight
-                    className={`w-3.5 h-3.5 transition-opacity ${
-                      isActive ? "opacity-100 text-teal-400" : "opacity-30 group-hover:opacity-70"
+                    className={`w-4 h-4 transition-transform group-hover:translate-x-0.5 ${
+                      isActive ? "text-teal-400" : "text-slate-600"
                     }`}
                   />
                 </Link>
