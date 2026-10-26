@@ -1,10 +1,4 @@
-export interface FAQItem {
-  id: string;
-  question: string;
-  answer: string;
-  category: "Eligibility & Tests" | "Outreach & Supervisors" | "Funding & Finance" | "Strategy & Preparation";
-  tags: string[];
-}
+import { FAQItem } from "./types";
 
 export const faqsData: FAQItem[] = [
   {

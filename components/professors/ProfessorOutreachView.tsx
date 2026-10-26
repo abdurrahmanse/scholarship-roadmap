@@ -6,7 +6,7 @@ import {
   coldEmailTemplates,
   supervisorNecessityByCountry,
   researchFitChecklist,
-  EmailTemplate
+  OutreachEmailBlueprint
 } from "@/data/professorsData";
 import {
   Copy,
@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 export function ProfessorOutreachView() {
-  const [selectedTemplate, setSelectedTemplate] = useState<EmailTemplate>(coldEmailTemplates[0]);
+  const [selectedTemplate, setSelectedTemplate] = useState<OutreachEmailBlueprint>(coldEmailTemplates[0]);
   const [copied, setCopied] = useState<boolean>(false);
   const [checkedFitItems, setCheckedFitItems] = useState<Record<string, boolean>>({});
 

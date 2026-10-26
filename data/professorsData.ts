@@ -5,7 +5,7 @@ export interface OutreachStep {
   detailedProtocol: string;
 }
 
-export interface EmailTemplate {
+export interface OutreachEmailBlueprint {
   id: string;
   type: "phd-cold-inquiry" | "masters-research-inquiry" | "polite-follow-up";
   name: string;
@@ -75,7 +75,7 @@ export const professorOutreachWorkflow: OutreachStep[] = [
   }
 ];
 
-export const coldEmailTemplates: EmailTemplate[] = [
+export const coldEmailTemplates: OutreachEmailBlueprint[] = [
   {
     id: "phd-cold-inquiry",
     type: "phd-cold-inquiry",
