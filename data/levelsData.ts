@@ -366,3 +366,11 @@ export const roadmapLevelsComparisonData = [
     statusBadge: "Phases 5 & 6 Covered"
   }
 ];
+
+export function getLevelBySlug(slug: string): RoadmapLevel | undefined {
+  return roadmapLevelsData.find((l) => l.slug === slug || l.id === slug);
+}
+
+export function getLevelById(id: string): RoadmapLevel | undefined {
+  return roadmapLevelsData.find((l) => l.id === id);
+}

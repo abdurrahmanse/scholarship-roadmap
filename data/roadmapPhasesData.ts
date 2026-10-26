@@ -903,3 +903,15 @@ export const roadmapControlsData = {
     prevStepLabel: "Previous Step"
   }
 };
+
+export function getPhaseBySlug(slug: string): RoadmapPhase | undefined {
+  return roadmapPhasesData.find((p) => p.slug === slug || p.id === slug);
+}
+
+export function getPhaseById(id: string): RoadmapPhase | undefined {
+  return roadmapPhasesData.find((p) => p.id === id);
+}
+
+export function getPhaseByNumber(num: number): RoadmapPhase | undefined {
+  return roadmapPhasesData.find((p) => p.number === num);
+}

@@ -1,5 +1,15 @@
-import { redirect } from "next/navigation";
-import { roadmapLevelsData } from "@/data/levelsData";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import { roadmapLevelsData, getLevelBySlug } from "@/data/levelsData";
+import { stepsData } from "@/data/steps";
+import { LevelHero } from "@/components/roadmap/LevelHero";
+import { LevelInteractiveTracker } from "@/components/roadmap/LevelInteractiveTracker";
+import { LevelTasksSection } from "@/components/roadmap/LevelTasksSection";
+import { LevelNavigationFooter } from "@/components/roadmap/LevelNavigationFooter";
+
+interface Props {
+  params: Promise<{ level: string }>;
+}
 
 export async function generateStaticParams() {
   return roadmapLevelsData.map((lvl) => ({
@@ -7,6 +17,39 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function LevelDetailPage() {
-  redirect("/roadmap");
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { level: levelSlug } = await params;
+  const level = getLevelBySlug(levelSlug);
+  if (!level) return { title: "Curriculum Level Not Found" };
+
+  return {
+    title: `Level ${level.levelNumber}: ${level.shortTitle} — AI Scholarship Roadmap`,
+    description: `${level.tagline} Step-by-step technical execution, proof-of-work milestones, code loops, and faculty review criteria for Level ${level.levelNumber}.`,
+    openGraph: {
+      title: `Level 0${level.levelNumber}: ${level.title} — AI Scholarship Roadmap`,
+      description: level.objective.slice(0, 160),
+      type: "article",
+    },
+  };
+}
+
+export default async function LevelDetailRoute({ params }: Props) {
+  const { level: levelSlug } = await params;
+  const level = getLevelBySlug(levelSlug);
+
+  if (!level) {
+    notFound();
+  }
+
+  // Filter granular steps belonging to this level
+  const levelSteps = stepsData.filter((step) => level.stepIds.includes(step.id));
+
+  return (
+    <main className="min-h-screen bg-[#090d16] text-slate-100 pb-20">
+      <LevelHero level={level} />
+      <LevelInteractiveTracker level={level} />
+      <LevelTasksSection level={level} levelSteps={levelSteps} />
+      <LevelNavigationFooter currentLevel={level} />
+    </main>
+  );
 }

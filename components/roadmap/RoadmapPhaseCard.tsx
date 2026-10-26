@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { ChevronDown, ChevronUp, Clock, GraduationCap, Award } from "lucide-react";
+import Link from "next/link";
+import { ChevronDown, ChevronUp, Clock, GraduationCap, Award, ArrowRight } from "lucide-react";
 import { RoadmapPhase } from "@/data/roadmapPhasesData";
 import { PhaseWhatWhy } from "./PhaseWhatWhy";
 import { PhaseHowSteps } from "./PhaseHowSteps";
@@ -91,12 +92,22 @@ export function RoadmapPhaseCard({
           </div>
         </div>
 
-        <div className="flex items-center gap-2 shrink-0 self-end md:self-center">
-          <span className="text-xs font-semibold text-slate-400">
-            {isExpanded ? "Collapse Phase" : "Expand Instructions"}
-          </span>
-          <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 group-hover:text-white">
-            {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+        <div className="flex items-center gap-3 shrink-0 self-end md:self-center">
+          <Link
+            href={`/roadmap/phases/${phase.slug}`}
+            onClick={(e) => e.stopPropagation()}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white border border-indigo-500/30 text-xs font-semibold transition-all group/link"
+          >
+            <span>Full Blueprint</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
+          </Link>
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-semibold text-slate-400 hidden sm:inline">
+              {isExpanded ? "Collapse" : "Preview"}
+            </span>
+            <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 group-hover:text-white">
+              {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+            </div>
           </div>
         </div>
       </button>
@@ -104,6 +115,21 @@ export function RoadmapPhaseCard({
       {/* Expanded Step-by-Step Instructions */}
       {isExpanded && (
         <div className="px-4 pb-6 sm:px-7 sm:pb-8 pt-2 border-t border-white/5 space-y-6">
+          {/* Quick link banner to full dedicated phase page */}
+          <div className="p-4 rounded-xl bg-gradient-to-r from-indigo-950/70 to-teal-950/70 border border-indigo-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md">
+            <div>
+              <span className="text-xs font-bold text-white block">Need the complete dedicated deep-dive?</span>
+              <span className="text-[11px] text-slate-300 font-sans">Access official directories, full committee rationales, case studies, and checklists on the standalone page.</span>
+            </div>
+            <Link
+              href={`/roadmap/phases/${phase.slug}`}
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold transition-colors shrink-0 shadow-md group/cta"
+            >
+              <span>Open Phase {String(phase.number).padStart(2, "0")} Full Page</span>
+              <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-0.5 transition-transform" />
+            </Link>
+          </div>
+
           {/* 1. What to do & Why it matters */}
           <PhaseWhatWhy what={phase.what} why={phase.why} />
 
