@@ -1,18 +1,19 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import {
   Sparkles,
   Target,
   ArrowRight,
   CheckCircle2,
-  AlertCircle,
   TrendingUp,
   GraduationCap
 } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { TabsContainer, TabItem } from "@/components/ui/Tabs";
+import { WidgetCallout } from "@/components/roadmap/widgets/common";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import {
   diagnosticDegreeOptions,
@@ -96,22 +97,19 @@ export function InteractiveProfileDiagnostic() {
                 <label className="block text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2 font-mono">
                   1. Target Postgraduate Path
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <TabsContainer variant="cards" columns={3}>
                   {diagnosticDegreeOptions.map((item) => (
-                    <button
+                    <TabItem
                       key={item.id}
+                      active={degree === item.id}
                       onClick={() => setDegree(item.id)}
-                      className={`p-3 rounded-xl border text-left transition-all cursor-pointer ${
-                        degree === item.id
-                          ? "bg-indigo-600/30 border-indigo-400 text-white shadow-md shadow-indigo-950 font-semibold"
-                          : "bg-[#090d16] border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200"
-                      }`}
-                    >
-                      <div className="text-xs font-bold font-heading">{item.label}</div>
-                      <div className="text-[10px] text-slate-400 mt-0.5">{item.sub}</div>
-                    </button>
+                      variant="cards"
+                      title={item.label}
+                      subtitle={item.sub}
+                      theme="indigo"
+                    />
                   ))}
-                </div>
+                </TabsContainer>
               </div>
 
               {/* Question 2: Academic GPA */}
@@ -119,22 +117,19 @@ export function InteractiveProfileDiagnostic() {
                 <label className="block text-xs font-bold uppercase tracking-wider text-cyan-400 mb-2 font-mono">
                   2. Cumulative Academic GPA (Scale of 4.0)
                 </label>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                <TabsContainer variant="cards" columns={4}>
                   {diagnosticGpaOptions.map((item) => (
-                    <button
+                    <TabItem
                       key={item.id}
+                      active={gpa === item.id}
                       onClick={() => setGpa(item.id)}
-                      className={`p-2.5 rounded-xl border text-center transition-all cursor-pointer ${
-                        gpa === item.id
-                          ? "bg-cyan-600/30 border-cyan-400 text-white shadow-md shadow-cyan-950 font-semibold"
-                          : "bg-[#090d16] border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200"
-                      }`}
-                    >
-                      <div className="text-xs font-bold font-heading">{item.label}</div>
-                      <div className="text-[10px] text-slate-400">{item.sub}</div>
-                    </button>
+                      variant="cards"
+                      title={item.label}
+                      subtitle={item.sub}
+                      theme="cyan"
+                    />
                   ))}
-                </div>
+                </TabsContainer>
               </div>
 
               {/* Question 3: Research Capital & Publications */}
@@ -142,22 +137,19 @@ export function InteractiveProfileDiagnostic() {
                 <label className="block text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2 font-mono">
                   3. Peer-Reviewed Research & Preprints
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <TabsContainer variant="cards" columns={2}>
                   {diagnosticPaperOptions.map((item) => (
-                    <button
+                    <TabItem
                       key={item.id}
+                      active={papers === item.id}
                       onClick={() => setPapers(item.id)}
-                      className={`p-3 rounded-xl border text-left transition-all cursor-pointer ${
-                        papers === item.id
-                          ? "bg-emerald-600/30 border-emerald-400 text-white shadow-md shadow-emerald-950 font-semibold"
-                          : "bg-[#090d16] border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200"
-                      }`}
-                    >
-                      <div className="text-xs font-bold font-heading">{item.label}</div>
-                      <div className="text-[10px] text-slate-400 mt-0.5">{item.sub}</div>
-                    </button>
+                      variant="cards"
+                      title={item.label}
+                      subtitle={item.sub}
+                      theme="emerald"
+                    />
                   ))}
-                </div>
+                </TabsContainer>
               </div>
 
               {/* Question 4: Technical Stack */}
@@ -165,22 +157,19 @@ export function InteractiveProfileDiagnostic() {
                 <label className="block text-xs font-bold uppercase tracking-wider text-purple-400 mb-2 font-mono">
                   4. Production AI Stack & Compute Experience
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <TabsContainer variant="cards" columns={3}>
                   {diagnosticEngineeringOptions.map((item) => (
-                    <button
+                    <TabItem
                       key={item.id}
+                      active={engineering === item.id}
                       onClick={() => setEngineering(item.id)}
-                      className={`p-3 rounded-xl border text-left transition-all cursor-pointer ${
-                        engineering === item.id
-                          ? "bg-purple-600/30 border-purple-400 text-white shadow-md shadow-purple-950 font-semibold"
-                          : "bg-[#090d16] border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200"
-                      }`}
-                    >
-                      <div className="text-xs font-bold font-heading">{item.label}</div>
-                      <div className="text-[10px] text-slate-400 mt-0.5">{item.sub}</div>
-                    </button>
+                      variant="cards"
+                      title={item.label}
+                      subtitle={item.sub}
+                      theme="purple"
+                    />
                   ))}
-                </div>
+                </TabsContainer>
               </div>
             </GlassCard>
           </div>
@@ -237,24 +226,24 @@ export function InteractiveProfileDiagnostic() {
               </div>
 
               {/* Priority Action Recommendation */}
-              <div className="p-4 rounded-xl bg-amber-950/20 border border-amber-800/40 mb-6">
-                <div className="text-xs font-bold text-amber-300 flex items-center gap-1.5 mb-1 font-heading">
-                  <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />
-                  Immediate High-Leverage Strategic Move:
-                </div>
-                <p className="text-xs text-amber-100/90 leading-relaxed">
-                  {audit.priorityAction}
-                </p>
+              <div className="mb-6">
+                <WidgetCallout
+                  variant="warning"
+                  title="Immediate High-Leverage Strategic Move:"
+                  message={audit.priorityAction}
+                />
               </div>
 
               {/* CTA to Roadmap Phase */}
-              <Link
+              <Button
                 href={audit.recommendedPhase}
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white font-bold text-xs uppercase tracking-wider text-center shadow-lg shadow-indigo-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                variant="primary"
+                size="md"
+                className="w-full"
+                rightIcon={<ArrowRight className="w-4 h-4" />}
               >
-                <span>Jump to {audit.phaseName}</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+                Jump to {audit.phaseName}
+              </Button>
             </GlassCard>
           </div>
         </div>

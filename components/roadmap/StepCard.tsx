@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 import { RoadmapStep } from "@/data/types";
 import { StepWidgetRenderer } from "./widgets/StepWidgetRegistry";
 
@@ -96,17 +97,21 @@ export function StepCard({ step }: StepCardProps) {
         </div>
 
         {/* Expand / Collapse Control */}
-        <button
+        <Button
+          variant="secondary"
+          size="sm"
           onClick={() => setIsExpanded(!isExpanded)}
-          className="self-start sm:self-center px-3.5 py-2 rounded-xl bg-[#090d16] hover:bg-slate-800 text-slate-300 border border-white/10 text-xs font-mono flex items-center gap-2 transition-all cursor-pointer shadow-md"
+          iconRight={
+            isExpanded ? (
+              <ChevronUp className="w-3.5 h-3.5 text-slate-400" />
+            ) : (
+              <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
+            )
+          }
+          className="self-start sm:self-center font-mono text-xs"
         >
-          <span>{isExpanded ? "Collapse View" : "Expand Deep-Dive"}</span>
-          {isExpanded ? (
-            <ChevronUp className="w-4 h-4 text-slate-400" />
-          ) : (
-            <ChevronDown className="w-4 h-4 text-slate-400" />
-          )}
-        </button>
+          {isExpanded ? "Collapse View" : "Expand Deep-Dive"}
+        </Button>
       </div>
 
       {/* Key Objective Highlight Banner */}

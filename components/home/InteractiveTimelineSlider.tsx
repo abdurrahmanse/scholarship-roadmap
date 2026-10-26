@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import {
   Calendar,
   CheckCircle2,
@@ -16,6 +15,8 @@ import { timelineSliderData, timelineSliderMetadata } from "@/data/homeData";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { TabsContainer, TabItem } from "@/components/ui/Tabs";
 
 export function InteractiveTimelineSlider() {
   const [phaseIndex, setPhaseIndex] = useState(0);
@@ -49,24 +50,19 @@ export function InteractiveTimelineSlider() {
         <div className="w-full mb-10">
           <div className="p-4 sm:p-6 rounded-2xl bg-[#0f1422] border border-white/10 backdrop-blur-xl shadow-xl shadow-black/30">
             {/* Quick Milestone Stepper Pills */}
-            <div className="grid grid-cols-7 gap-1 sm:gap-2 mb-6">
+            <TabsContainer variant="cards" columns={7} className="mb-6">
               {timelineSliderData.map((item, idx) => (
-                <button
+                <TabItem
                   key={item.id}
+                  active={phaseIndex === idx}
                   onClick={() => setPhaseIndex(idx)}
-                  className={`flex flex-col items-center justify-center p-1.5 sm:p-2 rounded-xl transition-all duration-200 cursor-pointer ${
-                    phaseIndex === idx
-                      ? "bg-indigo-600/30 border border-indigo-500/60 text-white shadow-md shadow-indigo-950"
-                      : "bg-white/[0.03] border border-transparent text-slate-400 hover:text-slate-200 hover:bg-white/[0.06]"
-                  }`}
-                >
-                  <span className="font-mono text-[10px] sm:text-xs font-bold">P{item.phaseNumber}</span>
-                  <span className="text-[9px] sm:text-[10px] hidden sm:inline text-slate-400 truncate max-w-[80px]">
-                    {timelineSliderMetadata.sliderLabels[idx]?.label}
-                  </span>
-                </button>
+                  variant="cards"
+                  badge={`P${item.phaseNumber}`}
+                  title={timelineSliderMetadata.sliderLabels[idx]?.label}
+                  theme="indigo"
+                />
               ))}
-            </div>
+            </TabsContainer>
 
             {/* Range Slider Track with Controls */}
             <div className="flex items-center gap-4">
@@ -180,13 +176,15 @@ export function InteractiveTimelineSlider() {
               <span className="text-xs text-slate-500 font-mono">
                 Step {phaseIndex + 1} of {timelineSliderData.length} in Postgraduate Pipeline
               </span>
-              <Link
+              <Button
                 href={`/roadmap#phase-${activePhase.phaseNumber}`}
-                className="inline-flex items-center gap-2 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition-colors group"
+                variant="ghost"
+                size="sm"
+                className="text-indigo-400 hover:text-indigo-300"
+                rightIcon={<ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />}
               >
-                <span>{timelineSliderMetadata.viewFullPhaseText}</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+                {timelineSliderMetadata.viewFullPhaseText}
+              </Button>
             </div>
           </GlassCard>
         </div>

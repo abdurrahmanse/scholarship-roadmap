@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ShieldCheck, ArrowRight, Check } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { deliverableAuditData } from "@/data/roadmapSectionData";
 import { roadmapPageData } from "@/data/pagesData";
@@ -105,13 +106,14 @@ export function DeliverablesAuditWidget() {
             <span className="text-xs text-slate-400">
               Need copy-ready templates to accelerate your deliverables?
             </span>
-            <Link
+            <Button
               href="/toolkit"
-              className="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition-all shadow-md shadow-indigo-600/30 flex items-center gap-1.5 cursor-pointer"
+              variant="primary"
+              size="sm"
+              iconRight={<ArrowRight className="w-3.5 h-3.5" />}
             >
-              <span>Explore Application Toolkit</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+              Explore Application Toolkit
+            </Button>
           </div>
         </GlassCard>
       </div>

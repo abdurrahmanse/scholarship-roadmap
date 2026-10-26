@@ -16,45 +16,13 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { RoadmapLevel } from "@/data/types";
+import { getLevelIcon, getLevelDifficultyVariant } from "./roadmapConstants";
 
 interface LevelHeroProps {
   level: RoadmapLevel;
 }
 
 export function LevelHero({ level }: LevelHeroProps) {
-  const getIcon = (iconName: string) => {
-    switch (iconName) {
-      case "Cpu":
-        return <Cpu className="w-5 h-5 text-indigo-400" />;
-      case "Sparkles":
-        return <Sparkles className="w-5 h-5 text-cyan-400" />;
-      case "Target":
-        return <Target className="w-5 h-5 text-emerald-400" />;
-      case "FileCheck":
-        return <FileCheck className="w-5 h-5 text-amber-400" />;
-      case "ShieldCheck":
-        return <ShieldCheck className="w-5 h-5 text-purple-400" />;
-      default:
-        return <Cpu className="w-5 h-5 text-indigo-400" />;
-    }
-  };
-
-  const getDifficultyVariant = (difficulty: RoadmapLevel["difficulty"]) => {
-    switch (difficulty) {
-      case "Fundamental":
-        return "indigo" as const;
-      case "Intensive":
-        return "cyan" as const;
-      case "Strategic":
-        return "emerald" as const;
-      case "Critical":
-        return "amber" as const;
-      case "Elite":
-        return "purple" as const;
-      default:
-        return "slate" as const;
-    }
-  };
 
   return (
     <section className="relative overflow-hidden pt-28 pb-16 border-b border-white/[0.06] bg-[#090d16]">
@@ -79,11 +47,11 @@ export function LevelHero({ level }: LevelHeroProps) {
               <span className="animate-radar-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
             </span>
-            {getIcon(level.iconName)}
+            {getLevelIcon(level.iconName)}
             <span>{level.badge}</span>
           </div>
 
-          <Badge variant={getDifficultyVariant(level.difficulty)} size="sm">
+          <Badge variant={getLevelDifficultyVariant(level.difficulty)} size="sm">
             {level.difficulty} Difficulty
           </Badge>
 

@@ -1,17 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import {
   DollarSign,
   Home,
   ShieldCheck,
   ArrowRight,
-  Calculator,
-  Info
+  Calculator
 } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { WidgetCallout } from "@/components/roadmap/widgets/common";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { stipendCitiesData, stipendCalculatorMetadata } from "@/data/homeData";
 
@@ -164,21 +164,24 @@ export function InteractiveStipendCalculator() {
               </div>
 
               {/* Crucial Context Alert */}
-              <div className="p-4 rounded-xl bg-indigo-950/30 border border-indigo-800/40 flex items-start gap-3">
-                <Info className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
-                <div className="text-xs text-indigo-200 leading-relaxed font-sans">
-                  {stipendCalculatorMetadata.summerInternshipAlert}
-                </div>
+              <div className="mt-4">
+                <WidgetCallout
+                  variant="accent"
+                  title="Summer Internship Strategic Lift:"
+                  message={stipendCalculatorMetadata.summerInternshipAlert}
+                />
               </div>
 
               <div className="mt-6 pt-4 border-t border-white/[0.08] flex justify-end">
-                <Link
+                <Button
                   href="/programs"
-                  className="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition-colors group"
+                  variant="ghost"
+                  size="sm"
+                  className="text-cyan-400 hover:text-cyan-300"
+                  rightIcon={<ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />}
                 >
-                  <span>{stipendCalculatorMetadata.exploreCtaText}</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                  {stipendCalculatorMetadata.exploreCtaText}
+                </Button>
               </div>
             </GlassCard>
           </div>

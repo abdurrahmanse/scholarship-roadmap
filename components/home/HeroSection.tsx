@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import {
   ArrowRight,
   ShieldCheck,
@@ -16,6 +15,7 @@ import { homeMetricsData, heroEqualizerData } from "@/data/homeData";
 import { homePageData } from "@/data/pagesData";
 import { MetricItem } from "@/data/types";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { Button } from "@/components/ui/Button";
 
 export function HeroSection() {
   const getIcon = (iconName: string) => {
@@ -89,33 +89,35 @@ export function HeroSection() {
 
         {/* Primary, Secondary, and Tertiary Action CTAs */}
         <div className="flex flex-wrap justify-center items-center gap-4 mb-16">
-          <Link
+          <Button
             href={homePageData.hero.primaryCta.href}
-            className="relative group px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white font-bold text-sm tracking-wide shadow-2xl shadow-indigo-600/35 transition-all duration-300 hover:scale-103 hover:shadow-indigo-500/50 flex items-center gap-2.5 overflow-hidden"
+            variant="primary"
+            size="lg"
+            rightIcon={<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
           >
-            <span className="relative z-10">{homePageData.hero.primaryCta.label}</span>
-            <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-200" />
-            <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-          </Link>
+            {homePageData.hero.primaryCta.label}
+          </Button>
 
           {homePageData.hero.secondaryCta && (
-            <Link
+            <Button
               href={homePageData.hero.secondaryCta.href}
-              className="px-7 py-4 rounded-xl bg-[#0f1422] hover:bg-slate-800 border border-white/10 hover:border-indigo-500/50 text-slate-200 font-semibold text-sm transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-indigo-500/20 hover:-translate-y-0.5"
+              variant="secondary"
+              size="lg"
+              leftIcon={<Sparkles className="w-4 h-4 text-indigo-400" />}
             >
-              <Sparkles className="w-4 h-4 text-indigo-400" />
-              <span>{homePageData.hero.secondaryCta.label}</span>
-            </Link>
+              {homePageData.hero.secondaryCta.label}
+            </Button>
           )}
 
           {homePageData.hero.tertiaryCta && (
-            <Link
+            <Button
               href={homePageData.hero.tertiaryCta.href}
-              className="px-6 py-4 rounded-xl bg-[#0f1422] hover:bg-slate-800 border border-white/10 hover:border-cyan-500/40 text-slate-300 font-medium text-sm transition-all duration-300 flex items-center gap-2 hover:-translate-y-0.5"
+              variant="outline"
+              size="lg"
+              leftIcon={<Cpu className="w-4 h-4 text-cyan-400" />}
             >
-              <Cpu className="w-4 h-4 text-cyan-400" />
-              <span>{homePageData.hero.tertiaryCta.label}</span>
-            </Link>
+              {homePageData.hero.tertiaryCta.label}
+            </Button>
           )}
         </div>
 

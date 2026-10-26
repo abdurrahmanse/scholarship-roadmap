@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, Copy, Check, Sparkles, Clock, Send, FileCode } from "lucide-react";
+import { Mail, Copy, Check, Sparkles, Clock } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { Button } from "@/components/ui/Button";
+import { TabsContainer, TabItem } from "@/components/ui/Tabs";
+import { WidgetCallout } from "@/components/roadmap/widgets/common";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { emailPresetsData } from "@/data/toolkitSectionData";
 import { toolkitPageData } from "@/data/pagesData";
@@ -76,25 +79,22 @@ B.S. / M.S. in Computer Science
             <GlassCard borderGlow="indigo" className="p-6 space-y-4 bg-[#0f1422] border border-white/10">
               {/* Preset Selector */}
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2 font-mono">
                   Select High-Response Preset Scenario:
                 </span>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <TabsContainer variant="cards" columns={3}>
                   {emailPresetsData.map((preset) => (
-                    <button
+                    <TabItem
                       key={preset.id}
+                      active={selectedPresetId === preset.id}
                       onClick={() => handleApplyPreset(preset)}
-                      className={`p-2 rounded-xl text-xs font-semibold text-left transition-all cursor-pointer ${
-                        selectedPresetId === preset.id
-                          ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/30 border border-indigo-400/50"
-                          : "bg-[#090d16] text-slate-400 hover:text-white border border-white/5"
-                      }`}
-                    >
-                      <span className="block text-[10px] opacity-75 uppercase tracking-wider">{preset.badge}</span>
-                      <span className="truncate block font-bold">{preset.name}</span>
-                    </button>
+                      variant="cards"
+                      badge={preset.badge}
+                      title={preset.name}
+                      theme="indigo"
+                    />
                   ))}
-                </div>
+                </TabsContainer>
               </div>
 
               <div className="pt-2 border-t border-white/5">
@@ -177,12 +177,11 @@ B.S. / M.S. in Computer Science
             </GlassCard>
 
             {/* Timing Rule Callout */}
-            <div className="p-4 rounded-xl bg-amber-950/20 border border-amber-800/40 text-xs text-amber-200/90 flex items-start gap-2.5">
-              <Clock className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-              <span>
-                <strong>Optimal Dispatch Window:</strong> Send on <strong>Tuesday or Thursday at 8:15 AM local time</strong> in the professor&apos;s timezone. Never send on Friday afternoon or during major conference deadlines.
-              </span>
-            </div>
+            <WidgetCallout
+              variant="warning"
+              title="Optimal Dispatch Window:"
+              message="Send on Tuesday or Thursday at 8:15 AM local time in the professor's timezone. Never send on Friday afternoon or during major conference deadlines."
+            />
           </div>
 
           {/* Live Preview Column (7 cols) */}
@@ -193,22 +192,20 @@ B.S. / M.S. in Computer Science
                   <Mail className="w-4 h-4" />
                   <span>Generated Email Draft (Ready to Send)</span>
                 </div>
-                <button
+                <Button
+                  variant="indigo"
+                  size="sm"
                   onClick={handleCopy}
-                  className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-md shadow-indigo-600/30 cursor-pointer"
-                >
-                  {copied ? (
-                    <>
+                  leftIcon={
+                    copied ? (
                       <Check className="w-3.5 h-3.5 text-emerald-300" />
-                      <span className="text-emerald-200">Copied to Clipboard!</span>
-                    </>
-                  ) : (
-                    <>
+                    ) : (
                       <Copy className="w-3.5 h-3.5" />
-                      <span>Copy Email Draft</span>
-                    </>
-                  )}
-                </button>
+                    )
+                  }
+                >
+                  {copied ? "Copied to Clipboard!" : "Copy Email Draft"}
+                </Button>
               </div>
 
               {/* Subject Line */}

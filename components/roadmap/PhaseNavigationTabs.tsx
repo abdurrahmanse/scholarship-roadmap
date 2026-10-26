@@ -2,6 +2,7 @@
 
 import React from "react";
 import { phasesData } from "@/data/phases";
+import { TabsContainer, TabItem } from "@/components/ui/Tabs";
 
 interface PhaseNavigationTabsProps {
   selectedPhase: number | "all";
@@ -19,33 +20,25 @@ export function PhaseNavigationTabs({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           {/* Phase Filter Tabs */}
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
-            <button
+          <TabsContainer variant="pills">
+            <TabItem
+              active={selectedPhase === "all"}
               onClick={() => onSelectPhase("all")}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
-                selectedPhase === "all"
-                  ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/30"
-                  : "bg-white/[0.03] text-slate-400 hover:text-white border border-white/[0.06]"
-              }`}
-            >
-              All 7 Phases
-            </button>
+              title="All 7 Phases"
+              theme="indigo"
+            />
 
             {phasesData.map((p) => (
-              <button
+              <TabItem
                 key={p.id}
+                active={selectedPhase === p.number}
                 onClick={() => onSelectPhase(p.number)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 ${
-                  selectedPhase === p.number
-                    ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/30"
-                    : "bg-white/[0.03] text-slate-400 hover:text-white border border-white/[0.06]"
-                }`}
-              >
-                <span className="font-mono text-[10px] opacity-75">P{p.number}</span>
-                <span className="hidden md:inline">{p.shortTitle || p.title.split(":")[1]?.trim() || p.title}</span>
-              </button>
+                badge={`P${p.number}`}
+                title={p.shortTitle || p.title.split(":")[1]?.trim() || p.title}
+                theme="indigo"
+              />
             ))}
-          </div>
+          </TabsContainer>
 
           {/* Quick Scrub Range Slider */}
           <div className="hidden lg:flex items-center gap-3 w-56 shrink-0">

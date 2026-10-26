@@ -1,0 +1,120 @@
+"use client";
+
+import React from "react";
+
+export type TabTheme = "indigo" | "cyan" | "emerald" | "amber" | "purple" | "rose";
+export type TabVariant = "pills" | "cards" | "segmented" | "minimal";
+
+export interface TabsContainerProps {
+  children: React.ReactNode;
+  variant?: TabVariant;
+  className?: string;
+  columns?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+}
+
+const CONTAINER_VARIANTS: Record<TabVariant, string> = {
+  segmented: "p-1.5 rounded-2xl bg-[#090d16] border border-white/10 flex items-center gap-1.5 overflow-x-auto scrollbar-none",
+  pills: "flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none",
+  cards: "grid gap-2.5",
+  minimal: "flex items-center gap-1 border-b border-white/10"
+};
+
+const COLUMN_CLASSES: Record<number, string> = {
+  1: "grid-cols-1",
+  2: "grid-cols-1 sm:grid-cols-2",
+  3: "grid-cols-1 sm:grid-cols-3",
+  4: "grid-cols-2 sm:grid-cols-4",
+  5: "grid-cols-2 sm:grid-cols-5",
+  6: "grid-cols-3 sm:grid-cols-6",
+  7: "grid-cols-3 sm:grid-cols-7"
+};
+
+/**
+ * Universal Tabs layout container component.
+ */
+export function TabsContainer({
+  children,
+  variant = "pills",
+  className = "",
+  columns
+}: TabsContainerProps) {
+  const colClass = columns ? COLUMN_CLASSES[columns] || "" : "";
+  return (
+    <div className={`${CONTAINER_VARIANTS[variant]} ${colClass} ${className}`}>
+      {children}
+    </div>
+  );
+}
+
+export interface TabItemProps {
+  active: boolean;
+  onClick: () => void;
+  title: React.ReactNode;
+  subtitle?: React.ReactNode;
+  badge?: React.ReactNode;
+  icon?: React.ReactNode;
+  theme?: TabTheme;
+  variant?: TabVariant;
+  className?: string;
+  disabled?: boolean;
+}
+
+const ACTIVE_THEMES: Record<TabTheme, string> = {
+  indigo: "bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 border-indigo-400/50",
+  cyan: "bg-cyan-600 text-white shadow-lg shadow-cyan-600/30 border-cyan-400/50",
+  emerald: "bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 border-emerald-400/50",
+  amber: "bg-amber-600 text-white shadow-lg shadow-amber-600/30 border-amber-400/50",
+  purple: "bg-purple-600 text-white shadow-lg shadow-purple-600/30 border-purple-400/50",
+  rose: "bg-rose-600 text-white shadow-lg shadow-rose-600/30 border-rose-400/50"
+};
+
+const INACTIVE_STYLES = "bg-[#090d16] text-slate-400 hover:text-white border-white/5 hover:border-white/15 hover:bg-white/[0.04]";
+
+/**
+ * Universal decoupled Tab Item / Tab Button component following DRY principles.
+ */
+export function TabItem({
+  active,
+  onClick,
+  title,
+  subtitle,
+  badge,
+  icon,
+  theme = "indigo",
+  variant = "pills",
+  className = "",
+  disabled = false
+}: TabItemProps) {
+  const activeClass = active ? ACTIVE_THEMES[theme] : INACTIVE_STYLES;
+
+  if (variant === "cards") {
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        disabled={disabled}
+        className={`p-3.5 rounded-xl border text-left transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${activeClass} ${className}`}
+      >
+        <div className="flex items-center justify-between gap-2 mb-1">
+          {badge && <span className="text-[10px] uppercase font-mono font-bold tracking-wider opacity-85">{badge}</span>}
+          {icon && <span className="opacity-75 shrink-0">{icon}</span>}
+        </div>
+        <div className="text-xs font-bold font-heading truncate">{title}</div>
+        {subtitle && <div className="text-[10px] opacity-75 mt-0.5 line-clamp-1">{subtitle}</div>}
+      </button>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      className={`px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-200 flex items-center gap-2 border cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${activeClass} ${className}`}
+    >
+      {icon && <span className="shrink-0">{icon}</span>}
+      {badge && <span className="font-mono text-[10px] opacity-80">{badge}</span>}
+      <span>{title}</span>
+    </button>
+  );
+}

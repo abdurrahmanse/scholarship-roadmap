@@ -16,9 +16,11 @@ export type CalloutVariant =
   | "purple"
   | "rose";
 
-interface WidgetCalloutProps {
+export interface WidgetCalloutProps {
   title?: string;
-  description: React.ReactNode;
+  description?: React.ReactNode;
+  message?: React.ReactNode;
+  children?: React.ReactNode;
   variant?: CalloutVariant;
   icon?: React.ReactNode;
   className?: string;
@@ -88,22 +90,25 @@ const CALLOUT_STYLES: Record<
 export function WidgetCallout({
   title,
   description,
+  message,
+  children,
   variant = "neutral",
   icon,
   className = ""
 }: WidgetCalloutProps) {
   const styles = CALLOUT_STYLES[variant] || CALLOUT_STYLES.neutral;
   const renderIcon = icon || styles.defaultIcon;
+  const content = children || message || description;
 
   return (
     <div
       className={`p-3.5 rounded-xl border text-xs flex items-start gap-2.5 relative z-10 ${styles.container} ${className}`}
     >
       {renderIcon}
-      <p className="leading-relaxed font-sans">
+      <div className="leading-relaxed font-sans">
         {title && <strong className={`${styles.titleColor} mr-1`}>{title}</strong>}
-        {description}
-      </p>
+        {content}
+      </div>
     </div>
   );
 }
