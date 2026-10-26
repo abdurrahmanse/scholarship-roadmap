@@ -45,57 +45,66 @@ export const countryGuidesData: CountryGuide[] = [
     code: "DE",
     flag: "🇩🇪",
     region: "Europe",
-    headline: "Zero Public Tuition + Salaried TV-L E13 PhD Research Positions & DAAD Awards",
-    summary: "Germany is one of the world's most accessible graduate destinations. Most public universities charge zero tuition for both domestic and international non-EU students (outside Baden-Württemberg and Bavaria for certain programs). PhD candidates are predominantly hired as university researchers on state TV-L E13 employment contracts.",
-    fundingPhilosophy: "Public Higher Education as a Merit-Based Public Good: zero tuition at public institutions, complemented by statutory doctoral employment agreements and federal DAAD scholarship programs.",
+    headline: "Zero Public Tuition + Salaried TV-L E13 PhD Contracts & DAAD Awards",
+    summary:
+      "Most public universities charge zero tuition for international students. Doctoral candidates are predominantly hired on public-sector TV-L E13 research contracts with full benefits.",
+    fundingPhilosophy:
+      "Higher education is treated as a public good: free tuition at public universities paired with salaried doctoral employment.",
     commonFundingRoutes: [
-      "Tuition-Free Public Master's Degree (pay only €150–€350 semester fee including transit pass)",
-      "TV-L E13 Public Sector Doctoral Employment Contract (50%–100% full salary: €2,200–€3,200 net/month)",
-      "DAAD (German Academic Exchange Service) Government Scholarships",
-      "Heinrich Böll, Konrad Adenauer & Friedrich Ebert Political Foundation Fellowships",
-      "Max Planck, Helmholtz, and Fraunhofer Institute Research Fellowships"
+      "Tuition-Free Public Master's (€150–€350/semester fee with transit pass)",
+      "TV-L E13 Doctoral Employment Contract (€2,200–€3,200 net/month)",
+      "DAAD Government Scholarships (EPOS, All-Discipline Awards)",
+      "Deutschlandstipendium (€300/month university merit award)",
+      "Max Planck, Helmholtz, and Fraunhofer Institute Fellowships"
     ],
     governmentScholarships: [
       {
-        name: "DAAD Development-Related Postgraduate Courses (EPOS)",
+        name: "DAAD Postgraduate Scholarships (EPOS)",
         url: "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
-        description: "Fully funded awards for professionals from developing countries pursuing selected development-focused Master's and PhD programs.",
-        coverage: "€934/month for Master's, €1,300/month for PhD, travel allowance, health insurance, and study allowance.",
+        description: "Fully funded awards for students from developing countries in selected master's and PhD programs.",
+        coverage: "€934/mo (Master's) or €1,300/mo (PhD), travel allowance, health insurance, and study grant.",
         degreeLevel: "Master's & PhD"
       },
       {
-        name: "Deutschlandstipendium (National Scholarship Programme)",
+        name: "Deutschlandstipendium",
         url: "https://www.deutschlandstipendium.de/deutschlandstipendium/en/home/home_node.html",
-        description: "Public-private merit scholarship awarded directly by German universities to top domestic and international students.",
-        coverage: "€300/month stipend co-funded by the federal government and private sponsors.",
+        description: "National merit scholarship awarded directly by universities, co-funded by government and private donors.",
+        coverage: "€300/month stipend for at least two semesters.",
         degreeLevel: "Master's & PhD"
       }
     ],
-    universityScholarships: "Direct university scholarships are rare for Master's because tuition is already zero. Financial support primarily comes from student research assistant jobs ('HiWi' / Hilfswissenschaftler), working-student contracts ('Werkstudent'), or external foundations.",
-    phdFundingModel: "Structured or Individual PhDs are predominantly formal employment contracts (TV-L E13/E14). Candidates are paid a legal salary with full statutory pension, unemployment, and health insurance benefits.",
-    mastersFundingModel: "Virtually zero tuition at public universities. Living costs (€992/month baseline) must be covered via DAAD scholarship, working-student job, or personal blocked account (Sperrkonto).",
+    universityScholarships:
+      "Direct university scholarships for Master's are limited because tuition is already free. Students fund living costs through research jobs (HiWi) or external foundations.",
+    phdFundingModel:
+      "PhDs are formal employment positions (TV-L E13/E14). Candidates earn a monthly salary with statutory pension, unemployment, and healthcare coverage.",
+    mastersFundingModel:
+      "Zero tuition at almost all public universities. Living costs (~€992/month) are covered via scholarships, student jobs, or a blocked bank account (Sperrkonto).",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "HiWi (Studentische Hilfskraft) positions in labs pay €13–€16/hour for up to 20 hours/week, providing an excellent way to finance living costs while gaining lab experience.",
+    assistantshipsDetail:
+      "Student assistant jobs (HiWi) in university labs pay €13–€16/hour up to 20 hours/week, helping cover living expenses.",
     supervisorContactRequirement: "Recommended",
-    supervisorContactNotes: "For individual doctoral research (Individualpromotion), securing a Doktorvater/mutter (supervisor) in advance is mandatory. For structured PhD programs (Graduiertenkolleg) and Master's programs, applications are centralized.",
-    languageRequirements: "English-taught programs require IELTS 6.5–7.0 or TOEFL 90–100. German language is not required for academic admission in English programs, though A2/B1 German is recommended for daily life.",
-    typicalApplicationDeadlines: "Winter Semester (starts October): Applications open April–July 15. Summer Semester (starts April): Applications open November–January 15.",
+    supervisorContactNotes:
+      "Individual PhDs require securing a professor (Doktorvater) first. Structured PhD programs and Master's programs use centralized online applications.",
+    languageRequirements:
+      "English-taught programs require IELTS 6.5–7.0 or TOEFL 90–100. German is not required for academic admission in English programs.",
+    typicalApplicationDeadlines:
+      "Winter Semester (October start): April–July 15. Summer Semester (April start): November–January 15.",
     importantLimitations: [
-      "If self-funding living costs for a Master's, German immigration legally requires a Blocked Account (Sperrkonto) with ~€11,904/year.",
-      "Non-EU tuition fees (€1,500/semester) exist in Baden-Württemberg and select Bavarian universities.",
-      "ECTS subject-prerequisite matching is strictly enforced; admissions committees rarely admit students with non-aligned bachelor's degrees."
+      "German student visas require proof of funds via a Blocked Account (Sperrkonto) of ~€11,904/year if not on scholarship.",
+      "Baden-Württemberg and select Bavarian universities charge non-EU tuition (€1,500/semester).",
+      "Strict subject-prerequisite matching: your Bachelor's degree must closely align with the Master's field."
     ],
     officialPortals: [
-      { name: "DAAD Official Portal", url: "https://www.daad.de/en/", description: "Central German Academic Exchange Service for all programs and funding." },
-      { name: "Uni-Assist e.V.", url: "https://www.uni-assist.de/en/", description: "Centralized credential evaluation and application portal used by 180+ German universities." },
-      { name: "Research in Germany", url: "https://www.research-in-germany.org/en.html", description: "Federal Ministry of Education and Research portal for international doctoral candidates." }
+      { name: "DAAD Official Portal", url: "https://www.daad.de/en/", description: "Central German Academic Exchange Service database for programs and scholarships." },
+      { name: "Uni-Assist e.V.", url: "https://www.uni-assist.de/en/", description: "Central credential evaluation and application portal used by 180+ German universities." },
+      { name: "Research in Germany", url: "https://www.research-in-germany.org/en.html", description: "Federal research portal for international doctoral candidates and postdocs." }
     ],
     applicationSequence: [
-      "Check undergraduate degree accreditation on Anabin (confirm H+ status).",
-      "Find English-taught programs on the DAAD International Programs database.",
-      "Review ECTS curriculum prerequisites to ensure direct course alignment.",
-      "For individual PhD: Contact prospective professors with a concise research proposal.",
-      "Submit application either via Uni-Assist or directly to the university's portal before July 15."
+      "Check undergraduate degree recognition on the official Anabin database (H+ status).",
+      "Find English-taught programs on the DAAD International Programs portal.",
+      "Verify that your completed credits match the department's ECTS requirements.",
+      "For individual PhDs: email professors with a tailored research proposal and CV.",
+      "Submit application through Uni-Assist or the university portal before July 15."
     ]
   },
   {
@@ -104,57 +113,66 @@ export const countryGuidesData: CountryGuide[] = [
     code: "FR",
     flag: "🇫🇷",
     region: "Europe",
-    headline: "Eiffel Excellence Scholarships + Fully Funded Contrats Doctoraux & Subsidized Tuition",
-    summary: "France offers prestigious state-funded scholarships (such as the Ministry of Foreign Affairs' Eiffel Excellence program) and heavily subsidized public tuition fees. PhD candidates are hired under legal 3-year Contrats Doctoraux with mandatory minimum researcher salaries.",
-    fundingPhilosophy: "State-Subsidized Higher Education and Competitive National Excellence Awards: public tuition is low by international standards, and doctoral research is framed as formal employment.",
+    headline: "Eiffel Excellence Scholarships + Fully Funded Contrats Doctoraux",
+    summary:
+      "France offers prestigious national Eiffel scholarships and heavily subsidized tuition at public universities. PhD researchers are hired under legal 3-year Contrats Doctoraux with mandatory minimum salaries.",
+    fundingPhilosophy:
+      "State-supported education with competitive excellence grants and salaried doctoral research employment.",
     commonFundingRoutes: [
-      "Eiffel Excellence Scholarship Program (French Ministry for Europe and Foreign Affairs)",
-      "Contrat Doctoral (3-year statutory doctoral research employment contract with ~€2,100 gross/month)",
-      "ANR (National Research Agency) and CIFRE Industrial PhD Contracts",
-      "Regional & University Foundation Excellence Scholarships",
-      "Erasmus+ / Erasmus Mundus Joint Masters"
+      "Eiffel Excellence Scholarship (French Foreign Ministry - Master's & PhD)",
+      "Contrat Doctoral (3-year statutory doctoral research employment contract at ~€2,100 gross/mo)",
+      "ANR and CIFRE Industrial PhD Contracts with partner companies",
+      "University Foundation Excellence Waivers (reducing fees to domestic rates)",
+      "Erasmus Mundus Joint Master Degrees"
     ],
     governmentScholarships: [
       {
-        name: "Eiffel Excellence Scholarship Program (Bourse Eiffel)",
+        name: "Eiffel Excellence Scholarship Program",
         url: "https://www.campusfrance.org/en/the-eiffel-scholarship-program",
-        description: "France's flagship award for top international Master's and PhD students across engineering, science, economics, and law.",
-        coverage: "€1,181/month (Master's) or €1,800/month (PhD), international round-trip airfare, national health insurance, and cultural activities.",
+        description: "France's flagship award for top international Master's and PhD candidates across STEM, economics, and law.",
+        coverage: "€1,181/mo (Master's) or €1,800/mo (PhD), international round-trip flights, and national health insurance.",
         degreeLevel: "Master's & PhD"
       },
       {
-        name: "Make Our Planet Great Again (MOPGA) Grants",
+        name: "Make Our Planet Great Again (MOPGA)",
         url: "https://www.campusfrance.org/en/mopga-make-our-planet-great-again",
-        description: "Visiting research and doctoral grants in climate change, earth system sciences, and energy transition.",
-        coverage: "Monthly allowance, travel grant, and institutional lab support.",
+        description: "Doctoral and research grants in climate change, earth systems, and energy transition.",
+        coverage: "Monthly research allowance, travel grant, and laboratory support.",
         degreeLevel: "PhD Only"
       }
     ],
-    universityScholarships: "Universities and Grand Écoles offer merit waivers reducing non-EU tuition to standard domestic rates (~€243/year for Master's).",
-    phdFundingModel: "In France, enrolling in a science/engineering PhD legally requires secured funding. Most doctoral students sign a 'Contrat Doctoral' funded by the Ministry of Higher Education, regional councils, or research institutes (CNRS, INRIA, INSERM).",
-    mastersFundingModel: "Public university Master's fees for non-EU students are officially €3,770/year, though many universities systematically apply fee waivers down to the domestic rate (€243/year). Living costs require scholarship or self-funding.",
+    universityScholarships:
+      "Many public universities grant fee waivers that reduce non-EU Master's tuition to the standard domestic rate (~€243/year).",
+    phdFundingModel:
+      "Doctoral students in STEM must legally have secured funding before enrolling, typically via a 3-year Contrat Doctoral (~€2,100 gross/month).",
+    mastersFundingModel:
+      "Official non-EU tuition is €3,770/year, but many universities waive this to the domestic fee (€243/year). Living costs require scholarship or personal funds.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "Doctoral students on Contrats Doctoraux can take on up to 64 hours of annual university teaching ('Mission d'enseignement') for additional supplemental compensation.",
+    assistantshipsDetail:
+      "PhD researchers can teach up to 64 hours per year (Mission d'enseignement) for extra compensation.",
     supervisorContactRequirement: "Strictly Required Before Application",
-    supervisorContactNotes: "For PhD applications, finding an accredited Thesis Director (Directeur de Thèse) affiliated with a Doctoral School (École Doctorale) is an absolute legal prerequisite before registration.",
-    languageRequirements: "Many science, engineering, and business Master's and almost all PhD programs are taught entirely in English (IELTS 6.5+ or TOEFL 90+). French (B2/C1) is needed for humanities and social sciences.",
-    typicalApplicationDeadlines: "Eiffel Scholarship: Universities pre-screen candidates between September and December. General Master's via Campus France: October–January.",
+    supervisorContactNotes:
+      "For a PhD, finding a thesis director (Directeur de Thèse) at an accredited Doctoral School is an absolute requirement before registration.",
+    languageRequirements:
+      "Most STEM Master's and nearly all PhDs are taught in English (IELTS 6.5+ or TOEFL 90+). Humanities programs often require French B2/C1.",
+    typicalApplicationDeadlines:
+      "Eiffel Scholarship nominations: September–December. General Master's via Campus France: October–January.",
     importantLimitations: [
-      "Eiffel applications cannot be submitted by students directly; you must be nominated by an accredited French higher education institution.",
-      "Doctoral registration without guaranteed 3-year funding is legally prohibited in STEM fields.",
-      "Accommodation search in Paris is notoriously competitive; use CROUS student housing whenever eligible."
+      "Eiffel applications cannot be submitted directly; your French host university must nominate you.",
+      "STEM doctoral registration without guaranteed 3-year funding is prohibited by French law.",
+      "Student housing in Paris is extremely competitive; apply early through CROUS."
     ],
     officialPortals: [
-      { name: "Campus France Official Portal", url: "https://www.campusfrance.org/en", description: "The national agency for the promotion of French higher education." },
-      { name: "CampusBourses Search Engine", url: "https://campusbourses.campusfrance.org/", description: "The complete official grant search directory in France." },
-      { name: "ABG (Association Bernard Gregory)", url: "https://www.abg.asso.fr/en/", description: "French portal for doctoral and postdoctoral research job offers." }
+      { name: "Campus France", url: "https://www.campusfrance.org/en", description: "Official national agency promoting French higher education." },
+      { name: "CampusBourses", url: "https://campusbourses.campusfrance.org/", description: "Complete grant and scholarship search directory for France." },
+      { name: "ABG (Association Bernard Gregory)", url: "https://www.abg.asso.fr/en/", description: "French portal for academic research positions and doctoral jobs." }
     ],
     applicationSequence: [
-      "Search English-taught programs on the Campus France 'Taught in English' catalog.",
-      "For Master's: Apply to prospective French universities between September–November to request Eiffel nomination.",
-      "For PhD: Browse thesis offers on the Campus France Doctoral Portal or contact CNRS/INRIA research directors.",
-      "Submit your complete dossier through the official 'Études en France' procedural portal.",
-      "Apply for the Long-Stay Student Visa (VLS-TS) upon receiving the acceptance certificate."
+      "Browse English-taught programs on the Campus France online catalog.",
+      "For Master's: apply to target universities between September and November to request Eiffel nomination.",
+      "For PhD: browse thesis project offers on Campus France Doctoral Portal or contact lab directors.",
+      "Submit your official dossier via the 'Études en France' portal.",
+      "Apply for the Long-Stay Student Visa (VLS-TS) once accepted."
     ]
   },
   {
@@ -163,37 +181,46 @@ export const countryGuidesData: CountryGuide[] = [
     code: "SE",
     flag: "🇸🇪",
     region: "Europe",
-    headline: "Salaried Unionized PhD Positions + Swedish Institute Global Professionals Scholarships",
-    summary: "Sweden treats PhD candidates as salaried university employees with full collective-bargaining labor rights, generous parental leave, and pension contributions (~SEK 31,000–35,000/month). For Master's applicants, the Swedish Institute (SI) provides flagship fully funded scholarships.",
-    fundingPhilosophy: "Nordic Social Welfare Model: doctoral candidates are full employees, and state scholarship schemes prioritize global leadership and sustainable innovation.",
+    headline: "Salaried Unionized PhDs (SEK 31k–35k/mo) + Swedish Institute Scholarships",
+    summary:
+      "PhD candidates are full university employees with union-negotiated salaries (~SEK 31,000–35,000/month), pension, and paid leave. For Master's students, the Swedish Institute offers full scholarships.",
+    fundingPhilosophy:
+      "Nordic welfare model: PhD researchers are fully recognized employees with guaranteed labor rights and zero tuition fees.",
     commonFundingRoutes: [
       "Salaried Doctoral Employment (Doktorandanställning: SEK 31,000–35,000/month before tax)",
       "Swedish Institute (SI) Scholarship for Global Professionals (Master's level)",
-      "University Tuition Waiver Scholarships (e.g., KTH, Lund, Uppsala Global Scholarships)",
-      "Wallenberg Foundation and Vinnova-funded Research Projects"
+      "University Merit Scholarships (KTH, Lund, Uppsala 75%–100% tuition waivers)",
+      "Wallenberg Foundation and Vinnova-funded Research Grants"
     ],
     governmentScholarships: [
       {
-        name: "Swedish Institute Scholarship for Global Professionals (SISGP)",
+        name: "Swedish Institute Scholarship (SISGP)",
         url: "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/",
-        description: "Prestigious fully funded scholarship for future global leaders pursuing Master's programs aligned with UN Sustainable Development Goals.",
-        coverage: "100% full tuition coverage, monthly living allowance of SEK 12,000, travel grant of SEK 15,000, and health/accident insurance.",
+        description: "Full scholarship for future leaders pursuing master's degrees aligned with the UN Sustainable Development Goals.",
+        coverage: "100% tuition, monthly allowance of SEK 12,000, travel grant of SEK 15,000, and health insurance.",
         degreeLevel: "Master's Only"
       }
     ],
-    universityScholarships: "Each Swedish university (e.g., Lund Global Scholarship, KTH Scholarship, Chalmers IPOET) awards 100% and 75% tuition waivers based purely on academic excellence.",
-    phdFundingModel: "PhDs in Sweden are ALWAYS fully funded. You do not pay tuition; you are an employee on an official 4-year contract with annual salary step increases governed by the Swedish Association of University Teachers and Researchers (SULF).",
-    mastersFundingModel: "Non-EU students pay tuition (approx. SEK 90,000–160,000/year) unless awarded the Swedish Institute scholarship or an institutional university tuition waiver.",
+    universityScholarships:
+      "Every major university offers academic merit scholarships covering 75% to 100% of tuition fees for non-EU Master's students.",
+    phdFundingModel:
+      "PhDs are always fully funded salaried jobs. Tuition is zero, and salaries rise annually under collective agreements by SULF.",
+    mastersFundingModel:
+      "Non-EU students pay tuition (SEK 90,000–160,000/year) unless awarded a Swedish Institute scholarship or university fee waiver.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "PhD employment contracts can allocate up to 20% of time for teaching and department administration, which extends the 4-year PhD duration to 5 full years with paid salary.",
+    assistantshipsDetail:
+      "PhD candidates can dedicate up to 20% of their time to departmental teaching, extending their contract from 4 to 5 paid years.",
     supervisorContactRequirement: "Centralized / Not Required",
-    supervisorContactNotes: "Swedish PhD vacancies are legally advertised publicly as job openings on university career pages. You apply directly to the open vacancy posting; cold contacting professors is generally not required unless asking for vacancy clarification.",
-    languageRequirements: "English proficiency is universal. IELTS 6.5 (minimum 5.5 subscores) or TOEFL 90 (minimum 20 writing) meets the English 6 standard required nationwide.",
-    typicalApplicationDeadlines: "National Master's Portal (UniversityAdmissions.se): Opens mid-October, closes January 15. Swedish Institute scholarship application: February. PhD vacancies: Advertised year-round.",
+    supervisorContactNotes:
+      "PhD vacancies are advertised publicly as job openings on university career websites. You apply directly to the posting like an employment position.",
+    languageRequirements:
+      "IELTS 6.5 (minimum 5.5 in each section) or TOEFL 90 (minimum 20 in writing) satisfies English proficiency nationwide.",
+    typicalApplicationDeadlines:
+      "National Master's portal (UniversityAdmissions.se): mid-October to January 15. SI scholarship: February. PhDs: posted year-round.",
     importantLimitations: [
-      "Master's application fee of SEK 900 is mandatory for non-EU applicants through UniversityAdmissions.se.",
-      "The Swedish Institute scholarship is restricted to citizens of ~41 specified developing/partner nations with documented work experience (3,000+ hours).",
-      "Doctoral vacancy competition is intense because each position is a globally advertised, fully paid job."
+      "Non-EU applicants must pay a SEK 900 application fee through UniversityAdmissions.se.",
+      "The Swedish Institute scholarship requires 3,000+ hours of documented work or leadership experience.",
+      "Doctoral vacancy competition is high because every position is a globally advertised paid job."
     ],
     officialPortals: [
       { name: "UniversityAdmissions.se", url: "https://www.universityadmissions.se/intl/start", description: "Centralized national application portal for all Swedish universities." },
@@ -201,11 +228,11 @@ export const countryGuidesData: CountryGuide[] = [
       { name: "Swedish Institute (SI)", url: "https://si.se/en/", description: "Official portal for Swedish government scholarships and leadership networks." }
     ],
     applicationSequence: [
-      "Create an account on UniversityAdmissions.se and select up to 4 Master's programs in priority order before January 15.",
-      "Pay the SEK 900 application fee and upload verified academic transcripts and passport.",
-      "In early February, apply for the Swedish Institute Scholarship for Global Professionals if eligible.",
-      "For PhD: Regularly check university career pages (KTH, Lund, Karolinska, Uppsala, Chalmers) for open doctoral job ads.",
-      "Apply for a Swedish Residence Permit for Higher Education through the Swedish Migration Agency (Migrationsverket)."
+      "Select up to 4 Master's programs in priority order on UniversityAdmissions.se before January 15.",
+      "Pay the SEK 900 application fee and upload verified academic documents.",
+      "Apply for the Swedish Institute Scholarship in early February if eligible.",
+      "For PhD: monitor university vacancy pages (KTH, Lund, Uppsala, Chalmers) and apply directly to job postings.",
+      "Apply for a Swedish Residence Permit for Higher Education through the Swedish Migration Agency."
     ]
   },
   {
@@ -214,57 +241,66 @@ export const countryGuidesData: CountryGuide[] = [
     code: "FI",
     flag: "🇫🇮",
     region: "Europe",
-    headline: "Finland Scholarships (100% Tuition + €5,000 Relocation) + Salaried Doctoral Fellowships",
-    summary: "Finland provides high-quality academic education and world-leading research facilities. Non-EU students admitted to Master's programs can receive national 'Finland Scholarships' covering full tuition plus relocation grants. PhD candidates are funded via salaried university positions or Finnish foundation research grants.",
-    fundingPhilosophy: "Egalitarian Nordic Innovation: targeted state excellence scholarships for Master's and salaried employment for doctoral researchers.",
+    headline: "Finland Scholarships (100% Tuition + €5,000 Grant) + Salaried Doctoral Roles",
+    summary:
+      "Finland offers high-quality research institutions. Admitted non-EU Master's students can win national Finland Scholarships, while doctoral researchers earn salaried university contracts (~€2,400–€2,800/month).",
+    fundingPhilosophy:
+      "Nordic innovation model: merit-based tuition waivers with relocation grants for Master's, and salaried positions for doctoral researchers.",
     commonFundingRoutes: [
-      "Finland Scholarships (Ministry of Education and Culture - 100% tuition + €5,000 living grant)",
+      "Finland Scholarships (Ministry of Education: 100% tuition + €5,000 relocation grant)",
       "University 100% Tuition Waiver Scholarships (Aalto, Helsinki, Tampere, Oulu)",
       "Salaried Doctoral Researcher Positions (~€2,400–€2,800/month employment)",
-      "Finnish Foundation Grants (Kone Foundation, Finnish Cultural Foundation, Academy of Finland)",
-      "Erasmus Mundus Joint Masters"
+      "Finnish Foundation Grants (Kone Foundation, Finnish Cultural Foundation)",
+      "Erasmus Mundus Joint Master Degrees"
     ],
     governmentScholarships: [
       {
-        name: "Finland Scholarship (Master's level)",
+        name: "Finland Scholarship (Master's)",
         url: "https://www.studyinfinland.fi/scholarships/finland-scholarships",
-        description: "Funded by the Finnish Ministry of Education and Culture to attract exceptional international talent to Finnish research universities.",
-        coverage: "100% tuition fee waiver for the first year + a €5,000 relocation grant deposited upon arrival.",
+        description: "Funded by the Ministry of Education to attract exceptional international master's students.",
+        coverage: "100% tuition fee waiver for year 1 plus a €5,000 relocation allowance.",
         degreeLevel: "Master's Only"
       },
       {
-        name: "EDUFI Fellowships for Doctoral Students",
+        name: "EDUFI Fellowships",
         url: "https://www.oph.fi/en/development/edufi-fellowship",
-        description: "Finnish National Agency for Education grants for international doctoral researchers completing visits or full PhDs in Finland.",
-        coverage: "€1,500–€1,900/month living stipend for research visits up to 12 months.",
+        description: "National Agency for Education grants for visiting and full doctoral researchers.",
+        coverage: "€1,500–€1,900/month living stipend for research stays.",
         degreeLevel: "PhD Only"
       }
     ],
-    universityScholarships: "Every Finnish university operates a competitive scholarship program. When applying via the national portal, you can tick a single checkbox to be considered for a 100% tuition waiver.",
-    phdFundingModel: "Doctoral researchers at Finnish universities are either employed directly on university payroll with standard employee benefits or funded through multi-year personal grants from Finnish philanthropic foundations.",
-    mastersFundingModel: "Non-EU students pay tuition (€10,000–€18,000/year) unless awarded a Finland Scholarship or institutional tuition waiver. Living costs average €800–€1,000/month.",
+    universityScholarships:
+      "When applying via the national portal, you can check a single box to be considered for a full university tuition waiver.",
+    phdFundingModel:
+      "PhDs are funded through university payroll employment (~€2,400–€2,800/month) or multi-year personal grants from Finnish foundations.",
+    mastersFundingModel:
+      "Non-EU students pay tuition (€10,000–€18,000/year) unless awarded a Finland Scholarship or institutional waiver. Living costs average €800–€1,000/month.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "Research Assistantships in university labs are common for Master's students writing their theses, providing hourly wages or monthly thesis stipends.",
+    assistantshipsDetail:
+      "Research assistantships in university labs provide hourly wages or monthly stipends for master's thesis work.",
     supervisorContactRequirement: "Recommended",
-    supervisorContactNotes: "For PhD applications, you must identify a prospective supervisor who agrees to support your doctoral research plan before formal admission to the doctoral school.",
-    languageRequirements: "Programs are taught extensively in English. Standard requirements: IELTS Academic 6.5 (minimum 6.0 in writing) or TOEFL iBT 92.",
-    typicalApplicationDeadlines: "Joint Application to Higher Education (Opintopolku / Studyinfo.fi): Opens early January, closes mid-January. Doctoral application windows open 2–4 times per year.",
+    supervisorContactNotes:
+      "For a PhD, securing a prospective supervisor who endorses your research plan is required before formal admission to the doctoral school.",
+    languageRequirements:
+      "Standard requirements: IELTS Academic 6.5 (minimum 6.0 in writing) or TOEFL iBT 92.",
+    typicalApplicationDeadlines:
+      "Joint Master's application on Studyinfo.fi: early to mid-January (two-week window). PhD calls open 2–4 times annually.",
     importantLimitations: [
-      "The primary Master's joint application window is extremely brief (typically just two weeks in January).",
-      "Living costs in Helsinki and Espoo are high; personal funds or a relocation grant are required.",
-      "Non-EU students must provide proof of €6,720/year living funds for the Finnish residence permit."
+      "The primary joint Master's application window is very short (typically just two weeks in January).",
+      "Living costs in Helsinki and Espoo require personal funds or a relocation grant.",
+      "Proof of €6,720/year living funds is required for the Finnish residence permit."
     ],
     officialPortals: [
-      { name: "Studyinfo.fi (Opintopolku)", url: "https://opintopolku.fi/konfo/en/", description: "Official centralized national application portal for all Finnish higher education." },
+      { name: "Studyinfo.fi (Opintopolku)", url: "https://opintopolku.fi/konfo/en/", description: "Centralized national application portal for all Finnish universities." },
       { name: "Study in Finland", url: "https://www.studyinfinland.fi/", description: "Official national portal for international students by the Finnish National Agency for Education." },
-      { name: "Research.fi", url: "https://research.fi/en/", description: "The national science portal of the Academy of Finland for ongoing research projects." }
+      { name: "Research.fi", url: "https://research.fi/en/", description: "The national science portal of the Academy of Finland for research projects." }
     ],
     applicationSequence: [
-      "Browse degree programs on Studyinfo.fi during autumn.",
-      "Prepare certified academic transcripts, language scores, and portfolio/CV.",
-      "Submit application on Studyinfo.fi during the two-week January joint application window.",
-      "Tick the box applying for the 'Finland Scholarship' and institutional tuition waivers on the joint form.",
-      "Upon receiving offer in March/April, accept seat and apply for Finnish Residence Permit through Enter Finland."
+      "Search English-taught programs on Studyinfo.fi during autumn.",
+      "Prepare transcripts, language test scores, CV, and motivation letter.",
+      "Submit application on Studyinfo.fi during the January joint application window.",
+      "Tick the scholarship box on the application form to apply for fee waivers.",
+      "Accept offer and apply for the Finnish Residence Permit through Enter Finland."
     ]
   },
   {
@@ -273,49 +309,58 @@ export const countryGuidesData: CountryGuide[] = [
     code: "NO",
     flag: "🇳🇴",
     region: "Europe",
-    headline: "High-Paying Salaried PhD Fellowships (NOK 530,000+/year) with Full Employee Rights",
-    summary: "Norway is a premier global destination for doctoral research. All PhD candidates are hired as salaried research fellows (Stipendiat) earning over NOK 530,000 annually with full healthcare, pension, and worker rights. While public universities introduced non-EU tuition for Master's in 2023, PhD education remains 100% tuition-free and fully salaried.",
-    fundingPhilosophy: "Decent Work Model: PhD researchers are fully recognized academic staff with legally mandated living wages and collective bargaining protections.",
+    headline: "High-Paying Salaried PhD Positions (NOK 532,000+/year) + Full Employee Rights",
+    summary:
+      "Norway is a premier destination for doctoral research. All PhD candidates are hired as salaried research fellows (Stipendiat) earning over NOK 532,000/year (~$50,000) with complete employee benefits.",
+    fundingPhilosophy:
+      "Fair employment model: PhD researchers are academic staff members with living wages, union backing, and zero tuition.",
     commonFundingRoutes: [
-      "Doctoral Research Fellowship (Stipendiat - fully salaried position at NOK 532,000+ / ~$50,000/year)",
-      "Research Council of Norway (Forskningsrådet) project grants",
-      "Erasmus+ and EEA/Norway Grants",
-      "University Post-Doctoral and Research Assistantships"
+      "Doctoral Research Fellowship (Stipendiat - fully salaried position at NOK 532,000+/year)",
+      "Research Council of Norway (Forskningsrådet) Project Grants",
+      "EEA and Norway Grants Scholarships",
+      "University Research Assistantships"
     ],
     governmentScholarships: [
       {
-        name: "EEA and Norway Grants Scholarships",
+        name: "EEA and Norway Grants",
         url: "https://eeagrants.org/",
-        description: "Bilateral funding for students and researchers from beneficiary European partner states.",
+        description: "Bilateral study and research grants for students from eligible European partner countries.",
         coverage: "Full study grants and project research stipends.",
         degreeLevel: "Master's & PhD"
       }
     ],
-    universityScholarships: "Merit scholarships for non-EU Master's students are limited following the 2023 tuition reform, but selected private and specialized institutions offer tuition relief.",
-    phdFundingModel: "PhDs are 100% funded jobs. You apply to an advertised 'PhD Fellow' vacancy. The standard salary starts around NOK 532,700/year, with annual seniority increments and comprehensive public pension.",
-    mastersFundingModel: "Non-EU students pay tuition at public universities (approx. NOK 130,000–250,000/year) as of autumn 2023. Self-funding requires proof of ~NOK 151,690/year for living expenses.",
+    universityScholarships:
+      "Master's scholarships are very limited following the 2023 introduction of non-EU tuition, making self-funding or PhD positions the main routes.",
+    phdFundingModel:
+      "100% funded as employment. You apply to an advertised 'PhD Fellow' job vacancy. The starting salary is approximately NOK 532,700/year with pension.",
+    mastersFundingModel:
+      "Non-EU students pay tuition (approx. NOK 130,000–250,000/year) at public universities. Living costs require proof of ~NOK 151,690/year.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "PhD appointments typically span 3 years of 100% research, or 4 years including 25% mandatory department duty work (teaching, mentoring, lab maintenance).",
+    assistantshipsDetail:
+      "PhD appointments are 3 years of pure research, or 4 years including 25% teaching/departmental duties.",
     supervisorContactRequirement: "Centralized / Not Required",
-    supervisorContactNotes: "Apply directly to advertised PhD vacancy announcements on Jobbnorge or Webcruiter. Prior supervisor contact is only needed if proposing an external, self-funded grant project.",
-    languageRequirements: "English proficiency is exceptionally high in Norway. IELTS 6.5 or TOEFL 90 is required for admissions.",
-    typicalApplicationDeadlines: "PhD positions are posted year-round on Jobbnorge.no. Master's applications for international students typically close between December 1 and January 15.",
+    supervisorContactNotes:
+      "Apply directly to advertised PhD vacancy announcements on Jobbnorge or Webcruiter. Prior supervisor contact is only needed for external self-funded proposals.",
+    languageRequirements:
+      "IELTS 6.5 or TOEFL 90 is required for academic admissions.",
+    typicalApplicationDeadlines:
+      "PhD positions are posted year-round on Jobbnorge.no. Master's applications close December 1 to January 15.",
     importantLimitations: [
-      "Master's degrees at public universities are no longer tuition-free for non-EU/EEA students.",
-      "Norway has one of the highest cost-of-living indices in the world; living without a salary or scholarship is prohibitive.",
+      "Master's degrees are no longer tuition-free for non-EU students.",
+      "Norway has a high cost of living; living without a salary or scholarship is difficult.",
       "Proof of funds for student residence permits is approximately NOK 151,690/year."
     ],
     officialPortals: [
-      { name: "Study in Norway", url: "https://studyinnorway.no/", description: "Official Norwegian government guide to higher education for international students." },
-      { name: "Jobbnorge", url: "https://www.jobbnorge.no/en/available-jobs", description: "The primary national portal for all Norwegian university faculty and PhD Fellow vacancies." },
-      { name: "UDI (Norwegian Directorate of Immigration)", url: "https://www.udi.no/en/", description: "Official immigration authority for Norwegian residence and work permits." }
+      { name: "Study in Norway", url: "https://studyinnorway.no/", description: "Official Norwegian government guide for international students." },
+      { name: "Jobbnorge", url: "https://www.jobbnorge.no/en/available-jobs", description: "Primary national portal for all Norwegian university PhD Fellow vacancies." },
+      { name: "UDI (Directorate of Immigration)", url: "https://www.udi.no/en/", description: "Official immigration authority for Norwegian residence and work permits." }
     ],
     applicationSequence: [
-      "For PhD: Set up daily alerts on Jobbnorge.no for 'PhD Research Fellow' in your field.",
-      "Prepare a comprehensive academic CV, publication list, and tailored project cover letter.",
-      "Submit application directly via the university's online recruitment system (Jobbnorge/Webcruiter).",
-      "Shortlisted candidates undergo a formal interview and presentation before the departmental hiring committee.",
-      "Accepted fellows receive an employment contract and apply for a Norwegian Residence Permit for Skilled Workers / Researchers."
+      "For PhD: set up alerts on Jobbnorge.no for 'PhD Fellow' vacancies in your field.",
+      "Prepare an academic CV, publication list, and tailored project cover letter.",
+      "Submit application through the university's online job portal.",
+      "Complete the interview and presentation with the departmental committee.",
+      "Upon hire, sign the employment contract and apply for a Norwegian Residence Permit for Skilled Workers."
     ]
   },
   {
@@ -324,55 +369,64 @@ export const countryGuidesData: CountryGuide[] = [
     code: "DK",
     flag: "🇩🇰",
     region: "Europe",
-    headline: "Collective Agreement PhD Salaries (DKK 33,000/month) + Danish Government Scholarships",
-    summary: "Denmark offers world-class universities (Copenhagen, DTU, Aarhus) where PhD researchers are employed under the AC collective agreement, receiving competitive salaries (DKK ~33,000/month) and generous pension benefits. Master's candidates can compete for Danish Government Scholarships.",
-    fundingPhilosophy: "Collaborative Nordic Research Economy: strong industry-academic linkages, industrial PhD options, and union-backed doctoral salaries.",
+    headline: "Collective Agreement PhD Salaries (DKK 33k/mo) + Government Scholarships",
+    summary:
+      "At top institutions like Copenhagen, DTU, and Aarhus, PhD researchers earn ~DKK 33,000/month under collective labor agreements. Master's applicants can compete for Danish Government Scholarships.",
+    fundingPhilosophy:
+      "Nordic innovation economy: strong industry-academic partnerships, industrial PhD options, and union-backed doctoral salaries.",
     commonFundingRoutes: [
-      "PhD Fellow Employment Contract (Overenskomst - DKK 32,000–35,000/month + 17.1% pension)",
-      "Danish Government Scholarships under the Cultural Agreements (Master's level)",
-      "University 100% Tuition Waiver + Living Cost Grants (DTU, KU, AU)",
-      "Industrial PhD (ErhvervsPhD) co-funded by the Innovation Fund Denmark and private industry"
+      "PhD Fellow Employment Contract (Overenskomst: DKK 32,000–35,000/month + 17.1% pension)",
+      "Danish Government Scholarships (Cultural Agreements for Master's)",
+      "University Tuition Waiver + Monthly Living Grants (DTU, KU, AU)",
+      "Industrial PhD (ErhvervsPhD) co-funded by companies and Innovation Fund Denmark"
     ],
     governmentScholarships: [
       {
-        name: "Danish Government Scholarships (Cultural Agreements)",
+        name: "Danish Government Scholarships",
         url: "https://ufm.dk/en/education/programmes-and-education-institutions/scholarships-and-loans/the-cultural-agreements-programme",
-        description: "Targeted scholarships for highly qualified exchange and degree students from selected non-EU partner nations.",
+        description: "Targeted scholarships for high-achieving non-EU students from selected partner nations.",
         coverage: "Full or partial tuition fee waivers and monthly living contributions.",
         degreeLevel: "Master's Only"
       },
       {
-        name: "Innovation Fund Denmark Industrial PhD",
+        name: "Industrial PhD (Innovation Fund Denmark)",
         url: "https://innovationsfonden.dk/en/p/industrial-phd",
-        description: "A 3-year research project where the PhD candidate is employed by a private company while enrolled at a Danish university.",
-        coverage: "Full private company salary + DKK 17,500/month company subsidy + university tuition coverage.",
+        description: "3-year research project where you are employed by a company while enrolled at a Danish university.",
+        coverage: "Full private company salary + university tuition coverage.",
         degreeLevel: "PhD Only"
       }
     ],
-    universityScholarships: "Danish public universities receive government pools to award full tuition waivers and monthly stipends (~DKK 6,000–8,000/month) to outstanding non-EU Master's applicants.",
-    phdFundingModel: "PhDs are fully funded employment contracts. Tuition is zero, and candidates receive a formal salary paid under the Danish Confederation of Professional Associations (AC) agreement.",
-    mastersFundingModel: "Non-EU students pay tuition (€6,000–€16,000/year) unless awarded a Danish Government Scholarship or institutional fee waiver.",
+    universityScholarships:
+      "Universities receive government funding pools to award full tuition waivers and monthly stipends (~DKK 6,000–8,000/month) to top Master's applicants.",
+    phdFundingModel:
+      "PhDs are fully funded employment contracts. Tuition is zero, and candidates receive a formal salary under the AC collective agreement.",
+    mastersFundingModel:
+      "Non-EU students pay tuition (€6,000–€16,000/year) unless awarded a Danish Government Scholarship or university waiver.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "PhD employment contracts include a statutory requirement of 840 hours of teaching and knowledge dissemination over the 3-year doctoral period.",
+    assistantshipsDetail:
+      "PhD contracts include 840 hours of teaching and knowledge dissemination across the 3-year appointment.",
     supervisorContactRequirement: "Recommended",
-    supervisorContactNotes: "For advertised university PhD vacancies, apply through the portal. For independent project applications or Industrial PhDs, securing a university supervisor first is essential.",
-    languageRequirements: "Programs require proven English proficiency: IELTS 6.5 overall or TOEFL iBT 88–90.",
-    typicalApplicationDeadlines: "Master's applications for non-EU students close January 15. PhD vacancies are advertised throughout the year.",
+    supervisorContactNotes:
+      "Apply through the portal for advertised vacancies. For independent projects or Industrial PhDs, securing a university supervisor first is essential.",
+    languageRequirements:
+      "IELTS 6.5 overall or TOEFL iBT 88–90 meets admissions requirements.",
+    typicalApplicationDeadlines:
+      "Master's applications close January 15. PhD vacancies are advertised throughout the year.",
     importantLimitations: [
-      "Denmark has strict immigration rules and high living expenses (Copenhagen rent is competitive).",
-      "Master's government scholarships are allocated internally by universities; there is no separate government application portal.",
-      "A 3-year Bachelor's degree must meet Danish equivalency standards for direct Master's admission."
+      "High living expenses; Copenhagen rent requires early searching.",
+      "Master's government scholarships are distributed internally by universities—no separate government portal.",
+      "Your Bachelor's degree must directly match the prerequisites of the target Master's program."
     ],
     officialPortals: [
       { name: "Study in Denmark", url: "https://studyindenmark.dk/", description: "Official Danish Ministry of Higher Education and Science portal." },
-      { name: "UFM (Danish Ministry of Higher Education)", url: "https://ufm.dk/en", description: "Official government portal for education policies and international agreements." },
-      { name: "SIRI (Danish Agency for International Recruitment)", url: "https://www.nyidanmark.dk/en-GB", description: "Official immigration service for Danish student and researcher permits." }
+      { name: "UFM Ministry Portal", url: "https://ufm.dk/en", description: "Official government portal for education policies and international agreements." },
+      { name: "SIRI Immigration Agency", url: "https://www.nyidanmark.dk/en-GB", description: "Official immigration authority for Danish student and researcher permits." }
     ],
     applicationSequence: [
       "Apply through the national digital application portal (DANS) before January 15 for Master's programs.",
       "Check the box requesting consideration for the Danish Government Scholarship.",
-      "For PhD: Browse vacancy listings on DTU Jobs, Copenhagen University Job Portal, or Aarhus University Careers.",
-      "Upon acceptance, your university or employer initiates the digital residence and work permit application (ST1 or PhD permit)."
+      "For PhD: browse vacancy postings on DTU, KU, and Aarhus University job portals.",
+      "Upon acceptance, your university initiates the ST1 student/researcher permit application."
     ]
   },
   {
@@ -381,57 +435,66 @@ export const countryGuidesData: CountryGuide[] = [
     code: "NL",
     flag: "🇳🇱",
     region: "Europe",
-    headline: "Salaried Promovendus PhD Positions (€2,770–€3,539/month) + NL Scholarships",
-    summary: "In the Netherlands, doctoral candidates are not treated as students—they are 'Promovendi' (university employees) hired under the national CAO Universiteiten collective agreement with generous salaries, holiday allowances, and year-end bonuses. Master's candidates can access the NL Scholarship and Erasmus Mundus joint degrees.",
-    fundingPhilosophy: "Employee-First Doctoral Framework: full labor rights, union wages, and structured research autonomy.",
+    headline: "Salaried Promovendus PhD Positions (€2,770–€3,539/mo) + NL Scholarships",
+    summary:
+      "In the Netherlands, doctoral candidates are 'Promovendi' (university employees) hired under the CAO Universiteiten collective agreement with salaries, holiday bonuses, and full employee rights.",
+    fundingPhilosophy:
+      "Employee-first doctoral system: PhD candidates are salaried staff with full union protections and research autonomy.",
     commonFundingRoutes: [
-      "Promovendus Doctoral Employment (CAO Universiteiten salary: €2,770 in Year 1 rising to €3,539/month in Year 4)",
-      "NL Scholarship (formerly Holland Scholarship - Dutch Ministry of Education)",
-      "NWO (Dutch Research Council) Open Technology & Talent Programme grants",
-      "Institutional Excellence Scholarships (e.g., TU Delft Justus & Louise van Effen, Leiden Excellence)",
+      "Promovendus Doctoral Employment (€2,770/mo Year 1 rising to €3,539/mo Year 4 + bonuses)",
+      "NL Scholarship (Dutch Ministry of Education grant for non-EEA master's students)",
+      "NWO (Dutch Research Council) Project Grants",
+      "Institutional Excellence Awards (TU Delft Justus & Louise, Leiden Excellence)",
       "Erasmus Mundus Joint Master Degrees"
     ],
     governmentScholarships: [
       {
-        name: "NL Scholarship (Dutch Ministry of Education)",
+        name: "NL Scholarship",
         url: "https://www.studyinnl.org/finances/nl-scholarship",
-        description: "Funded by the Dutch Ministry of Education, Culture and Science for international students outside the EEA.",
-        coverage: "€5,000–€15,000 financial contribution toward tuition and living costs during the first year.",
+        description: "Funded by the Dutch Ministry of Education for international students outside the EEA.",
+        coverage: "€5,000–€15,000 financial contribution toward tuition and living costs during year one.",
         degreeLevel: "Master's Only"
       },
       {
         name: "Orange Knowledge Programme (OKP)",
         url: "https://www.nuffic.nl/en/subjects/orange-knowledge-programme",
-        description: "Dutch global development initiative offering full scholarships for professionals in partner countries.",
-        coverage: "Full tuition, living costs, visa, and insurance for selected Master's and training courses.",
+        description: "Global development initiative offering full scholarships for professionals in partner countries.",
+        coverage: "Full tuition, living costs, visa, and insurance for selected programs.",
         degreeLevel: "Master's & PhD"
       }
     ],
-    universityScholarships: "Top universities offer flagship awards, such as TU Delft's Justus & Louise van Effen Excellence Scholarships (100% tuition + living expenses) and Utrecht Excellence Scholarships.",
-    phdFundingModel: "PhDs are 100% fully funded employment positions (internal candidates). You receive a salary according to the Collective Labour Agreement of Dutch Universities (CAO), including an 8% holiday allowance and 8.3% end-of-year bonus.",
-    mastersFundingModel: "Non-EU students pay tuition fees (€12,000–€22,000/year). Funding requires winning an NL Scholarship, university excellence grant, or an Erasmus Mundus award.",
+    universityScholarships:
+      "Leading universities offer competitive excellence awards (such as TU Delft's Justus & Louise van Effen) covering 100% of tuition and living costs.",
+    phdFundingModel:
+      "PhDs are fully funded jobs. You receive a monthly salary governed by the CAO agreement, an 8% holiday allowance, and an 8.3% end-of-year bonus.",
+    mastersFundingModel:
+      "Non-EU tuition is €12,000–€22,000/year. Funding requires winning an NL Scholarship, institutional excellence award, or Erasmus Mundus grant.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "Under the CAO agreement, PhD candidates generally allocate up to 10–15% of their time to assisting with bachelor's coursework and lab supervision.",
+    assistantshipsDetail:
+      "PhD researchers spend up to 10–15% of their time assisting with undergraduate teaching and lab supervision.",
     supervisorContactRequirement: "Centralized / Not Required",
-    supervisorContactNotes: "Most Dutch PhD vacancies are advertised as open jobs on AcademicTransfer.com. You apply directly to the posting; cold emailing professors is only helpful when proposing a pre-funded external fellowship.",
-    languageRequirements: "The Netherlands is the top non-native English-speaking country in the world. IELTS 6.5–7.0 (minimum 6.0 subscores) or TOEFL iBT 90–100 is standard.",
-    typicalApplicationDeadlines: "Master's priority scholarship deadlines: December 1 to February 1. General admission: April 1. PhD vacancies: Advertised year-round.",
+    supervisorContactNotes:
+      "Most Dutch PhDs are advertised as open vacancies on AcademicTransfer.com. Apply directly to the posting; cold emails are rarely necessary.",
+    languageRequirements:
+      "English proficiency is extremely high. Required scores: IELTS 6.5–7.0 or TOEFL iBT 90–100.",
+    typicalApplicationDeadlines:
+      "Master's scholarship priority deadlines: December 1 to February 1. PhD vacancies: posted year-round.",
     importantLimitations: [
-      "Severe national student housing shortage; never travel to the Netherlands without verified accommodation booked months in advance.",
+      "Severe national student housing shortage; secure verified accommodation before arriving.",
       "High non-EU tuition for Master's programs if no scholarship is secured.",
-      "Application evaluation fees (€75–€100) are charged by most Dutch research universities."
+      "Research universities typically charge a €75–€100 application evaluation fee."
     ],
     officialPortals: [
       { name: "AcademicTransfer", url: "https://www.academictransfer.com/en/", description: "The official academic job portal for all 14 Dutch universities and research institutes." },
-      { name: "Study in NL (Nuffic)", url: "https://www.studyinnl.org/", description: "The official Dutch national agency portal for international education." },
-      { name: "NWO (Dutch Research Council)", url: "https://www.nwo.nl/en", description: "Official funding body investing over €1 billion annually in scientific research." }
+      { name: "Study in NL (Nuffic)", url: "https://www.studyinnl.org/", description: "Official national portal for international education in the Netherlands." },
+      { name: "NWO (Research Council)", url: "https://www.nwo.nl/en", description: "Official national funding council investing in major scientific research projects." }
     ],
     applicationSequence: [
-      "For Master's: Apply via Studielink.nl and the university application portal before December 1/February 1.",
-      "Submit the institutional excellence scholarship application simultaneously.",
-      "For PhD: Regularly monitor AcademicTransfer.com for PhD vacancies matching your specialization.",
-      "Submit CV, publication list, and cover letter addressing the specific project criteria.",
-      "Upon acceptance, the university handles your IND entry visa and Dutch residence permit application directly."
+      "For Master's: apply via Studielink.nl and the university portal before December 1/February 1.",
+      "Submit the institutional excellence scholarship application at the same time.",
+      "For PhD: monitor AcademicTransfer.com for vacancies matching your specialization.",
+      "Submit CV, publication list, and tailored cover letter through the university job system.",
+      "Upon hire, the university directly handles your IND visa and residence permit application."
     ]
   },
   {
@@ -440,57 +503,66 @@ export const countryGuidesData: CountryGuide[] = [
     code: "BE",
     flag: "🇧🇪",
     region: "Europe",
-    headline: "FWO / FNRS Doctoral Fellowships (€2,400+ net/month) + Master Mind Awards",
-    summary: "Belgium boasts world-renowned research institutions like KU Leuven, Ghent University, and UCLouvain. PhD researchers receive tax-exempt doctoral fellowship stipends of €2,400+ net per month via FWO (Flanders) or FNRS (Wallonia), while Master's applicants can secure Master Mind scholarships.",
-    fundingPhilosophy: "Subsidized European High-Tech Hub: low standard tuition at Flemish and Walloon universities paired with generous tax-exempt research fellowship salaries.",
+    headline: "FWO / FNRS Doctoral Fellowships (€2,400+ net/mo) + Master Mind Awards",
+    summary:
+      "Home to KU Leuven, Ghent University, and UCLouvain. Doctoral researchers receive tax-exempt fellowships of €2,400+ net/month via FWO or FNRS, while Master's candidates can secure Master Mind scholarships.",
+    fundingPhilosophy:
+      "Subsidized European hub: low standard tuition at Flemish and Walloon universities paired with generous tax-exempt research fellowship salaries.",
     commonFundingRoutes: [
       "FWO / FNRS Doctoral Fellowships (tax-exempt salary of €2,400–€2,700 net/month with full social security)",
-      "Master Mind Scholarship Programme (Government of Flanders)",
-      "VLIR-UOS Scholarships for Sustainable Development (Master's level)",
+      "Master Mind Scholarship (Flemish Government: €10,000 grant + tuition waiver)",
+      "VLIR-UOS Sustainable Development Master's Scholarships",
       "University Special Research Fund (BOF) Doctoral Grants",
       "Erasmus Mundus Joint Master Degrees"
     ],
     governmentScholarships: [
       {
-        name: "Master Mind Scholarship (Flanders Government)",
+        name: "Master Mind Scholarship",
         url: "https://www.studyinflanders.be/scholarships/master-mind-scholarships",
-        description: "Awarded by the Flemish Ministry of Education to outstanding international Master's students.",
-        coverage: "Full tuition waiver + €10,000 living grant per academic year.",
+        description: "Awarded by the Flemish Ministry of Education to outstanding international master's students.",
+        coverage: "Full tuition fee waiver plus €10,000 living allowance per academic year.",
         degreeLevel: "Master's Only"
       },
       {
         name: "VLIR-UOS Scholarships",
         url: "https://www.vliruos.be/en/scholarships/6",
-        description: "Full-ride awards for candidates from developing nations pursuing selected international master's programs.",
-        coverage: "100% tuition, monthly allowance, accommodation, travel, and comprehensive insurance.",
+        description: "Full awards for students from developing nations pursuing selected international master's programs.",
+        coverage: "100% tuition, monthly allowance, housing, travel, and comprehensive insurance.",
         degreeLevel: "Master's Only"
       }
     ],
-    universityScholarships: "KU Leuven and Ghent University provide Special Research Fund (BOF) doctoral positions and targeted developing-country master's grants.",
-    phdFundingModel: "PhDs are predominantly fully funded through 4-year tax-exempt doctoral fellowships (FWO in Flanders, FNRS in Wallonia) or BOF university research grants, providing €2,400+ net monthly take-home pay.",
-    mastersFundingModel: "Standard public tuition is exceptionally low at ~€1,116/year for many programs, though certain specialized Master's charge non-EU fees (~€3,500–€6,000/year).",
+    universityScholarships:
+      "KU Leuven and Ghent University provide Special Research Fund (BOF) doctoral positions and targeted developing-country master's grants.",
+    phdFundingModel:
+      "PhDs are funded via 4-year tax-exempt fellowships (FWO in Flanders, FNRS in Wallonia) or BOF university research grants, providing €2,400+ net monthly pay.",
+    mastersFundingModel:
+      "Public tuition is low at ~€1,116/year for many programs, though specialized Master's charge ~€3,500–€6,000/year. Scholarships cover tuition and living costs.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "Doctoral researchers can serve as teaching assistants ('Assisterend Academisch Personeel' - AAP), which includes formal university employment and structured teaching hours.",
+    assistantshipsDetail:
+      "Doctoral researchers can serve as teaching assistants (AAP), which includes university employment and structured teaching hours.",
     supervisorContactRequirement: "Strictly Required Before Application",
-    supervisorContactNotes: "For PhD applications in Belgium, you MUST secure a university faculty promoter (professor) who co-submits your research grant proposal to FWO, FNRS, or the university BOF fund.",
-    languageRequirements: "English is widely used in graduate research. Standard requirements: IELTS 6.5–7.0 or TOEFL 90+.",
-    typicalApplicationDeadlines: "Master Mind Scholarship nominations: February–March. FWO PhD fellowship applications: Typically March 1. Master's admissions: February 1 (non-EEA).",
+    supervisorContactNotes:
+      "For a PhD, you MUST secure a university faculty promoter (professor) who co-submits your research proposal to FWO, FNRS, or the BOF fund.",
+    languageRequirements:
+      "English-taught programs require IELTS 6.5–7.0 or TOEFL 90+.",
+    typicalApplicationDeadlines:
+      "Master Mind nominations: February–March. FWO PhD fellowships: March 1. Master's admissions: February 1 (non-EEA).",
     importantLimitations: [
-      "Master Mind requires institutional nomination by a Flemish university before you can apply to the government.",
-      "Strict Belgian visa proof of financial solvency requirement (~€789–€1,000/month block or official guarantor).",
-      "FWO/FNRS fellowship competition is rigorous; high academic rankings and clear research design are critical."
+      "Master Mind requires institutional nomination by a Flemish university before you can apply.",
+      "Proof of financial solvency (~€789–€1,000/month) is required for the Belgian student visa.",
+      "FWO/FNRS competition is intense; academic rankings and clear research design are critical."
     ],
     officialPortals: [
       { name: "Study in Flanders", url: "https://www.studyinflanders.be/", description: "Official website for higher education in the Flemish region of Belgium." },
-      { name: "FWO (Research Foundation - Flanders)", url: "https://www.fwo.be/en/", description: "The premier funding body for fundamental scientific research in Flanders." },
-      { name: "FNRS (Fonds de la Recherche Scientifique)", url: "https://www.frs-fnrs.be/en/", description: "Funding agency supporting scientific research in the French-speaking community of Belgium." }
+      { name: "FWO Research Foundation", url: "https://www.fwo.be/en/", description: "The premier funding body for fundamental scientific research in Flanders." },
+      { name: "FNRS Research Fund", url: "https://www.frs-fnrs.be/en/", description: "Scientific research funding agency for French-speaking universities in Belgium." }
     ],
     applicationSequence: [
-      "Find a prospective research promoter at a Belgian university (KU Leuven, Ghent, Antwerp, VUB, UCLouvain).",
-      "For Master's: Apply to the university and request nomination for the Master Mind Scholarship.",
-      "For PhD: Work collaboratively with your promoter to write and co-submit an FWO/FNRS/BOF doctoral proposal.",
-      "Upon fellowship approval, receive official admission and register at the university doctoral school.",
-      "Apply for the Belgian Long-Stay Visa (Type D) through the local embassy or VFS Global."
+      "Find a research promoter at a Belgian university (KU Leuven, Ghent, VUB, UCLouvain).",
+      "For Master's: apply to the university and request nomination for the Master Mind Scholarship.",
+      "For PhD: write and co-submit an FWO/FNRS/BOF doctoral proposal with your promoter.",
+      "Once approved, register at the university doctoral school.",
+      "Apply for the Belgian Long-Stay Visa (Type D) through the embassy or VFS Global."
     ]
   },
   {
@@ -499,14 +571,16 @@ export const countryGuidesData: CountryGuide[] = [
     code: "CH",
     flag: "🇨🇭",
     region: "Europe",
-    headline: "Highest Global PhD Salaries (CHF 47,040–80,000/year) + Swiss Excellence Scholarships",
-    summary: "Switzerland provides the highest academic research salaries on earth. At world top-10 universities like ETH Zurich and EPFL, PhD researchers earn between CHF 47,000 and CHF 80,000+ per year under Swiss National Science Foundation (SNSF) standards. The Swiss Government also awards prestigious Excellence Scholarships.",
-    fundingPhilosophy: "World-Class Precision & Unrivaled Research Investment: premier national salaries that guarantee complete financial independence during doctoral studies.",
+    headline: "World-Leading PhD Salaries (CHF 47k–85k/yr) + Swiss Excellence Scholarships",
+    summary:
+      "At world top-10 universities like ETH Zurich and EPFL, PhD researchers earn CHF 47,000 to CHF 85,000+ per year under Swiss National Science Foundation (SNSF) standards. The Swiss Government also awards prestigious Excellence Scholarships.",
+    fundingPhilosophy:
+      "Top-tier research investment: national salary scales that guarantee complete financial independence during doctoral studies.",
     commonFundingRoutes: [
-      "SNSF-Funded Doctoral Research Positions (CHF 47,040–CHF 55,000+ per year base salary)",
-      "ETH Zurich / EPFL Internal Doctoral Assistantships (up to CHF 70,000–CHF 85,000/year depending on department)",
+      "SNSF-Funded Doctoral Positions (CHF 47,040–CHF 55,000+ base salary)",
+      "ETH Zurich / EPFL Internal Assistantships (up to CHF 70,000–CHF 85,000/year)",
       "Swiss Government Excellence Scholarships (ESKAS / FCS)",
-      "ETH Zurich Excellence Scholarship & Opportunity Programme (ESOP - Master's level)",
+      "ETH Zurich ESOP Excellence Scholarships (Master's level)",
       "EPFL Master Excellence Fellowships"
     ],
     governmentScholarships: [
@@ -514,34 +588,41 @@ export const countryGuidesData: CountryGuide[] = [
         name: "Swiss Government Excellence Scholarships (ESKAS)",
         url: "https://www.sbfi.admin.ch/sbfi/en/home/education/scholarships-and-grants/swiss-government-excellence-scholarships.html",
         description: "Federal awards granted by the Swiss Confederation to international postgraduates and researchers.",
-        coverage: "CHF 1,920/month living allowance, exemption from tuition fees, health insurance, and flight allowance.",
+        coverage: "CHF 1,920/month living allowance, tuition fee waiver, health insurance, and flight grant.",
         degreeLevel: "PhD Only"
       }
     ],
-    universityScholarships: "ETH Zurich's ESOP and EPFL's Excellence Fellowships cover full living costs (CHF 12,000/semester) and tuition waivers for top Master's students.",
-    phdFundingModel: "All PhD students at Swiss public universities are employed as university research assistants. Tuition is negligible (often under CHF 150/semester for PhDs), and salaries are world-leading.",
-    mastersFundingModel: "Standard public tuition at ETH Zurich and EPFL is remarkably low (~CHF 730/semester). However, high living expenses (CHF 20,000–24,000/year) require personal funds or competitive excellence fellowships like ESOP.",
+    universityScholarships:
+      "ETH Zurich's ESOP and EPFL's Excellence Fellowships cover full living costs (CHF 12,000/semester) and tuition waivers for top Master's students.",
+    phdFundingModel:
+      "All PhD students at Swiss public universities are employed as research assistants. Tuition is negligible (~CHF 150/semester), and salaries are world-leading.",
+    mastersFundingModel:
+      "Public tuition at ETH Zurich and EPFL is modest (~CHF 730/semester), but living expenses (CHF 20,000–24,000/year) require personal savings or an ESOP scholarship.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "Assistantship responsibilities (TA work, lab exercises) are directly integrated into the salaried doctoral contract without needing extra applications.",
+    assistantshipsDetail:
+      "Assistantship duties (teaching exercises, lab supervision) are integrated directly into the salaried doctoral contract.",
     supervisorContactRequirement: "Strictly Required Before Application",
-    supervisorContactNotes: "For individual doctoral research, you must contact professors directly and secure a formal commitment letter. For structured doctoral schools (e.g., EPFL EDIC), admissions are centralized.",
-    languageRequirements: "Master's and PhD programs in STEM are 100% in English: IELTS 7.0+ or TOEFL iBT 100+.",
-    typicalApplicationDeadlines: "ETH Zurich & EPFL Master's: December 15. Swiss Government Excellence Scholarships: September–December (varies by embassy). PhD vacancies: Posted year-round.",
+    supervisorContactNotes:
+      "For individual doctorates, you must contact professors directly and secure a commitment letter. Structured doctoral programs (e.g. EPFL EDIC) use centralized admissions.",
+    languageRequirements:
+      "Master's and PhD programs in STEM are taught in English: IELTS 7.0+ or TOEFL iBT 100+.",
+    typicalApplicationDeadlines:
+      "ETH Zurich & EPFL Master's: December 15. Swiss Government Excellence Scholarships: September–December. PhD vacancies: posted year-round.",
     importantLimitations: [
-      "Cost of living in Zurich and Geneva is among the highest globally (monthly living costs exceed CHF 1,800–2,200).",
-      "Cantonal immigration offices strictly enforce proof of financial means (CHF 21,000 in a Swiss bank account) for Master's study visas if unassisted.",
-      "Acceptance rates at ETH Zurich and EPFL are exceptionally competitive."
+      "Cost of living in Zurich and Geneva is high (monthly expenses exceed CHF 1,800–2,200).",
+      "Cantonal immigration requires proof of CHF 21,000 in a Swiss bank for Master's study visas without a scholarship.",
+      "Admissions at ETH Zurich and EPFL are among the most competitive worldwide."
     ],
     officialPortals: [
-      { name: "Swiss Government Excellence Scholarships (SERI)", url: "https://www.sbfi.admin.ch/sbfi/en/home.html", description: "State Secretariat for Education, Research and Innovation official portal." },
-      { name: "SNSF (Swiss National Science Foundation)", url: "https://www.snf.ch/en", description: "Switzerland's central research funding agency." },
-      { name: "ETH Zurich Jobs & Vacancies", url: "https://jobs.ethz.ch/", description: "Direct portal for scientific and doctoral research vacancies at ETH Zurich." }
+      { name: "Swiss Government Excellence (SERI)", url: "https://www.sbfi.admin.ch/sbfi/en/home.html", description: "State Secretariat for Education, Research and Innovation official portal." },
+      { name: "SNSF (Science Foundation)", url: "https://www.snf.ch/en", description: "Switzerland's central scientific research funding agency." },
+      { name: "ETH Zurich Jobs Portal", url: "https://jobs.ethz.ch/", description: "Direct portal for scientific and doctoral research vacancies at ETH Zurich." }
     ],
     applicationSequence: [
-      "For Master's: Apply directly to ETH Zurich or EPFL online admissions before December 15, selecting the ESOP/Fellowship option.",
-      "For PhD: Browse lab vacancy pages or contact targeted professors with a tailored research inquiry and CV.",
-      "For Swiss Government Excellence: Contact the local Swiss embassy in your home country in August/September for official application packages.",
-      "Upon securing an employment contract or scholarship, submit visa application to the Swiss cantonal migration office."
+      "For Master's: apply to ETH Zurich or EPFL before December 15 and select the ESOP fellowship option.",
+      "For PhD: browse lab vacancy pages or email professors with a tailored research inquiry and CV.",
+      "For Swiss Government Excellence: contact the local Swiss embassy in August/September for application materials.",
+      "Upon securing an employment contract or scholarship, submit the visa application to the cantonal migration office."
     ]
   },
   {
@@ -550,15 +631,17 @@ export const countryGuidesData: CountryGuide[] = [
     code: "IT",
     flag: "🇮🇹",
     region: "Europe",
-    headline: "Regional DSU Need-Based Full Waivers + MAECI Government Grants & National PhD Stipends",
-    summary: "Italy is one of the most generous destinations for international students due to its DSU (Diritto allo Studio Universitario) regional framework, which provides full tuition waivers, free cafeteria meals, and annual living stipends based on family income. National PhD programs are fully funded at €1,200–€1,400 net/month.",
-    fundingPhilosophy: "Constitutional Right to Higher Education: socio-economic need-based regional funding (DSU) guarantees tuition-free access and living support for qualifying families worldwide.",
+    headline: "Regional DSU Need-Based Full Waivers + MAECI Grants & National PhD Stipends",
+    summary:
+      "Italy provides generous DSU (Diritto allo Studio Universitario) regional funding, giving qualifying students full tuition waivers, free cafeteria meals, and cash living stipends. National PhD programs are funded at ~€1,200–€1,400 net/month.",
+    fundingPhilosophy:
+      "Constitutional right to education: socio-economic need-based funding (DSU) guarantees tuition-free access and living stipends for qualifying students worldwide.",
     commonFundingRoutes: [
-      "DSU Regional Need-Based Scholarship (100% tuition waiver + free dorm + free meals + ~€5,000–€7,000 cash stipend)",
+      "DSU Regional Scholarship (100% tuition waiver + free dorm + free meals + ~€5,000–€7,000 cash stipend)",
       "MAECI Italian Government Scholarships for Foreign Citizens",
-      "Invest Your Talent in Italy (IYT) Programme (scholarship + guaranteed company internship)",
-      "National PNRR-Funded PhD Scholarships (~€1,200–€1,400 net/month with 50% increase for research abroad)",
-      "University Merit Scholarships (Politecnico di Milano, Politecnico di Torino, Sapienza, Bologna)"
+      "Invest Your Talent in Italy (IYT) Programme (scholarship + corporate internship)",
+      "National PNRR-Funded PhD Scholarships (~€1,200–€1,400 net/month)",
+      "University Merit Scholarships (PoliMi, PoliTo, Sapienza, Bologna)"
     ],
     governmentScholarships: [
       {
@@ -571,35 +654,42 @@ export const countryGuidesData: CountryGuide[] = [
       {
         name: "Invest Your Talent in Italy",
         url: "https://postgradinitaly.esteri.it/postgradinitaly/en/how-to-apply",
-        description: "Targeted Master's program combining engineering/business studies with paid Italian corporate internships.",
+        description: "Master's program combining engineering/business studies with paid corporate internships.",
         coverage: "Full tuition waiver + €900/month allowance + Italian language courses.",
         degreeLevel: "Master's Only"
       }
     ],
-    universityScholarships: "Merit awards (e.g., Politecnico di Milano Platinum/Gold scholarships) provide €10,000/year living allowance plus complete tuition waivers.",
-    phdFundingModel: "All accredited PhD seats in Italy (Dottorato di Ricerca) with scholarship receive a national legally defined stipend (~€16,243 gross per year, approx. €1,200–€1,400 net/month), increasing by 50% during authorized research visits abroad.",
-    mastersFundingModel: "Public university tuition is indexed to family income via the 'ISEE Parificato' document (€156–€3,000/year). Qualifying students through DSU pay €0 tuition and receive living stipends.",
+    universityScholarships:
+      "Merit awards (such as Politecnico di Milano Platinum scholarships) provide €10,000/year living allowance plus complete tuition waivers.",
+    phdFundingModel:
+      "All accredited PhD seats in Italy with scholarship receive a national stipend (~€1,200–€1,400 net/month), which increases by 50% during research visits abroad.",
+    mastersFundingModel:
+      "Public university tuition is indexed to family income via the 'ISEE Parificato' document (€156–€3,000/year). Qualifying DSU students pay €0 tuition and receive living stipends.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "Universities offer '150 Ore' (150 hours) student collaborations in libraries, computer labs, and international offices paying €8–€10/hour.",
+    assistantshipsDetail:
+      "Universities offer '150 Ore' (150 hours) paid student campus jobs in libraries and labs paying €8–€10/hour.",
     supervisorContactRequirement: "Centralized / Not Required",
-    supervisorContactNotes: "PhD admissions in Italy are strictly governed by public competitive examinations (Bando di Concorso). You submit a research project and CV to a centralized department committee.",
-    languageRequirements: "Over 500 English-taught Master's and almost all PhD programs require IELTS 6.0–6.5 or TOEFL 78–90.",
-    typicalApplicationDeadlines: "University pre-admissions: November–February. Universitaly pre-enrollment: March–June. DSU regional applications: July–September.",
+    supervisorContactNotes:
+      "PhD admissions are governed by public competitive calls (Bando di Concorso). You submit a project and CV to a centralized department committee.",
+    languageRequirements:
+      "English-taught Master's and PhD programs require IELTS 6.0–6.5 or TOEFL 78–90.",
+    typicalApplicationDeadlines:
+      "University pre-admissions: November–February. Universitaly pre-enrollment: March–June. DSU regional applications: July–September.",
     importantLimitations: [
-      "Obtaining the ISEE Parificato document requires getting home-country family income documents translated and stamped by the Italian Embassy.",
-      "Italian university administrative bureaucracy can be slow; start paperwork 6 months in advance.",
-      "DSU scholarship cash stipends are often paid in two delayed installments (December and June)."
+      "The ISEE Parificato document requires official translation and legalization of family income certificates.",
+      "Administrative procedures can take several months; prepare paperwork early.",
+      "DSU cash stipends are typically disbursed in two installments (December and June)."
     ],
     officialPortals: [
-      { name: "Universitaly Official Portal", url: "https://www.universitaly.it/", description: "The official Italian Ministry of University and Research portal for all university pre-enrollments." },
-      { name: "Study in Italy (MAECI)", url: "https://studyinitaly.esteri.it/", description: "Official Ministry of Foreign Affairs portal for international students and government scholarships." }
+      { name: "Universitaly Portal", url: "https://www.universitaly.it/", description: "Official Italian Ministry portal for international university pre-enrollments." },
+      { name: "Study in Italy (MAECI)", url: "https://studyinitaly.esteri.it/", description: "Official Foreign Ministry portal for international students and government grants." }
     ],
     applicationSequence: [
-      "Apply directly to Italian university portals (UniBo, PoliMi, Sapienza, PoliTo) between November and February.",
-      "Receive conditional admission letter and submit official pre-enrollment via the Universitaly portal.",
-      "Obtain translated and legalized family income documents from your home country for the ISEE Parificato.",
-      "Apply for regional DSU scholarships (e.g., ER.GO in Emilia Romagna, DSU Toscana, Disco Lazio) in July.",
-      "Book study visa appointment at the Italian Embassy/Consulate."
+      "Apply to Italian university portals (UniBo, PoliMi, Sapienza, PoliTo) between November and February.",
+      "Receive conditional admission letter and submit pre-enrollment via Universitaly.",
+      "Obtain translated and legalized family income documents for the ISEE Parificato.",
+      "Apply for the regional DSU scholarship (e.g. ER.GO, DSU Toscana, Disco Lazio) in July.",
+      "Book your study visa appointment at the Italian Embassy or Consulate."
     ]
   },
   {
@@ -608,57 +698,66 @@ export const countryGuidesData: CountryGuide[] = [
     code: "AT",
     flag: "🇦🇹",
     region: "Europe",
-    headline: "Low Public Tuition (€726/semester) + FWF Salaried Doctoral Positions & Ernst Mach Grants",
-    summary: "Austria combines world-leading academic heritage with modern scientific funding. Non-EU tuition at public universities is legally capped at just €726.72 per semester. PhD researchers are hired under collective agreements (Kollektivvertrag) on FWF research grants earning ~€2,400+ gross/month.",
-    fundingPhilosophy: "Subsidized Central European Excellence: legally capped low tuition fees and competitive national Austrian Science Fund (FWF) doctoral research positions.",
+    headline: "Low Public Tuition (€726/sem) + FWF Salaried PhDs & Ernst Mach Grants",
+    summary:
+      "Public university tuition for non-EU students is legally capped at €726.72 per semester. PhD researchers are hired under collective bargaining agreements on FWF grants earning ~€2,460 gross/month.",
+    fundingPhilosophy:
+      "Subsidized Central European excellence: legally capped low tuition fees and competitive national research positions.",
     commonFundingRoutes: [
       "Statutory Low Tuition at Public Universities (€726.72 per semester for non-EU students)",
-      "FWF (Austrian Science Fund) Salaried Doctoral Positions (~€2,460 gross/month on 30h/wk contracts)",
-      "Ernst Mach Grant (Austrian Agency for Education and Internationalisation - OeAD)",
+      "FWF (Austrian Science Fund) Salaried Doctoral Positions (~€2,460 gross/month)",
+      "Ernst Mach Grant (OeAD - Ministry of Education, Science and Research)",
       "Marietta Blau Grant (for doctoral candidates conducting research abroad)",
-      "University of Vienna / TU Wien / ISTA (Institute of Science and Technology Austria) Fellowships"
+      "ISTA (Institute of Science and Technology Austria) Fully Funded PhD Fellowships"
     ],
     governmentScholarships: [
       {
         name: "Ernst Mach Grant (OeAD)",
         url: "https://oead.at/en/to-austria/grants-and-scholarships/ernst-mach-grant",
-        description: "Funded by the Austrian Federal Ministry of Education, Science and Research for international postgraduates and young researchers.",
-        coverage: "Monthly grant of €1,150–€1,250, health insurance, accommodation assistance, and tuition fee exemption.",
+        description: "Funded by the Federal Ministry of Education for international postgraduates and young researchers.",
+        coverage: "Monthly grant of €1,150–€1,250, health insurance, housing assistance, and tuition fee waiver.",
         degreeLevel: "Master's & PhD"
       },
       {
-        name: "ISTA PhD Fellowships (Institute of Science and Technology Austria)",
+        name: "ISTA PhD Fellowships",
         url: "https://ista.ac.at/en/education/phd-program/",
-        description: "Fully funded international PhD program in computer science, biology, neuroscience, physics, and math.",
-        coverage: "100% full international salary, full health insurance, and comprehensive housing assistance.",
+        description: "Fully funded international PhD program in computer science, biology, physics, math, and neuroscience.",
+        coverage: "Full international researcher salary, health insurance, and subsidized campus housing.",
         degreeLevel: "PhD Only"
       }
     ],
-    universityScholarships: "Merit-based tuition waiver grants (Leistungsstipendium) are awarded after completion of successful academic semesters.",
-    phdFundingModel: "PhD students employed on third-party FWF projects or university positions sign employment contracts under the collective agreement for university staff (Kollektivvertrag B1).",
-    mastersFundingModel: "Tuition is universally capped at €726.72/semester for non-EU students. Living costs (~€950–€1,200/month) must be funded via scholarships, part-time work, or personal funds.",
+    universityScholarships:
+      "Merit-based tuition waiver grants (Leistungsstipendium) are awarded after completing successful academic semesters.",
+    phdFundingModel:
+      "PhD researchers on FWF projects sign employment contracts under the collective agreement for university staff (Kollektivvertrag B1).",
+    mastersFundingModel:
+      "Tuition is universally capped at €726.72/semester for non-EU students. Living costs (~€950–€1,200/month) are funded via part-time work or scholarships.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "Student assistant (Studienassistent) positions in faculties pay hourly wages for up to 20 hours/week.",
+    assistantshipsDetail:
+      "Student assistant (Studienassistent) roles in university departments pay hourly wages for up to 20 hours/week.",
     supervisorContactRequirement: "Recommended",
-    supervisorContactNotes: "For individual doctoral research, finding a professor willing to supervise your dissertation is required. For structured programs (like ISTA or Vienna Graduate Schools), applications are centralized.",
-    languageRequirements: "English-taught programs require IELTS 6.5–7.0 or TOEFL 90+. German is helpful for local living but not required for STEM research.",
-    typicalApplicationDeadlines: "Winter Semester: Apply by September 5 (Austrian universities allow extended enrollment periods). ISTA PhD deadline: January 8. OeAD grants: February 1.",
+    supervisorContactNotes:
+      "For individual doctorates, finding a supervising professor is required. Structured programs like ISTA use centralized admissions.",
+    languageRequirements:
+      "English-taught programs require IELTS 6.5–7.0 or TOEFL 90+.",
+    typicalApplicationDeadlines:
+      "Winter Semester: apply by September 5 (Austrian universities allow extended enrollment). ISTA PhD: January 8. OeAD grants: February 1.",
     importantLimitations: [
-      "Strict legalization requirements: Austrian universities mandate Apostille or full consular superlegalization for all foreign degree certificates.",
-      "Proof of financial funds for Austrian student residence permit is roughly €1,100/month for students under 24, and ~€1,250/month for older students.",
-      "Housing in Vienna requires booking early via OeAD student housing."
+      "Austrian universities mandate Apostille or full consular legalization for all foreign degree documents.",
+      "Proof of funds for the Austrian residence permit is ~€1,100–€1,250/month depending on age.",
+      "Student housing in Vienna should be reserved months in advance through OeAD housing."
     ],
     officialPortals: [
-      { name: "Grants.at (OeAD Database)", url: "https://grants.at/en/", description: "Austria's official and largest online database for scholarships and research grants." },
-      { name: "OeAD (Agency for Education and Internationalisation)", url: "https://oead.at/en/", description: "The central Austrian service agency for international academic mobility." },
-      { name: "ISTA PhD Portal", url: "https://ista.ac.at/en/education/phd-program/", description: "Direct portal for Austria's premier world-leading science and tech institute." }
+      { name: "Grants.at Database", url: "https://grants.at/en/", description: "Austria's official and largest online database for scholarships and research grants." },
+      { name: "OeAD Agency", url: "https://oead.at/en/", description: "Central Austrian service agency for international academic mobility." },
+      { name: "ISTA PhD Portal", url: "https://ista.ac.at/en/education/phd-program/", description: "Direct portal for Austria's premier science and technology institute." }
     ],
     applicationSequence: [
-      "Search for programs and funding options on Grants.at and university websites.",
+      "Search for programs and funding opportunities on Grants.at and university websites.",
       "Obtain official Apostille or consular legalization on all academic certificates.",
-      "Apply directly to the university's online portal (e.g., u:space for Uni Vienna, TISS for TU Wien).",
+      "Apply directly through the university portal (e.g. u:space for Uni Vienna, TISS for TU Wien).",
       "Apply for the Ernst Mach Grant or ISTA Fellowship if eligible.",
-      "Apply for the Austrian Residence Permit (Aufenthaltsbewilligung Student) at the Austrian Embassy."
+      "Apply for the Austrian Residence Permit (Aufenthaltsbewilligung Student) at the embassy."
     ]
   },
   {
@@ -667,57 +766,66 @@ export const countryGuidesData: CountryGuide[] = [
     code: "GB",
     flag: "🇬🇧",
     region: "Europe",
-    headline: "Chevening & Commonwealth Scholarships + UKRI Fully Funded PhD Studentships",
-    summary: "The United Kingdom hosts historic global universities (Oxford, Cambridge, Imperial, UCL, Edinburgh). International students can access fully funded flagship awards like Chevening, Commonwealth Scholarships, Rhodes, and Gates Cambridge. Additionally, UKRI doctoral training partnerships now allocate up to 30% of fully funded PhD awards to international applicants.",
-    fundingPhilosophy: "Prestigious Merit Fellowships & Research Council Studentships: highly competitive, fully funded packages that cover international fees and tax-free stipends.",
+    headline: "Chevening & Commonwealth Awards + UKRI Fully Funded PhD Studentships",
+    summary:
+      "The UK hosts world-leading universities (Oxford, Cambridge, Imperial, UCL, Edinburgh). International students can win full awards like Chevening, Commonwealth, and UKRI doctoral studentships covering full fees and tax-free stipends.",
+    fundingPhilosophy:
+      "Prestigious merit fellowships and Research Council studentships providing full funding packages.",
     commonFundingRoutes: [
-      "Chevening Scholarships (UK Foreign, Commonwealth & Development Office - Master's)",
+      "Chevening Scholarships (Foreign, Commonwealth & Development Office - Master's)",
       "Commonwealth Scholarships (for citizens of Commonwealth developing nations)",
-      "UKRI (UK Research and Innovation) Doctoral Training Partnerships (DTPs/CDTs - PhD)",
-      "Gates Cambridge & Rhodes Scholarships (Oxford/Cambridge)",
+      "UKRI Doctoral Training Partnerships (DTPs/CDTs - PhD studentships)",
+      "Gates Cambridge & Rhodes Scholarships (Oxford / Cambridge)",
       "University Departmental Studentships & President's Fellowships"
     ],
     governmentScholarships: [
       {
         name: "Chevening Scholarships",
         url: "https://www.chevening.org/scholarships/",
-        description: "The UK government's global scholarship programme, funded by the FCDO and partner organizations.",
-        coverage: "100% full university tuition fees, monthly living allowance, economy flights to/from the UK, and arrival grants.",
+        description: "The UK government's flagship global scholarship program for 1-year master's degrees.",
+        coverage: "100% university tuition fees, monthly living allowance, economy flights, and arrival grants.",
         degreeLevel: "Master's Only"
       },
       {
-        name: "Commonwealth Master's and PhD Scholarships",
+        name: "Commonwealth Scholarships",
         url: "https://cscuk.fcdo.gov.uk/apply/",
         description: "Funded by the UK FCDO for individuals from developing Commonwealth countries.",
-        coverage: "Full tuition, monthly stipend of £1,347 (£1,652 in London), return flights, warm clothing allowance, and thesis grant.",
+        coverage: "Full tuition, monthly stipend of £1,347 (£1,652 in London), return flights, and thesis grant.",
         degreeLevel: "Master's & PhD"
       }
     ],
-    universityScholarships: "Major institutional awards include Clarendon Fund (Oxford), Gates Cambridge, Cambridge Trust, Imperial College President's PhD Scholarships, and Edinburgh Doctoral College Scholarships.",
-    phdFundingModel: "Funded PhDs in the UK are called 'Studentships'. UKRI studentships provide a minimum tax-free stipend of £19,237/year (£21,237 in London for 2024–2025) plus full tuition fee coverage for 3.5–4 years.",
-    mastersFundingModel: "Master's tuition is high (£18,000–£45,000/year). Fully funded Master's positions rely on winning a Chevening, Commonwealth, or university-wide full scholarship.",
+    universityScholarships:
+      "Institutional awards include Clarendon Fund (Oxford), Gates Cambridge, Imperial President's PhD Scholarships, and Edinburgh Doctoral College Awards.",
+    phdFundingModel:
+      "Funded PhDs are called 'Studentships'. UKRI awards provide full international tuition coverage plus a minimum tax-free stipend of £19,237/year (£21,237 in London).",
+    mastersFundingModel:
+      "Master's tuition is high (£18,000–£45,000/year). Full funding requires securing a Chevening, Commonwealth, or university-wide scholarship.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "Graduate Teaching Assistant (GTA) work pays competitive hourly rates (£18–£25/hour) for marking and laboratory demonstration, typically capped at 6–8 hours/week.",
+    assistantshipsDetail:
+      "Graduate Teaching Assistant (GTA) work pays £18–£25/hour for lab demonstrating and grading, typically capped at 6–8 hours/week.",
     supervisorContactRequirement: "Strictly Required Before Application",
-    supervisorContactNotes: "For PhD applications, approaching prospective supervisors with a structured 3–5 page research proposal is standard practice across almost all UK universities before formal portal submission.",
-    languageRequirements: "Strict UKVI requirements: IELTS Academic (usually 6.5–7.5 overall with 6.0–7.0 minimum subscores) or TOEFL iBT 92–100.",
-    typicalApplicationDeadlines: "Chevening: Opens August, closes early November. Commonwealth: September–December. Oxford/Cambridge funding deadlines: December 1 or early January.",
+    supervisorContactNotes:
+      "For a PhD, approaching prospective supervisors with a 3–5 page research proposal is standard practice before formal application.",
+    languageRequirements:
+      "IELTS Academic (typically 6.5–7.5 overall with 6.0–7.0 minimum subscores) or TOEFL iBT 92–100.",
+    typicalApplicationDeadlines:
+      "Chevening: August to early November. Commonwealth: September–December. Oxford/Cambridge funding deadlines: December 1 or early January.",
     importantLimitations: [
-      "Chevening requires recipients to return to their home country for a minimum of two years post-graduation.",
-      "The UK Immigration Health Surcharge (IHS) costs £776/year unless covered by specific scholarship schemes.",
-      "UKRI studentships have a statutory cap (maximum 30%) on international scholars, making competition fierce."
+      "Chevening recipients must return to their home country for at least two years post-graduation.",
+      "The Immigration Health Surcharge (IHS) costs £776/year unless covered by your award.",
+      "UKRI studentships have a statutory 30% cap on international candidates, making competition high."
     ],
     officialPortals: [
-      { name: "Jobs.ac.uk PhD Studentships", url: "https://www.jobs.ac.uk/categories/phd", description: "The premier UK academic job board listing all active university PhD studentships." },
-      { name: "Chevening Official Portal", url: "https://www.chevening.org/", description: "Official application and information portal for Chevening scholars." },
-      { name: "FindAPhD.com UK Directory", url: "https://www.findaphd.com/", description: "Comprehensive searchable directory of funded doctoral projects across the UK." }
+      { name: "Jobs.ac.uk PhD Directory", url: "https://www.jobs.ac.uk/categories/phd", description: "The premier UK academic job board listing active university PhD studentships." },
+      { name: "Chevening Portal", url: "https://www.chevening.org/", description: "Official application and information portal for Chevening scholarships." },
+      { name: "FindAPhD.com", url: "https://www.findaphd.com/", description: "Searchable directory of funded doctoral projects across the UK." }
     ],
     applicationSequence: [
-      "For Master's: Submit Chevening or Commonwealth application in autumn (August–November).",
-      "Apply to 3 eligible UK university master's programs in parallel before January.",
-      "For PhD: Find funded studentships on Jobs.ac.uk or contact supervisors with a research proposal.",
-      "Submit official university portal application before the institutional funding deadline (December/January).",
-      "Receive CAS (Confirmation of Acceptance for Studies) letter and apply for the UK Student Visa."
+      "For Master's: submit Chevening or Commonwealth application in autumn (August–November).",
+      "Apply to 3 eligible UK master's programs in parallel before January.",
+      "For PhD: find advertised studentships on Jobs.ac.uk or email supervisors with a proposal.",
+      "Submit university application before the institutional funding deadline (December/January).",
+      "Receive CAS letter and apply for the UK Student Visa."
     ]
   },
 
@@ -728,50 +836,59 @@ export const countryGuidesData: CountryGuide[] = [
     code: "US",
     flag: "🇺🇸",
     region: "North America",
-    headline: "100% Tuition Remission + Graduate Assistantships (RA/TA) & Fulbright Foreign Student Grants",
-    summary: "The United States is the largest funder of doctoral education in the world. Virtually all STEM and quantitative PhD programs offer 100% tuition remission, comprehensive health insurance, and guaranteed 9–12 month living stipends ($28,000–$45,000/year) funded via Graduate Research Assistantships (GRA) or Teaching Assistantships (GTA). Master's candidates can access Fulbright awards or university assistantships.",
-    fundingPhilosophy: "Departmental Graduate Assistantship Ecosystem: PhD candidates are supported through teaching and sponsored federal research grants (NSF, NIH, DOE, DARPA).",
+    headline: "100% Tuition Remission + Graduate Assistantships (RA/TA) & Fulbright Grants",
+    summary:
+      "Virtually all STEM and quantitative PhD programs offer full tuition remission, health insurance, and guaranteed living stipends ($28,000–$45,000/year) through Research (GRA) or Teaching (GTA) Assistantships. Master's students can access Fulbright awards.",
+    fundingPhilosophy:
+      "Departmental assistantship model: PhD students are funded through teaching and sponsored research grants (NSF, NIH, DOE).",
     commonFundingRoutes: [
-      "Graduate Research Assistantship (GRA - 20h/week research funding full tuition + $28k–$45k/year stipend)",
-      "Graduate Teaching Assistantship (GTA - 20h/week lab/recitation teaching + full tuition waiver + stipend)",
-      "University Graduate School Fellowships (Dean's Fellowship, Presidential Fellowship)",
-      "Fulbright Foreign Student Program (US Department of State bilateral award)",
-      "External Fellowships (HHMI, Google, Microsoft, Apple PhD Fellowships for enrolled scholars)"
+      "Graduate Research Assistantship (GRA: full tuition waiver + $28k–$45k/year stipend)",
+      "Graduate Teaching Assistantship (GTA: full tuition waiver + living stipend)",
+      "University Fellowships (Dean's Fellowship, Presidential Fellowship)",
+      "Fulbright Foreign Student Program (US Department of State bilateral grant)",
+      "External Fellowships (HHMI, Google, Microsoft PhD Fellowships for enrolled scholars)"
     ],
     governmentScholarships: [
       {
         name: "Fulbright Foreign Student Program",
         url: "https://foreign.fulbrightonline.org/",
-        description: "The flagship international educational exchange program sponsored by the U.S. government.",
-        coverage: "Full tuition, monthly living stipend, health insurance (ASPE), round-trip airfare, and visa sponsorship (J-1).",
+        description: "Flagship international educational exchange program sponsored by the U.S. government.",
+        coverage: "Full tuition, monthly living stipend, health insurance (ASPE), airfare, and J-1 visa sponsorship.",
         degreeLevel: "Master's & PhD"
       }
     ],
-    universityScholarships: "Most R1 doctoral institutions (MIT, Stanford, Michigan, UIUC, Texas, Georgia Tech) guarantee 4–5 years of full funding to 100% of admitted PhD candidates.",
-    phdFundingModel: "Standard Full-Ride Package: 100% Tuition Remission + Health Insurance Subsidy + Monthly Living Stipend ($2,400–$3,800/month) for 9 to 12 months per year.",
-    mastersFundingModel: "Most coursework Master's degrees are self-funded ($40,000–$70,000/year). However, research-thesis Master's degrees in STEM frequently offer partial or full Graduate Teaching Assistantships (GTA).",
+    universityScholarships:
+      "Most R1 research universities (MIT, Stanford, Michigan, UIUC, Texas, Georgia Tech) guarantee 4–5 years of full funding to all admitted PhD students.",
+    phdFundingModel:
+      "Full-Ride Package: 100% tuition remission + health insurance subsidy + monthly living stipend ($2,400–$3,800/month) for 9 to 12 months per year.",
+    mastersFundingModel:
+      "Most coursework Master's degrees are self-funded ($40,000–$70,000/year). However, STEM thesis Master's programs frequently offer partial or full Teaching Assistantships.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "Standard assistantships require 20 hours per week of service (the legal maximum under F-1 visa regulations during academic semesters).",
+    assistantshipsDetail:
+      "Assistantships require 20 hours/week of teaching or research service during academic terms.",
     supervisorContactRequirement: "Recommended",
-    supervisorContactNotes: "US PhD admissions are predominantly centralized by departmental graduate committees. Prior supervisor agreement is rarely binding; students often complete laboratory rotations in Year 1 before choosing a permanent PI.",
-    languageRequirements: "Rigorous standards: TOEFL iBT 90–105 (crucially, Speaking subscore of 26+ is required by many universities for GTA teaching eligibility) or IELTS 7.0–7.5.",
-    typicalApplicationDeadlines: "Fall Intake: Priority PhD deadlines are December 1, December 15, or January 1. CGS April 15 Resolution governs final offer acceptance.",
+    supervisorContactNotes:
+      "Admissions are decided by departmental graduate committees. Prior supervisor agreement is rarely binding; students often complete first-year lab rotations before selecting a PI.",
+    languageRequirements:
+      "TOEFL iBT 90–105 (Speaking subscore of 26+ is required by many universities for GTA teaching) or IELTS 7.0–7.5.",
+    typicalApplicationDeadlines:
+      "Fall Intake: Priority PhD deadlines are December 1, December 15, or January 1. CGS April 15 Resolution governs final offer acceptance.",
     importantLimitations: [
-      "Application fees ($75–$150 per university) add up quickly; apply for departmental fee waivers early.",
-      "Fulbright scholars travel on J-1 visas with a strict 2-year home-country physical presence requirement (Section 212(e)).",
-      "9-month stipends mean you must secure summer research funding or internship income to bridge June–August."
+      "Application fees ($75–$150 per university) add up; request department fee waivers early.",
+      "Fulbright scholars travel on J-1 visas with a 2-year home-country presence rule (Section 212(e)).",
+      "9-month stipends require securing summer research funding or internship income for June–August."
     ],
     officialPortals: [
-      { name: "EducationUSA Official Portal", url: "https://educationusa.state.gov/", description: "U.S. Department of State network of over 430 international student advising centers." },
-      { name: "Fulbright Foreign Student Program", url: "https://foreign.fulbrightonline.org/", description: "Official application guidelines and participating country binational commissions." },
-      { name: "CGS April 15 Resolution", url: "https://cgsnet.org/resources/for-students/cgs-april-15-resolution/", description: "Official resolution protecting student rights regarding funding offer decision deadlines." }
+      { name: "EducationUSA", url: "https://educationusa.state.gov/", description: "U.S. Department of State network of 430+ international advising centers." },
+      { name: "Fulbright Foreign Student Portal", url: "https://foreign.fulbrightonline.org/", description: "Official application guidelines and participating country commissions." },
+      { name: "CGS April 15 Resolution", url: "https://cgsnet.org/resources/for-students/cgs-april-15-resolution/", description: "Council of Graduate Schools resolution protecting student funding decision rights." }
     ],
     applicationSequence: [
-      "Identify 10–12 target US institutions balanced across Reach, Match, and Safety tiers in July/August.",
-      "Take IELTS/TOEFL and GRE (if mandated by target departments) by September/October.",
-      "Request 3 academic recommendation letters and write tailored Statements of Purpose by November.",
-      "Submit online applications via university portals (Slate/ApplyWeb) before December 1/15 deadlines.",
-      "Participate in virtual committee interviews in January/February; compare funding letters by April 15."
+      "Select 8–10 target universities balanced across Reach, Match, and Safety tiers.",
+      "Take IELTS/TOEFL and GRE (if required by your target departments) by October.",
+      "Request 3 recommendation letters and draft a focused Statement of Purpose.",
+      "Submit online applications via university portals before December 1/15 deadlines.",
+      "Complete virtual faculty interviews and compare funding offers by April 15."
     ]
   },
   {
@@ -780,13 +897,15 @@ export const countryGuidesData: CountryGuide[] = [
     code: "CA",
     flag: "🇨🇦",
     region: "North America",
-    headline: "Guaranteed Departmental Minimum Funding Packages + Vanier CGS ($50,000/year)",
-    summary: "Canada's top research universities (Toronto, UBC, McGill, Waterloo, Alberta, Montreal) provide guaranteed multi-year minimum funding packages for research Master's (MSc) and PhD students. Exceptional doctoral applicants can compete for the prestigious federal Vanier Canada Graduate Scholarship ($50,000/year).",
-    fundingPhilosophy: "Institutional Minimum Funding Guarantees: departments establish binding baseline funding commitments covering tuition and basic living costs for research degree candidates.",
+    headline: "Guaranteed Minimum Funding Packages + Vanier CGS ($50,000/year)",
+    summary:
+      "Canada's top universities (Toronto, UBC, McGill, Waterloo, Alberta) offer guaranteed multi-year minimum funding packages for research Master's and PhD students. Top doctoral candidates can compete for the federal Vanier CGS ($50,000/year).",
+    fundingPhilosophy:
+      "Departmental minimum funding guarantees: binding baseline funding covering tuition and basic living costs for research students.",
     commonFundingRoutes: [
-      "Departmental Minimum Funding Package (GRA + GTA + internal fellowship totaling CAD $24,000–$35,000/year)",
-      "Vanier Canada Graduate Scholarships (Vanier CGS - CAD $50,000/year for 3 years)",
-      "Provincial Graduate Fellowships (e.g., Ontario Graduate Scholarship - OGS, CAD $15,000/year)",
+      "Departmental Minimum Funding Package (GRA + GTA + awards: CAD $24,000–$35,000/year)",
+      "Vanier Canada Graduate Scholarships (Vanier CGS: CAD $50,000/year for 3 years)",
+      "Provincial Graduate Fellowships (e.g. Ontario Graduate Scholarship - OGS, CAD $15,000/year)",
       "Graduate Research Assistantships (GRA) from supervisor tri-agency grants (NSERC, CIHR, SSHRC)",
       "University President's and International Tuition Offset Fellowships"
     ],
@@ -794,42 +913,49 @@ export const countryGuidesData: CountryGuide[] = [
       {
         name: "Vanier Canada Graduate Scholarships (Vanier CGS)",
         url: "https://vanier.gc.ca/en/home-accueil.html",
-        description: "Canada's most prestigious doctoral award, honoring world-class academic excellence, research potential, and leadership.",
-        coverage: "CAD $50,000 annually for three years during doctoral studies.",
+        description: "Canada's premier doctoral scholarship, awarded for academic excellence, research potential, and leadership.",
+        coverage: "CAD $50,000 annually for three years of doctoral study.",
         degreeLevel: "PhD Only"
       },
       {
-        name: "Banting Postdoctoral & Research Fellowships",
+        name: "Banting Research Fellowships",
         url: "https://banting.fellowships-bourses.gc.ca/en/home-accueil.html",
         description: "Premier awards for postdoctoral and senior advanced research talent.",
         coverage: "CAD $70,000/year for two years.",
         degreeLevel: "PhD Only"
       }
     ],
-    universityScholarships: "U15 universities maintain published minimum funding policies. For example, the University of Toronto guarantees a minimum doctoral funding package of CAD $28,000–$34,000/year plus tuition coverage.",
-    phdFundingModel: "PhDs are systematically funded for 4–5 years. Packages combine Graduate Research Assistantships (funded by the supervisor's research grant) and Graduate Teaching Assistantships (GTA union contract).",
-    mastersFundingModel: "Unlike the US, thesis-based Master's (MSc/MA with thesis) in Canada are frequently funded through guaranteed minimum funding packages (CAD $18,000–$25,000/year). Coursework-only Master's are self-funded.",
+    universityScholarships:
+      "U15 universities maintain published minimum funding guarantees. For example, Toronto guarantees CAD $28,000–$34,000/year plus tuition coverage for PhDs.",
+    phdFundingModel:
+      "PhDs are funded for 4–5 years through packages combining Graduate Research Assistantships (lab grants) and Graduate Teaching Assistantships (GTA union contract).",
+    mastersFundingModel:
+      "Thesis-based Master's (MSc/MA with thesis) frequently include guaranteed funding packages (CAD $18,000–$25,000/year). Course-based Master's are self-funded.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "GTA positions are governed by university labor unions (e.g., CUPE) and pay high hourly wages (CAD $45–$52/hour) for 100–140 hours per term.",
+    assistantshipsDetail:
+      "GTA positions are unionized (e.g. CUPE) and pay high hourly rates (CAD $45–$52/hour) for 100–140 hours per term.",
     supervisorContactRequirement: "Strictly Required Before Application",
-    supervisorContactNotes: "At most Canadian universities (especially Toronto, UBC, McGill, Alberta), you MUST find a supervisor who agrees in writing to accept and fund you before the department will evaluate your formal application.",
-    languageRequirements: "IELTS Academic 6.5–7.0 (with no band below 6.0) or TOEFL iBT 90–100.",
-    typicalApplicationDeadlines: "Vanier CGS institutional nominations: September–October. University admissions: December 1 to January 15 for Fall intake.",
+    supervisorContactNotes:
+      "At most Canadian universities, you MUST find a professor who agrees in writing to supervise and fund you before the department reviews your application.",
+    languageRequirements:
+      "IELTS Academic 6.5–7.0 (no band below 6.0) or TOEFL iBT 90–100.",
+    typicalApplicationDeadlines:
+      "Vanier CGS institutional nominations: September–October. University admissions: December 1 to January 15 for Fall intake.",
     importantLimitations: [
-      "Recent Canadian student visa caps do not apply to Master's and PhD programs, but provincial attestation letters (PAL) may require review.",
-      "High cost of living and housing in Vancouver and Toronto; verify that the department funding package covers local rent.",
-      "Course-based (non-thesis) professional Master's programs do not offer guaranteed funding."
+      "Recent Canadian student visa caps do not apply to Master's and PhD programs.",
+      "High living and housing costs in Vancouver and Toronto; verify your stipend covers local rent.",
+      "Course-based (non-thesis) Master's programs do not offer guaranteed funding."
     ],
     officialPortals: [
-      { name: "EduCanada Official Portal", url: "https://www.educanada.ca/", description: "Government of Canada official portal for international scholarships and study permits." },
+      { name: "EduCanada", url: "https://www.educanada.ca/", description: "Government of Canada official portal for international scholarships and study permits." },
       { name: "Vanier CGS Portal", url: "https://vanier.gc.ca/en/home-accueil.html", description: "Official application and eligibility portal for Vanier Canada Graduate Scholarships." },
-      { name: "IRCC (Immigration, Refugees and Citizenship Canada)", url: "https://www.canada.ca/en/immigration-refugees-citizenship.html", description: "Official federal portal for Canadian Study Permits and Post-Graduation Work Permits (PGWP)." }
+      { name: "IRCC Immigration Portal", url: "https://www.canada.ca/en/immigration-refugees-citizenship.html", description: "Official federal portal for Canadian Study Permits and work regulations." }
     ],
     applicationSequence: [
-      "Identify prospective faculty supervisors across Canadian U15 universities in July/August.",
-      "Send tailored academic inquiry emails with your CV and a brief thesis proposal.",
-      "Once a professor agrees to sponsor your admission, submit formal university portal application before December/January.",
-      "If nominated for Vanier CGS or OGS, prepare supporting leadership statements with your supervisor.",
+      "Identify prospective faculty supervisors across Canadian universities in July/August.",
+      "Email professors with a concise research pitch and your academic CV.",
+      "Once a professor agrees to supervise you, submit the formal university application.",
+      "If nominated for Vanier CGS or OGS, prepare supporting statements with your supervisor.",
       "Receive official Letter of Acceptance (LOA) and apply for the Canadian Study Permit via IRCC."
     ]
   },
@@ -841,57 +967,66 @@ export const countryGuidesData: CountryGuide[] = [
     code: "JP",
     flag: "🇯🇵",
     region: "Asia",
-    headline: "MEXT Monbukagakusho Government Scholarships + JSPS Doctoral Research Fellowships",
-    summary: "Japan is a global leader in scientific innovation, engineering, and robotics. The Japanese Ministry of Education, Culture, Sports, Science and Technology (MEXT) awards one of the most generous international scholarships in the world, covering 100% tuition, monthly stipends, and round-trip airfare. JSPS research fellowships support doctoral candidates.",
-    fundingPhilosophy: "Government-Sponsored Bilateral Scholarship Diplomacy: MEXT fully finances international graduate researchers to integrate into Japanese university laboratory systems.",
+    headline: "MEXT Government Scholarships + JSPS Research Fellowships",
+    summary:
+      "The Japanese Government (MEXT) awards one of the world's most generous full-ride scholarships, covering 100% tuition, monthly stipends, and round-trip airfare. JSPS fellowships support advanced doctoral research.",
+    fundingPhilosophy:
+      "Government bilateral scholarship diplomacy: MEXT fully funds international graduate researchers to integrate into Japanese university labs.",
     commonFundingRoutes: [
-      "MEXT Embassy Recommendation Scholarship (full ride: 100% tuition + flights + ¥144,000–¥145,000/month)",
-      "MEXT University Recommendation Scholarship (direct university nomination pathway)",
-      "JSPS (Japan Society for the Promotion of Science) Research Fellowships (DC1/DC2)",
-      "University Presidential Scholarships (e.g., University of Tokyo, Kyoto University, Tokyo Tech)",
-      "JASSO (Japan Student Services Organization) Honors Scholarships"
+      "MEXT Embassy Recommendation Scholarship (full ride: tuition + flights + ¥144k–¥145k/month)",
+      "MEXT University Recommendation Scholarship (direct university nomination track)",
+      "JSPS Research Fellowships (DC1/DC2 for doctoral researchers)",
+      "University Presidential Waivers (Tokyo, Kyoto, Tokyo Tech)",
+      "JASSO Honors Scholarships"
     ],
     governmentScholarships: [
       {
-        name: "MEXT Monbukagakusho Scholarship (Research Students)",
+        name: "MEXT Monbukagakusho Scholarship",
         url: "https://www.studyinjapan.go.jp/en/planning/scholarship/mext-scholarships/",
-        description: "The premier Japanese government scholarship for international graduate research students.",
-        coverage: "100% university tuition fees, monthly living allowance of ¥144,000 (Master's) or ¥145,000 (PhD), round-trip flights, and language prep.",
+        description: "Flagship Japanese government award for international graduate research students.",
+        coverage: "100% tuition waiver, monthly stipend of ¥144,000 (Master's) or ¥145,000 (PhD), and round-trip airfare.",
         degreeLevel: "Master's & PhD"
       },
       {
-        name: "JSPS Postdoctoral & Doctoral Fellowships",
+        name: "JSPS Doctoral Fellowships",
         url: "https://www.jsps.go.jp/english/e-fellow/index.html",
-        description: "Competitive fellowships for young researchers conducting collaborative research in Japanese labs.",
-        coverage: "Monthly research grant of ¥200,000 + domestic travel and research grants-in-aid (Kakenhi).",
+        description: "Competitive fellowships for young researchers conducting collaborative research in Japanese laboratories.",
+        coverage: "Monthly research grant of ¥200,000 plus domestic travel and research grants-in-aid.",
         degreeLevel: "PhD Only"
       }
     ],
-    universityScholarships: "National universities offer tuition exemptions (50% or 100% waiver) for self-funded students who perform well academically.",
-    phdFundingModel: "PhDs are predominantly funded via MEXT scholarships, JSPS research fellowships, or professor research project appointments (Research Assistant / RA).",
-    mastersFundingModel: "Fully funded Master's studies are widely available through MEXT (both Embassy and University tracks). Self-funded tuition at national universities is standardized and relatively modest (~¥535,800/year).",
+    universityScholarships:
+      "National universities offer 50% or 100% tuition fee exemptions for self-funded students who maintain strong academic records.",
+    phdFundingModel:
+      "PhDs are funded through MEXT scholarships, JSPS research fellowships, or professor-funded research assistant (RA) appointments.",
+    mastersFundingModel:
+      "Fully funded Master's positions are widely available through MEXT (Embassy and University tracks). Self-funded national university tuition is standardized (~¥535,800/year).",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "Teaching Assistant (TA) and Research Assistant (RA) positions in university laboratories provide supplementary hourly stipends (~¥1,200–¥1,800/hour).",
+    assistantshipsDetail:
+      "TA and RA positions in university labs pay supplementary hourly wages (~¥1,200–¥1,800/hour).",
     supervisorContactRequirement: "Strictly Required Before Application",
-    supervisorContactNotes: "For both MEXT and direct admissions, obtaining an informal Letter of Acceptance (Naidaku) from a prospective Japanese professor is an essential milestone.",
-    languageRequirements: "Top national universities offer English-medium graduate programs (Global 30 network): IELTS 6.5+ or TOEFL 85–90. Japanese language (JLPT) is not required for English tracks.",
-    typicalApplicationDeadlines: "MEXT Embassy Track: Applications open April/May at local Japanese embassies. MEXT University Track: Applications open October–December.",
+    supervisorContactNotes:
+      "For both MEXT and direct admissions, obtaining an informal Letter of Acceptance (Naidaku) from a Japanese professor is an essential requirement.",
+    languageRequirements:
+      "English-medium graduate programs (Global 30 network) require IELTS 6.5+ or TOEFL 85–90. Japanese language is not required for English tracks.",
+    typicalApplicationDeadlines:
+      "MEXT Embassy Track: opens April/May at local Japanese embassies. MEXT University Track: opens October–December.",
     importantLimitations: [
-      "The MEXT Embassy application process spans nearly a full year from initial exam to departure.",
-      "Cultural hierarchy within laboratory research groups (Kōza system) requires respectful, formal communication.",
-      "MEXT recipients often spend the first 6 months as a non-degree 'Research Student' before passing the formal Master's/PhD entrance exam."
+      "The MEXT Embassy application takes nearly a full year from initial screening to arrival.",
+      "Laboratory culture involves formal hierarchies (Kōza system) that require respectful communication.",
+      "MEXT recipients often spend their first 6 months as non-degree 'Research Students' before passing the entrance exam."
     ],
     officialPortals: [
-      { name: "Study in Japan (JASSO)", url: "https://www.studyinjapan.go.jp/en/", description: "Comprehensive official information portal for studying in Japan and scholarship directories." },
+      { name: "Study in Japan (JASSO)", url: "https://www.studyinjapan.go.jp/en/", description: "Comprehensive official information portal for studying in Japan." },
       { name: "MEXT Ministry Portal", url: "https://www.mext.go.jp/en/", description: "Official Japanese Ministry of Education, Culture, Sports, Science and Technology." },
-      { name: "JSPS (Japan Society for the Promotion of Science)", url: "https://www.jsps.go.jp/english/", description: "Japan's core agency for scientific research funding and researcher fellowships." }
+      { name: "JSPS Agency", url: "https://www.jsps.go.jp/english/", description: "Japan's core agency for scientific research funding and fellowships." }
     ],
     applicationSequence: [
-      "Choose pathway: Embassy Recommendation (apply via your local Japanese Embassy in April) OR University Recommendation (apply directly to university in October).",
+      "Choose route: Embassy Recommendation (apply via local Japanese Embassy in April) OR University Track (apply to university in autumn).",
       "Pass document screening and preliminary interview at the Japanese embassy (Embassy track).",
-      "Contact Japanese university professors with your embassy passing certificate to secure an official Letter of Acceptance.",
-      "Submit final placement preferences to MEXT; receive formal scholarship award notification in January/February.",
-      "Embassy issues visa and provides official economy flight tickets to Japan for October or April intake."
+      "Contact Japanese university professors with your embassy certificate to secure a Letter of Acceptance.",
+      "Submit final university preferences to MEXT; receive formal award notice in January/February.",
+      "Receive visa and plane tickets from the embassy for April or October departure."
     ]
   },
   {
@@ -900,49 +1035,58 @@ export const countryGuidesData: CountryGuide[] = [
     code: "KR",
     flag: "🇰🇷",
     region: "Asia",
-    headline: "Global Korea Scholarship (GKS Full-Ride) + BK21 Government Lab Research Stipends",
-    summary: "South Korea has emerged as an intellectual powerhouse with elite institutions like KAIST, Seoul National University, and POSTECH. The Korean government's flagship Global Korea Scholarship (GKS) provides 100% tuition, living stipends, and airfare. In STEM fields, the national Brain Korea 21 (BK21) initiative funds graduate researchers directly in academic labs.",
-    fundingPhilosophy: "National Strategic R&D Drive: government GKS scholarships attract global talent, while the multi-billion-dollar BK21 fund directly subsidizes STEM lab personnel.",
+    headline: "Global Korea Scholarship (GKS Full-Ride) + BK21 Lab Research Stipends",
+    summary:
+      "Home to KAIST, Seoul National University, and POSTECH. The Korean government's Global Korea Scholarship (GKS) covers full tuition, living stipends, and flights. In STEM fields, the national Brain Korea 21 (BK21) fund supports graduate researchers directly in labs.",
+    fundingPhilosophy:
+      "National R&D drive: government GKS awards recruit global talent, while the multi-billion-dollar BK21 fund subsidizes lab personnel.",
     commonFundingRoutes: [
-      "Global Korea Scholarship (GKS - 100% full tuition + ₩1,000,000–₩1,300,000/month stipend + flights)",
-      "BK21 (Brain Korea 21) Four Lab Research Stipends (minimum ₩1,000,000/mo for Master's, ₩1,600,000/mo for PhD)",
-      "KAIST, UNIST, DGIST, and GIST Institutional Full Fellowships (tuition waiver + lab stipend for all admitted)",
-      "University Presidential Fellowships (Seoul National University SNU Global Scholarship)",
-      "POSCO TJ Park Foundation Asian Fellowships"
+      "Global Korea Scholarship (GKS: full tuition + ₩1,000,000–₩1,300,000/mo + flights)",
+      "BK21 Four Lab Research Stipends (minimum ₩1,000,000/mo for Master's, ₩1,600,000/mo for PhD)",
+      "KAIST, UNIST, DGIST, and GIST Institutional Fellowships (full tuition waiver + lab stipend for all admitted)",
+      "Seoul National University Global Scholarships",
+      "POSCO TJ Park Asian Fellowships"
     ],
     governmentScholarships: [
       {
         name: "Global Korea Scholarship (GKS Graduate)",
         url: "https://www.studyinkorea.go.kr/en/sub/gks/allnew_invite.do",
-        description: "National Institute for International Education (NIIED) flagship full-ride scholarship program.",
-        coverage: "Full tuition, ₩1,000,000–₩1,300,000/month living stipend, round-trip flights, settlement allowance, medical insurance, and 1-year Korean language training.",
+        description: "National Institute for International Education (NIIED) flagship full-ride scholarship.",
+        coverage: "Full tuition, ₩1,000,000–₩1,300,000/mo living stipend, flights, settlement allowance, and 1-year Korean language training.",
         degreeLevel: "Master's & PhD"
       }
     ],
-    universityScholarships: "Specialized STEM universities (KAIST, GIST, UNIST) automatically waive tuition and provide living stipends for all accepted international graduate scholars.",
-    phdFundingModel: "PhD students in science and engineering are funded through BK21 project funds and national research grants managed by their laboratory professor (Professor-funded RA).",
-    mastersFundingModel: "GKS provides full funding for Master's candidates. In STEM labs, professors routinely provide full tuition waivers and monthly stipends from university research grants.",
+    universityScholarships:
+      "STEM institutes (KAIST, GIST, UNIST) automatically waive tuition and provide living stipends for all accepted international students.",
+    phdFundingModel:
+      "PhD students in science and engineering are funded through BK21 project grants managed by their laboratory professor (Professor-funded RA).",
+    mastersFundingModel:
+      "GKS provides full funding for Master's students. In STEM labs, professors routinely provide full tuition waivers and monthly stipends from research grants.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "Lab Research Assistantships (RA) are the standard mechanism of graduate study in Korean STEM departments.",
+    assistantshipsDetail:
+      "Lab Research Assistantships (RA) are the standard working mechanism for STEM graduate students.",
     supervisorContactRequirement: "Strictly Required Before Application",
-    supervisorContactNotes: "For STEM admissions (especially KAIST, SNU, POSTECH), securing an agreement from a lab professor to cover your tuition and stipend is virtually mandatory before formal application.",
-    languageRequirements: "English-track programs require IELTS 6.0–6.5 or TOEFL iBT 80–90. GKS includes one year of mandatory Korean language training prior to degree study.",
-    typicalApplicationDeadlines: "GKS Graduate Embassy Track: February–March. GKS University Track: February–April. Fall university intake: February–April.",
+    supervisorContactNotes:
+      "For STEM admissions (especially KAIST, SNU, POSTECH), securing an agreement from a lab professor to cover your tuition and stipend is essential before applying.",
+    languageRequirements:
+      "English-track programs require IELTS 6.0–6.5 or TOEFL iBT 80–90. GKS includes one year of funded Korean language training.",
+    typicalApplicationDeadlines:
+      "GKS Embassy Track: February–March. GKS University Track: February–April. Fall university intake: February–April.",
     importantLimitations: [
-      "GKS requires a mandatory 1-year Korean language training program in Korea unless you already hold TOPIK Level 5 or 6.",
-      "Korean STEM lab culture entails long working hours and intense publication expectations.",
-      "Apostille or Korean consular legalization is mandatory for all undergraduate degree certificates and transcripts."
+      "GKS requires a 1-year Korean language training program in Korea unless you hold TOPIK Level 5 or 6.",
+      "STEM lab culture involves long working hours and high publication expectations.",
+      "Apostille or Korean consular legalization is mandatory for all degree certificates."
     ],
     officialPortals: [
-      { name: "Study in Korea (NIIED)", url: "https://www.studyinkorea.go.kr/", description: "The official Korean government portal for international students and GKS application notices." },
-      { name: "National Research Foundation of Korea (NRF)", url: "https://www.nrf.re.kr/eng/index", description: "Korea's leading agency for national academic research grants and BK21 funding." }
+      { name: "Study in Korea (NIIED)", url: "https://www.studyinkorea.go.kr/", description: "Official Korean government portal for international students and GKS notices." },
+      { name: "National Research Foundation (NRF)", url: "https://www.nrf.re.kr/eng/index", description: "Korea's leading agency for academic research grants and BK21 funding." }
     ],
     applicationSequence: [
-      "Choose GKS route: Embassy Track (apply through Korean Embassy in your home country) or University Track (apply directly to a Korean university) in February.",
+      "Choose GKS route: Embassy Track (via local embassy) or University Track (directly to university) in February.",
       "Submit legalized transcripts, recommendation letters, personal statement, and medical report.",
-      "For STEM: Contact prospective lab professors at KAIST, SNU, or POSTECH to secure research supervisor backing.",
+      "For STEM: contact prospective lab professors at KAIST, SNU, or POSTECH to secure supervisor support.",
       "Pass NIIED review and receive official GKS selection certificate in June.",
-      "Arrive in Korea in late August for the mandatory Korean language program or direct degree enrollment."
+      "Arrive in Korea in late August for language training or direct degree matriculation."
     ]
   },
   {
@@ -951,56 +1095,65 @@ export const countryGuidesData: CountryGuide[] = [
     code: "CN",
     flag: "🇨🇳",
     region: "Asia",
-    headline: "Chinese Government Scholarship (CSC Full-Ride) + Belt and Road & CAS-TWAS Fellowships",
-    summary: "China has invested heavily in higher education under Project Double First-Class, elevating universities like Tsinghua, Peking, Fudan, and Zhejiang to top global rankings. The Chinese Government Scholarship (CSC) provides full tuition, free university dormitories, health insurance, and monthly living stipends up to 3,500 RMB/month.",
-    fundingPhilosophy: "Massive State Higher Education Investment: national CSC and presidential scholarships provide comprehensive full-ride coverage to recruit global STEM researchers.",
+    headline: "Chinese Government Scholarship (CSC Full-Ride) + ANSO / CAS Fellowships",
+    summary:
+      "China has elevated institutions like Tsinghua, Peking, Fudan, and Zhejiang under Project Double First-Class. The Chinese Government Scholarship (CSC) provides full tuition, free university housing, medical insurance, and living stipends up to 3,500 RMB/month.",
+    fundingPhilosophy:
+      "Massive state investment: national CSC and presidential scholarships provide comprehensive full-ride coverage to attract international talent.",
     commonFundingRoutes: [
-      "Chinese Government Scholarship (CSC / Bilateral & University Program - 100% full ride + monthly stipend)",
-      "ANSO Scholarship for International Students (Alliance of National and International Science Organizations / CAS)",
-      "Provincial & Municipal Government Scholarships (e.g., Shanghai Government Scholarship, Beijing Government)",
-      "University Presidential Excellence Scholarships (Tsinghua, Peking, Fudan, Zhejiang)",
-      "Silk Road & Belt and Road Scholarships"
+      "Chinese Government Scholarship (CSC Type A Embassy & Type B University Programs)",
+      "ANSO Scholarship for International Students (Chinese Academy of Sciences / USTC / UCAS)",
+      "Provincial & Municipal Government Scholarships (Shanghai, Beijing Government Awards)",
+      "University Presidential Excellence Scholarships (Tsinghua, Peking, Zhejiang)",
+      "Belt and Road / Silk Road Scholarships"
     ],
     governmentScholarships: [
       {
-        name: "Chinese Government Scholarship (CSC - Type A & Type B)",
+        name: "Chinese Government Scholarship (CSC)",
         url: "https://www.campuschina.org/",
         description: "Administered by the China Scholarship Council under the Ministry of Education for international postgraduates.",
-        coverage: "100% tuition waiver, free university accommodation, comprehensive medical insurance, and monthly stipend (Master's: 3,000 RMB; PhD: 3,500 RMB/month).",
+        coverage: "100% tuition waiver, free university accommodation, medical insurance, and monthly stipend (Master's: 3,000 RMB; PhD: 3,500 RMB/mo).",
         degreeLevel: "Master's & PhD"
       },
       {
         name: "ANSO Scholarship for Young Talents",
         url: "http://www.anso.org.cn/",
-        description: "Joint scholarship by CAS and international science academies for Master's and PhD training at USTC and UCAS.",
-        coverage: "Full tuition waiver, health insurance, international travel subsidy, and monthly living allowance up to 7,000 RMB/month for PhD.",
+        description: "Joint scholarship by CAS and international science academies for graduate training at USTC and UCAS.",
+        coverage: "Full tuition waiver, health insurance, travel subsidy, and monthly living allowance up to 7,000 RMB/mo for PhD.",
         degreeLevel: "Master's & PhD"
       }
     ],
-    universityScholarships: "Top universities award independent university scholarships (e.g., Tsinghua University Tuition Scholarship) that match or exceed national CSC stipend rates.",
-    phdFundingModel: "PhDs in China are routinely fully funded through CSC Type B (University Program), CAS-TWAS / ANSO fellowships, or professor research project funds.",
-    mastersFundingModel: "Extensive fully funded opportunities exist for Master's candidates through the CSC University Program and provincial government awards.",
+    universityScholarships:
+      "Top universities award independent scholarships (such as the Tsinghua Tuition Scholarship) that match or exceed national CSC rates.",
+    phdFundingModel:
+      "PhDs are routinely fully funded through CSC Type B (University Program), ANSO fellowships, or professor research project funds.",
+    mastersFundingModel:
+      "Extensive fully funded opportunities exist for Master's candidates through the CSC University Program and provincial government awards.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "San-Zhu positions (Teaching Assistant, Research Assistant, Admin Assistant) provide supplemental monthly earnings (500–1,500 RMB/month).",
+    assistantshipsDetail:
+      "Campus assistantships (San-Zhu: Teaching, Research, and Admin) provide supplemental monthly earnings (500–1,500 RMB/month).",
     supervisorContactRequirement: "Strictly Required Before Application",
-    supervisorContactNotes: "Obtaining an official 'Pre-admission Letter' or 'Provisional Acceptance Letter' signed by a professor from a Chinese university exponentially increases your CSC selection probability.",
-    languageRequirements: "Over 2,000 graduate programs are taught 100% in English: IELTS 6.0–6.5 or TOEFL 80–90. HSK (Chinese test) is only required for Chinese-taught programs.",
-    typicalApplicationDeadlines: "CSC Type A (Embassy): January–March. CSC Type B (University): December–March. ANSO Scholarship: November–February.",
+    supervisorContactNotes:
+      "Securing an official 'Provisional Acceptance Letter' signed by a professor from a Chinese university greatly increases your CSC selection probability.",
+    languageRequirements:
+      "English-taught programs require IELTS 6.0–6.5 or TOEFL 80–90. HSK (Chinese test) is only needed for Chinese-taught programs.",
+    typicalApplicationDeadlines:
+      "CSC Type A (Embassy): January–March. CSC Type B (University): December–March. ANSO: November–February.",
     importantLimitations: [
-      "Medical physical examination form (Foreigner Physical Examination Form) with blood tests and ECG is mandatory for application.",
-      "Non-criminal record certificate (police clearance) legalized by the Chinese Embassy is required.",
-      "Competition for top tier-1 institutions (Tsinghua, Peking) is intensely competitive."
+      "A completed Foreigner Physical Examination Form (blood tests, ECG, chest X-ray) is mandatory for applying.",
+      "A legalized police non-criminal record certificate is required.",
+      "Admissions to top-tier universities (Tsinghua, Peking) are extremely selective."
     ],
     officialPortals: [
-      { name: "Campus China (CSC)", url: "https://www.campuschina.org/", description: "The official website of the China Scholarship Council for international applications." },
-      { name: "ANSO Official Portal", url: "http://www.anso.org.cn/", description: "Alliance of National and International Science Organizations for scientific talent." }
+      { name: "Campus China (CSC)", url: "https://www.campuschina.org/", description: "Official application and information portal of the China Scholarship Council." },
+      { name: "ANSO Official Portal", url: "http://www.anso.org.cn/", description: "Alliance of National and International Science Organizations scholarship page." }
     ],
     applicationSequence: [
-      "Explore Double First-Class universities and English-taught programs on CampusChina.org.",
-      "Contact faculty members to obtain an official Provisional Acceptance of International Student letter.",
-      "Register on the CSC Online Application System (select Agency Number for your target university or embassy).",
-      "Submit parallel application on the target university's international student portal.",
-      "Receive official JW201/JW202 visa form and university admission notice to apply for the X1 student visa."
+      "Explore Double First-Class universities and English programs on CampusChina.org.",
+      "Contact faculty members to secure a signed Provisional Acceptance Letter.",
+      "Register on the CSC Online Application System with the target Agency Number.",
+      "Submit a parallel application on the target university's international student portal.",
+      "Receive JW201/JW202 visa form and admission notice to apply for the X1 student visa."
     ]
   },
   {
@@ -1009,50 +1162,59 @@ export const countryGuidesData: CountryGuide[] = [
     code: "SG",
     flag: "🇸🇬",
     region: "Asia",
-    headline: "SINGA Awards + NUS & NTU Research Scholarships (SGD 2,700–3,200/month)",
-    summary: "Singapore is home to two of the world's highest-ranking universities: National University of Singapore (NUS) and Nanyang Technological University (NTU). Doctoral research is heavily funded through the Singapore International Graduate Award (SINGA) and university research scholarships, providing 100% tuition coverage and monthly living stipends of SGD 2,700 to SGD 3,200.",
-    fundingPhilosophy: "Elite Technocratic Research Hub: targeted high-stipend investments to recruit premier scientific researchers into world top-20 university laboratories.",
+    headline: "SINGA Full Awards + NUS & NTU Research Scholarships (SGD 2,700–3,200/mo)",
+    summary:
+      "Singapore is home to world top-20 universities NUS and NTU. Doctoral research is funded through the Singapore International Graduate Award (SINGA) and university research scholarships, covering 100% tuition plus SGD 2,700 to SGD 3,200/month stipends.",
+    fundingPhilosophy:
+      "Technocratic research investment: high-stipend packages to recruit top scientific researchers into world-leading laboratories.",
     commonFundingRoutes: [
-      "SINGA (Singapore International Graduate Award - A*STAR, NUS, NTU, SUTD)",
+      "SINGA (Singapore International Graduate Award: A*STAR, NUS, NTU, SUTD)",
       "NUS Research Scholarship (100% tuition waiver + SGD 2,700–3,200/month stipend)",
       "NTU Research Scholarship (100% tuition waiver + SGD 2,700–3,200/month stipend)",
       "A*STAR Graduate Scholarship (AGS)",
-      "President's Graduate Fellowship (PGF - top tier award with SGD 3,500/month stipend + travel allowance)"
+      "President's Graduate Fellowship (SGD 3,500/month top-tier award)"
     ],
     governmentScholarships: [
       {
         name: "Singapore International Graduate Award (SINGA)",
         url: "https://www.a-star.edu.sg/Scholarships/for-graduate-studies/singapore-international-graduate-award-singa",
-        description: "A collaboration between A*STAR, NUS, NTU, SUTD, and SMU for international students pursuing PhDs in science and engineering.",
-        coverage: "Full tuition coverage, monthly stipend of SGD 2,700 (increasing to SGD 3,200 after qualifying exam), one-time airfare grant (up to SGD 1,500), and settling-in allowance (SGD 1,000).",
+        description: "Partnership between A*STAR, NUS, NTU, and SUTD for international PhD candidates in science and engineering.",
+        coverage: "Full tuition coverage, monthly stipend of SGD 2,700 (increasing to SGD 3,200 after qualifying exam), airfare grant, and settling-in allowance.",
         degreeLevel: "PhD Only"
       }
     ],
-    universityScholarships: "NUS and NTU award internal Research Scholarships automatically to top-ranked PhD applicants based purely on academic merit.",
-    phdFundingModel: "Virtually all admitted PhD students in science, computing, and engineering receive full funding packages covering 100% tuition and providing monthly stipends.",
-    mastersFundingModel: "Master's by Research degrees offer limited Research Scholarships. Master's by Coursework degrees are predominantly self-funded (SGD 35,000–55,000/year) unless subsidized under service bonds.",
+    universityScholarships:
+      "NUS and NTU award internal Research Scholarships automatically to top-ranked PhD applicants based on academic merit.",
+    phdFundingModel:
+      "Virtually all admitted PhD students in STEM and computing receive full funding packages covering tuition and monthly stipends.",
+    mastersFundingModel:
+      "Research Master's offer limited scholarships. Coursework Master's degrees are predominantly self-funded (SGD 35,000–55,000/year).",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "Graduate Teaching Assistant (GAP) hours are required as part of doctoral training, contributing to pedagogy development.",
+    assistantshipsDetail:
+      "Graduate Teaching Assistant (GAP) hours are integrated into doctoral training to build academic teaching experience.",
     supervisorContactRequirement: "Recommended",
-    supervisorContactNotes: "For SINGA applications, reviewing A*STAR and university researcher supervisor profiles and listing prospective supervisors in your application is vital.",
-    languageRequirements: "English is the official language of instruction in Singapore. IELTS 6.5–7.0 or TOEFL 85–100 is standard. GRE is frequently recommended or required by NUS/NTU departments.",
-    typicalApplicationDeadlines: "SINGA August Intake: Closes December 1 of the preceding year. SINGA January Intake: Closes June 1. Direct NUS/NTU PhD: November–January.",
+    supervisorContactNotes:
+      "For SINGA, reviewing A*STAR and university researcher profiles and listing prospective supervisors in your application is critical.",
+    languageRequirements:
+      "Instruction is 100% in English. Required scores: IELTS 6.5–7.0 or TOEFL 85–100. GRE is recommended or required by some departments.",
+    typicalApplicationDeadlines:
+      "SINGA August Intake: closes December 1. SINGA January Intake: closes June 1. Direct university PhD: November–January.",
     importantLimitations: [
-      "Singapore has high rental accommodation costs; university graduate hall placement is priority for Year 1 scholars.",
-      "Admission standards for NUS and NTU are exceptionally competitive (often requiring first-class honors or top 5% class ranking).",
-      "Singapore Ministry of Education (MOE) tuition grants for certain Master's programs carry a mandatory 3-year service obligation in Singapore."
+      "High rental accommodation costs in Singapore; graduate student housing on campus is priority for Year 1.",
+      "Admissions to NUS and NTU are highly competitive, typically requiring high GPA or first-class honors.",
+      "Ministry of Education (MOE) tuition grants for certain Master's programs carry a 3-year service obligation in Singapore."
     ],
     officialPortals: [
-      { name: "A*STAR SINGA Portal", url: "https://www.a-star.edu.sg/Scholarships/for-graduate-studies/singapore-international-graduate-award-singa", description: "Official application and information page for the Singapore International Graduate Award." },
-      { name: "NUS Graduate School", url: "https://nusgs.nus.edu.sg/", description: "Official graduate admissions and research scholarship portal of the National University of Singapore." },
+      { name: "A*STAR SINGA Portal", url: "https://www.a-star.edu.sg/Scholarships/for-graduate-studies/singapore-international-graduate-award-singa", description: "Official application page for the Singapore International Graduate Award." },
+      { name: "NUS Graduate School", url: "https://nusgs.nus.edu.sg/", description: "Graduate admissions and research scholarship portal of NUS." },
       { name: "NTU Graduate College", url: "https://www.ntu.edu.sg/graduate-college", description: "Official portal for Nanyang Technological University research scholarships." }
     ],
     applicationSequence: [
-      "Browse research project areas across A*STAR research institutes, NUS, NTU, and SUTD.",
-      "Submit application directly on the official A*STAR SINGA application portal before December 1 (for August intake).",
-      "Ensure two academic recommendation letters are submitted through the automated referee portal.",
-      "Shortlisted candidates attend a rigorous virtual interview with an A*STAR / university faculty panel.",
-      "Receive official award letter, accept seat, and complete Student's Pass (STP) application with the Singapore ICA."
+      "Browse research project areas across A*STAR institutes, NUS, NTU, and SUTD.",
+      "Submit application on the official A*STAR SINGA portal before December 1 (for August intake).",
+      "Ensure two academic recommendation letters are uploaded by your referees.",
+      "Attend the virtual interview with an A*STAR and university faculty panel.",
+      "Accept award and complete the Student's Pass (STP) application with the Singapore ICA."
     ]
   },
 
@@ -1063,56 +1225,65 @@ export const countryGuidesData: CountryGuide[] = [
     code: "AU",
     flag: "🇦🇺",
     region: "Oceania",
-    headline: "Research Training Program (RTP Full-Ride) + Australia Awards (AUD $32,000–$40,000/year)",
-    summary: "Australia's prestigious Group of Eight (Go8) universities (Melbourne, ANU, Sydney, UNSW, Queensland, Monash, Adelaide, Western Australia) offer premier research environments. International research students are funded via the Australian Government Research Training Program (RTP), which waives 100% of international tuition and provides tax-free annual living stipends of AUD $32,000 to $40,000+.",
-    fundingPhilosophy: "Government Research Training Program (RTP) Framework: federal block grants support domestic and international postgraduate research candidates with tax-free stipends.",
+    headline: "Research Training Program (RTP Full-Ride) + Australia Awards (AUD $32k–$40k/yr)",
+    summary:
+      "Australia's Group of Eight (Go8) universities (Melbourne, ANU, Sydney, UNSW, Queensland, Monash) provide world-class research facilities. International researchers are funded via the Australian Government Research Training Program (RTP), which covers 100% tuition and pays tax-free stipends of AUD $32,000–$40,000/year.",
+    fundingPhilosophy:
+      "Federal Research Training Program (RTP): block grants provide domestic and international research candidates with tuition offsets and tax-free living stipends.",
     commonFundingRoutes: [
-      "Australian Government Research Training Program (RTP International Stipend + Fee Offset)",
-      "University International Postgraduate Research Scholarships (UIPRS / Melbourne Research Scholarship)",
-      "Australia Awards Scholarships (DFAT government bilateral program for development)",
-      "CSIRO (Commonwealth Scientific and Industrial Research Organisation) Postgraduate Scholarships",
+      "Australian Government Research Training Program (RTP: full tuition offset + AUD $32k–$40k/year stipend)",
+      "University Postgraduate Research Scholarships (e.g. Melbourne Research Scholarship)",
+      "Australia Awards Scholarships (DFAT government bilateral development program)",
+      "CSIRO Postgraduate Research Scholarships",
       "Faculty Project-Specific Research Grants (ARC / NHMRC grants)"
     ],
     governmentScholarships: [
       {
         name: "Australian Government Research Training Program (RTP)",
         url: "https://www.education.gov.au/research-block-grants/research-training-program",
-        description: "Administered directly by individual Australian universities on behalf of the Department of Education.",
-        coverage: "100% International Tuition Fee Offset + tax-free fortnightly living stipend (AUD $32,000–$40,000/year) + Overseas Student Health Cover (OSHC).",
+        description: "Administered directly by Australian universities on behalf of the Department of Education.",
+        coverage: "100% International Tuition Offset + tax-free living stipend (AUD $32,000–$40,000/year) + Overseas Student Health Cover (OSHC).",
         degreeLevel: "Master's & PhD"
       },
       {
         name: "Australia Awards Scholarships",
         url: "https://www.dfat.gov.au/people-to-people/australia-awards/australia-awards-scholarships",
-        description: "Department of Foreign Affairs and Trade (DFAT) bilateral awards for emerging leaders from partner developing nations.",
-        coverage: "Full tuition, return air travel, establishment allowance, contribution to living expenses (CLE), and OSHC.",
+        description: "DFAT bilateral awards for emerging leaders from partner developing countries.",
+        coverage: "Full tuition, return flights, establishment allowance, contribution to living expenses, and health cover.",
         degreeLevel: "Master's & PhD"
       }
     ],
-    universityScholarships: "Go8 universities maintain massive internal scholarship pools (e.g., Melbourne Graduate Research Scholarships, Sydney International Research Scholarship) that mirror RTP terms.",
-    phdFundingModel: "PhDs (Doctor of Philosophy by Research) are systematically funded through RTP or university research scholarships covering international fees and providing a tax-free stipend.",
-    mastersFundingModel: "Master's by Research degrees are eligible for RTP fee offsets and living stipends. Master's by Coursework degrees are predominantly self-funded (AUD $38,000–$55,000/year) unless funded via Australia Awards.",
+    universityScholarships:
+      "Go8 universities maintain internal scholarship schemes (e.g. Melbourne Graduate Research Scholarships) that match RTP terms.",
+    phdFundingModel:
+      "PhDs (by research) are systematically funded through RTP or university research scholarships covering international fees and providing a tax-free stipend.",
+    mastersFundingModel:
+      "Master's by Research degrees are eligible for RTP fee offsets and stipends. Master's by Coursework degrees are predominantly self-funded (AUD $38,000–$55,000/year) unless on Australia Awards.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "Casual academic sessional teaching (tutoring, lab demonstrating, exam marking) is widely available, paying high hourly rates (AUD $50–$65/hour).",
+    assistantshipsDetail:
+      "Casual academic tutoring and lab demonstrating pay high hourly rates (AUD $50–$65/hour) for up to 20 hours/week.",
     supervisorContactRequirement: "Strictly Required Before Application",
-    supervisorContactNotes: "Australian universities strictly mandate obtaining formal written expression of support from an accredited prospective supervisor before submitting an admission application.",
-    languageRequirements: "Strict university and Department of Home Affairs visa rules: IELTS Academic 6.5–7.0 (no band below 6.0) or TOEFL iBT 85–96.",
-    typicalApplicationDeadlines: "Major international scholarship rounds: Round 1 closes August 31 (for start early next year); Round 2 closes February/March. Australia Awards: Closes April 30.",
+    supervisorContactNotes:
+      "Australian universities mandate obtaining written support from an accredited supervisor before submitting your formal admission application.",
+    languageRequirements:
+      "IELTS Academic 6.5–7.0 (no band below 6.0) or TOEFL iBT 85–96.",
+    typicalApplicationDeadlines:
+      "Major international scholarship rounds close August 31 (for start early next year) and February/March. Australia Awards close April 30.",
     importantLimitations: [
-      "Australian student visa (Subclass 500) financial capacity requirements have increased; genuine student (GS) criteria are strictly enforced.",
+      "Australian student visa (Subclass 500) Genuine Student (GS) criteria are strictly enforced.",
       "High rental accommodation costs in Sydney and Melbourne; confirm your stipend covers living costs.",
-      "Application without prior supervisor agreement will be rejected administratively."
+      "Applications submitted without prior supervisor agreement are rejected administratively."
     ],
     officialPortals: [
-      { name: "Study Australia Official Portal", url: "https://www.studyaustralia.gov.au/", description: "Australian Government's official website for international students." },
+      { name: "Study Australia", url: "https://www.studyaustralia.gov.au/", description: "Australian Government's official website for international students." },
       { name: "Department of Education RTP Guidelines", url: "https://www.education.gov.au/research-block-grants/research-training-program", description: "Official federal guidelines governing the Research Training Program." },
       { name: "Australia Awards (DFAT)", url: "https://www.dfat.gov.au/people-to-people/australia-awards", description: "Official portal for Australian government international development scholarships." }
     ],
     applicationSequence: [
-      "Identify prospective academic supervisors at Go8 and leading Australian universities in May/June.",
+      "Identify prospective academic supervisors at Go8 and leading universities in May/June.",
       "Submit an Expression of Interest (EOI) with your CV and a 2–3 page research proposal.",
-      "Once an approved supervisor provides formal written agreement to supervise, submit the formal university application.",
-      "Tick the box applying for 'Australian Government RTP and University Research Scholarships' on the unified form.",
+      "Once a supervisor agrees in writing, submit the formal university application.",
+      "Tick the box applying for 'RTP and University Research Scholarships' on the application.",
       "Receive Confirmation of Enrolment (CoE) and apply for the Australian Student Visa (Subclass 500)."
     ]
   },
@@ -1122,14 +1293,16 @@ export const countryGuidesData: CountryGuide[] = [
     code: "NZ",
     flag: "🇳🇿",
     region: "Oceania",
-    headline: "Domestic Tuition Fee Policy for All PhDs (NZD ~7,000/year) + Full Doctoral Scholarships",
-    summary: "New Zealand has a unique policy: all international PhD students pay the exact same low domestic tuition fees as New Zealand citizens (approx. NZD $7,000–$9,000/year). Furthermore, all 8 universities offer generous University Doctoral Scholarships paying full domestic tuition plus living stipends of NZD $30,000–$35,000/year.",
-    fundingPhilosophy: "Equal International Doctoral Treatment: international PhD candidates pay domestic tuition rates and have unlimited full-time work rights and spousal work visas.",
+    headline: "Domestic Tuition Policy for All PhDs (NZD ~7k/yr) + Full Scholarships",
+    summary:
+      "In New Zealand, all international PhD students pay the exact same low domestic tuition as New Zealand citizens (~NZD $7,000–$9,000/year). All 8 universities offer University Doctoral Scholarships providing full tuition plus living stipends of NZD $30,000–$35,000/year.",
+    fundingPhilosophy:
+      "Equal doctoral treatment: international PhD candidates pay domestic tuition rates, hold unlimited work rights, and can access spousal work visas.",
     commonFundingRoutes: [
-      "University Doctoral Scholarships (e.g., Auckland, Otago, Victoria Wellington: full tuition + NZD $30,000–$35,000/year tax-free stipend)",
+      "University Doctoral Scholarships (full tuition + NZD $30,000–$35,000/year tax-free stipend)",
       "Domestic Tuition Fee Rate Guarantee for ALL International PhD Candidates",
-      "Manaaki New Zealand Scholarships (Ministry of Foreign Affairs and Trade - MFAT)",
-      "Crown Research Institute (CRI) Project Grants (AgResearch, ESR, GNS Science, Scion)",
+      "Manaaki New Zealand Scholarships (Foreign Affairs and Trade - MFAT)",
+      "Crown Research Institute (CRI) Project Grants",
       "Faculty Project Grants (Marsden Fund / MBIE Endeavour Fund)"
     ],
     governmentScholarships: [
@@ -1137,42 +1310,49 @@ export const countryGuidesData: CountryGuide[] = [
         name: "Manaaki New Zealand Scholarships",
         url: "https://www.manaakinzscholarships.govt.nz/",
         description: "Funded by the New Zealand Government for postgraduates from eligible developing partner countries.",
-        coverage: "Full tuition fees, living allowance of NZD $531/week, establishment allowance, medical insurance, and return flights.",
+        coverage: "Full tuition, living allowance of NZD $531/week, establishment allowance, medical insurance, and return flights.",
         degreeLevel: "Master's & PhD"
       }
     ],
-    universityScholarships: "Every New Zealand university (University of Auckland, University of Otago, Victoria University of Wellington, Canterbury) awards guaranteed doctoral scholarships to applicants achieving first-class GPA equivalents.",
-    phdFundingModel: "If awarded a University Doctoral Scholarship: 100% tuition coverage + NZD $30,000–$35,000 annual tax-free stipend. Even if self-funding, tuition is only ~NZD $7,500/year (domestic rate).",
-    mastersFundingModel: "Master's programs charge international tuition (NZD $32,000–$45,000/year) unless funded through Manaaki New Zealand Scholarships or internal university master's awards.",
+    universityScholarships:
+      "All 8 universities (Auckland, Otago, Victoria Wellington, Canterbury, etc.) award guaranteed doctoral scholarships to candidates with top GPA equivalents.",
+    phdFundingModel:
+      "With a University Doctoral Scholarship: 100% tuition coverage + NZD $30,000–$35,000 tax-free stipend. Even if self-funding, PhD tuition is only ~NZD $7,500/year (domestic rate).",
+    mastersFundingModel:
+      "Master's degrees charge international tuition (NZD $32,000–$45,000/year) unless funded via Manaaki NZ Scholarships or university master's awards.",
     assistantshipsAvailable: true,
-    assistantshipsDetail: "International PhD students in New Zealand hold unlimited work rights on their student visa, allowing flexible paid tutoring and research assistant work.",
+    assistantshipsDetail:
+      "International PhD students hold unlimited work rights on their student visa, allowing flexible paid teaching and research assistant work.",
     supervisorContactRequirement: "Strictly Required Before Application",
-    supervisorContactNotes: "You MUST contact a prospective academic supervisor and obtain formal preliminary approval of your research proposal before the university will consider your doctoral application.",
-    languageRequirements: "Strict English standards: IELTS Academic 6.5 (no sub-band below 6.0) or TOEFL iBT 90.",
-    typicalApplicationDeadlines: "University Doctoral Scholarship rounds typically close: March 1, July 15, and November 1. Manaaki NZ Scholarships close in February.",
+    supervisorContactNotes:
+      "You MUST contact a prospective supervisor and obtain preliminary approval of your research proposal before the university will consider your doctoral application.",
+    languageRequirements:
+      "IELTS Academic 6.5 (no sub-band below 6.0) or TOEFL iBT 90.",
+    typicalApplicationDeadlines:
+      "University Doctoral Scholarship rounds close: March 1, July 15, and November 1. Manaaki NZ Scholarships close in February.",
     importantLimitations: [
-      "Master's degrees do not benefit from the domestic fee policy and require substantial funding.",
-      "New Zealand has high living costs in Auckland and Wellington.",
-      "Preliminary supervisor review can take 4–8 weeks; reach out well in advance of scholarship rounds."
+      "Master's degrees do not benefit from the domestic fee policy and require full international tuition.",
+      "Living costs in Auckland and Wellington are high.",
+      "Preliminary supervisor review takes 4–8 weeks; contact faculty well in advance of scholarship rounds."
     ],
     officialPortals: [
       { name: "Study with New Zealand", url: "https://www.studywithnewzealand.govt.nz/", description: "The official government website for international students in New Zealand." },
       { name: "Manaaki New Zealand Scholarships", url: "https://www.manaakinzscholarships.govt.nz/", description: "Official MFAT portal for New Zealand Government international scholarships." },
-      { name: "Immigration New Zealand (Student Visa)", url: "https://www.immigration.govt.nz/new-zealand-visas/visas/visa/fee-paying-student-visa", description: "Official visa information for doctoral and master's students." }
+      { name: "Immigration New Zealand", url: "https://www.immigration.govt.nz/new-zealand-visas/visas/visa/fee-paying-student-visa", description: "Official visa information for doctoral and master's students." }
     ],
     applicationSequence: [
       "Review faculty research directories at New Zealand universities (Auckland, Otago, VUW, Canterbury).",
-      "Contact a prospective supervisor with your academic CV, transcripts, and 2-page research proposal.",
-      "Upon securing supervisor support, submit your formal application through the university admissions portal.",
-      "Select consideration for the University Doctoral Scholarship during application submission.",
-      "Receive official Offer of Place and Scholarship Award; apply for New Zealand Student Visa."
+      "Contact a prospective supervisor with your CV, transcripts, and 2-page research proposal.",
+      "Upon securing supervisor support, submit your application through the university admissions portal.",
+      "Select consideration for the University Doctoral Scholarship on the application form.",
+      "Receive Offer of Place and Scholarship Award; apply for the New Zealand Student Visa."
     ]
   }
 ];
 
 export const countryGuidesControlsData = {
   header: {
-    badge: "20 Destination Dossiers",
+    badge: "20 Country Dossiers",
     title: "Country Funding Guides",
     subtitle:
       "Explore tuition policies, statutory PhD salaries, government awards, and supervisor rules across 20 global destinations."
@@ -1184,7 +1364,7 @@ export const countryGuidesControlsData = {
     { label: "Recommended", value: "Recommended" },
     { label: "Centralized / Not Required", value: "Centralized / Not Required" }
   ],
-  searchPlaceholder: "Search by country, scholarship (e.g. DAAD, MEXT, Fulbright)...",
+  searchPlaceholder: "Search by country or scholarship (e.g. DAAD, MEXT, Fulbright)...",
   actions: {
     expandAll: "Expand All",
     collapseAll: "Collapse All"
@@ -1210,4 +1390,3 @@ export const getCountryById = (id: string): CountryGuide | undefined => {
 export const getCountriesByRegion = (region: "Europe" | "North America" | "Asia" | "Oceania"): CountryGuide[] => {
   return countryGuidesData.filter((country) => country.region === region);
 };
-

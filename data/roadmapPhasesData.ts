@@ -905,3 +905,21 @@ export function getPhaseBySlug(slug: string): RoadmapPhase | undefined {
 export function getPhaseByNumber(num: number): RoadmapPhase | undefined {
   return roadmapPhasesData.find((phase) => phase.number === num);
 }
+
+export const roadmapControlsData = {
+  header: {
+    badge: "13-Phase Pipeline",
+    title: "The Scholarship Application Pipeline",
+    subtitle: "A structured, 13-phase roadmap from profile audit to funding offer."
+  },
+  filters: {
+    all: "All Phases",
+    masters: "Master's Only",
+    phd: "PhD Only"
+  },
+  searchPlaceholder: "Search phases by keyword (e.g., IELTS, SOP, professor, visa)...",
+  actions: {
+    expandAll: "Expand All",
+    collapseAll: "Collapse All"
+  }
+};

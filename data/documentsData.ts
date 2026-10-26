@@ -17,50 +17,50 @@ export const documentsData: DocumentGuideline[] = [
     name: "Academic Curriculum Vitae (CV)",
     badge: "Universal Requirement",
     degreeLevel: "Universal",
-    what: "A comprehensive, 2-page document chronicling your complete scholarly and academic trajectory: educational qualifications, research interests, publications, laboratory experience, technical methodologies, teaching/mentoring, academic awards, and referee contacts.",
-    why: "Unlike a 1-page corporate resume designed for HR resume-parsers, an Academic CV is reviewed by professors and researchers who want to see the technical depth of your research projects, methodologies, software/lab tools, and scholarly outputs.",
+    what: "A 2-page document highlighting your academic history, degrees, research projects, technical skills, publications, and referee contacts.",
+    why: "Committees use your CV to quickly evaluate your research background, technical skills, and academic qualifications before reading other documents.",
     structure: [
       {
         section: "1. Header & Contact Information",
-        guidance: "Full legal name, professional email (preferably institutional), telephone with country code, LinkedIn, Google Scholar profile, and GitHub/ORCID link. No photos, date of birth, marital status, or nationality unless explicitly requested."
+        guidance: "Full legal name, professional email, phone number, LinkedIn, and links to your GitHub or Google Scholar. Do not include photos, age, marital status, or nationality unless requested."
       },
       {
-        section: "2. Education & Academic Credentials",
-        guidance: "Degrees listed in reverse chronological order: Degree title, Major/Discipline, Institution name, City/Country, Graduation year (or expected), Cumulative GPA with grading scale, and Thesis title with primary supervisor name."
+        section: "2. Education & Credentials",
+        guidance: "List degrees in reverse chronological order: degree name, institution, graduation year, GPA with scale, and thesis title with your supervisor's name."
       },
       {
-        section: "3. Research Interests & Publications",
-        guidance: "3–5 precise sub-disciplinary research keywords. Complete bibliographic citations for peer-reviewed journal papers, conference proceedings, preprints (with arXiv DOI), or technical reports using standard APA or IEEE format."
+        section: "3. Research & Projects",
+        guidance: "Detail research assistantships, thesis projects, or independent research. Mention the problem investigated, methods used, and key results."
       },
       {
-        section: "4. Research & Laboratory Experience",
-        guidance: "Positions as Research Assistant, Undergraduate Researcher, or Capstone Scholar. Detail your specific theoretical and methodological contributions, data collection techniques, tools, and quantifiable outcomes."
+        section: "4. Publications & Preprints",
+        guidance: "List peer-reviewed papers, conference proceedings, or preprints (with arXiv links/DOIs) using standard APA or IEEE citation style."
       },
       {
-        section: "5. Technical, Laboratory & Language Proficiencies",
-        guidance: "Programming languages, scientific software (MATLAB, R, PyTorch, LaTeX), laboratory instrumentation, statistical methods, and spoken language proficiencies with official CEFR/IELTS levels."
+        section: "5. Technical Skills & Languages",
+        guidance: "List programming languages, software, laboratory tools, statistical methods, and spoken language proficiencies."
       },
       {
-        section: "6. Honors, Awards & Academic Referees",
-        guidance: "Merit scholarships, dean's list honors, competitive hackathon/case-study awards. Conclude with names, titles, institutional affiliations, and official email addresses of 3 academic referees."
+        section: "6. Honors & Academic Referees",
+        guidance: "Include academic honors, merit awards, and the names, titles, and institutional emails of 2–3 faculty referees."
       }
     ],
     commonMistakes: [
-      "Using a 1-page business resume highlighting sales, customer service, or high school extracurriculars instead of academic research.",
-      "Including personal photos, age, religion, or home address (which violates anti-discrimination standards in the US, UK, and Canada).",
-      "Listing generic buzzwords ('detail-oriented', 'fast learner') without evidence of concrete research methodologies.",
-      "Using complex multi-column graphic design templates that break when processed through university application portals."
+      "Using a 1-page business resume focused on corporate tasks instead of academic and research achievements.",
+      "Including photos, age, or marital status (which violates anti-bias policies in the US, UK, and Canada).",
+      "Listing generic buzzwords ('hard worker', 'quick learner') instead of specific technical tools and methodologies.",
+      "Using complex multi-column design templates that scramble in university applicant tracking systems."
     ],
     officialChecks: [
-      "Keep within 2 pages for Master's and early-career PhD applicants (3 pages max if you have multiple first-author publications).",
-      "Export as a clean, text-searchable PDF titled 'CV_FirstName_LastName.pdf'.",
-      "Verify that all hyperlinks (Google Scholar, GitHub, paper DOIs) are active and clickable."
+      "Keep to 2 pages maximum for Master's and early-career PhD applicants.",
+      "Save as a clean, text-searchable PDF titled 'CV_FirstName_LastName.pdf'.",
+      "Verify that all links (GitHub, Google Scholar, publications) are active and clickable."
     ],
     checklistItems: [
-      { id: "doc-cv-1", label: "Structured in reverse chronological order with clear institutional details", tip: "Check that graduation dates match official transcripts." },
-      { id: "doc-cv-2", label: "Detailed research experience highlights specific methodology and tools", tip: "Avoid vague descriptions; mention exact algorithms or equipment used." },
-      { id: "doc-cv-3", label: "Listed full citations and active links/DOIs for all publications or preprints", tip: "Even in-preparation papers should be clearly designated." },
-      { id: "doc-cv-4", label: "Removed all personal photos, age, marital status, and non-academic jobs", tip: "Keep focus strictly on scholarly and technical merit." }
+      { id: "doc-cv-1", label: "Structured in reverse chronological order with complete degree details", tip: "Ensure graduation dates match your official transcripts." },
+      { id: "doc-cv-2", label: "Research experience highlights specific methods, tools, and results", tip: "Mention exact software, equipment, or algorithms used." },
+      { id: "doc-cv-3", label: "All publications or preprints have full citations and active links", tip: "Clearly designate working papers or preprints." },
+      { id: "doc-cv-4", label: "Removed photos, age, marital status, and non-academic jobs", tip: "Keep the focus strictly on scholarly and technical merit." }
     ]
   },
   {
@@ -68,85 +68,85 @@ export const documentsData: DocumentGuideline[] = [
     name: "Statement of Purpose (SOP)",
     badge: "Core Deciding Factor",
     degreeLevel: "Universal",
-    what: "A focused, 800–1,200 word academic essay articulating your research trajectory, theoretical foundation, methodological capabilities, specific reasons for selecting this university and department, and realistic post-graduation academic/professional goals.",
-    why: "The Statement of Purpose is the most heavily scrutinized qualitative document in your application. It proves to the committee that you understand the academic discipline, can articulate a scholarly gap, and possess the maturity to succeed in rigorous graduate training.",
+    what: "A focused, 800–1,200 word academic essay explaining your research interests, academic preparation, motivation for choosing this specific program, and career goals.",
+    why: "The SOP is the most influential qualitative document in your application. It proves you understand your field, have realistic research goals, and fit well with the department's faculty.",
     structure: [
       {
-        section: "Movement 1: Intellectual Foundation & Research Focus (Paragraph 1)",
-        guidance: "Open immediately with your core research domain, the scientific problem you investigate, and your academic trajectory. Do NOT open with childhood anecdotes ('Ever since I was a child...'). State your proposed graduate concentration clearly."
+        section: "1. Introduction & Research Focus",
+        guidance: "Open immediately with your core academic interest and proposed research area. Skip childhood anecdotes ('Ever since I was a child...'). State your intended graduate specialization clearly."
       },
       {
-        section: "Movement 2: Past Research & Methodological Mastery (Paragraphs 2–3)",
-        guidance: "Detail 1–2 substantial academic projects or thesis research. Explain the research hypothesis, the methodology you engineered (experimental design, data models, instruments), key findings, and what this taught you about independent inquiry."
+        section: "2. Academic & Research Background",
+        guidance: "Describe 1–2 major research projects or your bachelor's/master's thesis. Highlight the research question, your methodology, and key findings."
       },
       {
-        section: "Movement 3: The Intellectual Gap & Future Inquiries (Paragraph 4)",
-        guidance: "Identify the current bottleneck or unresolved question in the scientific literature that motivates your graduate study. Explain what theoretical frameworks you wish to master."
+        section: "3. Research Gap & Future Direction",
+        guidance: "Identify an unresolved question in the literature that you want to explore during your graduate studies."
       },
       {
-        section: "Movement 4: Program & Faculty Customization (Paragraph 5)",
-        guidance: "Demonstrate intimate familiarity with the target university: name 2–3 specific faculty members whose recent research connects with your goals, specific research centers, lab equipment, or unique specialized curriculum offerings."
+        section: "4. Why This Program & Faculty Fit",
+        guidance: "Name 2–3 specific professors whose current research aligns with your interests, and mention specific labs, equipment, or specialized courses."
       },
       {
-        section: "Movement 5: Career Trajectory & Long-Term Vision (Paragraph 6)",
-        guidance: "Conclude with your realistic post-graduation trajectory (e.g., academic tenure-track research, national laboratory scientist, industrial R&D leader). Reiterate your readiness to contribute actively to the department's academic community."
+        section: "5. Long-Term Career Vision",
+        guidance: "Conclude with your realistic post-graduation goals (e.g. university research, national lab scientist, or R&D industry leadership)."
       }
     ],
     commonMistakes: [
-      "Writing a chronological personal autobiography rather than an academic research statement.",
-      "Using hyperbolic or flattery-heavy language ('Your world-famous, prestigious university...') without naming specific faculty or labs.",
-      "Copy-pasting an SOP across different universities and accidentally leaving another institution's name in the text.",
-      "Relying on generic AI-generated prose devoid of concrete metrics, specific project names, and technical depth."
+      "Writing a chronological autobiography rather than an academic research statement.",
+      "Using generic praise ('Your prestigious world-class university...') without naming specific faculty or labs.",
+      "Reusing the same SOP across universities and accidentally leaving another institution's name in the text.",
+      "Using generic AI-generated text that lacks concrete project details and personal insight."
     ],
     officialChecks: [
-      "Strictly respect the program's posted word or page limit (usually 2 pages, single-spaced, 11-12pt font).",
-      "Check whether the program requires a separate 'Personal History Statement' addressing adversity or diversity."
+      "Adhere strictly to departmental word limits (typically 800–1,200 words or 2 pages).",
+      "Have at least two academic mentors or peers proofread your draft before submission."
     ],
     checklistItems: [
-      { id: "doc-sop-1", label: "Eliminated childhood stories and clichés from the opening paragraph", tip: "Start directly with your technical or scholarly research focus." },
-      { id: "doc-sop-2", label: "Dedicated at least 40% of the essay to concrete past research methodology", tip: "Quantify metrics, datasets, or theoretical frameworks." },
-      { id: "doc-sop-3", label: "Named 2–3 specific faculty members and explained exact research alignment", tip: "Cite their recent 2024–2026 papers." },
-      { id: "doc-sop-4", label: "Proofread thoroughly by at least two academic mentors or peers", tip: "Ensure zero spelling, grammatical, or institutional name errors." }
+      { id: "doc-sop-1", label: "Opens directly with your research focus, avoiding childhood clichés", tip: "State your field and research direction in the first paragraph." },
+      { id: "doc-sop-2", label: "At least 40% of the essay describes concrete past research and methods", tip: "Mention specific datasets, algorithms, or experimental setups." },
+      { id: "doc-sop-3", label: "Names 2–3 target professors and explains why your interests match", tip: "Cite their recent research papers from the last 2–3 years." },
+      { id: "doc-sop-4", label: "Proofread for zero spelling, grammar, or university name errors", tip: "Read aloud to catch awkward phrasing." }
     ]
   },
   {
     id: "motivation-letter",
     name: "Motivation Letter",
-    badge: "European Master's Standard",
+    badge: "European Standard",
     degreeLevel: "Master's Heavy",
-    what: "A 1–2 page formal letter—frequently required by European universities, DAAD, and Erasmus Mundus programs—explaining your personal motivation for pursuing the specific degree, how your educational background qualifies you, and how the program aligns with your career plans.",
-    why: "While a North American SOP is intensely focused on scientific research methodology, a European Motivation Letter balances academic qualifications with personal drive, adaptability, cultural exchange potential, and professional career goals.",
+    what: "A 1–2 page formal letter required by European universities, DAAD, and Erasmus Mundus programs explaining your academic motivation, career goals, and why you chose this degree.",
+    why: "Unlike a research-heavy SOP, a Motivation Letter balances your academic qualifications with personal motivation, adaptability, and how the degree advances your long-term career.",
     structure: [
       {
-        section: "1. Formal Letter Header",
-        guidance: "Your contact details, date, formal address of the admissions committee / selection panel, and clear subject line (e.g., 'Application for Master of Science in Renewable Energy Systems - Intake 2026')."
+        section: "1. Formal Header",
+        guidance: "Include contact details, date, admissions committee address, and a clear subject line with the degree program name."
       },
       {
-        section: "2. Academic Suitability & Prerequisite Match",
-        guidance: "Detail how your bachelor's degree coursework directly satisfies the specific program modules and prerequisites."
+        section: "2. Academic Preparation",
+        guidance: "Show how your undergraduate coursework and projects directly satisfy the program's prerequisite modules."
       },
       {
         section: "3. Program-Specific Attraction",
-        guidance: "Explain why this exact university and curriculum (e.g., interdisciplinary structure, international cohort, mandatory internship semester) fit your learning objectives better than alternatives."
+        guidance: "Explain why this university and curriculum (e.g. interdisciplinary setup, cohort structure, or internship semester) best suit your goals."
       },
       {
-        section: "4. Professional & Societal Impact",
-        guidance: "For scholarship bodies (like DAAD EPOS or Swedish Institute), demonstrate how completing this program will enable you to solve tangible challenges in your home country or industry upon graduation."
+        section: "4. Career & Societal Impact",
+        guidance: "For scholarship programs (like DAAD or Swedish Institute), explain how the degree enables you to address real-world challenges in your home country or field."
       }
     ],
     commonMistakes: [
-      "Confusing a Motivation Letter with a cover letter for a retail job.",
-      "Failing to address the specific selection criteria published in the official scholarship call.",
-      "Writing exclusively about how wonderful the host country is for tourism rather than academic excellence."
+      "Treating the Motivation Letter like a casual cover letter for a retail job.",
+      "Failing to address the specific evaluation criteria published in the scholarship call.",
+      "Focusing on tourism or cultural attraction rather than academic and career benefits."
     ],
     officialChecks: [
-      "Keep to 1–2 pages maximum (500–800 words unless specified).",
-      "Include formal sign-off ('Yours sincerely, [Your Name]')."
+      "Keep to 1–2 pages maximum (typically 500–800 words).",
+      "Conclude with a formal sign-off ('Yours sincerely, [Your Name]')."
     ],
     checklistItems: [
-      { id: "doc-mot-1", label: "Followed formal business/academic letter formatting with full headers", tip: "Address the specific selection committee by official title." },
-      { id: "doc-mot-2", label: "Linked specific curriculum modules directly to your past coursework", tip: "Demonstrate prerequisite mastery." },
-      { id: "doc-mot-3", label: "Articulated tangible post-graduation professional impact in your home country/field", tip: "Crucial for government bilateral scholarships." }
+      { id: "doc-mot-1", label: "Follows formal business/academic letter formatting with full headers", tip: "Address the selection committee by their official title." },
+      { id: "doc-mot-2", label: "Links specific program modules directly to your past coursework", tip: "Demonstrate that you meet all course prerequisites." },
+      { id: "doc-mot-3", label: "Clearly explains post-graduation career and societal impact", tip: "Crucial for government scholarships like DAAD or Chevening." }
     ]
   },
   {
@@ -154,49 +154,49 @@ export const documentsData: DocumentGuideline[] = [
     name: "Research Proposal",
     badge: "Mandatory for PhD & MPhil",
     degreeLevel: "PhD / Research Master's",
-    what: "A structured, 3–6 page academic document defining an original research project you propose to investigate during your doctoral studies: problem statement, literature review, theoretical framework, research questions/hypotheses, methodology, expected contributions, timeline, and academic bibliography.",
-    why: "The research proposal demonstrates to prospective supervisors and scholarship panels that you can independently conceptualize a viable research project, formulate testable questions, and select appropriate scientific methodologies within a 3–4 year timeframe.",
+    what: "A structured, 3–6 page academic document outlining an original research project you plan to pursue during your doctorate.",
+    why: "The proposal proves to prospective supervisors and funding panels that you can independently conceptualize a viable research project with clear questions and realistic methodology.",
     structure: [
       {
         section: "1. Title & Abstract",
-        guidance: "Concise, descriptive title indicating the variables, context, and focus. 150–250 word abstract summarizing background, problem, methodology, and significance."
+        guidance: "A clear, descriptive title and a 150–250 word abstract summarizing the problem, research questions, methodology, and expected contributions."
       },
       {
-        section: "2. Background & Literature Review",
-        guidance: "Synthesize key academic debates, establish the theoretical foundation, and identify the clear scholarly gap in current published literature."
+        section: "2. Literature Review & Research Gap",
+        guidance: "Synthesize current scholarly debates and pinpoint the specific gap in published literature that your research will address."
       },
       {
         section: "3. Research Questions & Hypotheses",
         guidance: "Formulate 1 primary research question and 2–3 sub-questions or testable scientific hypotheses."
       },
       {
-        section: "4. Research Methodology & Design",
-        guidance: "Specify data collection methods, sampling criteria, instruments, experimental protocols, data analysis frameworks (e.g., qualitative thematic analysis, statistical regression, machine learning benchmarks), and ethical considerations."
+        section: "4. Methodology & Research Design",
+        guidance: "Detail data collection methods, experimental setups, analytical frameworks, software tools, and ethical considerations."
       },
       {
         section: "5. Significance & Expected Contributions",
-        guidance: "Articulate how your findings will advance theoretical knowledge, inform public policy, or create technological innovations."
+        guidance: "Explain how your findings will advance theoretical knowledge, guide policy, or produce technological improvements."
       },
       {
-        section: "6. Indicative 3–4 Year Timeline & Key References",
-        guidance: "Yearly or quarterly milestone breakdown (Gantt chart). Comprehensive bibliography of 15–30 authoritative peer-reviewed academic papers formatted in APA or IEEE."
+        section: "6. Project Timeline & Bibliography",
+        guidance: "Include a 3–4 year milestone timeline (Gantt chart) and 15–30 academic references formatted in APA or IEEE style."
       }
     ],
     commonMistakes: [
-      "Proposing an overly ambitious project that would take 15 years and $5 million to complete.",
-      "Proposing a topic that has already been extensively resolved in published literature.",
-      "Neglecting methodology; writing 4 pages of background and only 2 vague sentences on how you will collect and analyze data.",
-      "Failing to align the proposal with the prospective supervisor's actual lab capabilities."
+      "Proposing an overly broad project that cannot be completed within a 3–4 year doctoral timeline.",
+      "Proposing a topic that has already been solved in recent literature.",
+      "Devoting too much space to background and only a few sentences to actual research methodology.",
+      "Choosing a topic that does not match the target professor's laboratory focus."
     ],
     officialChecks: [
-      "Check whether target university has specific proposal formatting rules or word limits (e.g., 2,000 words maximum).",
-      "Confirm whether your proposed project requires specialized ethical board approvals (IRB)."
+      "Check whether your target university specifies a proposal template or strict word limit (e.g. 2,000–3,000 words).",
+      "Confirm if your project involves human or animal subjects requiring ethical clearance (IRB)."
     ],
     checklistItems: [
-      { id: "doc-prop-1", label: "Formulated clear, focused, and testable research questions", tip: "Ensure questions are answerable within a 3–4 year doctoral timeline." },
-      { id: "doc-prop-2", label: "Detailed specific research methodology, data sources, and analytical tools", tip: "The methodology section should comprise at least 30–40% of the proposal." },
-      { id: "doc-prop-3", label: "Included realistic multi-year milestone schedule (Gantt chart)", tip: "Demonstrates practical feasibility to the committee." },
-      { id: "doc-prop-4", label: "Formatted 15–30 academic references in consistent citation style", tip: "Cite papers from top-tier journals in the specific field." }
+      { id: "doc-prop-1", label: "Formulates clear, focused, and testable research questions", tip: "Ensure questions are answerable within 3–4 years." },
+      { id: "doc-prop-2", label: "Dedicates at least 35% of the proposal to research methodology", tip: "Detail data sources, tools, and analytical models." },
+      { id: "doc-prop-3", label: "Includes a realistic multi-year milestone schedule (Gantt chart)", tip: "Demonstrates practical feasibility to the committee." },
+      { id: "doc-prop-4", label: "Contains 15–30 authoritative academic references in consistent citation style", tip: "Cite recent papers from top-tier journals in the field." }
     ]
   },
   {
@@ -204,35 +204,35 @@ export const documentsData: DocumentGuideline[] = [
     name: "Academic Transcripts & Grading Scales",
     badge: "Official Legal Record",
     degreeLevel: "Universal",
-    what: "Complete, official academic records issued by your university registrar detailing every course taken, semester-by-semester grades, credit hours, cumulative GPA, and the official institutional grading scale legend.",
-    why: "Admissions committees use transcripts to verify your degree completion, examine your grade progression over time (looking for upward trends), and verify that you meet foundational subject prerequisites.",
+    what: "Official university registrar records listing all courses taken, grades received, credit hours, cumulative GPA, and the institution's grading scale legend.",
+    why: "Admissions committees use transcripts to verify your degree completion, examine your grade trajectory over time, and confirm that you meet prerequisite course requirements.",
     structure: [
       {
         section: "Official Registrar Seal & Legend",
-        guidance: "Ensure every transcript page carries the registrar's official stamp/seal and signature. Include the reverse side explaining the university's grading scale (e.g., A = 80–100%, First Class Division, ECTS equivalent)."
+        guidance: "Ensure each transcript page displays the official university seal and registrar signature. Include the reverse side explaining the grading scale (e.g. A = 80–100%, ECTS conversion)."
       },
       {
         section: "Certified English Translations",
-        guidance: "If transcripts are in a language other than English, provide both the original language document and an official sworn/certified word-for-word translation."
+        guidance: "If original transcripts are not in English, include both the original language document and an official certified translation."
       },
       {
         section: "Credential Evaluation (WES / ECE / Anabin)",
-        guidance: "For US, Canadian, and European universities requiring third-party evaluation, order official WES Course-by-Course evaluation reports early."
+        guidance: "For universities requiring third-party credential evaluation (common in the US and Canada), request official WES Course-by-Course evaluation reports early."
       }
     ],
     commonMistakes: [
-      "Uploading self-printed unofficial student portal screenshots instead of scanned official stamped transcripts.",
-      "Cropping off the grading scale legend printed on the back of the transcript.",
-      "Submitting an incomplete transcript missing the final semester grades or graduation confirmation."
+      "Uploading unofficial student portal screenshots instead of official registrar-stamped PDFs.",
+      "Omitting the grading scale explanation printed on the reverse side of the transcript.",
+      "Submitting an incomplete transcript missing final semester marks or degree confirmation."
     ],
     officialChecks: [
-      "Scan in full-color, high-resolution (300 DPI) PDF.",
-      "Keep original physical sealed paper envelopes intact for universities requiring post-admission postal verification."
+      "Scan documents in full color at 300 DPI resolution.",
+      "Keep original sealed paper transcripts intact for universities that require physical verification after admission."
     ],
     checklistItems: [
-      { id: "doc-trans-1", label: "Scanned all semester transcripts in high-resolution full color", tip: "Ensure all stamps, signatures, and grade legends are 100% legible." },
-      { id: "doc-trans-2", label: "Included official university grading scale conversion documentation", tip: "Necessary for committees to convert your marks to 4.0 or ECTS." },
-      { id: "doc-trans-3", label: "Secured certified sworn English translations if originals are in another language", tip: "Must be performed by an accredited translator." }
+      { id: "doc-trans-1", label: "Scanned all semester transcripts in high-resolution full color", tip: "Ensure seals, signatures, and grade legends are completely legible." },
+      { id: "doc-trans-2", label: "Included official university grading scale conversion documentation", tip: "Needed for committees to convert your marks to 4.0 or ECTS." },
+      { id: "doc-trans-3", label: "Secured certified English translations if originals are in another language", tip: "Must be issued by an accredited sworn translator." }
     ]
   },
   {
@@ -240,28 +240,28 @@ export const documentsData: DocumentGuideline[] = [
     name: "Degree Certificates & Graduation Letters",
     badge: "Official Legal Record",
     degreeLevel: "Universal",
-    what: "The formal diploma or degree conferral parchment verifying that your Bachelor's or Master's degree has been formally awarded, or an official 'Bonafide Certificate / Letter of Expected Graduation' if you are currently enrolled in your final year.",
-    why: "Graduate schools cannot legally matriculate a student into a Master's or PhD program without documented proof of completion of the prior qualifying degree.",
+    what: "The official diploma verifying your awarded degree, or an official Expected Graduation Letter from your registrar if you are currently in your final year.",
+    why: "Universities cannot legally enroll you into a Master's or PhD program without verified proof that your qualifying degree has been or will be completed.",
     structure: [
       {
-        section: "Conferral Parchment",
-        guidance: "Displays full legal name, degree awarded (e.g., Bachelor of Science in Electrical Engineering), conferral date, and university governing seal."
+        section: "Degree Parchment",
+        guidance: "Must display your full legal name, degree awarded (e.g. Bachelor of Science in Mechanical Engineering), conferral date, and university seal."
       },
       {
-        section: "Provisional Certificate / Expected Graduation Letter",
-        guidance: "If your formal degree convocation has not yet occurred, submit an official provisional certificate issued by the registrar confirming you have fulfilled all degree requirements and specifying your expected graduation date."
+        section: "Expected Graduation Letter",
+        guidance: "If you have not yet graduated, submit an official registrar letter confirming you are on track to complete all degree requirements before graduate enrollment begins."
       }
     ],
     commonMistakes: [
-      "Waiting until after graduation to apply; final-year students can and should apply using an Expected Graduation Letter.",
-      "Submitting degree certificates where your name spelling differs from your international passport."
+      "Waiting until after graduation to apply; final-year students should apply early using an Expected Graduation Letter.",
+      "Submitting certificates where your name spelling differs from your international passport."
     ],
     officialChecks: [
-      "Verify that your name matches your passport letter-for-letter.",
+      "Verify that your name matches your passport letter for letter.",
       "Check whether your target country requires Hague Apostille or consular legalization."
     ],
     checklistItems: [
-      { id: "doc-deg-1", label: "Obtained official degree certificate or university Expected Graduation Letter", tip: "Ensure university seal and registrar signature are clearly visible." },
+      { id: "doc-deg-1", label: "Obtained official degree certificate or Expected Graduation Letter", tip: "Ensure university seal and registrar signature are clearly visible." },
       { id: "doc-deg-2", label: "Verified that legal name matches passport exactly", tip: "Resolve any name discrepancy affidavits in advance." }
     ]
   },
@@ -270,37 +270,37 @@ export const documentsData: DocumentGuideline[] = [
     name: "Letters of Recommendation (LORs)",
     badge: "Critical Qualitative Weight",
     degreeLevel: "Universal",
-    what: "Three confidential letters written by academic professors or research supervisors who have directly taught, mentored, or supervised your scientific research work.",
-    why: "Admissions committees rely heavily on LORs to assess your intellectual curiosity, research integrity, technical independence, and capability to overcome research setbacks from an external, senior academic perspective.",
+    what: "Confidential recommendation letters from academic professors or research supervisors who have directly taught or supervised your research.",
+    why: "Admissions committees rely heavily on LORs to evaluate your technical independence, research potential, work ethic, and ability to overcome academic setbacks.",
     structure: [
       {
-        section: "1. Institutional Letterhead & Context of Relationship",
-        guidance: "Must be printed on official university letterhead with the professor's official email and telephone. Opening paragraph establishes how long and in what capacity the referee has known you (top X% of students taught)."
+        section: "1. Institutional Letterhead & Context",
+        guidance: "Must be printed on official university letterhead with the professor's institutional email. The opening states how long and in what capacity the referee has known you."
       },
       {
-        section: "2. Concrete Evidence of Intellectual & Research Capability",
-        guidance: "Details 2–3 specific instances of exceptional performance: your thesis defense, original experimental designs, mastery of complex technical tools, or co-authored research manuscripts."
+        section: "2. Concrete Evidence of Research Potential",
+        guidance: "Highlights 1–2 specific examples: your thesis research, lab independence, technical skills, or co-authored manuscripts."
       },
       {
-        section: "3. Comparative Ranking & Unconditional Endorsement",
-        guidance: "Explicit comparative assessment (e.g., 'In the top 2% of undergraduate researchers I have mentored over the past 15 years') and unconditional recommendation for graduate funding."
+        section: "3. Comparative Ranking & Endorsement",
+        guidance: "Provides a comparative ranking (e.g. 'In the top 5% of undergraduate students I have taught') and an endorsement for graduate funding."
       }
     ],
     commonMistakes: [
-      "Selecting high-profile referees (politicians, university presidents) who do not know your academic work and write generic letters.",
-      "Providing personal email addresses (@gmail, @yahoo) for recommenders; universities mandate institutional domains (@university.edu).",
-      "Approaching recommenders 3 days before the deadline, forcing rushed, low-quality submissions.",
-      "Drafting letters yourself that sound identical in style across all 3 recommenders."
+      "Choosing high-profile referees who do not know your research work and write generic letters.",
+      "Providing personal email addresses (@gmail, @yahoo) instead of official institutional domains (@university.edu).",
+      "Asking recommenders just days before the deadline, resulting in rushed submissions.",
+      "Writing draft letters yourself that sound identical across all three recommenders."
     ],
     officialChecks: [
-      "Always waive your right to inspect the recommendation letter (FERPA in the US); waived confidential letters carry 10x more credibility.",
-      "Provide recommenders with an LOR dossier packet: CV, SOP draft, program list, and deadline calendar."
+      "Always waive your right to inspect the recommendation letter; confidential letters carry far more credibility with selection panels.",
+      "Provide recommenders with an LOR packet: your CV, draft SOP, and application deadline table at least 4–6 weeks early."
     ],
     checklistItems: [
-      { id: "doc-lor-1", label: "Secured commitments from 3 academic faculty who know your research work", tip: "At least two should be tenure-track faculty who taught you in upper-level courses." },
-      { id: "doc-lor-2", label: "Provided recommenders with an LOR briefing packet at least 6 weeks in advance", tip: "Include your draft SOP, CV, and program deadline table." },
-      { id: "doc-lor-3", label: "Waived right of inspection inside every university application portal", tip: "Signals to the committee that the appraisal is 100% candid and genuine." },
-      { id: "doc-lor-4", label: "Confirmed all recommenders use official institutional email addresses", tip: "Prevents automatic portal fraud flags." }
+      { id: "doc-lor-1", label: "Secured commitments from 2–3 faculty who know your academic and research work", tip: "Prefer tenure-track professors who taught upper-level courses or supervised your thesis." },
+      { id: "doc-lor-2", label: "Provided recommenders with an LOR dossier packet at least 4–6 weeks early", tip: "Include your draft SOP, CV, and program deadline list." },
+      { id: "doc-lor-3", label: "Waived right of inspection inside all application portals", tip: "Confidential letters carry significantly more weight with committees." },
+      { id: "doc-lor-4", label: "Confirmed recommenders will use official institutional email addresses", tip: "Prevents automatic portal verification flags." }
     ]
   },
   {
@@ -308,35 +308,35 @@ export const documentsData: DocumentGuideline[] = [
     name: "Language Proficiency (IELTS / TOEFL / Duolingo / MOI)",
     badge: "Mandatory Eligibility Filter",
     degreeLevel: "Universal",
-    what: "Standardized test score reports (IELTS Academic, TOEFL iBT, Duolingo English Test) or official Medium of Instruction (MOI) verification certificates documenting English language fluency.",
-    why: "Universities and immigration embassies require proof that you can comprehend advanced graduate lectures, write academic papers, and communicate effectively in research environments. For Graduate Teaching Assistantships (GTA), speaking scores are strictly regulated by law.",
+    what: "Official standardized test score reports (IELTS Academic, TOEFL iBT, Duolingo) or an official Medium of Instruction (MOI) certificate demonstrating English fluency.",
+    why: "Universities and immigration embassies require proof that you can follow lectures, write academic papers, and communicate effectively in research labs.",
     structure: [
       {
-        section: "IELTS Academic Test",
-        guidance: "Widely accepted in UK, Europe, Australia, Canada, and USA. Benchmark: 6.5–7.5 overall with minimum 6.0–6.5 subscores."
+        section: "IELTS Academic",
+        guidance: "Accepted worldwide (UK, Europe, Australia, Canada, USA). Standard target: 6.5–7.5 overall with minimum 6.0 in each subscore."
       },
       {
-        section: "TOEFL iBT Test",
-        guidance: "Standard across US, Canada, and global universities. Benchmark: 90–105 overall. Crucially, aim for Speaking subscore of 26+ for US GTA funding."
+        section: "TOEFL iBT",
+        guidance: "Standard across US, Canadian, and global universities. Standard target: 90–105 overall. Aim for Speaking 26+ for US Teaching Assistantship eligibility."
       },
       {
         section: "Medium of Instruction (MOI) Certificate",
-        guidance: "An official letter stamped by your undergraduate registrar stating your entire degree was delivered 100% in English. Accepted by select universities in Germany, Sweden, and Asia, but rarely accepted in the USA, UK, or Canada."
+        guidance: "An official registrar letter stating your bachelor's degree was taught 100% in English. Accepted by select European universities, but rarely in the US, UK, or Canada."
       }
     ],
     commonMistakes: [
-      "Assuming an overall high IELTS score (e.g., 7.5) saves you when you received a 5.5 in Writing and the department has a strict 6.0 subscore minimum.",
-      "Letting test scores expire (IELTS and TOEFL scores are valid for exactly 2 years from test date).",
-      "Relying on an MOI certificate without checking if the target department explicitly mandates an official IELTS/TOEFL exam."
+      "Overlooking subscore minimums (e.g. an overall 7.5 IELTS with a 5.5 in Writing when the program requires 6.0+ across all bands).",
+      "Letting scores expire (IELTS and TOEFL scores are valid for exactly 2 years from test date).",
+      "Assuming an MOI certificate is accepted everywhere without checking departmental requirements."
     ],
     officialChecks: [
-      "Order official institutional score reports sent through ETS (using university DI codes) or IELTS TRF upload.",
-      "Check expiration dates against the program's official start date."
+      "Order official electronic score reports through ETS or IELTS to target university institution codes.",
+      "Ensure test score validity extends through your intended university start date."
     ],
     checklistItems: [
-      { id: "doc-lang-1", label: "Achieved target overall and minimum sub-band scores across all 4 sections", tip: "Pay special attention to Speaking and Writing subscores." },
-      { id: "doc-lang-2", label: "Verified test score validity extends through your intended matriculation date", tip: "Scores must be valid when enrollment begins." },
-      { id: "doc-lang-3", label: "Dispatched official electronic score reports via ETS/IELTS institutional codes", tip: "Keep official test taker PDF report for portal uploads." }
+      { id: "doc-lang-1", label: "Achieved overall and minimum sub-band scores across all sections", tip: "Pay special attention to Speaking and Writing minimums." },
+      { id: "doc-lang-2", label: "Verified test scores are valid through your intended enrollment date", tip: "Scores must remain valid when classes begin." },
+      { id: "doc-lang-3", label: "Sent official score reports to university codes via ETS or IELTS", tip: "Keep a digital copy of the test taker report for online application portals." }
     ]
   },
   {
@@ -344,33 +344,33 @@ export const documentsData: DocumentGuideline[] = [
     name: "Standardized Tests (GRE General / Subject)",
     badge: "Selective Requirement",
     degreeLevel: "Universal",
-    what: "Graduate Record Examination (GRE General) measuring Verbal Reasoning, Quantitative Reasoning, and Analytical Writing, or GRE Subject Tests in specific disciplines.",
-    why: "While many graduate programs adopted 'GRE Optional' or 'GRE Waived' policies, a high Quantitative score (165–170 Q) can substantially strengthen an application for STEM/Economics programs, particularly when compensating for an undergraduate GPA from an unfamiliar international university.",
+    what: "Graduate Record Examination (GRE General) measuring Quantitative Reasoning, Verbal Reasoning, and Analytical Writing.",
+    why: "While many programs are now 'GRE Optional', a strong Quantitative score (165–170) can help strengthen applications to competitive STEM and economics programs.",
     structure: [
       {
         section: "Quantitative Reasoning (130–170)",
-        guidance: "Target: 164–170 for STEM, Computer Science, Engineering, Economics, and Statistics."
+        guidance: "Target: 164–170 for STEM, engineering, computer science, and economics."
       },
       {
         section: "Verbal Reasoning (130–170)",
         guidance: "Target: 155–162 for humanities and social sciences; 150+ for engineering."
       },
       {
-        section: "Analytical Writing Assessment (0.0–6.0)",
-        guidance: "Target: 4.0–5.0 demonstrating coherent analytical critique and academic structure."
+        section: "Analytical Writing (0.0–6.0)",
+        guidance: "Target: 4.0–5.0 demonstrating clear analytical structure and reasoning."
       }
     ],
     commonMistakes: [
-      "Spending 4 months studying for the GRE for European universities that do not require or accept it.",
-      "Submitting an average GRE score to a 'test-optional' program where submitting it actually weakens your application."
+      "Spending months studying for the GRE for European universities that do not require or accept it.",
+      "Submitting a mediocre score to a test-optional program where omitting it would result in a stronger profile."
     ],
     officialChecks: [
-      "Carefully check department websites for: 'GRE Required' vs. 'GRE Optional' vs. 'GRE Blind / Not Accepted'.",
-      "Do not take the GRE unless your target universities specifically value or mandate it."
+      "Check department websites for: 'GRE Required' vs. 'GRE Optional' vs. 'GRE Not Accepted'.",
+      "Do not take the GRE unless your target universities specifically value or require it."
     ],
     checklistItems: [
-      { id: "doc-gre-1", label: "Verified whether any target programs mandate or strongly recommend the GRE", tip: "Do not sit for the exam if all your target programs are GRE-optional or European." },
-      { id: "doc-gre-2", label: "Dispatched official ETS score reports using departmental institution codes", tip: "Ensure test name matches passport exactly." }
+      { id: "doc-gre-1", label: "Confirmed whether target universities require or value the GRE", tip: "Do not sit for the exam if all your target programs are test-optional or European." },
+      { id: "doc-gre-2", label: "Sent official ETS score reports using departmental institution codes", tip: "Ensure test name matches your passport exactly." }
     ]
   },
   {
@@ -378,30 +378,30 @@ export const documentsData: DocumentGuideline[] = [
     name: "Writing Samples, Publications & Portfolio",
     badge: "Technical Demonstrator",
     degreeLevel: "PhD / Research Master's",
-    what: "A sample of your best scholarly writing (undergraduate/master's thesis chapter, published paper, peer-reviewed preprint, or course seminar paper), or a technical research portfolio (GitHub repository, design dossier).",
-    why: "Writing samples provide direct, unmediated evidence of your critical thinking, scientific writing style, argumentation rigor, and technical documentation abilities.",
+    what: "A sample of your best academic writing (thesis excerpt, published paper, or seminar paper) or a technical portfolio (GitHub repositories, design projects).",
+    why: "Writing samples provide direct evidence of your critical thinking, scientific writing ability, and research methodology.",
     structure: [
       {
-        section: "Scholarly Article or Thesis Chapter (10–25 pages)",
-        guidance: "Clean PDF including title, abstract, introduction, methodology, results, discussion, and full bibliography. Single-authored or lead-author papers are preferred."
+        section: "Scholarly Article or Thesis Excerpt (10–25 pages)",
+        guidance: "A clean PDF with title, abstract, introduction, methodology, results, discussion, and bibliography. Lead-author or single-author work is preferred."
       },
       {
-        section: "Co-Authored Publication Explanatory Note",
-        guidance: "If submitting a co-authored published paper, attach a 1-page preface explicitly outlining your specific percentage contribution (e.g., 'Conducted 100% of data preprocessing, implemented baseline algorithms, and co-wrote sections 3 and 4')."
+        section: "Co-Authored Explanatory Note",
+        guidance: "If submitting a co-authored paper, add a 1-page preface specifying your exact individual contribution (e.g. data collection, modeling, analysis)."
       }
     ],
     commonMistakes: [
-      "Uploading an 80-page full undergraduate thesis when the department specified a 15-page maximum excerpt.",
-      "Submitting co-authored work without clarifying your individual technical contributions."
+      "Uploading an entire 90-page thesis when the department specified a 15–20 page excerpt.",
+      "Submitting co-authored work without clarifying your specific technical contributions."
     ],
     officialChecks: [
-      "Ensure writing sample is clean, anonymized if requested, and within specified page limits.",
-      "Check that GitHub repositories are public, documented with clean README files, and reproducible."
+      "Ensure writing samples are within requested page and word limits.",
+      "Check that GitHub repositories are public, documented with clean READMEs, and reproducible."
     ],
     checklistItems: [
-      { id: "doc-ws-1", label: "Selected your strongest piece of scholarly or technical writing", tip: "Choose work where you were the primary or sole author." },
-      { id: "doc-ws-2", label: "Formatted to respect department page and word length boundaries", tip: "Create an excerpt with a brief summary preface if necessary." },
-      { id: "doc-ws-3", label: "Verified public access and clear README documentation on code repositories", tip: "Ensure code runs cleanly with installation instructions." }
+      { id: "doc-ws-1", label: "Selected your strongest piece of academic or technical writing", tip: "Choose work where you were primary or sole author." },
+      { id: "doc-ws-2", label: "Formatted to respect department page and word count boundaries", tip: "Create an excerpt with a brief summary preface if necessary." },
+      { id: "doc-ws-3", label: "Verified public access and clear READMEs on code repositories", tip: "Ensure code runs cleanly with clear setup instructions." }
     ]
   }
 ];
@@ -411,14 +411,14 @@ export const documentsGuideControlsData = {
     badge: "Application Dossier Architecture",
     title: "Required Documents Guide",
     subtitle:
-      "Comprehensive blueprints for Academic CV, 5-part Statement of Purpose, Motivation Letter, Research Proposal, Transcripts, and Recommendation Letters."
+      "Clear blueprints for Academic CV, 5-part Statement of Purpose, Motivation Letter, Research Proposal, Transcripts, and Recommendation Letters."
   },
   sections: {
-    overviewTitle: "Document Overview & Strategic Purpose",
-    blueprintTitle: "Recommended Structure & Paragraph Blueprint",
-    mistakesTitle: "Critical Mistakes to Avoid",
-    checksTitle: "Official Compliance Checks",
-    checklistTitle: "Interactive Readiness Checklist",
+    overviewTitle: "Overview & Purpose",
+    blueprintTitle: "Recommended Structure & Content",
+    mistakesTitle: "Mistakes to Avoid",
+    checksTitle: "Official Checks",
+    checklistTitle: "Readiness Checklist",
     checklistProgress: "Document Readiness Progress"
   },
   labels: {
@@ -431,4 +431,3 @@ export const documentsGuideControlsData = {
 export const getDocumentById = (id: string): DocumentGuideline | undefined => {
   return documentsData.find((doc) => doc.id.toLowerCase() === id.toLowerCase());
 };
-
