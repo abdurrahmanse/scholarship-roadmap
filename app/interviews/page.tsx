@@ -7,12 +7,9 @@ import { StarlDefenseSection } from "@/components/interviews/StarlDefenseSection
 import { VisaTalCheckerWidget } from "@/components/interviews/VisaTalCheckerWidget";
 import { OfferNegotiationSection } from "@/components/interviews/OfferNegotiationSection";
 import { interviewsNavAnchors } from "@/data/interviewsSectionData";
+import { interviewsMetadata } from "@/data/metadata";
 
-export const metadata: Metadata = {
-  title: "Professor Interviews & STAR-L Defense",
-  description:
-    "Master PI technical interviews, 5-slide thesis presentation decks, and STAR-L scientific defense scenarios for competitive PhD/MS CS admissions.",
-};
+export const metadata: Metadata = interviewsMetadata;
 
 export default function InterviewsPage() {
   return (

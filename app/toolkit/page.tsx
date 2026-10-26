@@ -7,12 +7,9 @@ import { InteractiveEmailBuilder } from "@/components/toolkit/InteractiveEmailBu
 import { ResearchProposalSection } from "@/components/toolkit/ResearchProposalSection";
 import { QuickScrollNavigator } from "@/components/ui/QuickScrollNavigator";
 import { toolkitNavAnchors } from "@/data/toolkitSectionData";
+import { toolkitMetadata } from "@/data/metadata";
 
-export const metadata: Metadata = {
-  title: "AI Application Toolkit: SOP, CV & Cold Email",
-  description:
-    "Open-access templates for 5-movement Statement of Purpose (SOP), academic LaTeX CV with Google XYZ metrics, interactive cold outreach email builder, and research proposals.",
-};
+export const metadata: Metadata = toolkitMetadata;
 
 export default function ToolkitPage() {
   return (

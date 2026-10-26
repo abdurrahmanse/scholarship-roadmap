@@ -9,6 +9,7 @@ import { GpuComputeBlueprint } from "@/components/roadmap/GpuComputeBlueprint";
 import { DeliverablesAuditWidget } from "@/components/roadmap/DeliverablesAuditWidget";
 import { roadmapLevelsData } from "@/data/levelsData";
 import { stepsData } from "@/data/steps";
+import { getLevelMetadata } from "@/data/metadata";
 
 interface LevelPageProps {
   params: Promise<{
@@ -16,14 +17,11 @@ interface LevelPageProps {
   }>;
 }
 
-
 export async function generateStaticParams() {
   return roadmapLevelsData.map((lvl) => ({
     level: lvl.slug,
   }));
 }
-
-import { getLevelMetadata } from "@/data/metadata";
 
 export async function generateMetadata({ params }: LevelPageProps): Promise<Metadata> {
   const { level: levelSlug } = await params;
