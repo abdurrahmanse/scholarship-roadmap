@@ -6,7 +6,7 @@ import {
   liveIndicatorData,
   StatusTickerItem
 } from "@/data/navigationData";
-import { ShieldCheck, Cpu, ChevronRight, Activity } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 export function LiveStatusTicker() {
   const [activeItemIndex, setActiveItemIndex] = useState(0);

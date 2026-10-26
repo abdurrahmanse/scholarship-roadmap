@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { phasesData } from "@/data/phases";
 import { homePageData } from "@/data/pagesData";
+import { getPhaseLevelHref } from "@/components/roadmap/roadmapConstants";
 
 export function RoadmapPipelinePreview() {
   const sectionMeta = homePageData.sections[1];
@@ -63,7 +64,7 @@ export function RoadmapPipelinePreview() {
                     ))}
                   </div>
                   <Button
-                    href={`/roadmap#phase-${phase.number}`}
+                    href={getPhaseLevelHref(phase.number)}
                     variant="ghost"
                     size="xs"
                     rightIcon={<ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />}

@@ -30,3 +30,15 @@ export function getLevelDifficultyVariant(
 ): "indigo" | "cyan" | "emerald" | "amber" | "purple" {
   return DIFFICULTY_VARIANTS[difficulty] || "indigo";
 }
+
+/**
+ * Maps a pipeline phase number (0-6) to its corresponding dedicated Roadmap Level page.
+ */
+export function getPhaseLevelHref(phaseNumber: number): string {
+  if (phaseNumber === 0) return "/roadmap/level-1";
+  if (phaseNumber === 1) return "/roadmap/level-2";
+  if (phaseNumber === 2) return "/roadmap/level-3";
+  if (phaseNumber <= 4) return "/roadmap/level-4";
+  return "/roadmap/level-5";
+}
+

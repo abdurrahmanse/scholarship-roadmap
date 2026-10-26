@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Compass, ChevronRight } from "lucide-react";
+import { Compass } from "lucide-react";
 import { NavAnchorItem } from "@/data/types";
 
 interface QuickScrollNavigatorProps {
@@ -37,7 +37,7 @@ export function QuickScrollNavigator({
     const el = document.getElementById(id);
     if (el) {
       const yOffset = -90; // account for sticky navbar and filter bar
-      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
       setActiveId(id);
     }
@@ -47,7 +47,7 @@ export function QuickScrollNavigator({
     <div className={`w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${className}`}>
       <div className="p-2 sm:p-2.5 rounded-2xl bg-[#0f1422]/95 border border-white/10 backdrop-blur-xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-3">
         {/* Navigation Anchors Pills */}
-        <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 scrollbar-none">
+        <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 scrollbar-none" role="tablist">
           <div className="flex items-center gap-1.5 px-3 py-1.5 text-slate-400 text-xs font-semibold shrink-0">
             <Compass className="w-4 h-4 text-cyan-400 animate-pulse" />
             <span className="hidden sm:inline">Jump to:</span>
@@ -58,6 +58,9 @@ export function QuickScrollNavigator({
             return (
               <button
                 key={anchor.id}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
                 onClick={() => scrollToSection(anchor.id)}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all flex items-center gap-2 cursor-pointer ${
                   isActive
