@@ -72,39 +72,39 @@ export interface RoadmapUiData {
 
 export const roadmapUiData: RoadmapUiData = {
   pageHero: {
-    badge: "Full-Ride Admissions Architecture",
-    standardBadge: "100% Free & Verified Educational Standard",
-    title: "The Complete Master's & PhD",
-    titleGradient: "Scholarship Application Roadmap",
+    badge: "100% Fully Funded Guide",
+    standardBadge: "Free & Open Access",
+    title: "The Step-by-Step",
+    titleGradient: "Scholarship Roadmap",
     description:
-      "An exhaustive, battle-tested blueprint bridging technical research capital with procedural admissions execution. Navigate between the 13 Sequential Application Phases and the 5 Progressive Career Levels with dedicated deep-dive pages for every stage.",
+      "A clear 13-phase journey from understanding your academic profile to securing full tuition waivers, living stipends, and visa approval. Click any phase to see exact steps, official portals, and interactive checklists.",
     metrics: [
       {
         iconName: "ListOrdered",
-        category: "Sequential Flow",
+        category: "Complete Journey",
         value: "13 Phases",
-        sublabel: "Profile audit to visa stamp",
+        sublabel: "From profile audit to arrival",
         accentColor: "teal",
       },
       {
         iconName: "Layers",
-        category: "Curriculum Ladder",
+        category: "Career Milestones",
         value: "5 Levels",
-        sublabel: "Math rigor to faculty defense",
+        sublabel: "Foundations to thesis defense",
         accentColor: "cyan",
       },
       {
         iconName: "CheckCircle2",
-        category: "Granular Checklist",
-        value: "26 Tasks",
-        sublabel: "Proof-of-work deliverables",
+        category: "Actionable Steps",
+        value: "65+ Tasks",
+        sublabel: "Step-by-step checklists",
         accentColor: "indigo",
       },
       {
         iconName: "Award",
-        category: "Target Coverage",
+        category: "Target Funding",
         value: "100% Full-Ride",
-        sublabel: "Tuition + stipend contracts",
+        sublabel: "Tuition waiver + living stipend",
         accentColor: "emerald",
       },
     ],
@@ -114,7 +114,7 @@ export const roadmapUiData: RoadmapUiData = {
     chips: [
       {
         iconName: "ListOrdered",
-        label: "13 Sequenced Phases",
+        label: "13 Clear Phases",
       },
       {
         iconName: "GraduationCap",
@@ -122,26 +122,26 @@ export const roadmapUiData: RoadmapUiData = {
       },
       {
         iconName: "Sparkles",
-        label: "WHAT • WHY • HOW • WHERE",
+        label: "What • Why • How • Portals",
       },
     ],
   },
   phasesSection: {
-    badge: "13-Phase Chronological Pipeline",
-    title: "Sequential Application Phases",
+    badge: "Complete 13-Phase Pipeline",
+    title: "The 13-Phase Scholarship Pipeline",
     subtitle:
-      "From academic diagnostics to official visa issuance: an end-to-end chronological campaign.",
-    countBadge: "13 Sequenced Phases",
+      "Follow each phase in sequence: understand your profile, pick countries, contact professors, prepare documents, and win funding offers.",
+    countBadge: "13 Sequential Phases",
   },
   levelsSection: {
-    badge: "5-Level Career Ladder",
-    title: "Curricular Proof-of-Work Levels",
+    badge: "5 Development Levels",
+    title: "Curriculum Milestones & Deliverables",
     subtitle:
-      "A 24-month developmental curriculum dividing graduate preparation into 5 mastery tiers.",
-    countBadge: "5 Levels • 26 Actionable Tasks",
+      "A structured milestone ladder dividing your graduate preparation journey into 5 clear progress stages.",
+    countBadge: "5 Curriculum Levels",
   },
   controls: {
-    scopeLabel: "Scope:",
+    scopeLabel: "Filter:",
     clearSearchLabel: "Clear search",
     countSuffix: "Phases",
     ofSeparator: "of",
@@ -149,27 +149,27 @@ export const roadmapUiData: RoadmapUiData = {
   card: {
     phasePrefix: "Phase",
     totalPhasesSuffix: "of 13",
-    mastersBadge: "Master's Specific",
-    phdBadge: "PhD Specific",
+    mastersBadge: "Master's",
+    phdBadge: "PhD",
     bothBadge: "Master's & PhD",
-    exploreBlueprint: "Explore Blueprint",
-    strategicMandateLabel: "Strategic Mandate:",
-    keyMilestonesLabel: "Key Execution Milestones:",
-    sequencedMilestonesSuffix: "Sequenced Milestones",
-    portalsLabel: "Portals:",
-    verificationChecksSuffix: "Verification Checks",
-    fullBlueprintCta: "Full Blueprint & Audit",
+    exploreBlueprint: "View Phase Details",
+    strategicMandateLabel: "What to Do:",
+    keyMilestonesLabel: "Action Steps:",
+    sequencedMilestonesSuffix: "Steps",
+    portalsLabel: "Official Portals:",
+    verificationChecksSuffix: "Checklist Items",
+    fullBlueprintCta: "View Details & Checklist",
   },
   emptyState: {
     title: "No phases match your search",
     description:
-      "Try searching with different terms or reset your degree filters.",
+      "Try searching with simpler terms (like 'GPA', 'IELTS', 'SOP', or 'Professor') or reset your filters.",
     resetLabel: "Reset Filters",
   },
   levelsHeader: {
-    badge: "5-Level Career Ladder",
-    title: "The 5 Distinct Levels to Fully Funded Graduate Admission",
+    badge: "5 Milestone Levels",
+    title: "5 Levels to Fully Funded Graduate Admission",
     subtitle:
-      "A structured modular curriculum dividing the 24-month admissions campaign into 5 manageable levels. Click any level to access its actionable tasks, checklists, code snippets, and deliverables.",
+      "A structured ladder dividing preparation into 5 manageable stages. Click any level to see concrete deliverables, checklists, and faculty tips.",
   },
 };

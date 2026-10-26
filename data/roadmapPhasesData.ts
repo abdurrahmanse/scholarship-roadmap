@@ -44,694 +44,724 @@ export const roadmapPhasesData: RoadmapPhase[] = [
     id: "phase-01",
     number: 1,
     slug: "understand-academic-profile",
-    title: "Understand Your Academic Profile",
-    tagline: "Assess your GPA, research, and language skills before applying.",
-    estimatedDuration: "1–2 Months before searching (Estimate)",
+    title: "Assess Your Academic Profile",
+    tagline: "Calculate your true GPA, audit your research, and confirm language test requirements.",
+    estimatedDuration: "1–2 Months",
     degreeScope: "both",
-    what: "Audit your degree transcripts, native grading scale, research work, and language test results without guessing eligibility.",
-    why: "Knowing your strengths and limitations prevents wasted applications to mismatched universities with strict cutoffs.",
+    what: "Review your degree transcripts, calculate your GPA on international scales, and list all research or practical projects.",
+    why: "Knowing your exact qualifications helps you target universities where you meet admission cutoffs, saving time and money.",
     how: [
       {
-        step: "Calculate True GPA Scale",
-        detail: "Find your native GPA and class rank. Use official WES or modified Bavarian formulas rather than crude percentages."
+        step: "Convert Your GPA Correctly",
+        detail: "Calculate your GPA on the US 4.0 or German 1.0–4.0 scale using official formulas (like WES or Bavarian formula) rather than simple percentages."
       },
       {
-        step: "Catalog Research Artifacts",
-        detail: "List your bachelor's or master's thesis, publications, code repositories, design portfolios, or relevant industry projects."
+        step: "List Your Research & Projects",
+        detail: "Document your bachelor's or master's thesis, publications, code repositories, capstones, and relevant lab or industry experience."
       },
       {
-        step: "Verify Language Baseline",
-        detail: "Check if your degree was 100% English-taught (MOI) or if target universities require IELTS Academic or TOEFL iBT."
+        step: "Check English Language Rules",
+        detail: "Verify whether target universities accept an official Medium of Instruction (MOI) certificate or strictly require IELTS or TOEFL."
       },
       {
-        step: "Identify Compensatory Assets",
-        detail: "Balance an average GPA (3.0–3.3/4.0) with strong research outputs, high GRE scores, or stellar reference letters."
+        step: "Identify Your Compensatory Strengths",
+        detail: "Balance a moderate GPA (3.0–3.3/4.0) with strong research outputs, relevant work experience, or high GRE/test scores."
       }
     ],
     where: [
       {
-        name: "WES iGPA Calculator (Free Tool)",
+        name: "WES iGPA Calculator",
         url: "https://www.wes.org/calculator/",
-        description: "Official credential evaluation preview for US and Canadian 4.0 GPA equivalency."
+        description: "Free credential conversion tool for US and Canadian 4.0 GPA equivalency."
       },
       {
         name: "DAAD Bavarian Formula Calculator",
         url: "https://www.daad.de/en/study-and-research-in-germany/plan-your-studies/recognition-of-academic-qualifications/",
-        description: "Standard German formula for converting foreign grades into the 1.0–4.0 scale."
+        description: "Official German formula to convert international grades into the 1.0–4.0 scale."
       },
       {
-        name: "ENIC-NARIC Portal",
+        name: "ENIC-NARIC Qualification Portal",
         url: "https://www.enic-naric.net/",
-        description: "Official European network for degree verification and qualification recognition."
+        description: "Official European network for international diploma recognition and degree verification."
       }
     ],
     commonMistakes: [
-      "Assuming a 3.0 GPA automatically disqualifies you from all funded programs.",
-      "Self-converting grades without checking the university's conversion system.",
-      "Delaying language tests until the application month.",
-      "Forgetting to request an official Medium of Instruction (MOI) letter early."
+      "Assuming a 3.0 GPA automatically rules you out of fully funded opportunities.",
+      "Self-converting grades incorrectly instead of using official conversion tools.",
+      "Waiting until the application deadline to book language tests.",
+      "Forgetting to request an official Medium of Instruction (MOI) certificate early from your registrar."
     ],
     practicalExample:
-      "A student with a 3.1 GPA focused on European salaried PhD vacancies where published conference papers and laboratory skills outweighed undergraduate coursework scores.",
+      "A student with a 3.1 GPA focused on European salaried PhD vacancies where their undergraduate thesis and GitHub project outweighed coursework grades.",
     checklist: [
       { id: "p1-c1", label: "Collected official English transcripts with grading scales from all attended universities." },
-      { id: "p1-c2", label: "Calculated native GPA, percentile rank, and ECTS or US 4.0 equivalent." },
-      { id: "p1-c3", label: "Listed all research projects, conference papers, code repos, and capstones." },
+      { id: "p1-c2", label: "Calculated native GPA and equivalent US 4.0 or German grade scale." },
+      { id: "p1-c3", label: "Cataloged all research projects, conference papers, code repos, and capstones." },
       { id: "p1-c4", label: "Confirmed valid English test results or obtained an official registrar MOI certificate." },
-      { id: "p1-c5", label: "Identified 3 faculty mentors able to write detailed reference letters." }
+      { id: "p1-c5", label: "Identified 3 professors or supervisors who can provide strong reference letters." }
     ],
     mastersNuance: "Master's admissions prioritize prerequisite course credits (ECTS match) and cumulative GPA.",
-    phdNuance: "PhD admissions prioritize research potential, methodological fit, and supervisor alignment over grades.",
+    phdNuance: "PhD admissions prioritize research potential, lab techniques, and supervisor alignment over undergraduate coursework.",
     nextStep: {
       slug: "choose-countries",
-      title: "Phase 02: Choose the Right Countries"
+      title: "Phase 02: Pick Your Target Countries"
     }
   },
   {
     id: "phase-02",
     number: 2,
     slug: "choose-countries",
-    title: "Choose the Right Countries",
-    tagline: "Select target destinations based on funding models, language rules, and intake cycles.",
-    estimatedDuration: "1 Month (Estimate)",
+    title: "Pick Your Target Countries",
+    tagline: "Select countries based on funding models, language rules, and stay-back work rights.",
+    estimatedDuration: "1 Month",
     degreeScope: "both",
-    what: "Match your academic profile with countries offering government scholarships, tuition waivers, or salaried PhD jobs.",
-    why: "Funding models vary by country. Scandinavia treats PhDs as employees; North America uses assistantships; Asia provides bilateral government awards.",
+    what: "Match your goals with destinations that offer government scholarships, tuition-free universities, or salaried doctoral jobs.",
+    why: "Funding models differ drastically: Northern Europe offers employment contracts; North America uses assistantships; Asia provides bilateral awards.",
     how: [
       {
-        step: "Group Destinations by Funding Type",
-        detail: "Separate employee PhD systems (Nordics, Netherlands) from scholarship systems (DAAD, Eiffel, MEXT, Chevening) and assistantships (USA, Canada)."
+        step: "Group Countries by Funding Model",
+        detail: "Separate employee PhD systems (Nordics, Netherlands) from government awards (DAAD, Eiffel, MEXT) and assistantships (USA, Canada)."
       },
       {
-        step: "Check Supervisor Rules by Country",
-        detail: "Determine whether contacting a professor is mandatory (UK, Germany, Canada) or unnecessary (US centralized admissions, Nordic vacancies)."
+        step: "Check Supervisor Requirements",
+        detail: "Learn where contacting a professor is mandatory before applying (UK, Canada, Australia) versus centralized portals (USA, Nordics)."
       },
       {
-        step: "Align Application Deadlines",
-        detail: "Map deadlines across your targets: US (Dec–Jan), European scholarships (Oct–Dec), and Nordic vacancies (rolling year-round)."
+        step: "Map Intake Deadlines",
+        detail: "Track deadlines: US programs (Dec–Jan), European scholarships (Oct–Dec), and European job vacancies (rolling year-round)."
       },
       {
-        step: "Verify Visa & Post-Study Work Rules",
-        detail: "Review post-graduation work permits and spouse work rights on official national immigration websites."
+        step: "Verify Visa & Post-Study Work Rights",
+        detail: "Check work permits, spouse work rights, and permanent residency pathways on official government immigration sites."
       }
     ],
     where: [
       {
         name: "Study in Europe Portal",
-        url: "https://education.ec.europa.eu/study-in-europe",
-        description: "Official European Commission gateway for higher education systems across 33 nations."
+        url: "https://studyineurope.eu/",
+        description: "Official European Commission gateway to programs, tuition rules, and scholarships across 33 nations."
       },
       {
-        name: "DAAD Germany Scholarship Database",
-        url: "https://www2.daad.de/deutschland/stipendien/datenbank/en/21148-scholarship-database/",
-        description: "Verified database of funding programs across German universities and research institutes."
+        name: "EduCanada Portal",
+        url: "https://www.educanada.ca/",
+        description: "Government of Canada portal for international study permits, provincial funding, and Vanier awards."
       },
       {
-        name: "EducationUSA Official Portal",
-        url: "https://educationusa.state.gov/",
-        description: "US Department of State network guiding international students to accredited graduate programs."
+        name: "Study in Japan Portal",
+        url: "https://www.studyinjapan.go.jp/en/",
+        description: "Official JASSO government directory for MEXT awards and English-taught university programs."
       }
     ],
     commonMistakes: [
-      "Applying to countries without checking if living costs require personal savings.",
-      "Assuming all European universities teach Master's programs tuition-free (tuition varies for non-EU students).",
-      "Treating US graduate applications identically to European university applications.",
-      "Overlooking country-specific deadlines like UK Chevening (November) or Japanese MEXT (May)."
+      "Applying exclusively to one country without a backup plan across different funding systems.",
+      "Ignoring cost of living in countries that offer free tuition but require high living savings.",
+      "Confusing employee-status PhD vacancies with student-status scholarships.",
+      "Missing early government scholarship deadlines that close 10–12 months before intake."
     ],
     practicalExample:
-      "A chemistry student balanced applications between German DAAD Master's programs, US R1 assistantships, and Swedish salaried doctoral vacancies, securing funding in two distinct systems.",
+      "A student applied to 3 US universities (with RA assistantships), 2 German universities (DAAD & TV-L E13), and 2 Swedish universities (salaried jobs), securing funding in Germany.",
     checklist: [
-      { id: "p2-c1", label: "Selected 3–5 realistic target countries matching your funding needs." },
-      { id: "p2-c2", label: "Verified whether target universities charge non-EU international tuition." },
-      { id: "p2-c3", label: "Checked whether supervisor pre-approval is required before applying." },
-      { id: "p2-c4", label: "Recorded early government scholarship deadlines (Oct–Dec)." },
-      { id: "p2-c5", label: "Confirmed post-study work visa rights on official government portals." }
+      { id: "p2-c1", label: "Selected 2–3 target countries matching your funding preference and career goals." },
+      { id: "p2-c2", label: "Confirmed language of instruction and English score requirements for each country." },
+      { id: "p2-c3", label: "Verified whether target countries treat PhD candidates as salaried employees or students." },
+      { id: "p2-c4", label: "Noted application open and deadline dates in a centralized tracking sheet." },
+      { id: "p2-c5", label: "Checked post-study work visa rights and living cost requirements on government immigration portals." }
     ],
-    mastersNuance: "Check if non-EU tuition is charged (free in public German universities; fees apply in Sweden, Finland, and Netherlands).",
-    phdNuance: "Check if PhD candidates are enrolled as students (tuition fees apply) or hired as staff (salary paid).",
+    mastersNuance: "Look for tuition-free public universities (Germany, Norway) or national bilateral scholarships (Eiffel, DAAD, Chevening).",
+    phdNuance: "Prioritize countries offering salaried doctoral positions (Sweden, Denmark, Netherlands, Switzerland, Germany).",
     nextStep: {
-      slug: "understand-funding-types",
-      title: "Phase 03: Understand Funding Types"
+      slug: "find-scholarships",
+      title: "Phase 03: Find Legitimate Scholarships"
     }
   },
   {
     id: "phase-03",
     number: 3,
-    slug: "understand-funding-types",
-    title: "Understand Funding Types",
-    tagline: "Learn the difference between full scholarships, assistantships, employee contracts, and partial discounts.",
-    estimatedDuration: "2 Weeks (Estimate)",
+    slug: "find-scholarships",
+    title: "Find Legitimate Scholarships",
+    tagline: "Discover full-ride government scholarships, university fellowships, and funded vacancies.",
+    estimatedDuration: "1–2 Months",
     degreeScope: "both",
-    what: "Learn how funding packages are structured—full scholarships, research assistantships (GRA), teaching assistantships (GTA), doctoral employment contracts, and partial waivers.",
-    why: "A partial tuition waiver still requires $15,000–$25,000/year for living expenses. Knowing the difference protects you from financial hardship.",
+    what: "Search verified scholarship databases and university portals for awards offering full tuition waivers and livable monthly stipends.",
+    why: "Legitimate scholarships provide sustainable funding. Knowing where to search protects you from fee-charging scams and partial discounts.",
     how: [
       {
-        step: "Analyze What Full Funding Actually Covers",
-        detail: "Confirm that an offer covers 100% of tuition, a livable monthly stipend, and health insurance."
+        step: "Search National Government Portals",
+        detail: "Explore DAAD (Germany), Campus France, Swedish Institute, Fulbright (USA), MEXT (Japan), and Australia Awards for full scholarships."
       },
       {
-        step: "Understand Research & Teaching Assistantships",
-        detail: "In North America, GRAs and GTAs provide full tuition waivers and stipends in exchange for 20 hours/week of lab work or teaching."
+        step: "Inspect University Department Pages",
+        detail: "Navigate directly to departmental graduate funding pages to find fellowships, research assistantships, and tuition waivers."
       },
       {
-        step: "Evaluate European Doctoral Contracts",
-        detail: "In Sweden, Denmark, Norway, and the Netherlands, PhDs receive statutory salaries (€2,200–€3,800/mo) with full pension and social benefits."
+        step: "Check Academic Job Boards",
+        detail: "Use EURAXESS and AcademicPositions to search open, salaried PhD and research vacancies in Europe."
       },
       {
-        step: "Identify Partial Waiver Pitfalls",
-        detail: "Treat '30% tuition scholarships' as discounts, not full funding. You will still need heavy personal savings to clear visa financial checks."
+        step: "Filter Out Partial Discounts",
+        detail: "Distinguish 100% full-ride funding packages from 10%–20% tuition discounts that still leave you with heavy living expenses."
       }
     ],
     where: [
       {
-        name: "EURAXESS European Research Salaries",
-        url: "https://euraxess.ec.europa.eu/",
-        description: "European portal for funded doctoral vacancies and research employment contracts."
+        name: "EURAXESS European Research Jobs",
+        url: "https://euraxess.ec.europa.eu/jobs",
+        description: "Official EU job portal listing thousands of funded doctoral and post-doctoral research positions."
       },
       {
-        name: "Council of Graduate Schools (CGS)",
-        url: "https://cgsnet.org/",
-        description: "North American guidelines on graduate assistantship funding standards and April 15 decision rules."
+        name: "DAAD Scholarship Database",
+        url: "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
+        description: "Official searchable database of all scholarships and research grants available in Germany."
+      },
+      {
+        name: "Campus France Bourses Directory",
+        url: "https://www.campusfrance.org/en/bourses-etudiants-etrangers",
+        description: "Complete catalog of French government, regional, and institutional scholarships."
       }
     ],
     commonMistakes: [
-      "Accepting a tuition waiver that offers no monthly stipend for food or rent.",
-      "Assuming graduate assistantship work hours leave no time for thesis research.",
-      "Overlooking mandatory university student fees ($500–$2,000/year) not covered by waivers.",
-      "Forgetting to check summer funding (9-month vs. 12-month assistantships)."
+      "Paying third-party agencies for scholarship lists that are freely available on official portals.",
+      "Accepting a partial tuition waiver without a guaranteed living stipend or permission to work.",
+      "Missing bilateral government deadlines that close a full year before university admission deadlines.",
+      "Applying for scholarships without meeting the exact citizenship, degree, or experience criteria."
     ],
     practicalExample:
-      "An applicant turned down a 50% tuition scholarship in the UK requiring £18,000 personal funds, accepting instead a US Graduate Teaching Assistantship with 100% tuition coverage and a $2,800/month stipend.",
+      "A student searching for funded Master's programs used the DAAD database to filter specifically by 'English-taught' and 'Full Funding', identifying 8 programs with no tuition fees.",
     checklist: [
-      { id: "p3-c1", label: "Confirmed the offer provides 100% tuition remission for all semesters." },
-      { id: "p3-c2", label: "Verified whether the living stipend covers local rent and living expenses." },
-      { id: "p3-c3", label: "Confirmed whether health insurance is fully subsidized or deducted from stipend." },
-      { id: "p3-c4", label: "Checked whether summer funding is guaranteed (9-month vs 12-month package)." },
-      { id: "p3-c5", label: "Calculated mandatory student activity or laboratory fees." }
+      { id: "p3-c1", label: "Searched national government exchange portals for bilateral scholarships." },
+      { id: "p3-c2", label: "Checked departmental financial aid pages for research assistantships (RA/TA)." },
+      { id: "p3-c3", label: "Set up email alerts on EURAXESS and AcademicPositions for salaried PhD jobs." },
+      { id: "p3-c4", label: "Confirmed that target awards provide full tuition remission plus a monthly stipend." },
+      { id: "p3-c5", label: "Recorded opening dates, submission deadlines, and eligibility criteria in a spreadsheet." }
     ],
-    mastersNuance: "Fully funded Master's awards usually come from government programs (DAAD, Eiffel, MEXT) or departmental GTAs.",
-    phdNuance: "PhDs in STEM should rarely pay tuition; funding is standard through supervisor research grants or institutional assistantships.",
+    mastersNuance: "Focus on flagship bilateral awards (Fulbright, Chevening, DAAD EPOS, Eiffel, Swedish Institute).",
+    phdNuance: "Look for funded project vacancies with advertised grant numbers on university job boards and EURAXESS.",
     nextStep: {
-      slug: "find-scholarships-universities",
-      title: "Phase 04: Find Scholarships & Universities"
+      slug: "shortlist-universities",
+      title: "Phase 04: Shortlist Universities & Labs"
     }
   },
   {
     id: "phase-04",
     number: 4,
-    slug: "find-scholarships-universities",
-    title: "Find Scholarships & Universities",
-    tagline: "Use systematic search workflows, verified databases, and Boolean queries to locate opportunities.",
-    estimatedDuration: "1–2 Months (Estimate)",
+    slug: "shortlist-universities",
+    title: "Shortlist Universities & Labs",
+    tagline: "Build a balanced list of dream, match, and safe universities with active funding lines.",
+    estimatedDuration: "1 Month",
     degreeScope: "both",
-    what: "Search official university funding pages, government scholarship registries, and funded doctoral job boards without relying on commercial search agencies.",
-    why: "Legitimate scholarships are published on accredited university and government portals, not hidden behind paid agency memberships.",
+    what: "Select 8–12 institutions across safety tiers where your qualifications match faculty research and departmental admissions requirements.",
+    why: "Applying to a balanced portfolio across different institutions dramatically increases your probability of securing at least one fully funded offer.",
     how: [
       {
-        step: "Search University Department Funding Portals",
-        detail: "Navigate to departmental websites (e.g., department of your field) and find 'Graduate Funding', 'Assistantships', or 'Fees and Financial Aid'."
+        step: "Build a 3-Tier Portfolio",
+        detail: "Select 2–3 dream programs (reach), 4–5 competitive matches (target), and 2–3 high-probability choices (safety)."
       },
       {
-        step: "Query Verified Government Portals",
-        detail: "Check official databases: DAAD (Germany), Campus France (France), Fulbright (USA), Chevening (UK), and MEXT (Japan)."
+        step: "Verify Faculty Research Output",
+        detail: "Confirm professors in your field are actively publishing papers and winning grants, not nearing retirement or inactive."
       },
       {
-        step: "Use Targeted Boolean Search Strings",
-        detail: "Search queries like: site:.edu 'graduate assistantship' OR 'full tuition waiver' [your subject] or site:.ac.uk 'fully funded PhD studentship' [your field]."
+        step: "Inspect Department Minimums",
+        detail: "Check prerequisite courses, GPA minimums, and GRE/language requirements to ensure you are fully eligible."
       },
       {
-        step: "Verify Deadlines & Requirements",
-        detail: "Record application deadlines, eligibility criteria, and required documents directly in a clean spreadsheet."
+        step: "Compare Cost vs. Stipend Ratios",
+        detail: "Calculate local living costs against the offered stipend to ensure the funding package is genuinely livable."
       }
     ],
     where: [
       {
-        name: "EURAXESS Jobs Database",
-        url: "https://euraxess.ec.europa.eu/jobs",
-        description: "Official European research vacancies database listing thousands of funded PhD positions."
+        name: "CSRankings (Computer Science Focus)",
+        url: "https://csrankings.org/",
+        description: "Metrics-based ranking tracking top conference publications by university faculty."
       },
       {
-        name: "DAAD International Programs",
-        url: "https://www.daad.de/en/study-and-research-in-germany/courses-of-study-in-germany/all-study-programmes-in-germany/",
-        description: "Complete database of English-taught degree programs and funding in Germany."
+        name: "Nature Index",
+        url: "https://www.nature.com/nature-index/",
+        description: "Tracks high-quality research output across top natural and physical science institutions."
       },
       {
-        name: "FindAPhD.com",
-        url: "https://www.findaphd.com/",
-        description: "Search portal for funded doctoral projects and research studentships in the UK and worldwide."
+        name: "Mastersportal & PhDportal",
+        url: "https://www.mastersportal.com/",
+        description: "Comprehensive global search engine for international graduate degree programs."
       }
     ],
     commonMistakes: [
-      "Relying on unofficial blog posts with outdated deadlines and fabricated award sums.",
-      "Paying commercial agencies for scholarship lists that are freely available on university websites.",
-      "Missing departmental priority deadlines (often December 1 or 15 for fellowship consideration).",
-      "Confusing university admission deadlines with earlier scholarship deadlines."
+      "Applying only to top-10 global universities and getting rejected across the board.",
+      "Picking universities based on overall brand name rather than the specific department's research funding.",
+      "Ignoring local cost of living (a $25k stipend in small-town Ohio goes much further than in Boston or London).",
+      "Failing to check specific course prerequisites before paying application fees."
     ],
     practicalExample:
-      "A student searching for biomedical engineering funding used Google queries targeting '.edu' domains, finding 8 funded lab positions with active NSF grants that never appeared on general scholarship aggregators.",
+      "A student applied to 2 Ivy League schools, 4 strong R1 state universities with guaranteed RA funding, and 2 European universities, receiving funding from two state universities.",
     checklist: [
-      { id: "p4-c1", label: "Compiled a shortlist of 10–15 verified universities with documented graduate funding." },
-      { id: "p4-c2", label: "Verified priority funding deadlines for each program on official department pages." },
-      { id: "p4-c3", label: "Checked whether separate scholarship applications are required." },
-      { id: "p4-c4", label: "Searched national government scholarship databases (DAAD, Campus France, MEXT)." },
-      { id: "p4-c5", label: "Saved direct official portal URLs into a reference document." }
+      { id: "p4-c1", label: "Shortlisted 8–12 target universities categorized into dream, match, and safety." },
+      { id: "p4-c2", label: "Confirmed you meet all department prerequisite course and GPA minimums." },
+      { id: "p4-c3", label: "Identified at least 2 potential faculty supervisors per university." },
+      { id: "p4-c4", label: "Calculated estimated net monthly living expenses for each campus city." },
+      { id: "p4-c5", label: "Verified whether institutional application fee waivers are available." }
     ],
-    mastersNuance: "Check if the university requires you to check a 'Consider me for departmental funding' box in the admission portal.",
-    phdNuance: "Look for funded project vacancies with an assigned grant code on EURAXESS or university employment pages.",
+    mastersNuance: "Check if the curriculum has course alignment with your undergraduate major (ECTS credit match).",
+    phdNuance: "Check lab funding pages and recent grant announcements to ensure professors have open funded seats.",
     nextStep: {
-      slug: "find-contact-professors",
-      title: "Phase 05: Find & Contact Professors"
+      slug: "contact-supervisors",
+      title: "Phase 05: Contact Potential Supervisors"
     }
   },
   {
     id: "phase-05",
     number: 5,
-    slug: "find-contact-professors",
-    title: "Find & Contact Professors",
-    tagline: "Identify compatible researchers, audit their recent work, and send concise, personalized cold emails.",
-    estimatedDuration: "1–2 Months before deadlines (Estimate)",
+    slug: "contact-supervisors",
+    title: "Contact Potential Supervisors",
+    tagline: "Send concise, personalized cold emails to professors who have funding for graduate researchers.",
+    estimatedDuration: "1–2 Months",
     degreeScope: "both",
-    what: "Reach out to faculty members whose research matches your background when seeking a research Master's supervisor or PhD advisor.",
-    why: "Faculty members hold research grant funding. A professor who supports your application can champion your acceptance and funding package.",
+    what: "Reach out to prospective academic advisors with a tailored, 150–200 word email and academic CV to explore funded supervision.",
+    why: "In many countries (Canada, UK, Germany, Australia), securing a professor's agreement is required before you can submit an application.",
     how: [
       {
-        step: "Identify Research Groups",
-        detail: "Review faculty directories and recent lab publications to find professors actively publishing in your specific research niche."
+        step: "Check if Outreach is Necessary",
+        detail: "Confirm whether the university requires a supervisor agreement before applying or uses centralized admissions committees (common in the US)."
       },
       {
-        step: "Read Recent Papers",
-        detail: "Read 2 recent papers (past 18 months). Understand their methodology, open questions, and how your skills fit their current directions."
+        step: "Read Their Recent Publications",
+        detail: "Read 1–2 recent papers published by the professor to understand their current research focus and lab methodology."
       },
       {
-        step: "Draft a Concise 5-Point Email",
-        detail: "Write a short email (150–250 words): state your purpose, cite their paper, describe your relevant skills, and attach your 2-page academic CV."
+        step: "Write a 4-Paragraph Cold Email",
+        detail: "Keep it under 200 words: (1) Who you are, (2) Why their lab, (3) Your concrete skills and deliverables, (4) Call to action."
       },
       {
-        step: "Follow Up Once Professionally",
-        detail: "If there is no reply after 7–10 working days, send a single polite follow-up. If no reply, move to other faculty members."
+        step: "Follow Up Professionally",
+        detail: "If no reply after 10–14 days, send one polite follow-up email. If still no response, move on to other faculty."
       }
     ],
     where: [
       {
         name: "Google Scholar",
         url: "https://scholar.google.com/",
-        description: "Track professor publication history, recent preprints, and active co-authors."
+        description: "Search professors by research topic, view recent publications, and inspect citation metrics."
       },
       {
-        name: "ResearchGate Directory",
+        name: "OpenReview",
+        url: "https://openreview.net/",
+        description: "Review current conference submissions and active research papers in computer science and AI."
+      },
+      {
+        name: "ResearchGate",
         url: "https://www.researchgate.net/",
-        description: "Explore laboratory projects, preprints, and open questions across global research groups."
+        description: "Connect with researchers, request full-text papers, and inspect lab updates."
       }
     ],
     commonMistakes: [
-      "Sending generic mass-copy emails without naming specific papers or lab projects.",
-      "Writing overly long emails (400+ words) that busy professors ignore.",
-      "Attaching heavy zip files or unrequested certificates.",
-      "Contacting professors at universities with centralized admissions where early contact is explicitly discouraged."
+      "Sending generic mass-copy-pasted emails starting with 'Dear Respected Professor'.",
+      "Writing a 500-word life story instead of a concise 150-word research summary.",
+      "Attaching heavy 10MB zip files containing certificates instead of a clean 2-page PDF CV.",
+      "Following up after only 24–48 hours instead of waiting 10–14 business days."
     ],
     practicalExample:
-      "A candidate sent a 180-word email referencing a professor's 2025 paper on battery degradation, explaining their own undergraduate thesis experience with electrochemical impedance spectroscopy, leading to a 20-minute Zoom chat and a funded PhD offer.",
+      "A student sent 15 tailored cold emails citing specific papers and lab projects, received 4 positive responses, and scheduled 2 Zoom interviews that led to funded offers.",
     checklist: [
-      { id: "p5-c1", label: "Confirmed that contacting a supervisor is recommended by the target department." },
-      { id: "p5-c2", label: "Read at least two recent publications from the target professor's laboratory." },
-      { id: "p5-c3", label: "Drafted a concise, personalized cold email under 250 words." },
-      { id: "p5-c4", label: "Attached a clean, 2-page academic CV as a lightweight PDF." },
-      { id: "p5-c5", label: "Recorded outreach dates to schedule a polite 7-day follow-up if needed." }
+      { id: "p5-c1", label: "Confirmed supervisor outreach rules for each target university." },
+      { id: "p5-c2", label: "Read at least one recent paper and lab grant summary for every target professor." },
+      { id: "p5-c3", label: "Drafted a concise 150–200 word cold email referencing their specific work." },
+      { id: "p5-c4", label: "Attached a clean, professional 2-page academic CV as a PDF." },
+      { id: "p5-c5", label: "Tracked sent dates and planned follow-ups 10–14 days later." }
     ],
-    mastersNuance: "Usually not required for taught Master's programs; only needed for research-based (thesis) programs (e.g., Canada).",
-    phdNuance: "Crucial for European and Commonwealth PhDs. You must secure a supervisor before or alongside your formal application.",
+    mastersNuance: "Usually only needed for research/thesis Master's programs (especially in Canada). Rarely required for taught degrees.",
+    phdNuance: "Essential in the UK, Germany, Canada, and Australia. Focus on Assistant and Associate Professors with fresh grant funding.",
     nextStep: {
-      slug: "prepare-required-documents",
-      title: "Phase 06: Prepare All Required Documents"
+      slug: "prepare-documents",
+      title: "Phase 06: Prepare Your Core Documents"
     }
   },
   {
     id: "phase-06",
     number: 6,
-    slug: "prepare-required-documents",
-    title: "Prepare All Required Documents",
-    tagline: "Build a polished application dossier: CV, 5-part SOP, Research Proposal, transcripts, and recommendation letters.",
-    estimatedDuration: "2–3 Months (Estimate)",
+    slug: "prepare-documents",
+    title: "Prepare Your Core Documents",
+    tagline: "Create an academic CV, Statement of Purpose (SOP), and get official transcripts in order.",
+    estimatedDuration: "1–2 Months",
     degreeScope: "both",
-    what: "Draft and polish all required application documents: Academic CV, Statement of Purpose, Motivation Letter, Research Proposal, Transcripts, and Recommendation Letters.",
-    why: "Admissions committees review your written documents to judge your academic rigor, motivation, and fit for the program.",
+    what: "Draft, format, and polish your academic CV, Statement of Purpose, transcripts, and proof of degree completion.",
+    why: "Your documents represent you directly to admissions committees. Clear, persuasive writing is often the deciding factor between two similar applicants.",
     how: [
       {
-        step: "Structure an Academic CV",
-        detail: "Use a clean 2-page format highlighting education, GPA, research projects, publications, technical skills, and academic awards."
+        step: "Format a 2-Page Academic CV",
+        detail: "Focus on education, research experience, publications, technical skills, and awards using a clean, single-column LaTeX or Word layout."
       },
       {
-        step: "Write a 5-Part Statement of Purpose",
-        detail: "Structure logically: 1) Academic background, 2) Research experience, 3) Program fit, 4) Target faculty synergy, and 5) Long-term career goals."
+        step: "Structure a 5-Part Statement of Purpose",
+        detail: "Write a compelling narrative: hook & research focus, background & key achievements, why this program, specific professors, and future goals."
       },
       {
-        step: "Develop a Feasible Research Proposal",
-        detail: "For PhDs: Define research questions, literature context, methodology, expected contributions, and a realistic 3-year timeline."
+        step: "Order Official Transcripts Early",
+        detail: "Request sealed or certified digital transcripts with clear English translations and official grading scale explanations from your university."
       },
       {
-        step: "Secure Strong Recommendation Letters",
-        detail: "Request letters from 3 academic professors 6–8 weeks early. Provide them with your CV, transcripts, and a summary of your achievements."
+        step: "Have Peers & Mentors Review Your Drafts",
+        detail: "Get feedback on clarity, structure, and tone from professors, current graduate students, or professional editors."
       }
     ],
     where: [
       {
-        name: "Europass CV Builder",
-        url: "https://europa.eu/europass/en",
-        description: "Standardized European CV template accepted across EU institutions and Erasmus programs."
+        name: "Overleaf LaTeX CV Templates",
+        url: "https://www.overleaf.com/gallery/tagged/cv",
+        description: "Free, professionally formatted academic CV templates using clean typography."
       },
       {
         name: "Purdue Online Writing Lab (OWL)",
         url: "https://owl.purdue.edu/",
-        description: "Comprehensive guide to writing academic statements of purpose, CVs, and research proposals."
+        description: "Authoritative guides for academic writing, Statements of Purpose, and citation formats."
+      },
+      {
+        name: "Grammarly Writing Assistant",
+        url: "https://www.grammarly.com/",
+        description: "Grammar, tone, and conciseness checker to eliminate typos and awkward phrasing."
       }
     ],
     commonMistakes: [
-      "Using a generic SOP without naming specific professors or courses at the university.",
-      "Submitting an industry resume instead of an academic CV with research details.",
-      "Writing a vague research proposal lacking clear methodology or testable questions.",
-      "Giving recommenders only a few days before the deadline to submit letters."
+      "Using a 1-page corporate resume that leaves out research projects, publications, and methodologies.",
+      "Writing a generic SOP that mentions childhood dreams instead of concrete academic accomplishments and future goals.",
+      "Neglecting to mention specific professors or lab facilities at the target university.",
+      "Submitting documents with typos, grammatical errors, or incorrect university names."
     ],
     practicalExample:
-      "A student created tailored SOPs for 5 universities, dedicating 35% of each letter to specific lab facilities and faculty papers, resulting in 3 interview invitations.",
+      "A student revised their SOP to focus on 2 concrete undergraduate research projects and how they connected to a professor's active lab, winning a full departmental fellowship.",
     checklist: [
-      { id: "p6-c1", label: "Formatted a clean, 2-page academic CV with publications and project links." },
-      { id: "p6-c2", label: "Drafted and revised a 2-page Statement of Purpose tailored to each university." },
-      { id: "p6-c3", label: "Prepared a structured 3–5 page Research Proposal with methodology (for PhD)." },
-      { id: "p6-c4", label: "Requested recommendation letters from 3 faculty mentors 6+ weeks early." },
-      { id: "p6-c5", label: "Obtained official, sealed or verified digital transcripts from all prior universities." }
+      { id: "p6-c1", label: "Completed a clean, 2-page academic CV with publications, projects, and skills." },
+      { id: "p6-c2", label: "Drafted a customized 5-part SOP tailored to each target university." },
+      { id: "p6-c3", label: "Requested official English transcripts with grading criteria from your registrar." },
+      { id: "p6-c4", label: "Proofread all documents with spelling/grammar tools and received peer feedback." },
+      { id: "p6-c5", label: "Saved all files in standard PDF format with clear file names (e.g., JaneDoe_Academic_CV.pdf)." }
     ],
-    mastersNuance: "Master's statements should emphasize course readiness, academic growth, and clear post-graduation career goals.",
-    phdNuance: "PhD proposals must demonstrate independent scientific thinking, literature mastery, and methodological feasibility.",
+    mastersNuance: "Focus on your academic background, course preparation, motivation, and professional career goals.",
+    phdNuance: "Focus on research methodology, analytical skills, publications, and exact alignment with faculty research.",
     nextStep: {
-      slug: "understand-eligibility-requirements",
-      title: "Phase 07: Understand Eligibility Requirements"
+      slug: "draft-research-proposal",
+      title: "Phase 07: Draft Your Research Proposal"
     }
   },
   {
     id: "phase-07",
     number: 7,
-    slug: "understand-eligibility-requirements",
-    title: "Understand Eligibility & Requirements",
-    tagline: "Separate university admissions, department rules, and scholarship requirements.",
-    estimatedDuration: "2 Weeks (Estimate)",
-    degreeScope: "both",
-    what: "Analyze admission guidelines to distinguish university minimums, departmental thresholds, and scholarship-specific rules.",
-    why: "Meeting general university admission standards does not guarantee scholarship eligibility, which often has stricter GPA or nationality requirements.",
+    slug: "draft-research-proposal",
+    title: "Draft Your Research Proposal",
+    tagline: "Formulate a clear research question, methodology, literature review, and realistic timeline.",
+    estimatedDuration: "1–2 Months",
+    degreeScope: "phd",
+    what: "Write a 3–5 page structured research proposal outlining your proposed investigation, methodology, and scientific contributions.",
+    why: "A well-formulated proposal demonstrates that you understand the field, can think independently, and are ready for doctoral research.",
     how: [
       {
-        step: "Separate Admission from Scholarship Rules",
-        detail: "Confirm both admission requirements (e.g. 3.0 GPA, IELTS 6.5) and scholarship criteria (e.g. 3.5 GPA, specific country list)."
+        step: "Identify a Precise Research Gap",
+        detail: "Formulate a focused research question based on open problems identified in recent top-tier journal or conference papers."
       },
       {
-        step: "Check Prerequisite Course Credits",
-        detail: "In Europe, check ECTS prerequisites in math, statistics, or computing. In the US, check required undergraduate coursework."
+        step: "Synthesize the Key Literature",
+        detail: "Summarize the 10–15 most relevant papers, showing where current solutions fall short and how your approach helps."
       },
       {
-        step: "Verify Language Exemptions",
-        detail: "Review whether your English Medium of Instruction (MOI) degree qualifies for an IELTS or TOEFL waiver."
+        step: "Detail Your Proposed Methodology",
+        detail: "Describe your experimental design, datasets, algorithms, laboratory assays, or statistical models clearly."
       },
       {
-        step: "Check Application Fee Waiver Options",
-        detail: "Many US universities offer $75–$120 fee waivers for international applicants attending virtual graduate fairs or webinars."
+        step: "Provide a Feasible 3-Year Timeline",
+        detail: "Include a Gantt chart or semester-by-semester plan detailing milestones, expected conference papers, and thesis completion."
       }
     ],
     where: [
       {
-        name: "DAAD Admission Requirements (ZAB)",
-        url: "https://www.daad.de/en/study-and-research-in-germany/plan-your-studies/admission-requirements/",
-        description: "Official database on whether foreign school and degree credentials meet German university entrance criteria."
+        name: "Connected Papers",
+        url: "https://www.connectedpapers.com/",
+        description: "Visual tool to explore connected academic papers, find seminal works, and identify research trends."
       },
       {
-        name: "UK ENIC (National Information Centre)",
-        url: "https://www.enic.org.uk/",
-        description: "UK national agency for comparing international qualifications to UK bachelor's and master's degree levels."
+        name: "Semantic Scholar",
+        url: "https://www.semanticscholar.org/",
+        description: "AI-powered scientific literature search engine with citation graphs and key result summaries."
+      },
+      {
+        name: "UKRI Research Proposal Guidelines",
+        url: "https://www.ukri.org/councils/esrc/career-and-skills-development/funding-for-postgraduate-training/how-to-write-a-research-proposal/",
+        description: "Official UK Research and Innovation standards for postgraduate research proposals."
       }
     ],
     commonMistakes: [
-      "Assuming university minimum GPA guarantees scholarship consideration.",
-      "Overlooking country-specific eligibility lists for bilateral government awards.",
-      "Failing to convert credits (ECTS vs. credit hours) to verify prerequisite match.",
-      "Paying application fees without checking for departmental fee waiver codes."
+      "Proposing a topic that is far too broad (e.g., 'Solving Cancer with Machine Learning' in 3 years).",
+      "Failing to cite the target professor's recent publications on the topic.",
+      "Writing a literature review without proposing a concrete methodology or experimental plan.",
+      "Proposing methods that require equipment, datasets, or lab facilities that the target department does not have."
     ],
     practicalExample:
-      "An engineering applicant avoided an automatic rejection by discovering that an Austrian program required 18 ECTS credits in higher mathematics, which they fulfilled by submitting an annotated transcript syllabus.",
+      "A doctoral applicant drafted a focused proposal on low-resource fine-tuning for biomedical NLP, aligning directly with a professor's funded grant and securing immediate support.",
     checklist: [
-      { id: "p7-c1", label: "Confirmed you meet departmental GPA thresholds for funding consideration." },
-      { id: "p7-c2", label: "Verified that your nationality is eligible for targeted government scholarships." },
-      { id: "p7-c3", label: "Checked prerequisite course credit requirements (ECTS or credit hours)." },
-      { id: "p7-c4", label: "Confirmed language score thresholds for teaching assistantships (often Speaking >= 26)." },
-      { id: "p7-c5", label: "Checked for departmental graduate application fee waivers." }
+      { id: "p7-c1", label: "Defined a focused research question addressing a concrete gap in the literature." },
+      { id: "p7-c2", label: "Conducted a literature review with at least 15 peer-reviewed citations." },
+      { id: "p7-c3", label: "Outlined methodology, required datasets, tools, and anticipated challenges." },
+      { id: "p7-c4", label: "Added a semester-by-semester Gantt chart or 3-year timeline." },
+      { id: "p7-c5", label: "Shared the proposal draft with a mentor or prospective advisor for initial feedback." }
     ],
-    mastersNuance: "Check prerequisite course credit match carefully; European Master's programs strictly enforce topic alignment.",
-    phdNuance: "Check if a completed Master's degree is mandatory (standard in Europe) or if direct-entry from Bachelor's is allowed (common in the US).",
+    mastersNuance: "Usually not required for Master's programs, unless applying for a research thesis degree or specific scholarships (e.g., DAAD EPOS).",
+    phdNuance: "Required for virtually all European, UK, and Commonwealth PhD applications. Keep it focused and feasible.",
     nextStep: {
-      slug: "prepare-strong-application",
-      title: "Phase 08: Prepare a Strong Application"
+      slug: "secure-recommendation-letters",
+      title: "Phase 08: Secure Recommendation Letters"
     }
   },
   {
     id: "phase-08",
     number: 8,
-    slug: "prepare-strong-application",
-    title: "Prepare a Strong Application",
-    tagline: "Unify your dossier into a cohesive, convincing narrative tailored to each program.",
-    estimatedDuration: "1 Month (Estimate)",
+    slug: "secure-recommendation-letters",
+    title: "Secure Recommendation Letters",
+    tagline: "Brief 3 academic referees early with your CV, statement of purpose, and submission deadlines.",
+    estimatedDuration: "1 Month",
     degreeScope: "both",
-    what: "Assemble your documents into a cohesive narrative that highlights your academic strengths and program synergy.",
-    why: "Successful applicants present a unified profile where transcripts, SOP, and recommendation letters all support the same research trajectory.",
+    what: "Ask 2–3 former professors or research mentors to write strong, detailed recommendation letters that highlight your abilities.",
+    why: "Admissions committees rely heavily on trusted faculty assessments to confirm your technical abilities, work ethic, and intellectual independence.",
     how: [
       {
-        step: "Align Application Materials",
-        detail: "Ensure your SOP directly builds on the research projects listed in your CV and matches the praise in your recommendation letters."
+        step: "Choose Mentors Who Know You Well",
+        detail: "Pick professors who taught you in small classes, advised your thesis, or supervised your research over famous professors who barely know you."
       },
       {
-        step: "Tailor Every Application",
-        detail: "Customize at least 30% of each application to highlight specific departmental labs, course offerings, and faculty members."
+        step: "Ask 6–8 Weeks Before Deadlines",
+        detail: "Send a polite email well ahead of time asking if they can provide a 'strong letter of recommendation' for your target programs."
       },
       {
-        step: "Address Profile Weaknesses Proactively",
-        detail: "Briefly explain any semester grade dips in your SOP by highlighting subsequent recovery, difficult course loads, or external challenges."
+        step: "Provide a Comprehensive Brag Sheet",
+        detail: "Give each referee your CV, draft SOP, list of target universities with deadlines, course grades, and reminders of your achievements in their class."
       },
       {
-        step: "Proofread Rigorously",
-        detail: "Audit every document for grammar, formatting, and correct university names before final submission."
+        step: "Send Courteous Reminders",
+        detail: "Send polite reminder emails 14 days and 3 days before deadlines with direct links to the submission portals."
       }
     ],
     where: [
       {
-        name: "Grammarly Writing Assistant",
-        url: "https://www.grammarly.com/",
-        description: "Grammar and sentence clarity checker for academic prose."
+        name: "MIT Graduate Admissions Letter Guidelines",
+        url: "https://mitadmissions.org/apply/parents-educators/writing-recs/",
+        description: "Official guide on what top admissions committees look for in strong recommendation letters."
       },
       {
-        name: "Overleaf Academic LaTeX Editor",
-        url: "https://www.overleaf.com/",
-        description: "Collaborative LaTeX editor for typesetting academic CVs and technical research proposals."
+        name: "Interfolio Dossier Service",
+        url: "https://www.interfolio.com/",
+        description: "Platform to collect, manage, and deliver confidential letters of recommendation securely."
       }
     ],
     commonMistakes: [
-      "Leaving the wrong university or professor name in a recycled Statement of Purpose.",
-      "Writing a generic introduction describing childhood passions instead of academic achievements.",
-      "Failing to explain how your background directly prepares you for the program's coursework.",
-      "Neglecting formatting consistency across CV, SOP, and research proposals."
+      "Asking professors at the last minute (giving them less than 3 weeks to write and submit).",
+      "Choosing a famous department chair who can only write 3 generic sentences about you.",
+      "Failing to provide recommenders with your SOP, CV, and university deadlines.",
+      "Forgetting to thank recommenders and update them on your admission outcomes."
     ],
     practicalExample:
-      "A student whose first-year GPA was 2.8 explained how a shift toward hands-on laboratory research raised their final two years' GPA to 3.7, demonstrating maturity and focus.",
+      "A student provided their thesis advisor with a 1-page summary of their thesis contributions and target program details, resulting in a rich, specific letter that committee reviewers praised.",
     checklist: [
-      { id: "p8-c1", label: "Verified that every document refers to the correct university and department." },
-      { id: "p8-c2", label: "Confirmed that your SOP connects your past work with target lab research." },
-      { id: "p8-c3", label: "Proofread all documents with peers or academic mentors." },
-      { id: "p8-c4", label: "Formatted all documents cleanly in PDF format." },
-      { id: "p8-c5", label: "Confirmed that your recommenders have uploaded their letters before the deadline." }
+      { id: "p8-c1", label: "Confirmed 3 academic referees who agreed to write strong, supportive letters." },
+      { id: "p8-c2", label: "Prepared a recommender package: CV, draft SOP, transcripts, and deadline list." },
+      { id: "p8-c3", label: "Provided clear instructions on how portals will email them the submission link." },
+      { id: "p8-c4", label: "Logged into portals to confirm recommendations were submitted before deadlines." },
+      { id: "p8-c5", label: "Sent a thank-you note to all referees with admissions status updates." }
     ],
-    mastersNuance: "Emphasize coursework mastery, analytical skills, and readiness for advanced study.",
-    phdNuance: "Demonstrate independent scientific curiosity, problem formulation, and methodological resilience.",
+    mastersNuance: "Academic course instructors and thesis advisors are ideal. Professional managers can serve as a 3rd referee if relevant.",
+    phdNuance: "Referees must be active researchers who can speak in detail about your research potential and problem-solving skills.",
     nextStep: {
-      slug: "submit-applications-correctly",
-      title: "Phase 09: Submit Applications Correctly"
+      slug: "submit-applications",
+      title: "Phase 09: Submit University Applications"
     }
   },
   {
     id: "phase-09",
     number: 9,
-    slug: "submit-applications-correctly",
-    title: "Submit Applications Correctly",
-    tagline: "Navigate application portals, verify document uploads, and beat deadlines safely.",
-    estimatedDuration: "2 Weeks before deadlines (Estimate)",
+    slug: "submit-applications",
+    title: "Submit University Applications",
+    tagline: "Upload verified documents, request fee waivers, and submit portals before early deadlines.",
+    estimatedDuration: "1 Month",
     degreeScope: "both",
-    what: "Submit complete application dossiers through official university and scholarship portals before deadlines.",
-    why: "Portals crash on deadline day, recommenders miss submission windows, and time-zone confusion can disqualify otherwise strong dossiers.",
+    what: "Complete application portal forms, upload required PDFs, pay fees or use waivers, and verify submission receipts.",
+    why: "Submitting error-free applications ahead of early deadlines ensures your file is reviewed before funding allocations are exhausted.",
     how: [
       {
-        step: "Submit 5–7 Days Early",
-        detail: "Complete uploads early to avoid server traffic spikes and resolve unexpected upload errors."
+        step: "Request Application Fee Waivers",
+        detail: "Attend university virtual open days, check financial need criteria, or email admissions to request fee waiver codes ($75–$150 savings each)."
       },
       {
-        step: "Confirm Time Zone Deadlines",
-        detail: "Note whether deadlines follow Eastern Time (US), Central European Time (EU), or UTC, and plan accordingly."
+        step: "Complete Portal Questions Carefully",
+        detail: "Fill in biographical, academic, and prerequisite details accurately, ensuring information matches your transcripts exactly."
       },
       {
-        step: "Verify Recommender Submissions",
-        detail: "Log in to portal dashboards to confirm that all 3 reference letters show as received."
+        step: "Upload Verified PDF Documents",
+        detail: "Upload clean, high-resolution PDFs of your CV, SOP, writing samples, and unofficial transcripts with standard file names."
       },
       {
-        step: "Save Confirmation Records",
-        detail: "Download PDF copies of submitted forms, application ID numbers, and payment or waiver receipts."
+        step: "Track Application Confirmation",
+        detail: "Confirm receipt emails, record your application ID, and monitor student portals to ensure all referee letters and scores arrive."
       }
     ],
     where: [
       {
-        name: "Uni-Assist Germany Portal",
+        name: "Uni-Assist Application Portal",
         url: "https://www.uni-assist.de/en/",
-        description: "Central processing agency handling international applications for over 180 German universities."
+        description: "Centralized application portal used by over 180 German universities for international applicants."
       },
       {
-        name: "University Admissions Sweden",
-        url: "https://www.universityadmissions.se/",
-        description: "Official national application portal for all bachelor's and master's programs in Sweden."
+        name: "GradApp Central Portals",
+        url: "https://www.applyweb.com/",
+        description: "Common application portal system utilized across numerous North American graduate schools."
       },
       {
-        name: "Study in Finland Portal (Opintopolku)",
-        url: "https://opintopolku.fi/konfo/en/",
-        description: "Official Finnish national application system for university programs and scholarships."
+        name: "UCAS Postgraduate (UK)",
+        url: "https://www.ucas.com/postgraduate",
+        description: "Centralized application system for postgraduate programs across the United Kingdom."
       }
     ],
     commonMistakes: [
-      "Submitting within hours of the deadline and encountering server errors.",
-      "Assuming the deadline is midnight in your local time zone rather than the university's time zone.",
-      "Forgetting to check the box authorizing consideration for Graduate Assistantships or Fellowships.",
-      "Failing to confirm that referees uploaded their recommendation letters on time."
+      "Submitting within hours of the deadline and running into server crashes or time-zone mix-ups.",
+      "Uploading the wrong Statement of Purpose that names a competitor university.",
+      "Assuming the application is complete before referees have submitted their letters.",
+      "Not checking university portals for follow-up requests regarding missing credentials."
     ],
     practicalExample:
-      "A student submitting 4 days before the December 15 deadline noticed their recommender had not received the automated email link, allowing them to resend the notification and resolve the issue in time.",
+      "A student applied two weeks before the priority funding deadline, caught an unlinked TOEFL score in the portal tracker, and corrected it before committee review.",
     checklist: [
-      { id: "p9-c1", label: "Completed all portal forms 5+ days before the deadline." },
-      { id: "p9-c2", label: "Selected the checkbox for departmental funding / assistantship consideration." },
-      { id: "p9-c3", label: "Checked portal status to confirm all recommendation letters are received." },
-      { id: "p9-c4", label: "Downloaded official submission receipt with application reference ID." },
-      { id: "p9-c5", label: "Sent a polite thank-you email to all faculty recommenders." }
+      { id: "p9-c1", label: "Requested and applied official application fee waivers where available." },
+      { id: "p9-c2", label: "Double-checked that uploaded SOP files correspond to the correct university." },
+      { id: "p9-c3", label: "Confirmed official test scores (IELTS/TOEFL/GRE) were sent and matched." },
+      { id: "p9-c4", label: "Submitted applications prior to priority consideration deadlines." },
+      { id: "p9-c5", label: "Logged into portal applicant status checkers to confirm all documents show 'Complete'." }
     ],
-    mastersNuance: "Check if official hard-copy documents or notarized translations must be mailed by post (e.g., Uni-Assist).",
-    phdNuance: "Notify your prospective supervisor via email once your official portal application is successfully submitted.",
+    mastersNuance: "Check if separate scholarship applications or supplemental essays are required in addition to admission.",
+    phdNuance: "Note the professor or lab name on the application form if you secured prior supervisor support.",
     nextStep: {
-      slug: "prepare-interviews-selection",
-      title: "Phase 10: Prepare for Interviews & Selection"
+      slug: "prepare-interviews",
+      title: "Phase 10: Ace Academic Interviews"
     }
   },
   {
     id: "phase-10",
     number: 10,
-    slug: "prepare-interviews-selection",
-    title: "Prepare for Interviews & Selection",
-    tagline: "Prepare for faculty video calls, defend research methodology, and present your future goals.",
-    estimatedDuration: "2–4 Weeks during Jan–March (Estimate)",
+    slug: "prepare-interviews",
+    title: "Ace Academic Interviews",
+    tagline: "Prepare for technical walkthroughs, defend your research proposal, and interview prospective advisors.",
+    estimatedDuration: "1 Month",
     degreeScope: "both",
-    what: "Prepare for selection committee interviews and one-on-one video calls with potential faculty supervisors.",
-    why: "Interviews assess whether you can communicate complex ideas, handle technical questions, and collaborate effectively with a lab team.",
+    what: "Practice presenting your past research, explaining your proposal, answering technical questions, and asking smart questions about the lab.",
+    why: "Interviews determine whether you receive the final funding offer. Committees use them to evaluate communication, enthusiasm, and lab culture fit.",
     how: [
       {
-        step: "Prepare a 5-Slide Presentation",
-        detail: "For PhDs: Outline your undergraduate or master's thesis, problem formulation, methodology, results, and future research goals."
+        step: "Prepare a 5-Slide Research Deck",
+        detail: "Create a 5-minute summary: (1) Problem statement, (2) Methodology, (3) Key results, (4) Challenges overcome, (5) Future directions."
       },
       {
-        step: "Review Your Application Documents",
-        detail: "Re-read your SOP, CV, and referenced papers so you can discuss any project or claim in depth."
+        step: "Practice Answering Technical Deep-Dives",
+        detail: "Be ready to explain every equation, dataset, and algorithm on your CV, especially why you picked one methodology over another."
       },
       {
-        step: "Practice Common Questions",
-        detail: "Prepare concise answers for: Why this university? Walk me through your thesis methodology. How do you handle research setbacks?"
+        step: "Prepare Thoughtful Questions for the PI",
+        detail: "Ask about mentoring style, graduation timelines, lab funding stability, conference travel support, and post-doc placement."
       },
       {
-        step: "Ask Thoughtful Questions",
-        detail: "Ask about lab culture, ongoing grant projects, computing resources, and expected milestones for graduate students."
+        step: "Talk to Current Lab Members Privately",
+        detail: "Reach out to current PhD students in the lab to ask about work-life balance, advisor responsiveness, and lab culture."
       }
     ],
     where: [
       {
-        name: "National Postdoctoral Association Resources",
-        url: "https://www.nationalpostdoc.org/",
-        description: "Guidelines on academic interviewing, mentorship expectations, and research group dynamics."
+        name: "Stanford Graduate Interview Guide",
+        url: "https://med.stanford.edu/biosciences/incoming-students/interview-preparation.html",
+        description: "Official guide on preparing for academic interviews, technical questions, and lab visits."
+      },
+      {
+        name: "STAR Method Guide",
+        url: "https://www.themuse.com/advice/star-interview-method",
+        description: "Structured technique (Situation, Task, Action, Result) for answering behavioral questions clearly."
       }
     ],
     commonMistakes: [
-      "Failing to explain your personal contribution to team research papers.",
-      "Not knowing the recent research directions of the professors interviewing you.",
-      "Having no questions to ask the committee at the end of the interview.",
-      "Poor audio or lighting during international video calls."
+      "Not being able to explain in detail a project or paper listed on your own CV.",
+      "Failing to read the interviewing professor's latest papers right before the call.",
+      "Having zero questions prepared when the interviewer asks 'What questions do you have for me?'.",
+      "Poor audio or lighting setup during remote Zoom/Teams video interviews."
     ],
     practicalExample:
-      "Asked about an unexpected experimental failure in their thesis, a candidate clearly explained their systematic troubleshooting process, proving their resilience and scientific maturity.",
+      "A candidate used a concise 5-minute slide deck to walk an admissions committee through their thesis, clearly answering a methodological question that secured them a Research Assistantship.",
     checklist: [
-      { id: "p10-c1", label: "Prepared a concise 5-minute technical presentation of past research work." },
-      { id: "p10-c2", label: "Practiced answers for common academic interview questions." },
-      { id: "p10-c3", label: "Prepared 3 thoughtful questions about lab projects and mentorship." },
-      { id: "p10-c4", label: "Tested camera, microphone, and internet connection before the interview." },
-      { id: "p10-c5", label: "Sent a brief, professional thank-you email within 24 hours of the interview." }
+      { id: "p10-c1", label: "Prepared a concise 5-slide deck summarizing past research and future plans." },
+      { id: "p10-c2", label: "Reviewed foundational theory and methods behind every project on your CV." },
+      { id: "p10-c3", label: "Prepared 3–5 insightful questions about the advisor's lab and mentoring style." },
+      { id: "p10-c4", label: "Conducted mock interviews with peers using a webcam and quiet mic setup." },
+      { id: "p10-c5", label: "Sent a polite thank-you email within 24 hours of completing the interview." }
     ],
-    mastersNuance: "Master's interviews focus on motivation, course foundation, and career direction.",
-    phdNuance: "PhD interviews test deep technical problem-solving, methodological independence, and supervisor compatibility.",
+    mastersNuance: "Interviews focus on your motivation, academic strengths, teamwork, and program fit.",
+    phdNuance: "Interviews are in-depth technical discussions exploring your problem-solving process, independence, and research vision.",
     nextStep: {
-      slug: "evaluate-funding-offers",
-      title: "Phase 11: Evaluate Funding Offers"
+      slug: "evaluate-offers",
+      title: "Phase 11: Review Offers & Funding Contracts"
     }
   },
   {
     id: "phase-11",
     number: 11,
-    slug: "evaluate-funding-offers",
-    title: "Evaluate Funding Offers",
-    tagline: "Audit net living stipends against rent, taxes, and fees before signing binding agreements.",
-    estimatedDuration: "2–4 Weeks during March–April (Estimate)",
+    slug: "evaluate-offers",
+    title: "Review Offers & Funding Contracts",
+    tagline: "Compare stipends against local living costs, check contract terms, and accept your best offer.",
+    estimatedDuration: "2–4 Weeks",
     degreeScope: "both",
-    what: "Review the formal funding guarantee letter to verify true net take-home pay, tuition waivers, and renewal conditions.",
-    why: "A $30,000 stipend in an expensive city (New York, London, Zurich) can result in a deficit, while a $24,000 stipend in a low-cost college town provides comfortable living.",
+    what: "Examine admission and funding letters, verify net take-home stipends and health insurance, and formally accept your top offer.",
+    why: "Not all offers are equal. A $30,000 stipend in an expensive city may leave you struggling, while €2,400 net in Europe provides a comfortable living.",
     how: [
       {
-        step: "Audit Full Tuition Remission",
-        detail: "Verify in writing that 100% of out-of-state or international tuition is permanently waived for your entire degree duration."
+        step: "Calculate Real Net Take-Home Pay",
+        detail: "Deduct mandatory student fees, taxes, and health insurance from the gross stipend to determine true monthly living cash flow."
       },
       {
-        step: "Calculate Real Living Costs",
-        detail: "Deduct estimated taxes, health insurance copays, mandatory university fees, and median local rent from gross monthly stipend."
+        step: "Verify Funding Duration & Conditions",
+        detail: "Confirm funding duration (e.g., guaranteed 4–5 years vs. renewed annually) and duties required (e.g., 20 hrs/week teaching)."
       },
       {
-        step: "Review Funding Renewal Conditions",
-        detail: "Confirm the minimum GPA required to maintain funding and whether support is guaranteed for 2 years (MS) or 4–5 years (PhD)."
+        step: "Respect the April 15 Resolution",
+        detail: "In North America, CGS member universities give you until April 15 to decide. Do not let departments pressure you early."
       },
       {
-        step: "Respect Decision Deadlines",
-        detail: "In North America, the April 15 Resolution protects your right to consider all offers until April 15 without premature pressure."
+        step: "Decline Other Offers Promptly",
+        detail: "Once you accept your top offer, decline other universities politely so funded spots can be offered to waitlisted candidates."
       }
     ],
     where: [
       {
-        name: "CGS April 15 Resolution Agreement",
+        name: "Council of Graduate Schools (CGS) April 15 Resolution",
         url: "https://cgsnet.org/resources/for-students/april-15-resolution/",
-        description: "Official agreement among 400+ graduate institutions protecting student acceptance rights through April 15."
+        description: "Official agreement protecting graduate student acceptance rights across 400+ North American institutions."
       },
       {
-        name: "Numbeo Cost of Living Comparison",
+        name: "MIT Living Wage Calculator",
+        url: "https://livingwage.mit.edu/",
+        description: "Official county-by-county baseline cost of living across the United States."
+      },
+      {
+        name: "Numbeo Cost of Living Index",
         url: "https://www.numbeo.com/cost-of-living/",
-        description: "Compare rent, groceries, and transportation costs across global university cities."
+        description: "Global comparative database of rent, groceries, and transportation costs across cities."
       }
     ],
     commonMistakes: [
-      "Accepting an offer based on gross stipend without calculating local rent and tax deductions.",
-      "Accepting an offer without a written, signed funding letter specifying duration and responsibilities.",
-      "Holding multiple fully funded offers past April 15, blocking waitlisted peers.",
-      "Failing to confirm whether summer funding (June–August) is included."
+      "Accepting an offer without checking if tuition remission is 100% or only partial.",
+      "Overlooking mandatory university fees ($1,000–$2,500/year) not covered by stipends.",
+      "Prematurely accepting an offer before hearing back from other target universities before April 15.",
+      "Holding multiple offers past official decision deadlines and blocking spots for other students."
     ],
     practicalExample:
-      "A student compared a $34,000 offer in Boston (where rent was $1,700/month) with a $29,000 offer in North Carolina (rent $750/month), realizing the North Carolina offer provided $7,000 more in net disposable income.",
+      "A student compared two offers: a $32k stipend in high-rent New York City vs a €2,400/month salaried contract in Germany, choosing Germany for higher net savings and full healthcare.",
     checklist: [
-      { id: "p11-c1", label: "Received an official funding guarantee letter specifying stipend and waiver." },
-      { id: "p11-c2", label: "Calculated net monthly take-home pay after local taxes and deductions." },
-      { id: "p11-c3", label: "Researched local rent prices within commutable distance of campus." },
-      { id: "p11-c4", label: "Confirmed whether summer funding is included or requires separate applications." },
-      { id: "p11-c5", label: "Formally accepted your chosen offer and politely declined others before the deadline." }
+      { id: "p11-c1", label: "Confirmed 100% tuition remission in writing from the graduate school." },
+      { id: "p11-c2", label: "Calculated net monthly stipend after mandatory fees, taxes, and rent." },
+      { id: "p11-c3", label: "Verified health insurance coverage details and spouse benefits if applicable." },
+      { id: "p11-c4", label: "Formally submitted acceptance letter before the official deadline (e.g., April 15)." },
+      { id: "p11-c5", label: "Politely declined remaining offers to free up seats for waitlisted peers." }
     ],
-    mastersNuance: "Check if the assistantship waiver applies to both academic years or requires reapplication each year.",
-    phdNuance: "Confirm that funding is guaranteed for 4–5 years subject to standard academic progress, not just 1 year.",
+    mastersNuance: "Check if scholarship funding is renewed automatically in Year 2 based on GPA thresholds.",
+    phdNuance: "Confirm whether funding is guaranteed for 4–5 years and whether Summer stipends are included.",
     nextStep: {
       slug: "visa-pre-departure",
       title: "Phase 12: Visa & Pre-Departure"
@@ -742,176 +772,136 @@ export const roadmapPhasesData: RoadmapPhase[] = [
     number: 12,
     slug: "visa-pre-departure",
     title: "Visa & Pre-Departure",
-    tagline: "Secure immigration clearance, prepare financial documents, and arrange student housing.",
-    estimatedDuration: "2–3 Months before departure (Estimate)",
+    tagline: "Obtain your student visa or residence permit, arrange housing, and prepare health insurance.",
+    estimatedDuration: "2–3 Months",
     degreeScope: "both",
-    what: "Complete embassy visa interviews, submit official financial certificates, and finalize travel and housing plans.",
-    why: "Visa processing can take 6–12 weeks. Administrative delays or missing documents can postpone your enrollment by a semester.",
+    what: "Submit your student visa or residence permit application with official funding documents, secure housing, and book travel.",
+    why: "Visa processing times can take 4–12 weeks. Starting immediately upon receiving your acceptance prevents missing the start of classes.",
     how: [
       {
-        step: "Obtain Official Admission Documents",
-        detail: "Request your official immigration paperwork (e.g., US Form I-20 / DS-2019, UK CAS number, or German admission letter)."
+        step: "Gather Official Visa Documents",
+        detail: "Request your I-20 (USA), PAL/Study Permit (Canada), CAS (UK), or official university admission letter (Europe)."
       },
       {
-        step: "Prepare Visa Financial Proof",
-        detail: "Use your official university funding letter to prove financial support, eliminating the need for large personal bank statements."
+        step: "Present Proof of Full Funding",
+        detail: "Use your official scholarship letter or university funding contract to prove financial support without needing personal bank loans."
       },
       {
-        step: "Book Visa Interview Early",
-        detail: "Schedule your embassy appointment immediately upon receiving your immigration certificate to avoid peak summer queues."
+        step: "Book Visa Appointments Early",
+        detail: "Schedule your embassy or consulate interview as soon as your acceptance paperwork is issued."
       },
       {
         step: "Secure Student Housing Early",
-        detail: "Apply for university dormitory housing or search verified student housing platforms as soon as your offer is accepted."
+        detail: "Apply for on-campus graduate housing or university dormitories (e.g., Studentenwerk in Germany) as spots fill quickly."
       }
     ],
     where: [
       {
-        name: "US Department of State Student Visas",
-        url: "https://travel.state.gov/content/travel/en/us-visas/study.html",
-        description: "Official guide to F-1 and J-1 student visa eligibility, interview prep, and wait times."
+        name: "US Department of State Student Visa (F-1)",
+        url: "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+        description: "Official guide to DS-160 forms, SEVIS fee payments, and F-1 student visa interviews."
       },
       {
-        name: "UK Visas and Immigration (Student Visa)",
-        url: "https://www.gov.uk/student-visa",
-        description: "Official British government portal for student visa applications, points-based routes, and CAS requirements."
+        name: "Immigration, Refugees and Citizenship Canada (IRCC)",
+        url: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html",
+        description: "Official portal for Canadian study permits and provincial attestation letters."
       },
       {
-        name: "Make it in Germany Visa Guide",
-        url: "https://www.make-it-in-germany.com/en/visa-residence/types/studying",
-        description: "Federal government portal for international students and researchers entering Germany."
+        name: "German Federal Foreign Office Visa Navigator",
+        url: "https://visa.diplo.de/en/",
+        description: "Official visa tool for national study visas and researcher residence permits."
       }
     ],
     commonMistakes: [
-      "Delaying visa appointments until summer when embassy slots are fully booked.",
-      "Presenting personal bank statements that contradict the university funding letter.",
-      "Booking non-refundable international flights before the visa is stamped in your passport.",
-      "Leaving accommodation searches until arrival in cities with tight rental markets."
+      "Delaying visa appointments until mid-summer when embassy slots are fully booked.",
+      "Booking non-refundable flight tickets before your student visa is officially stamped in your passport.",
+      "Leaving housing search until arrival in university towns facing severe housing shortages.",
+      "Not carrying hard copies of funding letters, admission letters, and vaccination records in your carry-on luggage."
     ],
     practicalExample:
-      "A student scheduled their visa interview in May with their official I-20 and assistantship letter, received their visa within 10 days, and secured affordable on-campus housing before July waiting lists closed.",
+      "A student scheduled their visa appointment the day their I-20 arrived, presented their full research assistantship letter as financial proof, and received their visa in 10 business days.",
     checklist: [
-      { id: "p12-c1", label: "Received official university immigration certificates (I-20, CAS, or admission letter)." },
-      { id: "p12-c2", label: "Paid SEVIS fee or national visa administration fee." },
-      { id: "p12-c3", label: "Scheduled visa interview at nearest embassy or consulate." },
-      { id: "p12-c4", label: "Applied for university dormitory housing or verified private student flats." },
-      { id: "p12-c5", label: "Organized certified academic records, health immunization forms, and travel insurance." }
+      { id: "p12-c1", label: "Received official immigration document (I-20, CAS, PAL, or contract)." },
+      { id: "p12-c2", label: "Paid required government visa fees (e.g., SEVIS I-901 fee for the US)." },
+      { id: "p12-c3", label: "Booked and attended the embassy or visa application center appointment." },
+      { id: "p12-c4", label: "Applied for university dorms or verified off-campus rental housing." },
+      { id: "p12-c5", label: "Prepared a travel folder with certified copies of transcripts, letters, and passport." }
     ],
-    mastersNuance: "Check if your visa category allows off-campus part-time work or only on-campus employment.",
-    phdNuance: "In Europe, doctoral candidates holding salaried contracts apply for researcher or work permits rather than student visas.",
+    mastersNuance: "If on partial funding, prepare a blocked account or certified bank statements to prove living expense coverage.",
+    phdNuance: "In Europe, apply for a researcher/hosting agreement visa rather than a standard study visa to receive full employee rights.",
     nextStep: {
-      slug: "backup-plan-reapplication",
-      title: "Phase 13: Backup Plan & Reapplication"
+      slug: "arrival-registration",
+      title: "Phase 13: Arrive, Register & Enroll"
     }
   },
   {
     id: "phase-13",
     number: 13,
-    slug: "backup-plan-reapplication",
-    title: "Backup Plan & Reapplication",
-    tagline: "Analyze feedback, strengthen your profile, and target the next funding cycle strategically.",
-    estimatedDuration: "Ongoing preparation (Estimate)",
+    slug: "arrival-registration",
+    title: "Arrive, Register & Enroll",
+    tagline: "Register your address, open a local bank account, activate health insurance, and start classes.",
+    estimatedDuration: "First 2–4 Weeks",
     degreeScope: "both",
-    what: "If your first application cycle is unsuccessful, conduct an objective audit of your dossier and target subsequent admission cycles.",
-    why: "Top scholarship acceptance rates are competitive (often 5%–15%). Reapplicants with upgraded research and targeted applications succeed regularly.",
+    what: "Complete mandatory city registration, open a local student bank account, set up direct deposit for your stipend, and begin orientation.",
+    why: "Finishing administrative setup during your first week ensures your stipend is deposited without delays and your health insurance is fully active.",
     how: [
       {
-        step: "Conduct a Frank Dossier Audit",
-        detail: "Assess what held you back: late submission, weak research alignment, low test scores, or applying to too few programs."
+        step: "Complete City / Residence Registration",
+        detail: "Register your local address at the city hall or immigration office (e.g., Bürgeramt in Germany or Skatteverket in Sweden)."
       },
       {
-        step: "Add Tangible Qualifications",
-        detail: "Spend 6–9 months producing a research preprint, improving language test scores, or gaining relevant industry experience."
+        step: "Open a Local Bank Account",
+        detail: "Set up a fee-free student bank account and provide routing and account numbers to the university payroll office."
       },
       {
-        step: "Broaden Target Destinations",
-        detail: "Expand beyond the most competitive universities to include strong research institutions with active grant funding."
+        step: "Activate Mandatory Health Insurance",
+        detail: "Finalize your university or public health insurance policy to obtain your final enrollment clearance certificate."
       },
       {
-        step: "Engage Early in the Next Cycle",
-        detail: "Start contacting professors in August–September, submit applications by November, and secure stronger reference letters."
+        step: "Meet Your Advisor & Lab Members",
+        detail: "Visit your department, collect building and lab keys, set up your desk, and attend graduate orientation sessions."
       }
     ],
     where: [
       {
-        name: "arXiv Open-Access Research Repository",
-        url: "https://arxiv.org/",
-        description: "Post preprints of your research to build a citable scientific track record."
+        name: "EURAXESS Services Centers",
+        url: "https://euraxess.ec.europa.eu/information/centres/search",
+        description: "Official on-the-ground support centers for international researchers across European universities."
       },
       {
-        name: "Coursera & edX Advanced Specializations",
-        url: "https://www.coursera.org/",
-        description: "Take verified graduate-level coursework to demonstrate mastery in prerequisite subjects."
+        name: "International Student Orientation Guides",
+        url: "https://www.studyinaustralia.gov.au/english/live-in-australia/support-services",
+        description: "Official orientation and arrival support resources for international students."
       }
     ],
     commonMistakes: [
-      "Reapplying to the exact same programs with identical, unrevised documents.",
-      "Giving up after a single cycle without realizing that many fully funded scholars succeeded on their second attempt.",
-      "Focusing only on Ivy League or top-10 universities where odds are lowest.",
-      "Failing to ask prospective supervisors or mentors for constructive feedback."
+      "Missing municipal address registration deadlines, which can result in city fines.",
+      "Delaying bank account setup, causing a delay in receiving your first monthly stipend check.",
+      "Skipping department orientation sessions where key degree requirements and lab safety are explained.",
+      "Not checking in with the university International Student Office (ISO) to report arrival."
     ],
     practicalExample:
-      "After rejections in year one, an applicant spent 8 months working as a university research assistant, co-authored an IEEE conference paper, retook IELTS to score 8.0, and received 3 fully funded PhD offers in year two.",
+      "A newly arrived doctoral student completed city registration on day 2, set up their local bank account on day 3, and received their first monthly stipend on time at the end of the month.",
     checklist: [
-      { id: "p13-c1", label: "Identified specific areas for improvement (research output, SOP, test scores)." },
-      { id: "p13-c2", label: "Upgraded your academic CV with new publications, projects, or work experience." },
-      { id: "p13-c3", label: "Expanded your university list to include balanced reach, target, and safe programs." },
-      { id: "p13-c4", label: "Approached new faculty recommenders who can speak to your recent growth." },
-      { id: "p13-c5", label: "Set up early deadlines for the upcoming application cycle." }
+      { id: "p13-c1", label: "Completed mandatory city hall/police address registration." },
+      { id: "p13-c2", label: "Opened a local bank account and submitted direct deposit forms to university payroll." },
+      { id: "p13-c3", label: "Obtained student ID card and local public transit pass." },
+      { id: "p13-c4", label: "Reported arrival to the International Student Office to validate immigration status." },
+      { id: "p13-c5", label: "Met your academic supervisor, collected lab keys, and attended orientation events." }
     ],
-    mastersNuance: "Consider post-graduate diplomas, online verified certificates, or industrial internships to strengthen your academic profile.",
-    phdNuance: "Publishing a peer-reviewed paper or posting a quality preprint on arXiv is the single most effective way to turn rejections into funded offers.",
+    mastersNuance: "Register for your first-semester coursework credits early before lecture and lab sections fill up.",
+    phdNuance: "Sign your employment contract (in Europe) or assistantship appointment letter (in North America) with HR.",
     nextStep: {
       slug: "understand-academic-profile",
-      title: "Phase 01: Understand Your Academic Profile"
+      title: "Roadmap Complete: Revisit Phase 01"
     }
   }
 ];
 
-export const roadmapControlsData = {
-  header: {
-    badge: "The 13-Phase Pipeline",
-    title: "Complete Scholarship Roadmap",
-    subtitle:
-      "A step-by-step sequence from profile assessment to fully funded offer. Filter by degree or search any topic."
-  },
-  filters: {
-    all: "All 13 Phases",
-    masters: "Master's Pathway",
-    phd: "PhD Pathway"
-  },
-  searchPlaceholder: "Search phases by keyword (e.g. GPA, Cold Email, SOP, Visa)...",
-  actions: {
-    expandAll: "Expand All",
-    collapseAll: "Collapse All"
-  },
-  progress: {
-    label: "Interactive Checklist Progress",
-    sublabel: "Client-side tracking for this session only"
-  },
-  cardLabels: {
-    whatHeading: "What to do",
-    whyHeading: "Why it matters",
-    howHeading: "How to do it (Step-by-step)",
-    whereHeading: "Official Portals & Resources",
-    mistakesHeading: "Common Mistakes to Avoid",
-    exampleHeading: "Real-World Application Example",
-    checklistHeading: "Phase Preparation Checklist",
-    nuanceMasters: "Master's Consideration",
-    nuancePhd: "PhD Consideration",
-    nextStepLabel: "Next Sequential Step",
-    prevStepLabel: "Previous Step"
-  }
-};
-
 export function getPhaseBySlug(slug: string): RoadmapPhase | undefined {
-  return roadmapPhasesData.find((p) => p.slug === slug || p.id === slug);
-}
-
-export function getPhaseById(id: string): RoadmapPhase | undefined {
-  return roadmapPhasesData.find((p) => p.id === id);
+  return roadmapPhasesData.find((phase) => phase.slug === slug);
 }
 
 export function getPhaseByNumber(num: number): RoadmapPhase | undefined {
-  return roadmapPhasesData.find((p) => p.number === num);
+  return roadmapPhasesData.find((phase) => phase.number === num);
 }
