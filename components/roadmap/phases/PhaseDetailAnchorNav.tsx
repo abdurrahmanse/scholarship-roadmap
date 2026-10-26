@@ -1,36 +1,29 @@
 "use client";
 
 import React from "react";
-import { Sparkles, ListOrdered, Globe2, AlertTriangle, GraduationCap, ClipboardCheck } from "lucide-react";
-
-const ANCHOR_LINKS = [
-  { href: "#what-why", label: "Overview & Rationale", icon: Sparkles },
-  { href: "#how-to-execute", label: "Step-by-Step Action Plan", icon: ListOrdered },
-  { href: "#official-resources", label: "Official Portals", icon: Globe2 },
-  { href: "#mistakes-example", label: "Pitfalls & Example", icon: AlertTriangle },
-  { href: "#degree-nuances", label: "Degree Nuances", icon: GraduationCap },
-  { href: "#checklist", label: "Preparation Checklist", icon: ClipboardCheck },
-];
+import { phaseDetailUiData } from "@/data/phaseDetailUiData";
 
 export function PhaseDetailAnchorNav() {
+  const { items } = phaseDetailUiData.anchorNav;
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <nav aria-label="Phase section jump links" className="flex flex-wrap items-center gap-2 pt-2 border-t border-white/[0.08]">
-      <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider mr-1">
-        Jump to:
-      </span>
-      {ANCHOR_LINKS.map((anchor) => {
-        const Icon = anchor.icon;
-        return (
-          <a
-            key={anchor.href}
-            href={anchor.href}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/5 hover:border-white/15 text-xs font-mono text-slate-300 hover:text-white transition-all"
-          >
-            <Icon className="w-3 h-3 text-teal-400" />
-            <span>{anchor.label}</span>
-          </a>
-        );
-      })}
+    <nav className="flex items-center gap-2 overflow-x-auto no-scrollbar py-2 text-xs font-mono font-medium border-t border-white/[0.08] pt-4">
+      {items.map((item) => (
+        <button
+          key={item.id}
+          onClick={() => scrollTo(item.id)}
+          className="px-3.5 py-1.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] text-slate-300 hover:text-white border border-white/5 transition-all whitespace-nowrap cursor-pointer shrink-0"
+        >
+          {item.label}
+        </button>
+      ))}
     </nav>
   );
 }

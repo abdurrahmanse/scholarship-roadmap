@@ -2,12 +2,15 @@
 
 import React from "react";
 import { Compass } from "lucide-react";
+import { phaseDetailUiData } from "@/data/phaseDetailUiData";
 
 export interface PhaseRationaleCardProps {
   why: string;
 }
 
 export function PhaseRationaleCard({ why }: PhaseRationaleCardProps) {
+  const { whatWhy } = phaseDetailUiData;
+
   return (
     <div className="p-6 sm:p-8 rounded-2xl bg-[#0f1422] border border-white/10 shadow-xl relative overflow-hidden group hover:border-indigo-500/40 transition-colors">
       <div className="flex items-center gap-3 mb-4">
@@ -16,10 +19,10 @@ export function PhaseRationaleCard({ why }: PhaseRationaleCardProps) {
         </div>
         <div>
           <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-400 block">
-            Committee Perspective
+            {whatWhy.rationaleBadge}
           </span>
           <h3 className="text-xl font-bold text-white tracking-tight">
-            Why This Stage Matters
+            {whatWhy.rationaleHeading}
           </h3>
         </div>
       </div>

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { ListOrdered, Layers } from "lucide-react";
 import { roadmapPhasesData } from "@/data/roadmapPhasesData";
 import { roadmapLevelsData } from "@/data/levelsData";
+import { roadmapUiData } from "@/data/roadmapUiData";
 import { RoadmapHeader } from "./RoadmapHeader";
 import { RoadmapControls } from "./RoadmapControls";
 import { RoadmapPhaseCard } from "./RoadmapPhaseCard";
@@ -13,6 +14,8 @@ import { LevelsComparisonMatrix } from "./LevelsComparisonMatrix";
 import { AdmissionsSuiteLaunchpad } from "./AdmissionsSuiteLaunchpad";
 
 export function CompleteRoadmapView() {
+  const { phasesSection, levelsSection } = roadmapUiData;
+
   // Filter state for 13 Phases
   const [filterDegree, setFilterDegree] = useState<"all" | "masters" | "phd">("all");
   const [searchQuery, setSearchQuery] = useState("");
@@ -47,19 +50,19 @@ export function CompleteRoadmapView() {
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-950/70 border border-teal-500/30 text-teal-300 text-xs font-mono font-bold mb-2">
               <ListOrdered className="w-3.5 h-3.5 text-teal-400" />
-              <span>13-Phase Chronological Pipeline</span>
+              <span>{phasesSection.badge}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-              Sequential Application Phases
+              {phasesSection.title}
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 font-sans mt-1">
-              From academic diagnostics to official visa issuance: an end-to-end chronological campaign.
+              {phasesSection.subtitle}
             </p>
           </div>
 
           <div className="flex items-center gap-2">
             <span className="text-xs font-mono font-bold text-teal-300 px-3 py-1.5 rounded-xl bg-teal-500/10 border border-teal-500/30">
-              13 Sequenced Phases
+              {phasesSection.countBadge}
             </span>
           </div>
         </div>
@@ -97,19 +100,19 @@ export function CompleteRoadmapView() {
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-950/70 border border-indigo-500/30 text-indigo-300 text-xs font-mono font-bold mb-2">
               <Layers className="w-3.5 h-3.5 text-indigo-400" />
-              <span>5-Level Career Ladder</span>
+              <span>{levelsSection.badge}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-              Curricular Proof-of-Work Levels
+              {levelsSection.title}
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 font-sans mt-1">
-              A 24-month developmental curriculum dividing graduate preparation into 5 mastery tiers.
+              {levelsSection.subtitle}
             </p>
           </div>
 
           <div className="flex items-center gap-2">
             <span className="text-xs font-mono font-bold text-indigo-300 px-3 py-1.5 rounded-xl bg-indigo-950/60 border border-indigo-800/40">
-              5 Levels • 26 Actionable Tasks
+              {levelsSection.countBadge}
             </span>
           </div>
         </div>

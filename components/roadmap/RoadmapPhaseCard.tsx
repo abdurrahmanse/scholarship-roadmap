@@ -12,6 +12,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { RoadmapPhase } from "@/data/roadmapPhasesData";
+import { roadmapUiData } from "@/data/roadmapUiData";
 
 export interface RoadmapPhaseCardProps {
   phase: RoadmapPhase;
@@ -20,6 +21,7 @@ export interface RoadmapPhaseCardProps {
 export function RoadmapPhaseCard({ phase }: RoadmapPhaseCardProps) {
   const isMastersOnly = phase.degreeScope === "masters";
   const isPhdOnly = phase.degreeScope === "phd";
+  const { card } = roadmapUiData;
 
   return (
     <div
@@ -38,7 +40,7 @@ export function RoadmapPhaseCard({ phase }: RoadmapPhaseCardProps) {
             {/* Meta Badges */}
             <div className="flex flex-wrap items-center gap-2 mb-1.5">
               <span className="text-[11px] font-mono text-teal-400 font-bold uppercase tracking-wider">
-                Phase {String(phase.number).padStart(2, "0")} of 13
+                {card.phasePrefix} {String(phase.number).padStart(2, "0")} {card.totalPhasesSuffix}
               </span>
               <span className="text-slate-600">•</span>
               <span className="inline-flex items-center gap-1 text-[11px] font-mono text-slate-400">
@@ -48,19 +50,19 @@ export function RoadmapPhaseCard({ phase }: RoadmapPhaseCardProps) {
               {isMastersOnly && (
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-teal-500/20 text-teal-300 border border-teal-500/30">
                   <GraduationCap className="w-3 h-3" />
-                  <span>Master&apos;s Specific</span>
+                  <span>{card.mastersBadge}</span>
                 </span>
               )}
               {isPhdOnly && (
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
                   <Award className="w-3 h-3" />
-                  <span>PhD Specific</span>
+                  <span>{card.phdBadge}</span>
                 </span>
               )}
               {!isMastersOnly && !isPhdOnly && (
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-slate-800 text-slate-300 border border-white/5">
                   <Compass className="w-3 h-3 text-teal-400" />
-                  <span>Master&apos;s &amp; PhD</span>
+                  <span>{card.bothBadge}</span>
                 </span>
               )}
             </div>
@@ -82,7 +84,7 @@ export function RoadmapPhaseCard({ phase }: RoadmapPhaseCardProps) {
           href={`/roadmap/phases/${phase.slug}`}
           className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-teal-500/10 hover:bg-teal-500 text-teal-300 hover:text-slate-950 border border-teal-500/30 text-xs font-bold transition-all shadow-sm shrink-0 self-start sm:self-center group/btn"
         >
-          <span>Explore Blueprint</span>
+          <span>{card.exploreBlueprint}</span>
           <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
         </Link>
       </div>
@@ -90,7 +92,7 @@ export function RoadmapPhaseCard({ phase }: RoadmapPhaseCardProps) {
       {/* Strategic Core Objective */}
       <div className="p-3.5 sm:p-4 rounded-xl bg-[#090d16] border border-white/5 space-y-1.5">
         <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-teal-400 block">
-          Strategic Mandate:
+          {card.strategicMandateLabel}
         </span>
         <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
           {phase.what}
@@ -101,10 +103,10 @@ export function RoadmapPhaseCard({ phase }: RoadmapPhaseCardProps) {
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400">
-            Key Execution Milestones:
+            {card.keyMilestonesLabel}
           </span>
           <span className="text-[10px] font-mono text-slate-400">
-            {phase.how.length} Sequenced Milestones
+            {phase.how.length} {card.sequencedMilestonesSuffix}
           </span>
         </div>
 
@@ -130,7 +132,7 @@ export function RoadmapPhaseCard({ phase }: RoadmapPhaseCardProps) {
         {/* Verified Portals Badges */}
         <div className="flex items-center gap-2 flex-wrap">
           <span className="text-[11px] font-mono text-slate-400">
-            Portals:
+            {card.portalsLabel}
           </span>
           {phase.where.map((portal, pIdx) => (
             <a
@@ -150,14 +152,14 @@ export function RoadmapPhaseCard({ phase }: RoadmapPhaseCardProps) {
         <div className="flex items-center gap-3 self-end sm:self-auto">
           <span className="inline-flex items-center gap-1 text-[11px] font-mono text-teal-400">
             <CheckCircle2 className="w-3.5 h-3.5" />
-            <span>{phase.checklist.length} Verification Checks</span>
+            <span>{phase.checklist.length} {card.verificationChecksSuffix}</span>
           </span>
 
           <Link
             href={`/roadmap/phases/${phase.slug}`}
             className="text-xs font-mono font-bold text-teal-300 hover:text-teal-200 inline-flex items-center gap-1 group/cta"
           >
-            <span>Full Blueprint &amp; Audit</span>
+            <span>{card.fullBlueprintCta}</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform" />
           </Link>
         </div>

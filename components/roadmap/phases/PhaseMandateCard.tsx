@@ -2,12 +2,15 @@
 
 import React from "react";
 import { Sparkles } from "lucide-react";
+import { phaseDetailUiData } from "@/data/phaseDetailUiData";
 
 export interface PhaseMandateCardProps {
   what: string;
 }
 
 export function PhaseMandateCard({ what }: PhaseMandateCardProps) {
+  const { whatWhy } = phaseDetailUiData;
+
   return (
     <div className="p-6 sm:p-8 rounded-2xl bg-[#0f1422] border border-white/10 shadow-xl relative overflow-hidden group hover:border-teal-500/40 transition-colors">
       <div className="flex items-center gap-3 mb-4">
@@ -16,10 +19,10 @@ export function PhaseMandateCard({ what }: PhaseMandateCardProps) {
         </div>
         <div>
           <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-teal-400 block">
-            Execution Mandate
+            {whatWhy.mandateBadge}
           </span>
           <h3 className="text-xl font-bold text-white tracking-tight">
-            What You Must Do
+            {whatWhy.mandateHeading}
           </h3>
         </div>
       </div>
