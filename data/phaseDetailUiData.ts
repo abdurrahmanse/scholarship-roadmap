@@ -137,6 +137,6 @@ export const phaseDetailUiData: PhaseDetailUiData = {
     hubButton: "All 13 Phases Pipeline Hub",
     nextPhaseLabel: "Next Sequential Step",
     completeBadge: "13-Phase Pipeline Complete",
-    toolkitButton: "Explore Application Toolkit",
+    toolkitButton: "Explore Documents & SOP Blueprint",
   },
 };

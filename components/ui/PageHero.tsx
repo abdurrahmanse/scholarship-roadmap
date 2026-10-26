@@ -2,7 +2,7 @@
 
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
-import { renderCommonIcon } from "./iconUtils";
+import { renderCommonIcon } from "./IconUtils";
 
 export type PageHeroTheme = "indigo" | "cyan" | "purple" | "emerald" | "amber" | "blue";
 

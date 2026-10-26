@@ -80,7 +80,7 @@ export function PhaseNavigationFooter({
           </Link>
         ) : (
           <Link
-            href="/toolkit"
+            href="/documents"
             className="w-full sm:w-auto p-4 rounded-xl bg-gradient-to-r from-teal-600 to-indigo-600 hover:from-teal-500 hover:to-indigo-500 text-white shadow-xl transition-all flex items-center justify-between sm:justify-end gap-3 cursor-pointer group text-right font-bold"
           >
             <div>

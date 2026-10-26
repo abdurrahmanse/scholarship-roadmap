@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { roadmapLevelsData, getLevelBySlug } from "@/data/levelsData";
 import { stepsData } from "@/data/steps";
 import { LevelHero } from "@/components/roadmap/LevelHero";
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function LevelDetailRoute({ params }: Props) {
+async function LevelDetailContent({ params }: Props) {
   const { level: levelSlug } = await params;
   const level = getLevelBySlug(levelSlug);
 
@@ -51,5 +52,13 @@ export default async function LevelDetailRoute({ params }: Props) {
       <LevelTasksSection level={level} levelSteps={levelSteps} />
       <LevelNavigationFooter currentLevel={level} />
     </main>
+  );
+}
+
+export default function LevelDetailRoute({ params }: Props) {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#090d16] animate-pulse" />}>
+      <LevelDetailContent params={params} />
+    </Suspense>
   );
 }

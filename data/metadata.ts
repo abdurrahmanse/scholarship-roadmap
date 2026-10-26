@@ -205,27 +205,6 @@ export const faqsMetadata: Metadata = constructMetadata({
 });
 
 /**
- * Legacy / Complementary Route Metadata
- */
-export const programsMetadata: Metadata = constructMetadata({
-  title: "Funded Programs & Country Guide Directory",
-  description: "Browse fully funded Master's and PhD programs across 20 countries.",
-  path: "/programs",
-});
-
-export const toolkitMetadata: Metadata = constructMetadata({
-  title: "Application Toolkit: Documents, Checklists & Templates",
-  description: "Interactive tools, copyable email templates, and document blueprints.",
-  path: "/toolkit",
-});
-
-export const interviewsMetadata: Metadata = constructMetadata({
-  title: "Phase 10: Interviews & Selection Preparation Guide",
-  description: "Comprehensive preparation guide for academic interviews, technical walkthroughs, and supervisor selection.",
-  path: "/interviews",
-});
-
-/**
  * Dynamic Level Page (/roadmap/[level]) Metadata Resolver
  */
 export function getLevelMetadata(levelSlug: string): Metadata {

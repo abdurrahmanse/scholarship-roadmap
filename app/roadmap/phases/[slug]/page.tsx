@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { roadmapPhasesData, getPhaseBySlug } from "@/data/roadmapPhasesData";
 import { PhaseDetailPage } from "@/components/roadmap/phases";
 
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function PhaseDetailRoute({ params }: Props) {
+async function PhaseDetailContent({ params }: Props) {
   const { slug } = await params;
   const phase = getPhaseBySlug(slug);
 
@@ -49,5 +50,13 @@ export default async function PhaseDetailRoute({ params }: Props) {
       prevPhase={prevPhase}
       nextPhase={nextPhase}
     />
+  );
+}
+
+export default function PhaseDetailRoute({ params }: Props) {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#090d16] animate-pulse" />}>
+      <PhaseDetailContent params={params} />
+    </Suspense>
   );
 }

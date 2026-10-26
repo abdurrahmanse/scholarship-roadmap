@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { countryGuidesData, getCountryById } from "@/data/countryGuidesData";
 import { CountryDetailPage } from "@/components/countries/CountryDetailPage";
 
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function CountryDetailRoute({ params }: Props) {
+async function CountryDetailContent({ params }: Props) {
   const { id } = await params;
   const country = getCountryById(id);
 
@@ -36,4 +37,12 @@ export default async function CountryDetailRoute({ params }: Props) {
   }
 
   return <CountryDetailPage country={country} />;
+}
+
+export default function CountryDetailRoute({ params }: Props) {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#090d16] animate-pulse" />}>
+      <CountryDetailContent params={params} />
+    </Suspense>
+  );
 }

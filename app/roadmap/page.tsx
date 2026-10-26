@@ -2,11 +2,27 @@ import React from "react";
 import type { Metadata } from "next";
 import { CompleteRoadmapView } from "@/components/roadmap/CompleteRoadmapView";
 import { roadmapMetadata } from "@/data/metadata";
+import { roadmapUiData, RoadmapPageHeroMetric } from "@/data/roadmapUiData";
 import { CheckCircle2, ShieldCheck, Sparkles, Layers, ListOrdered, Award } from "lucide-react";
 
 export const metadata: Metadata = roadmapMetadata;
 
+function renderHeroMetricIcon(iconName: RoadmapPageHeroMetric["iconName"]) {
+  switch (iconName) {
+    case "ListOrdered":
+      return <ListOrdered className="w-4 h-4 text-teal-400" />;
+    case "Layers":
+      return <Layers className="w-4 h-4 text-cyan-400" />;
+    case "CheckCircle2":
+      return <CheckCircle2 className="w-4 h-4 text-indigo-400" />;
+    case "Award":
+      return <Award className="w-4 h-4 text-emerald-400" />;
+  }
+}
+
 export default function RoadmapPage() {
+  const { pageHero } = roadmapUiData;
+
   return (
     <main className="min-h-screen bg-[#090d16] text-slate-100 pb-20">
       {/* Dynamic Ambient Background Glow */}
@@ -24,95 +40,52 @@ export default function RoadmapPage() {
           <div className="flex flex-wrap items-center gap-2.5">
             <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-indigo-950/80 border border-indigo-500/40 text-indigo-300 text-xs font-mono font-bold shadow-lg">
               <Sparkles className="w-3.5 h-3.5 text-teal-400" />
-              <span>Full-Ride Admissions Architecture</span>
+              <span>{pageHero.badge}</span>
             </span>
 
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-slate-300 text-xs font-mono">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>100% Free & Verified Educational Standard</span>
+              <span>{pageHero.standardBadge}</span>
             </span>
           </div>
 
           {/* Hero Headline */}
           <div className="max-w-4xl space-y-4">
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-[1.12] font-heading">
-              The Complete Master&apos;s & PhD{" "}
+              {pageHero.title}{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-400 to-indigo-400">
-                Scholarship Application Roadmap
+                {pageHero.titleGradient}
               </span>
             </h1>
 
             <p className="text-base sm:text-xl text-slate-300 leading-relaxed font-sans max-w-3xl">
-              An exhaustive, battle-tested blueprint bridging technical research capital with procedural admissions execution. Navigate between the <strong className="text-white">13 Sequential Application Phases</strong> and the <strong className="text-white">5 Progressive Career Levels</strong> with dedicated deep-dive pages for every stage.
+              {pageHero.description}
             </p>
           </div>
 
           {/* 4 Metric Feature Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 pt-4 max-w-5xl">
-            <div className="p-4 rounded-2xl bg-[#0f1422]/90 border border-white/10 shadow-lg">
-              <div className="flex items-center gap-2 text-teal-400 mb-1">
-                <ListOrdered className="w-4 h-4" />
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
-                  Sequential Flow
-                </span>
+            {pageHero.metrics.map((metric, idx) => (
+              <div key={idx} className="p-4 rounded-2xl bg-[#0f1422]/90 border border-white/10 shadow-lg">
+                <div className="flex items-center gap-2 mb-1">
+                  {renderHeroMetricIcon(metric.iconName)}
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
+                    {metric.category}
+                  </span>
+                </div>
+                <div className={`text-2xl font-bold font-heading ${metric.accentColor === "emerald" ? "text-emerald-400" : "text-white"}`}>
+                  {metric.value}
+                </div>
+                <p className="text-[11px] text-slate-400 mt-0.5 font-sans">
+                  {metric.sublabel}
+                </p>
               </div>
-              <div className="text-2xl font-bold font-heading text-white">
-                13 Phases
-              </div>
-              <p className="text-[11px] text-slate-400 mt-0.5 font-sans">
-                Profile audit to visa stamp
-              </p>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-[#0f1422]/90 border border-white/10 shadow-lg">
-              <div className="flex items-center gap-2 text-cyan-400 mb-1">
-                <Layers className="w-4 h-4" />
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
-                  Curriculum Ladder
-                </span>
-              </div>
-              <div className="text-2xl font-bold font-heading text-white">
-                5 Levels
-              </div>
-              <p className="text-[11px] text-slate-400 mt-0.5 font-sans">
-                Math rigor to faculty defense
-              </p>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-[#0f1422]/90 border border-white/10 shadow-lg">
-              <div className="flex items-center gap-2 text-indigo-400 mb-1">
-                <CheckCircle2 className="w-4 h-4" />
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
-                  Granular Checklist
-                </span>
-              </div>
-              <div className="text-2xl font-bold font-heading text-white">
-                26 Tasks
-              </div>
-              <p className="text-[11px] text-slate-400 mt-0.5 font-sans">
-                Proof-of-work deliverables
-              </p>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-[#0f1422]/90 border border-white/10 shadow-lg">
-              <div className="flex items-center gap-2 text-emerald-400 mb-1">
-                <Award className="w-4 h-4" />
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
-                  Target Coverage
-                </span>
-              </div>
-              <div className="text-2xl font-bold font-heading text-emerald-400">
-                100% Full-Ride
-              </div>
-              <p className="text-[11px] text-slate-400 mt-0.5 font-sans">
-                Tuition + stipend contracts
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Main Interactive Roadmap View (13 Phases + 5 Levels Switcher) */}
+      {/* Main Interactive Roadmap View */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         <CompleteRoadmapView />
       </div>

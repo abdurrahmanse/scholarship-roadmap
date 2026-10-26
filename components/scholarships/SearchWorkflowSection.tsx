@@ -3,6 +3,7 @@
 import React from "react";
 import { Compass } from "lucide-react";
 import { searchWorkflowSteps, scholarshipFinderControlsData } from "@/data/scholarshipsSearchData";
+import { scholarshipsUiData } from "@/data/scholarshipsUiData";
 
 export function SearchWorkflowSection() {
   const { workflowTitle, workflowSubtitle } = scholarshipFinderControlsData.sections;
@@ -12,7 +13,7 @@ export function SearchWorkflowSection() {
       <div className="border-b border-white/10 pb-4">
         <div className="flex items-center gap-2 text-teal-400 font-mono text-xs font-bold uppercase tracking-wider mb-1">
           <Compass className="w-4 h-4" />
-          <span>Workflow Guide</span>
+          <span>{scholarshipsUiData.workflowBadge}</span>
         </div>
         <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
           {workflowTitle}
@@ -38,16 +39,18 @@ export function SearchWorkflowSection() {
             </div>
 
             <h4 className="text-sm font-bold text-white">{step.title}</h4>
-            <p className="text-xs text-slate-300 leading-relaxed">{step.summary}</p>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              {step.summary}
+            </p>
 
-            <div className="space-y-1.5 pt-2 border-t border-white/5">
+            <ul className="space-y-1.5 pt-2 border-t border-white/5 text-xs text-slate-400">
               {step.actionableInstructions.map((inst, idx) => (
-                <div key={idx} className="flex items-start gap-2 text-[11px] text-slate-300">
-                  <span className="text-teal-400 mt-0.5 font-bold">•</span>
-                  <span>{inst}</span>
-                </div>
+                <li key={idx} className="flex items-start gap-2">
+                  <span className="text-teal-400 font-bold">›</span>
+                  <span className="leading-relaxed">{inst}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         ))}
       </div>

@@ -3,18 +3,14 @@
 // ========================================================
 
 export * from "./types";
-export * from "./phases";
 export * from "./steps";
-export * from "./programs";
-export * from "./templates";
-export * from "./interviews";
 export * from "./faqs";
 export * from "./pagesData";
 export * from "./levelsData";
 export * from "./navigationData";
 export * from "./metadata";
 
-// New Comprehensive Roadmap Datasets
+// Comprehensive Roadmap Datasets
 export * from "./roadmapPhasesData";
 export * from "./countryGuidesData";
 export * from "./documentsData";
@@ -24,11 +20,16 @@ export * from "./scholarshipsSearchData";
 // Modular Section Datasets
 export * from "./homeData";
 export * from "./roadmapSectionData";
-export * from "./programsSectionData";
-export * from "./toolkitSectionData";
-export * from "./interviewsSectionData";
 export * from "./faqsSectionData";
 export * from "./stepWidgetsData";
+
+// Specialized UI Text & Layout Datasets
+export * from "./admissionsLaunchpadData";
+export * from "./roadmapUiData";
+export * from "./phaseDetailUiData";
+export * from "./levelDetailUiData";
+export * from "./scholarshipsUiData";
+export * from "./countryGuidesUiData";
 
 import { roadmapPhasesData } from "./roadmapPhasesData";
 import { countryGuidesData } from "./countryGuidesData";
@@ -50,8 +51,8 @@ export const scholarshipRoadmapMasterData = {
     totalCountries: countryGuidesData.length,
     totalDocuments: documentsData.length,
     totalTemplates: coldEmailTemplates.length,
-    totalFaqs: faqsData.length
-  }
+    totalFaqs: faqsData.length,
+  },
 };
 
 export default scholarshipRoadmapMasterData;

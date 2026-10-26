@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { navLinksData } from "@/data/navigationData";
-import { getIconComponent } from "@/components/ui/iconUtils";
+import { getIconComponent } from "@/components/ui/IconUtils";
 
 interface HeaderNavProps {
   pathname: string;

@@ -5,12 +5,15 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight, Layers } from "lucide-react";
 import { roadmapLevelsData } from "@/data/levelsData";
 import { RoadmapLevel } from "@/data/types";
+import { levelDetailUiData } from "@/data/levelDetailUiData";
 
 interface LevelNavigationFooterProps {
   currentLevel: RoadmapLevel;
 }
 
 export function LevelNavigationFooter({ currentLevel }: LevelNavigationFooterProps) {
+  const { navigationFooter } = levelDetailUiData;
+
   const currentIndex = roadmapLevelsData.findIndex((l) => l.id === currentLevel.id);
   const prevLevel = currentIndex > 0 ? roadmapLevelsData[currentIndex - 1] : null;
   const nextLevel = currentIndex < roadmapLevelsData.length - 1 ? roadmapLevelsData[currentIndex + 1] : null;
@@ -28,7 +31,7 @@ export function LevelNavigationFooter({ currentLevel }: LevelNavigationFooterPro
               <ChevronLeft className="w-5 h-5 text-indigo-400 group-hover:-translate-x-1 transition-transform" />
               <div className="text-left">
                 <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">
-                  Previous Level
+                  {navigationFooter.prevLevelLabel}
                 </span>
                 <span className="text-xs font-heading font-bold text-white">
                   Level {prevLevel.levelNumber}: {prevLevel.shortTitle}
@@ -43,10 +46,10 @@ export function LevelNavigationFooter({ currentLevel }: LevelNavigationFooterPro
               <ChevronLeft className="w-5 h-5 text-indigo-400 group-hover:-translate-x-1 transition-transform" />
               <div className="text-left">
                 <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">
-                  Overview
+                  {navigationFooter.badge}
                 </span>
                 <span className="text-xs font-heading font-bold text-white">
-                  All 5 Levels
+                  {navigationFooter.hubButton}
                 </span>
               </div>
             </Link>
@@ -58,7 +61,7 @@ export function LevelNavigationFooter({ currentLevel }: LevelNavigationFooterPro
             className="px-4 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white border border-white/10 text-xs font-mono font-medium flex items-center gap-2 transition-all cursor-pointer"
           >
             <Layers className="w-3.5 h-3.5 text-indigo-400" />
-            <span>All 5 Levels Hub</span>
+            <span>{navigationFooter.hubButton}</span>
           </Link>
 
           {/* Next Level Button */}
@@ -69,7 +72,7 @@ export function LevelNavigationFooter({ currentLevel }: LevelNavigationFooterPro
             >
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">
-                  Next Level
+                  {navigationFooter.nextLevelLabel}
                 </span>
                 <span className="text-xs font-heading font-bold text-white">
                   Level {nextLevel.levelNumber}: {nextLevel.shortTitle}
@@ -79,15 +82,15 @@ export function LevelNavigationFooter({ currentLevel }: LevelNavigationFooterPro
             </Link>
           ) : (
             <Link
-              href="/toolkit"
+              href="/documents"
               className="w-full sm:w-auto p-4 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white shadow-lg transition-all flex items-center justify-between sm:justify-end gap-3 cursor-pointer group text-right font-bold"
             >
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-wider text-indigo-200 block">
-                  Journey Complete
+                  {navigationFooter.curriculumCompleteBadge}
                 </span>
                 <span className="text-xs font-heading">
-                  Open Application Toolkit
+                  {navigationFooter.toolkitButton}
                 </span>
               </div>
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -98,3 +101,5 @@ export function LevelNavigationFooter({ currentLevel }: LevelNavigationFooterPro
     </div>
   );
 }
+
+export default LevelNavigationFooter;

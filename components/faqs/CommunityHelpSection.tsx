@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { SectionCard } from "@/components/ui/SectionCard";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { renderCommonIcon } from "@/components/ui/iconUtils";
+import { renderCommonIcon } from "@/components/ui/IconUtils";
 import { communityLaunchpadData } from "@/data/faqsSectionData";
 
 const ICON_COLORS: Record<string, string> = {

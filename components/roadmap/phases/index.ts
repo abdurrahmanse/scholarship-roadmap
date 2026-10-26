@@ -18,3 +18,4 @@ export { PhaseChecklistItem } from "./PhaseChecklistItem";
 export { PhaseChecklistSection } from "./PhaseChecklistSection";
 export { PhaseNavigationFooter } from "./PhaseNavigationFooter";
 export { PhaseDetailPage } from "./PhaseDetailPage";
+export * from "./badges";

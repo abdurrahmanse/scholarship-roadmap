@@ -58,6 +58,6 @@ export const levelDetailUiData: LevelDetailUiData = {
     hubButton: "Roadmap Hub",
     nextLevelLabel: "Next Level",
     curriculumCompleteBadge: "100% Fully Funded Curriculum Complete",
-    toolkitButton: "Go to Application Toolkit",
+    toolkitButton: "Go to Documents & SOP Blueprint",
   },
 };

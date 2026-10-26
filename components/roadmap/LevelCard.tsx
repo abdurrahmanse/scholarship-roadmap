@@ -11,7 +11,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { RoadmapLevel } from "@/data/types";
-import { getLevelIcon, getLevelDifficultyVariant } from "./roadmapConstants";
+import { getLevelIcon, getLevelDifficultyVariant } from "./RoadmapConstants";
 
 interface LevelCardProps {
   level: RoadmapLevel;

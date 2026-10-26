@@ -5,12 +5,15 @@ import { Award, Check } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
 import { RoadmapLevel } from "@/data/types";
+import { levelDetailUiData } from "@/data/levelDetailUiData";
 
 interface LevelInteractiveTrackerProps {
   level: RoadmapLevel;
 }
 
 export function LevelInteractiveTracker({ level }: LevelInteractiveTrackerProps) {
+  const { tracker } = levelDetailUiData;
+
   const [completedMilestones, setCompletedMilestones] = useState<{ [key: string]: boolean }>({
     "milestone-0": true
   });
@@ -35,18 +38,18 @@ export function LevelInteractiveTracker({ level }: LevelInteractiveTrackerProps)
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10 mb-6">
             <div>
               <span className="text-xs uppercase font-mono font-bold text-slate-400 block mb-1">
-                Level 0{level.levelNumber} Progress Tracker
+                Level 0{level.levelNumber} {tracker.liveBadge}
               </span>
               <h3 className="text-xl sm:text-2xl font-heading font-bold text-white">
-                Core Milestones & Tangible Deliverables
+                {tracker.title}
               </h3>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-xs font-mono font-bold text-slate-300">
-                {count} of {total} Verified
+                {count} {tracker.ofSeparator} {total} {tracker.tasksVerifiedLabel}
               </span>
               <Badge variant={count === total ? "emerald" : "indigo"} size="md">
-                {count === total ? "Level 100% Complete" : `${progressPercent}% Complete`}
+                {count === total ? tracker.allCompletedBadge : `${progressPercent}% Verified`}
               </Badge>
             </div>
           </div>
@@ -112,3 +115,5 @@ export function LevelInteractiveTracker({ level }: LevelInteractiveTrackerProps)
     </section>
   );
 }
+
+export default LevelInteractiveTracker;

@@ -3,7 +3,25 @@ export interface RoadmapHeaderChip {
   label: string;
 }
 
+export interface RoadmapPageHeroMetric {
+  iconName: "ListOrdered" | "Layers" | "CheckCircle2" | "Award";
+  category: string;
+  value: string;
+  sublabel: string;
+  accentColor: "teal" | "cyan" | "indigo" | "emerald";
+}
+
+export interface RoadmapPageHeroData {
+  badge: string;
+  standardBadge: string;
+  title: string;
+  titleGradient: string;
+  description: string;
+  metrics: RoadmapPageHeroMetric[];
+}
+
 export interface RoadmapUiData {
+  pageHero: RoadmapPageHeroData;
   header: {
     standardBadge: string;
     chips: RoadmapHeaderChip[];
@@ -53,6 +71,44 @@ export interface RoadmapUiData {
 }
 
 export const roadmapUiData: RoadmapUiData = {
+  pageHero: {
+    badge: "Full-Ride Admissions Architecture",
+    standardBadge: "100% Free & Verified Educational Standard",
+    title: "The Complete Master's & PhD",
+    titleGradient: "Scholarship Application Roadmap",
+    description:
+      "An exhaustive, battle-tested blueprint bridging technical research capital with procedural admissions execution. Navigate between the 13 Sequential Application Phases and the 5 Progressive Career Levels with dedicated deep-dive pages for every stage.",
+    metrics: [
+      {
+        iconName: "ListOrdered",
+        category: "Sequential Flow",
+        value: "13 Phases",
+        sublabel: "Profile audit to visa stamp",
+        accentColor: "teal",
+      },
+      {
+        iconName: "Layers",
+        category: "Curriculum Ladder",
+        value: "5 Levels",
+        sublabel: "Math rigor to faculty defense",
+        accentColor: "cyan",
+      },
+      {
+        iconName: "CheckCircle2",
+        category: "Granular Checklist",
+        value: "26 Tasks",
+        sublabel: "Proof-of-work deliverables",
+        accentColor: "indigo",
+      },
+      {
+        iconName: "Award",
+        category: "Target Coverage",
+        value: "100% Full-Ride",
+        sublabel: "Tuition + stipend contracts",
+        accentColor: "emerald",
+      },
+    ],
+  },
   header: {
     standardBadge: "100% Fully Funded Standard",
     chips: [
@@ -73,13 +129,15 @@ export const roadmapUiData: RoadmapUiData = {
   phasesSection: {
     badge: "13-Phase Chronological Pipeline",
     title: "Sequential Application Phases",
-    subtitle: "From academic diagnostics to official visa issuance: an end-to-end chronological campaign.",
+    subtitle:
+      "From academic diagnostics to official visa issuance: an end-to-end chronological campaign.",
     countBadge: "13 Sequenced Phases",
   },
   levelsSection: {
     badge: "5-Level Career Ladder",
     title: "Curricular Proof-of-Work Levels",
-    subtitle: "A 24-month developmental curriculum dividing graduate preparation into 5 mastery tiers.",
+    subtitle:
+      "A 24-month developmental curriculum dividing graduate preparation into 5 mastery tiers.",
     countBadge: "5 Levels • 26 Actionable Tasks",
   },
   controls: {
@@ -104,12 +162,14 @@ export const roadmapUiData: RoadmapUiData = {
   },
   emptyState: {
     title: "No phases match your search",
-    description: "Try searching with different terms or reset your degree filters.",
+    description:
+      "Try searching with different terms or reset your degree filters.",
     resetLabel: "Reset Filters",
   },
   levelsHeader: {
     badge: "5-Level Career Ladder",
     title: "The 5 Distinct Levels to Fully Funded Graduate Admission",
-    subtitle: "A structured modular curriculum dividing the 24-month admissions campaign into 5 manageable levels. Click any level to access its actionable tasks, checklists, code snippets, and deliverables.",
+    subtitle:
+      "A structured modular curriculum dividing the 24-month admissions campaign into 5 manageable levels. Click any level to access its actionable tasks, checklists, code snippets, and deliverables.",
   },
 };

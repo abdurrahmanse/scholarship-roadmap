@@ -3,6 +3,7 @@
 import React from "react";
 import { Terminal, Code2, Sparkles } from "lucide-react";
 import { searchQueryFormulas, scholarshipFinderControlsData } from "@/data/scholarshipsSearchData";
+import { scholarshipsUiData } from "@/data/scholarshipsUiData";
 import { CopyButton } from "@/components/ui/CopyButton";
 
 export function BooleanFormulasSection() {
@@ -13,7 +14,7 @@ export function BooleanFormulasSection() {
       <div className="border-b border-white/10 pb-4">
         <div className="flex items-center gap-2 text-indigo-400 font-mono text-xs font-bold uppercase tracking-wider mb-1">
           <Terminal className="w-4 h-4" />
-          <span>Advanced Discovery</span>
+          <span>{scholarshipsUiData.advancedDiscoveryBadge}</span>
         </div>
         <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
           {booleanTitle}
@@ -55,14 +56,14 @@ export function BooleanFormulasSection() {
               <div className="text-[11px] text-slate-400 flex items-center gap-1.5 flex-wrap">
                 <strong className="inline-flex items-center gap-1 text-slate-300 font-mono">
                   <Sparkles className="w-3 h-3 text-teal-400" />
-                  <span>Example:</span>
+                  <span>{scholarshipsUiData.exampleLabel}</span>
                 </strong>
                 <span>{formula.exampleFilled}</span>
               </div>
             </div>
 
             <div className="pt-2 border-t border-white/5 flex items-center justify-end">
-              <CopyButton textToCopy={formula.query} label="Copy Query" />
+              <CopyButton textToCopy={formula.query} label={scholarshipsUiData.copyQueryLabel} />
             </div>
           </div>
         ))}

@@ -4,6 +4,7 @@ import React from "react";
 import { Users, Layers, Globe2 } from "lucide-react";
 import { SearchInput } from "@/components/ui/SearchInput";
 import { countryGuidesControlsData } from "@/data/countryGuidesData";
+import { countryGuidesUiData } from "@/data/countryGuidesUiData";
 
 export interface CountryFiltersProps {
   selectedRegion: string;
@@ -31,6 +32,7 @@ export function CountryFilters({
   filteredCount
 }: CountryFiltersProps) {
   const { regions, supervisorFilters, searchPlaceholder } = countryGuidesControlsData;
+  const { filters } = countryGuidesUiData;
 
   return (
     <div className="p-4 sm:p-6 rounded-2xl bg-slate-900/80 border border-white/[0.08] backdrop-blur-xl sticky top-20 z-30 shadow-xl space-y-4">
@@ -69,7 +71,7 @@ export function CountryFilters({
         <div className="flex items-center gap-2">
           <span className="inline-flex items-center gap-1.5 text-slate-400 font-mono">
             <Users className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-            <span>Supervisor Outreach:</span>
+            <span>{filters.supervisorLabel}</span>
           </span>
           <select
             value={supervisorFilter}
@@ -86,8 +88,10 @@ export function CountryFilters({
 
         {/* Count */}
         <span className="inline-flex items-center gap-1.5 text-[11px] text-slate-400 font-mono">
-          <Layers className="w-3 h-3 text-teal-400" />
-          <span>Showing {filteredCount} of {totalCount} countries</span>
+          <Layers className="w-3.5 h-3.5 text-teal-400" />
+          <span>
+            {filters.showingPrefix} {filteredCount} {filters.ofSeparator} {totalCount} {filters.countriesSuffix}
+          </span>
         </span>
       </div>
     </div>

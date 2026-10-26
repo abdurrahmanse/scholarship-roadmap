@@ -10,9 +10,6 @@ export * from "./links";
 // Bottom Bar Section & Sub-components
 export * from "./bottom";
 
-// Reusable Column Component
-export * from "./FooterLinksColumn";
-
 // Root Footer Orchestrator
 export * from "./Footer";
 export { Footer as default } from "./Footer";

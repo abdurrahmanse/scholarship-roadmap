@@ -4,7 +4,7 @@ import React from "react";
 import { Compass } from "lucide-react";
 import { SectionCard } from "@/components/ui/SectionCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { renderCommonIcon } from "@/components/ui/iconUtils";
+import { renderCommonIcon } from "@/components/ui/IconUtils";
 import { faqCategoryCardsData } from "@/data/faqsSectionData";
 import { faqsPageData } from "@/data/pagesData";
 

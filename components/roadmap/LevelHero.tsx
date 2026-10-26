@@ -10,7 +10,7 @@ import {
 import { Badge } from "@/components/ui/Badge";
 import { RoadmapLevel } from "@/data/types";
 import { levelDetailUiData } from "@/data/levelDetailUiData";
-import { getLevelIcon, getLevelDifficultyVariant } from "./roadmapConstants";
+import { getLevelIcon, getLevelDifficultyVariant } from "./RoadmapConstants";
 
 interface LevelHeroProps {
   level: RoadmapLevel;

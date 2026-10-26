@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { ChevronRight, GraduationCap, X } from "lucide-react";
 import { headerData, navLinksData } from "@/data/navigationData";
-import { getIconComponent } from "@/components/ui/iconUtils";
+import { getIconComponent } from "@/components/ui/IconUtils";
 
 interface HeaderMobileDrawerProps {
   isOpen: boolean;
