@@ -2,69 +2,45 @@
 
 import React from "react";
 import Link from "next/link";
-import { ChevronDown, ChevronUp, Clock, GraduationCap, Award, ArrowRight } from "lucide-react";
+import {
+  Clock,
+  GraduationCap,
+  Award,
+  ArrowRight,
+  Compass,
+  CheckCircle2,
+  ExternalLink,
+} from "lucide-react";
 import { RoadmapPhase } from "@/data/roadmapPhasesData";
-import { PhaseWhatWhy } from "./PhaseWhatWhy";
-import { PhaseHowSteps } from "./PhaseHowSteps";
-import { PhaseOfficialResources } from "./PhaseOfficialResources";
-import { PhaseMistakesAndExample } from "./PhaseMistakesAndExample";
-import { PhaseChecklist } from "./PhaseChecklist";
-import { PhaseNuancesAndNav } from "./PhaseNuancesAndNav";
 
 export interface RoadmapPhaseCardProps {
   phase: RoadmapPhase;
-  isExpanded: boolean;
-  onToggle: () => void;
-  checkedItems: Record<string, boolean>;
-  onToggleChecklistItem: (id: string) => void;
-  prevPhaseId?: string;
-  onNavigateToPhase: (phaseId: string) => void;
 }
 
-export function RoadmapPhaseCard({
-  phase,
-  isExpanded,
-  onToggle,
-  checkedItems,
-  onToggleChecklistItem,
-  prevPhaseId,
-  onNavigateToPhase,
-}: RoadmapPhaseCardProps) {
+export function RoadmapPhaseCard({ phase }: RoadmapPhaseCardProps) {
   const isMastersOnly = phase.degreeScope === "masters";
   const isPhdOnly = phase.degreeScope === "phd";
 
   return (
     <div
       id={phase.id}
-      className={`rounded-2xl border transition-all duration-300 relative overflow-hidden ${
-        isExpanded
-          ? "bg-slate-900/90 border-white/15 shadow-2xl"
-          : "bg-slate-900/50 border-white/[0.07] hover:border-white/15 hover:bg-slate-900/80"
-      }`}
+      className="p-5 sm:p-7 rounded-2xl bg-[#0f1422] border border-white/10 hover:border-teal-500/30 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-teal-950/20 flex flex-col justify-between group space-y-6"
     >
-      {/* Phase Card Header / Toggle Button */}
-      <button
-        onClick={onToggle}
-        className="w-full text-left p-4 sm:p-6 md:p-7 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer"
-        aria-expanded={isExpanded}
-      >
-        <div className="flex items-start sm:items-center gap-3.5 sm:gap-4">
-          <span
-            className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-sm sm:text-base font-mono font-black shrink-0 ${
-              isExpanded
-                ? "bg-gradient-to-tr from-indigo-600 to-teal-500 text-white shadow-lg shadow-indigo-600/30"
-                : "bg-slate-800 text-slate-300 border border-white/10"
-            }`}
-          >
+      {/* Top Header Row */}
+      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+        <div className="flex items-start gap-4">
+          {/* Phase Number Badge */}
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-teal-500/20 via-indigo-500/20 to-teal-500/10 border border-teal-500/30 flex items-center justify-center text-base font-mono font-black text-teal-300 shrink-0 shadow-sm">
             {String(phase.number).padStart(2, "0")}
-          </span>
+          </div>
 
           <div>
+            {/* Meta Badges */}
             <div className="flex flex-wrap items-center gap-2 mb-1.5">
-              <span className="text-[11px] font-mono text-indigo-400 font-bold uppercase tracking-wider">
+              <span className="text-[11px] font-mono text-teal-400 font-bold uppercase tracking-wider">
                 Phase {String(phase.number).padStart(2, "0")} of 13
               </span>
-              <span className="text-slate-500">•</span>
+              <span className="text-slate-600">•</span>
               <span className="inline-flex items-center gap-1 text-[11px] font-mono text-slate-400">
                 <Clock className="w-3 h-3 text-teal-400" />
                 <span>{phase.estimatedDuration}</span>
@@ -81,84 +57,111 @@ export function RoadmapPhaseCard({
                   <span>PhD Specific</span>
                 </span>
               )}
+              {!isMastersOnly && !isPhdOnly && (
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-slate-800 text-slate-300 border border-white/5">
+                  <Compass className="w-3 h-3 text-teal-400" />
+                  <span>Master&apos;s &amp; PhD</span>
+                </span>
+              )}
             </div>
 
-            <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight leading-snug">
-              {phase.title}
+            {/* Title & Tagline */}
+            <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-teal-200 transition-colors">
+              <Link href={`/roadmap/phases/${phase.slug}`} className="hover:underline">
+                {phase.title}
+              </Link>
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed max-w-3xl">
+            <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed font-sans">
               {phase.tagline}
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-3 shrink-0 self-end md:self-center">
+        {/* Top Right Direct CTA */}
+        <Link
+          href={`/roadmap/phases/${phase.slug}`}
+          className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-teal-500/10 hover:bg-teal-500 text-teal-300 hover:text-slate-950 border border-teal-500/30 text-xs font-bold transition-all shadow-sm shrink-0 self-start sm:self-center group/btn"
+        >
+          <span>Explore Blueprint</span>
+          <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
+        </Link>
+      </div>
+
+      {/* Strategic Core Objective */}
+      <div className="p-3.5 sm:p-4 rounded-xl bg-[#090d16] border border-white/5 space-y-1.5">
+        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-teal-400 block">
+          Strategic Mandate:
+        </span>
+        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+          {phase.what}
+        </p>
+      </div>
+
+      {/* Sequenced Milestones Preview Chips */}
+      <div className="space-y-2">
+        <div className="flex items-center justify-between">
+          <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400">
+            Key Execution Milestones:
+          </span>
+          <span className="text-[10px] font-mono text-slate-400">
+            {phase.how.length} Sequenced Milestones
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+          {phase.how.map((step, idx) => (
+            <div
+              key={idx}
+              className="p-2.5 rounded-xl bg-white/[0.02] border border-white/5 flex items-start gap-2.5 text-xs text-slate-300"
+            >
+              <div className="w-5 h-5 rounded-md bg-teal-500/10 border border-teal-500/30 text-teal-300 text-[10px] font-mono font-bold flex items-center justify-center shrink-0 mt-0.5">
+                {idx + 1}
+              </div>
+              <span className="font-semibold text-white leading-tight">
+                {step.step}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom Footer Info & Fast Nav */}
+      <div className="pt-4 border-t border-white/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+        {/* Verified Portals Badges */}
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="text-[11px] font-mono text-slate-400">
+            Portals:
+          </span>
+          {phase.where.map((portal, pIdx) => (
+            <a
+              key={pIdx}
+              href={portal.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 text-slate-300 hover:text-white text-[11px] font-mono transition-colors"
+            >
+              <span>{portal.name}</span>
+              <ExternalLink className="w-2.5 h-2.5 text-slate-400" />
+            </a>
+          ))}
+        </div>
+
+        {/* Checklist Count & Full Blueprint Link */}
+        <div className="flex items-center gap-3 self-end sm:self-auto">
+          <span className="inline-flex items-center gap-1 text-[11px] font-mono text-teal-400">
+            <CheckCircle2 className="w-3.5 h-3.5" />
+            <span>{phase.checklist.length} Verification Checks</span>
+          </span>
+
           <Link
             href={`/roadmap/phases/${phase.slug}`}
-            onClick={(e) => e.stopPropagation()}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white border border-indigo-500/30 text-xs font-semibold transition-all group/link"
+            className="text-xs font-mono font-bold text-teal-300 hover:text-teal-200 inline-flex items-center gap-1 group/cta"
           >
-            <span>Full Blueprint</span>
-            <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
+            <span>Full Blueprint &amp; Audit</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform" />
           </Link>
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-semibold text-slate-400 hidden sm:inline">
-              {isExpanded ? "Collapse" : "Preview"}
-            </span>
-            <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 group-hover:text-white">
-              {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-            </div>
-          </div>
         </div>
-      </button>
-
-      {/* Expanded Step-by-Step Instructions */}
-      {isExpanded && (
-        <div className="px-4 pb-6 sm:px-7 sm:pb-8 pt-2 border-t border-white/5 space-y-6">
-          {/* Quick link banner to full dedicated phase page */}
-          <div className="p-4 rounded-xl bg-gradient-to-r from-indigo-950/70 to-teal-950/70 border border-indigo-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md">
-            <div>
-              <span className="text-xs font-bold text-white block">Need the complete dedicated deep-dive?</span>
-              <span className="text-[11px] text-slate-300 font-sans">Access official directories, full committee rationales, case studies, and checklists on the standalone page.</span>
-            </div>
-            <Link
-              href={`/roadmap/phases/${phase.slug}`}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold transition-colors shrink-0 shadow-md group/cta"
-            >
-              <span>Open Phase {String(phase.number).padStart(2, "0")} Full Page</span>
-              <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-0.5 transition-transform" />
-            </Link>
-          </div>
-
-          {/* 1. What to do & Why it matters */}
-          <PhaseWhatWhy what={phase.what} why={phase.why} />
-
-          {/* 2. Step-by-Step Instructions */}
-          <PhaseHowSteps steps={phase.how} />
-
-          {/* 3. Official External Portals & Links */}
-          <PhaseOfficialResources resources={phase.where} />
-
-          {/* 4. Common Mistakes & Practical Example */}
-          <PhaseMistakesAndExample mistakes={phase.commonMistakes} example={phase.practicalExample} />
-
-          {/* 5. Phase Preparation Checklist */}
-          <PhaseChecklist
-            checklist={phase.checklist}
-            checkedItems={checkedItems}
-            onToggleItem={onToggleChecklistItem}
-          />
-
-          {/* 6. Nuances and Next Step Navigation */}
-          <PhaseNuancesAndNav
-            mastersNuance={phase.mastersNuance}
-            phdNuance={phase.phdNuance}
-            nextStep={phase.nextStep}
-            prevPhaseId={prevPhaseId}
-            onNavigateToPhase={onNavigateToPhase}
-          />
-        </div>
-      )}
+      </div>
     </div>
   );
 }
