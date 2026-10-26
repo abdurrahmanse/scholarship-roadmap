@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { DollarSign, Award, ArrowRight, CheckCircle2, ShieldCheck, Calculator, Sparkles } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { Button } from "@/components/ui/Button";
+import { TabsContainer, TabItem } from "@/components/ui/Tabs";
+import { WidgetStatCard } from "@/components/roadmap/widgets/common";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import {
   offerFinancialMetricsData,
@@ -34,15 +37,13 @@ export function OfferNegotiationSection() {
         {/* 4 Key Benchmarks */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           {offerFinancialMetricsData.map((f) => (
-            <GlassCard key={f.label} borderGlow="emerald" className="p-5 text-center bg-[#0f1422] border border-white/10">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
-                {f.label}
-              </span>
-              <span className="text-xl sm:text-2xl font-black text-emerald-400 font-mono block mb-1">
-                {f.value}
-              </span>
-              <span className="text-[11px] text-slate-400">{f.sub}</span>
-            </GlassCard>
+            <WidgetStatCard
+              key={f.label}
+              label={f.label}
+              value={f.value}
+              sublabel={f.sub}
+              valueColor="text-emerald-400"
+            />
           ))}
         </div>
 
