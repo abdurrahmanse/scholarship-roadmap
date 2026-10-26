@@ -7,3 +7,5 @@ export * from "./SectionHeading";
 export * from "./AmbientBackground";
 export * from "./LiveStatusTicker";
 export * from "./QuickScrollNavigator";
+export * from "./PageHero";
+export * from "./iconUtils";
