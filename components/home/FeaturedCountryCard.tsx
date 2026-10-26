@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Users, GraduationCap, Globe2, Compass } from "lucide-react";
 import { CountryGuide } from "@/data/countryGuidesData";
 
 export interface FeaturedCountryCardProps {
@@ -25,7 +25,10 @@ export function FeaturedCountryCard({ country }: FeaturedCountryCardProps) {
               <h3 className="text-lg font-bold text-white group-hover:text-teal-300 transition-colors">
                 {country.name}
               </h3>
-              <span className="text-[11px] font-mono text-slate-400">{country.region}</span>
+              <span className="inline-flex items-center gap-1 text-[11px] font-mono text-slate-400">
+                <Globe2 className="w-3 h-3 text-teal-400/70" />
+                <span>{country.region}</span>
+              </span>
             </div>
           </div>
           <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-slate-300">
@@ -37,14 +40,20 @@ export function FeaturedCountryCard({ country }: FeaturedCountryCardProps) {
           {country.headline}
         </p>
 
-        <div className="space-y-1.5 text-[11px] text-slate-400 mb-4 pt-3 border-t border-white/5">
+        <div className="space-y-2 text-[11px] text-slate-400 mb-4 pt-3 border-t border-white/5">
           <div className="flex items-center gap-2">
+            <div className="w-5 h-5 rounded-md bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+              <Users className="w-3 h-3 text-slate-300" />
+            </div>
             <strong className="text-slate-300">Supervisor:</strong>
             <span className={isStrictSupervisor ? "text-amber-400" : "text-teal-400"}>
               {country.supervisorContactRequirement}
             </span>
           </div>
           <div className="flex items-center gap-2">
+            <div className="w-5 h-5 rounded-md bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+              <GraduationCap className="w-3 h-3 text-slate-300" />
+            </div>
             <strong className="text-slate-300">PhD Model:</strong>
             <span className="text-slate-400 truncate">{country.phdFundingModel.split(".")[0]}</span>
           </div>
@@ -52,7 +61,10 @@ export function FeaturedCountryCard({ country }: FeaturedCountryCardProps) {
       </div>
 
       <div className="flex items-center justify-between pt-3 border-t border-white/5 text-xs text-teal-400 font-semibold group-hover:text-teal-300">
-        <span>View Country Guide</span>
+        <span className="inline-flex items-center gap-1.5">
+          <Compass className="w-3.5 h-3.5" />
+          <span>View Country Guide</span>
+        </span>
         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
       </div>
     </Link>

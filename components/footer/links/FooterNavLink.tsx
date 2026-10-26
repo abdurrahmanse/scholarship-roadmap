@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 export interface FooterNavLinkProps {
   href: string;
@@ -12,9 +13,10 @@ export function FooterNavLink({ href, label }: FooterNavLinkProps) {
   return (
     <Link
       href={href}
-      className="hover:text-white transition-colors text-slate-400 hover:translate-x-0.5 inline-block transition-transform duration-150 text-xs"
+      className="group inline-flex items-center gap-1.5 hover:text-white text-slate-400 transition-colors text-xs"
     >
-      {label}
+      <ChevronRight className="w-2.5 h-2.5 text-teal-400/50 group-hover:text-teal-400 group-hover:translate-x-0.5 transition-all shrink-0" />
+      <span>{label}</span>
     </Link>
   );
 }

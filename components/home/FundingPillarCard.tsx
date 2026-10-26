@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Award, Briefcase, DollarSign, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { Award, Briefcase, DollarSign, AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
 import { FundingPillarItem } from "@/data/homeData";
 
 const ICON_MAP = {
@@ -66,8 +66,12 @@ export function FundingPillarCard({ pillar }: FundingPillarCardProps) {
         </ul>
       </div>
 
-      <div className="pt-3 border-t border-white/5 text-[11px] text-slate-400 font-mono">
-        <strong className="text-slate-300">Examples:</strong> {pillar.examples}
+      <div className="pt-3 border-t border-white/5 text-[11px] text-slate-400 font-mono flex items-center gap-2 flex-wrap">
+        <span className="inline-flex items-center gap-1 text-slate-300 font-bold">
+          <Sparkles className="w-3 h-3 text-teal-400 shrink-0" />
+          <span>Examples:</span>
+        </span>
+        <span>{pillar.examples}</span>
       </div>
     </div>
   );
