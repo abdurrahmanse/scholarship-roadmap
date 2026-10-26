@@ -27,51 +27,51 @@ export interface SupervisorNecessityRule {
 export const professorOutreachWorkflow: OutreachStep[] = [
   {
     stepNumber: 1,
-    title: "Determine if Supervisor Outreach is Necessary",
-    shortDesc: "Check whether your target degree mandates prior supervisor agreement or uses centralized committee admissions.",
-    detailedProtocol: "Carefully review the target department's admissions page. In Canada, Australia, New Zealand, and for individual European PhDs, securing a professor's written agreement is legally mandatory before applying. In contrast, most US PhD programs operate through centralized graduate committee admissions with first-year lab rotations, making cold emails optional or even discouraged by some departments."
+    title: "Check If Supervisor Outreach Is Required",
+    shortDesc: "Determine whether your program mandates prior faculty agreement or uses committee admissions.",
+    detailedProtocol: "Check departmental admissions guidelines. In Canada, Australia, New Zealand, and traditional German doctorates, securing a supervisor in advance is mandatory. In the US, most PhDs use centralized committee admissions with first-year lab rotations."
   },
   {
     stepNumber: 2,
-    title: "Identify Active Faculty via Recent Publications",
-    shortDesc: "Find actively publishing professors using Google Scholar, PubMed, Scopus, or OpenReview.",
-    detailedProtocol: "Do not rely on university static faculty directories, which are often years out of date. Search Google Scholar or Scopus for professors who have published peer-reviewed papers in your specific research niche within the last 18–24 months. Focus on tenure-track Assistant Professors (who actively recruit and have fresh startup funding) and productive Associate/Full Professors."
+    title: "Find Active Faculty via Recent Papers",
+    shortDesc: "Identify actively publishing professors on Google Scholar, PubMed, or Scopus.",
+    detailedProtocol: "Search for professors who published peer-reviewed papers in your research niche within the last 18–24 months. Focus on tenure-track Assistant Professors (who actively recruit and have new funding) and active Associate/Full Professors."
   },
   {
     stepNumber: 3,
-    title: "Read Selected Publications & Lab Grant Pages",
-    shortDesc: "Deeply analyze 2 recent papers from the target professor's laboratory.",
-    detailedProtocol: "Read the abstract, methodology, and conclusion of their 2 latest papers. Inspect the 'Acknowledgments' section at the end of their papers to identify their funding sources (e.g., NSF, NIH, ERC, DFG, NSERC grants). Visit their lab website to verify current lab members and check if they have posted an explicit 'Open Positions' or 'Join Us' notice."
+    title: "Review Their Recent Publications & Grants",
+    shortDesc: "Analyze 2 recent papers from the target professor's laboratory.",
+    detailedProtocol: "Read the abstract, methodology, and conclusion of their two latest papers. Check the 'Acknowledgments' section to identify their active research grants (e.g. NSF, NIH, ERC, DFG, NSERC), and check their lab site for open positions."
   },
   {
     stepNumber: 4,
-    title: "Evaluate Research Alignment with Your Background",
-    shortDesc: "Confirm that your existing technical, methodological, or theoretical skills directly contribute to their active research.",
-    detailedProtocol: "Ask yourself honestly: 'Can I hit the ground running in this lab?' If the professor works on computational fluid dynamics and your background is in qualitative marketing, a cold email will be ignored. Identify the specific overlap: your thesis, a machine learning framework, laboratory assay technique, or dataset mastery."
+    title: "Evaluate Your Technical & Research Fit",
+    shortDesc: "Confirm your existing skills directly contribute to their ongoing projects.",
+    detailedProtocol: "Identify direct overlap: your bachelor's or master's thesis, specific software frameworks, experimental lab techniques, or datasets that show you can contribute immediately."
   },
   {
     stepNumber: 5,
-    title: "Draft a Concise, Highly Customized 4-Paragraph Email",
-    shortDesc: "Write a 150–220 word email tailored specifically to that individual professor.",
-    detailedProtocol: "Follow the 4-paragraph formula: Paragraph 1: Intent (seeking Fall 2026 PhD/MSc thesis mentorship under their supervision). Paragraph 2: Academic fit (referencing their specific recent paper and connecting it to your research). Paragraph 3: Your proven technical deliverables (GPA, thesis, publications, specific methodology). Paragraph 4: Professional call-to-action (requesting a 15-minute introductory video meeting) + attached clean 2-page CV."
+    title: "Draft a Concise 4-Paragraph Email",
+    shortDesc: "Write a personalized 150–200 word email tailored to that individual professor.",
+    detailedProtocol: "Follow the 4-paragraph formula: (1) Reason for email and intake cycle; (2) Specific paper citation and academic fit; (3) Your proven skills and deliverables; (4) Polite request for a 15-minute video conversation."
   },
   {
     stepNumber: 6,
     title: "Attach Your Academic CV as a Clean PDF",
-    shortDesc: "Attach only a clean 2-page Academic CV named 'CV_FirstName_LastName.pdf'.",
-    detailedProtocol: "Never attach large zip files, high school diplomas, recommendation letters, or unrequested 50-page manuscripts. Busy professors read emails on their smartphones; an unrequested 15MB attachment triggers spam filters and annoys faculty. If you have publications or code, include clean, active hyperlinks inside your CV."
+    shortDesc: "Attach only a clean 2-page Academic CV titled 'CV_FirstName_LastName.pdf'.",
+    detailedProtocol: "Never attach large zip files, high school diplomas, or unrequested 50-page manuscripts. Include live hyperlinks (GitHub, Google Scholar, preprints) inside your CV instead of sending heavy files."
   },
   {
     stepNumber: 7,
-    title: "Send During Local Working Hours & Maintain Records",
-    shortDesc: "Send Tuesday–Thursday morning between 8:00 AM and 10:00 AM in the professor's local time zone.",
-    detailedProtocol: "Never send emails on Friday evening, over weekends, or on national holidays when your email will be buried under Monday morning inbox backlogs. Track your outreach in a personal notes document: Professor Name, University, Date Sent, Paper Cited, and Status."
+    title: "Send During Local Working Hours",
+    shortDesc: "Send Tuesday through Thursday morning between 8:00 AM and 10:00 AM in the professor's time zone.",
+    detailedProtocol: "Avoid sending emails on Friday evenings or weekends when messages get buried under Monday morning inbox backlogs. Track every sent email in a simple spreadsheet."
   },
   {
     stepNumber: 8,
-    title: "Execute Polite 7–10 Day Follow-Up Protocol",
-    shortDesc: "Send a single, courteous follow-up on the same thread if no reply is received after 7–10 business days.",
-    detailedProtocol: "Professors receive 100+ emails daily. If you do not hear back within 7–10 working days, reply to your original email with a 2-sentence polite check-in. If there is still no reply after the follow-up, accept it gracefully and move on. Never send more than one follow-up."
+    title: "Follow Up Once After 7–10 Business Days",
+    shortDesc: "Send a single polite follow-up on the same thread if no reply is received after 7–10 days.",
+    detailedProtocol: "Reply to your original email with a polite 2-sentence check-in. If there is still no response after another week, move on to other faculty. Never send more than one follow-up."
   }
 ];
 

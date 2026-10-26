@@ -6,55 +6,53 @@ export const roadmapLevelsData: RoadmapLevel[] = [
     levelNumber: 1,
     slug: "level-1",
     badge: "LEVEL 01 • FOUNDATIONAL RIGOR",
-    title: "Mathematical Foundations & Production Deep Learning Systems",
-    shortTitle: "Math & Systems Foundations",
-    tagline: "Build the theoretical depth, matrix calculus derivations, and low-resource GPU engineering mastery that top AI faculty demand.",
+    title: "Academic Foundations & Profile Preparation",
+    shortTitle: "Foundations & Profile Audit",
+    tagline: "Build a strong theoretical foundation, calculate your true GPA, and audit your academic strengths.",
     timeline: "Months 1–6 (24-Month Journey)",
     difficulty: "Fundamental",
     accentColor: "indigo",
     iconName: "Cpu",
-    phasesIncluded: ["phase-0"],
+    phasesIncluded: ["phase-01"],
     stepIds: ["step-0-1", "step-0-2", "step-0-3", "step-0-4", "step-0-5"],
     totalSteps: 5,
     estimatedHours: "15–20 hrs/week",
-    objective: "Establish analytical rigor in linear algebra, vector calculus, probability, optimization theory, and PyTorch system architecture to formulate valid research hypotheses and write custom training loops.",
+    objective: "Establish academic rigor in core coursework, calculate your true GPA on international scales, and build foundational technical or quantitative project skills.",
     milestones: [
       {
-        title: "Theoretical Diagnostic Audit",
-        desc: "Solve 20 proof-based problems in matrix calculus, SVD decomposition, and non-convex loss surface derivations.",
-        deliverable: "Mathematical proofs self-audit document"
+        title: "Academic Transcript Audit",
+        desc: "Convert your GPA to international scales (US 4.0 and German 1.0–4.0) and identify missing course prerequisites.",
+        deliverable: "Standardized GPA calculation sheet"
       },
       {
-        title: "Production Deep Learning Repository",
-        desc: "Build modular PyTorch implementations with mixed-precision training, gradient clipping, and WandB telemetry.",
-        deliverable: "Public GitHub repository with reproducible seed checks"
+        title: "Core Project Portfolio",
+        desc: "Complete independent capstone or laboratory projects with clear methodology and reproducible results.",
+        deliverable: "Documented project portfolio or code repository"
       },
       {
-        title: "Low-Resource GPU Compute Pipeline",
-        desc: "Master PEFT, QLoRA 4-bit quantization, and free cloud compute orchestration (Colab/Kaggle/Lightning AI).",
-        deliverable: "Memory-efficient training harness saving 70%+ VRAM"
+        title: "Standardized Test Planning",
+        desc: "Evaluate whether your target countries require IELTS/TOEFL or GRE, and begin diagnostic test prep.",
+        deliverable: "Diagnostic test scores and study calendar"
       }
     ],
     coreCompetencies: [
-      "Spectral & SVD Matrix Decomposition",
-      "Jacobian & Hessian Graph Backpropagation",
-      "Convex & Non-Convex Gradient Dynamics",
-      "OOP PyTorch 2.x Modular Design",
-      "Parameter-Efficient Fine-Tuning (PEFT)",
-      "Zero-Budget Hardware Orchestration"
+      "International GPA Conversion",
+      "Prerequisite Course Matching (ECTS)",
+      "Technical & Quantitative Foundations",
+      "Academic Project Documentation",
+      "Language Test Diagnostic Prep"
     ],
-    keyDeliverable: "Reproducible Deep Learning Systems Benchmark & Math Proof Audit",
+    keyDeliverable: "Standardized Academic Profile Audit & Project Portfolio",
     recommendedVenuesOrTools: [
-      "Deisenroth Mathematics for ML",
-      "PyTorch 2.x Profiler",
-      "WandB Telemetry",
-      "Hugging Face PEFT / BitsAndBytes",
-      "Google Colab & Kaggle GPU Quotas"
+      "WES GPA Calculator",
+      "DAAD Admission Database",
+      "Official University Handbooks",
+      "Cambridge / ETS Prep Materials"
     ],
     facultyInsightQuote: {
-      quote: "We do not admit PhD students to simply call pre-trained models. We look for candidates who understand what happens to gradient flow when an attention matrix rank collapses.",
+      quote: "We look for applicants who have solid academic foundations and understand the core principles of their field.",
       author: "Admissions Committee Member",
-      affiliation: "Carnegie Mellon University (CMU LTI)"
+      affiliation: "Graduate School of Engineering"
     }
   },
   {
@@ -62,116 +60,107 @@ export const roadmapLevelsData: RoadmapLevel[] = [
     levelNumber: 2,
     slug: "level-2",
     badge: "LEVEL 02 • RESEARCH CURRENCY",
-    title: "Publication Velocity, Preprints & Open-Source Artifacts",
-    shortTitle: "Publications & Open-Source",
-    tagline: "Transform empirical ideas into peer-reviewed workshop acceptances, first-author citable arXiv preprints, and reproducible models.",
+    title: "Research Deliverables, Preprints & Language Tests",
+    shortTitle: "Research & Language Tests",
+    tagline: "Transform course projects into citable research deliverables, complete language exams, and build proof-of-work.",
     timeline: "Months 6–12 (24-Month Journey)",
     difficulty: "Intensive",
     accentColor: "cyan",
     iconName: "Sparkles",
-    phasesIncluded: ["phase-1"],
+    phasesIncluded: ["phase-02"],
     stepIds: ["step-1-1", "step-1-2", "step-1-3"],
     totalSteps: 3,
     estimatedHours: "20–25 hrs/week",
-    objective: "Build tangible research capital before contacting professors. A single NeurIPS/ICLR/CVPR workshop paper or citable arXiv paper moves your profile into the top 5% of international applicants.",
+    objective: "Build tangible research credentials through a solid thesis, workshop papers, preprints, and official test score reports.",
     milestones: [
       {
-        title: "Fast-Track Workshop Submission",
-        desc: "Target top conference workshop tracks (NeurIPS, ICML, ICLR, CVPR) which value focused ablations over multi-million-dollar compute budgets.",
-        deliverable: "4-page camera-ready workshop paper or citable arXiv submission"
+        title: "Undergraduate / Master's Thesis Completion",
+        desc: "Complete a rigorous thesis with clear experimental or analytical methodology and structured findings.",
+        deliverable: "Complete thesis draft or conference paper"
       },
       {
-        title: "Hugging Face & Interactive Model Demo",
-        desc: "Deploy an interactive Gradio/Streamlit space and release open-weight checkpoints for the AI research community.",
-        deliverable: "Live Hugging Face Space with 100+ community runs"
+        title: "Language Test Completion",
+        desc: "Achieve target scores (IELTS 7.0+ or TOEFL 100+) with strong Speaking and Writing subscores.",
+        deliverable: "Official test report form"
       },
       {
-        title: "Standardized Testing Strategy",
-        desc: "Secure GRE waivers for top CS departments and achieve exempt-level TOEFL/IELTS scores for Teaching Assistantship (TA) eligibility.",
-        deliverable: "Exempt status documentation & verified score reports"
+        title: "Target Country & Program Shortlist",
+        desc: "Filter 15–20 prospective universities balanced across Reach, Match, and Safety tiers.",
+        deliverable: "Ranked university and funding shortlist"
       }
     ],
     coreCompetencies: [
-      "Empirical Ablation Design & Statistical Significance",
-      "LaTeX Overleaf Conference Template Mastery",
-      "Hugging Face Model Card & Checkpoint Release",
-      "Open-Source GitHub Community Engagement",
-      "Academic Peer-Review Rebuttal Techniques",
-      "Institutional GRE Waiver Navigation"
+      "Scientific Writing & Methodology",
+      "Academic Conference Submissions",
+      "Standardized Test Mastery (IELTS/TOEFL)",
+      "Target University Benchmarking",
+      "Research Proof-of-Work Assembly"
     ],
-    keyDeliverable: "First-Author Workshop Acceptance or Citable arXiv Preprint with Weights",
+    keyDeliverable: "Completed Thesis / Preprint & Verified Language Test Scores",
     recommendedVenuesOrTools: [
-      "NeurIPS / ICLR / ICML Workshop Tracks",
-      "arXiv Computer Science (cs.LG / cs.AI / cs.CV)",
-      "Hugging Face Spaces & Model Hub",
-      "PapersWithCode Benchmark Registration",
-      "OpenReview.net Discussion Archive"
+      "Google Scholar & Scopus",
+      "Overleaf LaTeX Editor",
+      "IELTS / TOEFL Official Prep",
+      "Notion University Tracker"
     ],
     facultyInsightQuote: {
-      quote: "An applicant with one accepted workshop paper and clean reproducible GitHub code with weights will beat an applicant with a 4.0 GPA and zero research output every single time.",
-      author: "Core Faculty Member",
-      affiliation: "Mila – Quebec AI Institute & Université de Montréal"
+      quote: "A well-written undergraduate thesis or clean project repository tells us much more about your research ability than grades alone.",
+      author: "Faculty Research Director",
+      affiliation: "European Research Institute"
     }
   },
   {
     id: "level-3",
     levelNumber: 3,
     slug: "level-3",
-    badge: "LEVEL 03 • PROFESSOR PIPELINE",
-    title: "Strategic PI Mapping & Cold Outreach Protocol",
+    badge: "LEVEL 03 • FACULTY OUTREACH",
+    title: "Faculty Mapping, Supervisor Outreach & Fit",
     shortTitle: "Faculty Mapping & Outreach",
-    tagline: "Bypass generic university rankings. Identify funded assistant professors with active grants and execute high-conversion outreach.",
+    tagline: "Identify active researchers, analyze their recent papers, and send tailored cold inquiry emails.",
     timeline: "Months 12–16 (24-Month Journey)",
     difficulty: "Strategic",
     accentColor: "emerald",
-    iconName: "Target",
-    phasesIncluded: ["phase-2"],
+    iconName: "Send",
+    phasesIncluded: ["phase-03"],
     stepIds: ["step-2-1", "step-2-2", "step-2-3", "step-2-4"],
     totalSteps: 4,
     estimatedHours: "12–15 hrs/week",
-    objective: "Reverse-engineer laboratory funding streams using CSRankings and federal grant registries. Secure 3–5 Zoom screening calls before university application portals even open.",
+    objective: "Identify professors with active funding, send customized 4-paragraph cold emails, and secure supervisory support before applying.",
     milestones: [
       {
-        title: "De-Biased CSRankings Faculty Matrix",
-        desc: "Filter faculty by specific AI subfields (AI, ML, CV, NLP) and cross-reference NSF/NIH/Horizon awards for active funding packages.",
-        deliverable: "Spreadsheet of 25–35 targeted professors categorized into Reach, Target, and Safe tiers"
+        title: "Target Faculty Database",
+        desc: "Identify 25–30 professors actively publishing in your research niche within the last 18–24 months.",
+        deliverable: "Targeted faculty research tracking sheet"
       },
       {
-        title: "Tenure-Track Assistant Professor Targeting",
-        desc: "Focus on assistant professors who have $400k–$800k startup packages and must hire graduate researchers to attain tenure.",
-        deliverable: "Curated dossier of 15 junior faculty members with recent lab openings"
+        title: "Personalized Outreach Campaign",
+        desc: "Send personalized 180-word inquiry emails citing specific recent papers and connecting them to your background.",
+        deliverable: "Sent outreach log with response tracking"
       },
       {
-        title: "5-Point Technical Cold Outreach",
-        desc: "Deploy concise 150-word emails referencing equation-level details from the professor's recent paper and proposing concrete next steps.",
-        deliverable: "Staggered email campaign with >25% response rate"
-      },
-      {
-        title: "15-Minute Zoom Screening Defense",
-        desc: "Master the technical elevator pitch, walk through code repositories, and secure verbal endorsement for department application.",
-        deliverable: "3–5 confirmed professor endorsements before official portal submission"
+        title: "Introductory Video Meetings",
+        desc: "Prepare an elevator pitch of your research and discuss prospective openings with interested professors.",
+        deliverable: "Confirmed supervisor support letters or verbal agreements"
       }
     ],
     coreCompetencies: [
-      "CSRankings Metric Filtering (Sub-Area Specialization)",
-      "NSF Award Search & Federal Grant Tracking",
-      "High-Yield Technical Cold Email Engineering",
-      "Reverse Literature Review & Paper Deconstruction",
-      "Live Faculty Screening Call Psychology",
-      "Pipeline Tracking & Follow-Up Cadence"
+      "Literature-Based Faculty Discovery",
+      "Concise Academic Cold Emailing",
+      "Laboratory Grant Identification",
+      "Virtual Video Interview Etiquette",
+      "Follow-Up Cadence & Record Keeping"
     ],
-    keyDeliverable: "30-PI Targeted Outreach Spreadsheet & 3+ Verbal Faculty Endorsements",
+    keyDeliverable: "30-PI Outreach Tracker & 2–4 Confirmed Supervisor Backings",
     recommendedVenuesOrTools: [
-      "CSRankings.org (Computer Science Rankings)",
-      "NSF Award Search (AwardSearch.gov)",
-      "NIH RePORTER & Horizon Europe Registry",
-      "Google Scholar Citation Alerts",
-      "Calendly & Notion Pipeline Tracker"
+      "Google Scholar Alerts",
+      "Grant Databases (NSF, ERC, DFG)",
+      "University Faculty Directories",
+      "Calendly & Google Meet"
     ],
     facultyInsightQuote: {
-      quote: "I receive 40 generic emails a day. But when an applicant writes 4 concise sentences referencing equation 3 from my latest paper and proposes a clean ablation with code, I invite them to Zoom.",
-      author: "Assistant Professor of Computer Science",
-      affiliation: "University of Texas at Austin"
+      quote: "When an applicant writes a concise, personalized email referencing a specific finding in my recent paper, I always reply and schedule a chat.",
+      author: "Assistant Professor",
+      affiliation: "North American Research University"
     }
   },
   {
@@ -179,14 +168,14 @@ export const roadmapLevelsData: RoadmapLevel[] = [
     levelNumber: 4,
     slug: "level-4",
     badge: "LEVEL 04 • APPLICATION DOSSIER",
-    title: "Technical SOP Architecture & Priority Submissions",
-    shortTitle: "SOP & Priority Submissions",
-    tagline: "Engineer an uncompromising technical Statement of Purpose, academic LaTeX CV, brag-sheet LORs, and submit ahead of December 1 deadlines.",
+    title: "Application Dossier Architecture & Submissions",
+    shortTitle: "SOP, LORs & Submissions",
+    tagline: "Assemble a tailored Statement of Purpose, 2-page academic CV, strong LORs, and submit before deadlines.",
     timeline: "Months 16–20 (24-Month Journey)",
     difficulty: "Critical",
     accentColor: "amber",
     iconName: "FileCheck",
-    phasesIncluded: ["phase-3", "phase-4"],
+    phasesIncluded: ["phase-04", "phase-05"],
     stepIds: [
       "step-3-1",
       "step-3-2",
@@ -198,54 +187,47 @@ export const roadmapLevelsData: RoadmapLevel[] = [
     ],
     totalSteps: 7,
     estimatedHours: "15–18 hrs/week",
-    objective: "Assemble an airtight, faculty-endorsed application package with verified fee waivers and priority fellowship eligibility, ensuring institutional committee approval.",
+    objective: "Assemble an airtight application dossier, secure recommendation letters, request fee waivers, and submit all packages before priority deadlines.",
     milestones: [
       {
-        title: "5-Movement Technical SOP Architecture",
-        desc: "Draft a research proposal-style SOP: Problem Statement, Research Capital, Methodological Vision, Specific Lab Alignment, and Career Horizon.",
-        deliverable: "Tailored 1,000-word Statement of Purpose naming specific prospective faculty"
+        title: "Tailored Statement of Purpose",
+        desc: "Draft a focused, 1,000-word SOP detailing your research problem, background, methodology, and faculty fit.",
+        deliverable: "Polished SOPs customized for each target university"
       },
       {
-        title: "2-Page Academic LaTeX CV",
-        desc: "Format an industry-standard Awesome-CV with Google XYZ achievement bullets, paper citations, and GitHub repository metrics.",
-        deliverable: "Single-source LaTeX compiled PDF CV"
+        title: "2-Page Academic CV",
+        desc: "Format a clean, 2-page CV highlighting degrees, research projects, publications, and skills.",
+        deliverable: "Text-searchable PDF CV"
       },
       {
-        title: "High-Impact LOR Brag Sheets",
-        desc: "Equip 3 academic recommenders with specific accomplishment bullet points to ensure letters confirm research independence.",
-        deliverable: "3 confirmed strong letters submitted before priority cutoffs"
+        title: "Confidential Recommendation Letters",
+        desc: "Provide 3 referees with an LOR briefing packet at least 6 weeks before deadlines.",
+        deliverable: "3 confirmed confidential letters submitted"
       },
       {
-        title: "Departmental Fee Waiver Acquisition",
-        desc: "Leverage conference attendance, diversity programs, and early-bird requests to save $1,000–$2,000 in application fees.",
-        deliverable: "Fee waiver codes for 8–12 target graduate programs"
-      },
-      {
-        title: "Priority Fellowship Deadline Lock",
-        desc: "Submit all applications before December 1–15 to guarantee institutional fellowship and university-wide funding pool consideration.",
-        deliverable: "Complete portal confirmations across 10–14 institutions"
+        title: "Priority Deadline Submission",
+        desc: "Submit all applications before December 1–15 priority funding deadlines to maximize scholarship consideration.",
+        deliverable: "Portal submission confirmations across target universities"
       }
     ],
     coreCompetencies: [
-      "Technical Narrative SOP Writing (Grant Style)",
-      "LaTeX Awesome-CV Formatting (Zero Fluff)",
-      "Recommender Brag-Sheet Preparation",
-      "Doctoral Research Proposal & Compute Budgeting",
-      "Fee Waiver Verification Protocols",
-      "Transcript Credential Evaluation (WES/ECE)"
+      "Academic Narrative Writing (SOP)",
+      "Academic CV Formatting",
+      "Recommender Management & Briefing",
+      "Application Fee Waiver Requests",
+      "Application Portal Management"
     ],
-    keyDeliverable: "Complete 100% Fee-Waived Application Submissions with Priority Fellowship Eligibility",
+    keyDeliverable: "Completed Application Submissions Ahead of Priority Funding Deadlines",
     recommendedVenuesOrTools: [
-      "Overleaf Academic LaTeX Templates",
-      "Grammarly & Hemingway Editor",
-      "GradCafe Admissions Archive",
-      "University Graduate School Application Portals",
-      "WES (World Education Services) Attestation"
+      "Overleaf LaTeX Templates",
+      "Grammarly / Language Tool",
+      "University Admissions Portals",
+      "WES Credential Evaluation"
     ],
     facultyInsightQuote: {
-      quote: "Admissions committees read SOPs to eliminate pretenders. A winning SOP reads like an NSF grant proposal: concise research problem, theoretical methodology, compute budget, and lab alignment.",
-      author: "Graduate Admissions Committee Chair",
-      affiliation: "University of Wisconsin-Madison"
+      quote: "A compelling SOP focuses on the research problem you want to solve and why our department provides the exact faculty and tools to solve it.",
+      author: "Admissions Committee Chair",
+      affiliation: "Graduate Admissions Panel"
     }
   },
   {
@@ -253,14 +235,14 @@ export const roadmapLevelsData: RoadmapLevel[] = [
     levelNumber: 5,
     slug: "level-5",
     badge: "LEVEL 05 • FINAL CONVERSION",
-    title: "Faculty Technical Defense, Stipend Negotiation & TAL Visa",
+    title: "Interviews, Offer Evaluation & Visa Relocation",
     shortTitle: "Defense, Offers & Visa",
-    tagline: "Defend your research in live screening calls, negotiate multi-year stipend packages, and clear Technology Alert List (TAL) consular scrutiny.",
+    tagline: "Defend your research in interviews, evaluate funding offers, and complete visa and relocation logistics.",
     timeline: "Months 20–24 (24-Month Journey)",
     difficulty: "Elite",
     accentColor: "purple",
     iconName: "ShieldCheck",
-    phasesIncluded: ["phase-5", "phase-6"],
+    phasesIncluded: ["phase-06", "phase-07"],
     stepIds: [
       "step-5-1",
       "step-5-2",
@@ -272,49 +254,41 @@ export const roadmapLevelsData: RoadmapLevel[] = [
     ],
     totalSteps: 7,
     estimatedHours: "10–12 hrs/week",
-    objective: "Convert faculty screening interviews into signed full-ride assistantship offers ($36,000–$52,000/yr), negotiate summer funding, and obtain approved F-1/J-1 or EU research visas without TAL delays.",
+    objective: "Pass committee interviews, evaluate net funding packages (tuition waiver + stipend), accept your best offer, and secure your student visa.",
     milestones: [
       {
-        title: "5-Slide Technical Research Defense",
-        desc: "Deliver a crisp 10-minute presentation: Problem, Limitations, Technical Innovation, Benchmark Results, and Future Directions.",
-        deliverable: "Defended 5-slide deck with live Q&A handling"
+        title: "Faculty Interview Preparation",
+        desc: "Prepare a concise 10-minute presentation of your past thesis research and future research interests.",
+        deliverable: "Defended interview presentation"
       },
       {
-        title: "Offer Deciphering & Stipend Negotiation",
-        desc: "Dissect tuition remission, health insurance subsidy, mandatory student fees, and negotiate summer RA stipends ($8k–$15k).",
-        deliverable: "Optimized net take-home assistantship contract"
+        title: "Funding Package Audit",
+        desc: "Verify that your offer covers 100% tuition, monthly living expenses, health insurance, and fees.",
+        deliverable: "Signed funding offer letter"
       },
       {
-        title: "Technology Alert List (TAL) Clearance",
-        desc: "Prepare non-classified open-source research statements for consular officers to avoid administrative processing delays (INA 221g).",
-        deliverable: "Consular research defense letter signed by prospective PI"
-      },
-      {
-        title: "International Relocation & Laboratory Onboarding",
-        desc: "Finalize multi-currency banking, housing leases, compute cluster access, and begin literature review for first lab milestone.",
-        deliverable: "On-site arrival, I-9 verification, and lab workstation setup"
+        title: "Student Visa & Relocation",
+        desc: "Gather financial documents, attend your embassy visa interview, and secure university housing.",
+        deliverable: "Approved student visa and housing reservation"
       }
     ],
     coreCompetencies: [
-      "5-Slide Slide Deck Architecture & Delivery",
-      "Live Deep Learning Stress-Testing Under Pressure",
-      "Assistantship Contract Deciphering & Net Math",
-      "Respectful Multi-Offer Negotiation Leverage",
-      "TAL Export Control Open-Science Visa Defense",
-      "International Relocation Logistics & Banking"
+      "Research Defense Presentation",
+      "Funding Letter & Contract Analysis",
+      "Embassy Visa Interview Preparation",
+      "International Housing & Banking Logistics"
     ],
-    keyDeliverable: "Signed Full-Ride Assistantship Offer Letter ($36k–$52k/yr) & Approved Student Visa",
+    keyDeliverable: "Signed Full-Ride Funding Package & Approved Student Visa",
     recommendedVenuesOrTools: [
-      "Prezi / Google Slides Deck Simulator",
-      "Living Wage Calculator (MIT)",
-      "SEVIS / DS-2019 / I-20 Processing Hub",
-      "State Department Foreign Affairs Manual (FAM)",
-      "Wise Multi-Currency Banking"
+      "Embassy Visa Portals",
+      "Living Wage Calculator",
+      "University Housing Services",
+      "International Student Office"
     ],
     facultyInsightQuote: {
-      quote: "When presenting to faculty, never apologize for what you have not done. Walk through your problem formulation, the negative results you encountered, and why our lab's compute cluster is the next logical step.",
-      author: "Max Planck Research Group Leader",
-      affiliation: "Max Planck Institute for Intelligent Systems (IMPRS-IS)"
+      quote: "In the interview, we want to see how you think through problems and whether you are genuinely excited about doing research with us.",
+      author: "Professor & Lab Director",
+      affiliation: "International Graduate School"
     }
   }
 ];
@@ -322,48 +296,48 @@ export const roadmapLevelsData: RoadmapLevel[] = [
 export const roadmapLevelsComparisonData = [
   {
     level: "Level 1",
-    title: "Math & Systems Foundations",
+    title: "Foundations & Profile Audit",
     duration: "Months 1–6",
-    primaryGatekeeper: "Coursework / Lab Diagnostic",
-    keyDeliverable: "PyTorch benchmark & math audit",
-    riskFactor: "Treating AI as a black box",
-    statusBadge: "Phase 0 Covered"
+    primaryGatekeeper: "Transcript & Coursework Audit",
+    keyDeliverable: "Standardized GPA & project portfolio",
+    riskFactor: "Unrecognized degree or missing prerequisites",
+    statusBadge: "Phase 1 Covered"
   },
   {
     level: "Level 2",
-    title: "Publications & Open-Source",
+    title: "Research & Language Tests",
     duration: "Months 6–12",
-    primaryGatekeeper: "Workshop & Conference Reviewers",
-    keyDeliverable: "First-author workshop or arXiv paper",
-    riskFactor: "Zero citable research proof-of-work",
-    statusBadge: "Phase 1 Covered"
+    primaryGatekeeper: "Testing Bodies & Research Reviewers",
+    keyDeliverable: "Thesis draft, preprints & test scores",
+    riskFactor: "Low language subscores or expired tests",
+    statusBadge: "Phase 2 Covered"
   },
   {
     level: "Level 3",
     title: "Faculty Mapping & Outreach",
     duration: "Months 12–16",
     primaryGatekeeper: "Prospective Faculty (PIs)",
-    keyDeliverable: "3–5 Zoom screening call invites",
-    riskFactor: "Generic spam cold emails",
-    statusBadge: "Phase 2 Covered"
+    keyDeliverable: "Confirmed supervisor support",
+    riskFactor: "Generic, untargeted mass emails",
+    statusBadge: "Phase 3 Covered"
   },
   {
     level: "Level 4",
-    title: "SOP & Priority Submissions",
+    title: "SOP, LORs & Submissions",
     duration: "Months 16–20",
     primaryGatekeeper: "Graduate Admissions Committee",
-    keyDeliverable: "Completed priority fee-waived apps",
-    riskFactor: "Missing Dec 1 fellowship cutoff",
-    statusBadge: "Phases 3 & 4 Covered"
+    keyDeliverable: "Complete application submissions",
+    riskFactor: "Missing priority funding deadlines",
+    statusBadge: "Phases 4 & 5 Covered"
   },
   {
     level: "Level 5",
     title: "Defense, Offers & Visa",
     duration: "Months 20–24",
     primaryGatekeeper: "Department Chair & Consular Officer",
-    keyDeliverable: "Signed $38k+ package & visa stamp",
-    riskFactor: "TAL 221(g) administrative delay",
-    statusBadge: "Phases 5 & 6 Covered"
+    keyDeliverable: "Signed full funding offer & visa",
+    riskFactor: "Visa processing delays or housing shortages",
+    statusBadge: "Phases 6 & 7 Covered"
   }
 ];
 

@@ -31,71 +31,71 @@ export const searchWorkflowSteps: SearchWorkflowStep[] = [
     number: 1,
     title: "Search Official University Websites Directly",
     category: "Discovery",
-    summary: "Bypass search engine ad spam and third-party commercial portals by navigating directly to primary university domains (.edu, .ac.uk, .edu.au, .ca).",
+    summary: "Bypass third-party ad sites by checking official university domains (.edu, .ac.uk, .ca, .edu.au).",
     actionableInstructions: [
-      "Navigate to the target university's homepage and find the 'Graduate School', 'School of Graduate Studies', or 'Postgraduate Admissions' tab.",
-      "Inspect the specific department offering your subject, looking for 'Prospective Graduate Students' or 'Academic Programs'.",
-      "Bookmark the direct URL to the graduate curriculum handbook and departmental financial aid policies."
+      "Navigate to the target university's Graduate School or Postgraduate Admissions page.",
+      "Check your specific subject department under 'Prospective Graduate Students' or 'Financial Aid'.",
+      "Bookmark direct links to departmental degree handbooks and funding policies."
     ],
-    keyToolsOrKeywords: ["Graduate Admissions", "Faculty of Graduate Studies", "Department Financial Support"]
+    keyToolsOrKeywords: ["Graduate Admissions", "Department Financial Support", "Prospective Students"]
   },
   {
     number: 2,
     title: "Identify Government Scholarship Programs",
     category: "Discovery",
-    summary: "Target official national exchange agencies that sponsor bilateral full-ride awards for international postgraduates.",
+    summary: "Target official national exchange agencies offering full-ride bilateral awards.",
     actionableInstructions: [
-      "Check official state agency portals: DAAD (Germany), Campus France, Swedish Institute (Sweden), Fulbright (USA), EduCanada (Canada), Chevening/Commonwealth (UK), MEXT (Japan), GKS (Korea), CSC (China), and Australia Awards.",
-      "Review eligibility by country of citizenship: many bilateral government awards are reserved specifically for emerging or developing economies.",
-      "Note return-to-home-country conditions (e.g., Fulbright J-1 2-year rule, Chevening 2-year rule) before committing."
+      "Check official national portals: DAAD (Germany), Campus France, Swedish Institute, Fulbright (USA), Chevening (UK), MEXT (Japan), GKS (Korea), and Australia Awards.",
+      "Review eligibility by citizenship: many bilateral awards are reserved for students from specific partner nations.",
+      "Check return-to-home-country requirements (e.g. Fulbright J-1 2-year rule, Chevening rule) before applying."
     ],
-    keyToolsOrKeywords: ["Bilateral Government Scholarships", "Ministry of Foreign Affairs", "National Exchange Agency"]
+    keyToolsOrKeywords: ["Government Scholarships", "National Exchange Agency", "Bilateral Grants"]
   },
   {
     number: 3,
-    title: "Inspect University Funding & Awards Pages",
+    title: "Inspect Department Funding & Fellowship Pages",
     category: "Discovery",
-    summary: "Locate decentralized department endowments, presidential fellowships, and merit awards buried inside university sub-domains.",
+    summary: "Look for departmental fellowships, Dean's awards, and tuition remission buried on faculty sub-sites.",
     actionableInstructions: [
-      "Within the target university site, search for: 'Graduate Fellowships', 'Dean's Excellence Award', 'Presidential Doctoral Fellowship', or 'Tuition Remission Policies'.",
-      "Check whether international students are eligible for internal institutional fellowships (some awards are restricted to domestic residents).",
-      "Look for application mechanisms: is scholarship consideration automatic upon submission of the admission application, or does it require a distinct supplemental application form?"
+      "Search the department website for 'Graduate Fellowships', 'Teaching Assistantships', or 'Tuition Waivers'.",
+      "Verify whether international students are eligible for internal institutional awards.",
+      "Confirm whether scholarship consideration is automatic with admission or requires a separate application."
     ],
-    keyToolsOrKeywords: ["Graduate Fellowships", "Dean's Merit Award", "Institutional Tuition Remission"]
+    keyToolsOrKeywords: ["Graduate Fellowships", "Dean's Merit Award", "Tuition Remission"]
   },
   {
     number: 4,
-    title: "Locate Funded Doctoral Vacancies (European Model)",
+    title: "Locate European Salaried PhD Vacancies",
     category: "Discovery",
-    summary: "Search European university employment and human resources portals where PhDs are advertised as paid research staff positions.",
+    summary: "Search university job boards in Sweden, the Netherlands, Denmark, and Norway where PhDs are paid positions.",
     actionableInstructions: [
-      "In the Netherlands, Sweden, Denmark, Norway, and Switzerland, navigate to the university's 'Work With Us', 'Vacancies', or 'Jobs' section.",
-      "Filter listings by category: 'PhD Candidate', 'Doctoral Researcher', 'Stipendiat', or 'Scientific Staff'.",
-      "Cross-reference centralized academic job boards: EURAXESS, AcademicTransfer, Jobbnorge, and Jobs.ac.uk."
+      "Check university 'Jobs' or 'Vacancies' pages for 'PhD Candidate' or 'Doctoral Researcher' openings.",
+      "Use centralized academic job portals: EURAXESS, AcademicTransfer (Netherlands), and Jobbnorge (Norway).",
+      "Treat these applications like formal job applications with a CV, cover letter, and references."
     ],
-    keyToolsOrKeywords: ["EURAXESS", "AcademicTransfer", "PhD Vacancies", "Scientific Staff"]
+    keyToolsOrKeywords: ["EURAXESS", "AcademicTransfer", "PhD Vacancies", "Jobbnorge"]
   },
   {
     number: 5,
-    title: "Use Academic Research Databases to Find Funded Labs",
+    title: "Search Active Lab Research Grants",
     category: "Discovery",
-    summary: "Discover which professors hold active multi-million-dollar research grants capable of hiring graduate research assistants.",
+    summary: "Find professors who hold multi-year research grants capable of hiring graduate research assistants.",
     actionableInstructions: [
-      "Inspect government grant databases: NSF Awards Search (USA), NIH RePORTER (USA), ERC Grants Directory (Europe), DFG GEPRIS (Germany), and NSERC Awards Database (Canada).",
-      "Search for research grants awarded within the last 12–24 months in your topic; Principal Investigators (PIs) with newly funded 3–5 year grants always need to recruit graduate researchers.",
-      "Review author affiliations in recent papers published in top-tier open-access journals in your field."
+      "Check grant databases: NSF Awards Search (USA), NIH RePORTER (USA), ERC Grants (Europe), and DFG (Germany).",
+      "Search for grants awarded in your field in the last 12–24 months; newly funded labs frequently recruit researchers.",
+      "Review author affiliations in recent papers published in top open-access journals in your area."
     ],
-    keyToolsOrKeywords: ["NSF Awards Search", "ERC Grants", "NIH RePORTER", "DFG GEPRIS"]
+    keyToolsOrKeywords: ["NSF Awards", "ERC Grants", "NIH RePORTER", "DFG GEPRIS"]
   },
   {
     number: 6,
-    title: "Deploy Advanced Precision Search Operators",
+    title: "Use Boolean Search Formulas",
     category: "Discovery",
-    summary: "Use boolean search syntax to eliminate commercial agency ad clutter and pinpoint primary university funding documents.",
+    summary: "Use search operators to filter out agency ads and pinpoint primary university funding pages.",
     actionableInstructions: [
-      "Use site: restrictions to restrict results exclusively to accredited university top-level domains: site:.edu, site:.ac.uk, site:.edu.au, site:.ca.",
-      "Enclose exact key phrases in quotation marks: \"fully funded\" \"master's\" OR \"full tuition waiver\" \"monthly stipend\".",
-      "Combine subject keywords, target country domains, and admission intake years: site:.ac.uk \"PhD studentship\" \"Computer Science\" 2026."
+      "Use site: filters to restrict results to university domains: site:.edu, site:.ac.uk, site:.edu.au.",
+      "Enclose exact phrases in quotes: \"fully funded\" \"master's\" OR \"full tuition waiver\" \"monthly stipend\".",
+      "Combine subject keywords with intake year: site:.ac.uk \"PhD studentship\" \"Computer Science\" 2026."
     ],
     keyToolsOrKeywords: ["site:.edu", "filetype:pdf", "\"fully funded\"", "\"tuition waiver\""]
   },
@@ -103,36 +103,35 @@ export const searchWorkflowSteps: SearchWorkflowStep[] = [
     number: 7,
     title: "Verify Exact Eligibility Criteria",
     category: "Validation",
-    summary: "Confirm that your nationality, degree equivalency, grading scale, and subject prerequisites satisfy the mandatory thresholds.",
+    summary: "Confirm that your degree, GPA, and prerequisite coursework satisfy departmental thresholds.",
     actionableInstructions: [
-      "Check minimum GPA requirements and whether the published GPA is an absolute administrative cutoff or a recommended average.",
-      "Verify degree length requirements: does the graduate school accept a 3-year European/Indian bachelor's, or is a 4-year degree (or 1-year master's) required?",
-      "Audit prerequisite courses: ensure your undergraduate transcript contains the exact required credit hours in core foundational topics."
+      "Check minimum GPA requirements and whether the cutoff is an absolute filter or a recommended average.",
+      "Verify degree length requirements: confirm whether the department accepts a 3-year bachelor's degree.",
+      "Check prerequisite course requirements to ensure your transcript covers required foundational subjects."
     ],
-    keyToolsOrKeywords: ["Eligibility Criteria", "Minimum Admission Standards", "Course Prerequisites"]
+    keyToolsOrKeywords: ["Minimum GPA", "Degree Equivalency", "Course Prerequisites"]
   },
   {
     number: 8,
-    title: "Audit Hard Deadlines & Time Zones",
+    title: "Audit Deadlines & Server Time Zones",
     category: "Validation",
-    summary: "Identify disparate deadlines between general university admission, priority funding rounds, and external scholarship programs.",
+    summary: "Distinguish between priority funding deadlines and general admission closing dates.",
     actionableInstructions: [
-      "Beware the 'Priority Funding Deadline': many US and Canadian universities have a general admission deadline of February 1, but mandate applying by December 1 to be considered for department scholarships.",
-      "Note the time zone of the portal (e.g., 11:59 PM EST vs. PST vs. CET); portals automatically lock at midnight in their local server zone.",
-      "Establish your personal submission target at least 72 hours prior to the official deadline to avoid payment and server bottlenecks."
+      "Check for 'Priority Funding Deadlines' (often December 1 or 15) that occur before final admission deadlines.",
+      "Note the time zone of the online application portal (e.g. 11:59 PM EST or CET) to prevent unexpected lockouts.",
+      "Aim to submit your dossier at least 72 hours before the deadline to avoid server overload."
     ],
-    keyToolsOrKeywords: ["Priority Scholarship Deadline", "Server Time Zone", "Portal Lockout Date"]
+    keyToolsOrKeywords: ["Priority Deadline", "Server Time Zone", "Submission Target"]
   },
   {
     number: 9,
-    title: "Identify the Actual Real Funding Coverage",
+    title: "Verify Real Net Funding Coverage",
     category: "Validation",
-    summary: "Examine whether an offer is genuinely sustainable or leaves severe living cost and fee deficits.",
+    summary: "Confirm that an offer covers 100% of costs without leaving unpaid fees or living cost deficits.",
     actionableInstructions: [
-      "Verify whether the package covers 100% of out-of-state/international tuition, or only domestic in-state rates.",
-      "Confirm the living stipend: is it paid monthly or per semester? Is it guaranteed for 9 months or 12 months?",
-      "Check mandatory campus student fees (technology, health center, recreation fees) which can deduct $1,000–$2,500/year if un-waived.",
-      "Verify health insurance coverage: does the university provide full medical insurance subsidy for international scholars?"
+      "Verify whether the waiver covers international out-of-state tuition or only domestic rates.",
+      "Confirm whether the living stipend is paid for 9 months or 12 months, and check net monthly take-home amounts.",
+      "Check whether mandatory student campus fees and health insurance are covered by the department."
     ],
     keyToolsOrKeywords: ["Net Monthly Stipend", "Mandatory Student Fees", "Health Insurance Subsidy"]
   },
@@ -140,26 +139,25 @@ export const searchWorkflowSteps: SearchWorkflowStep[] = [
     number: 10,
     title: "Confirm Supervisor Outreach Requirements",
     category: "Validation",
-    summary: "Determine if reaching out to faculty is legally mandatory, optional, or prohibited prior to application.",
+    summary: "Determine if reaching out to a professor is mandatory, optional, or not required.",
     actionableInstructions: [
-      "Look for language on the department page: 'Applicants must secure an advisor before applying' (common in Canada, Australia) vs. 'Admissions are centralized by committee; do not contact faculty' (common in US biomedical rotation tracks).",
-      "If supervisor agreement is required, start faculty outreach 3–4 months before the official application deadline.",
-      "Obtain written proof of supervision agreement (an email confirmation or official endorsement form) before submitting the portal application."
+      "Check the admissions page: mandatory in Canada/Australia/UK; centralized committee admissions in the US.",
+      "If supervisor agreement is required, begin personalized outreach 3–4 months before the application deadline.",
+      "Secure written confirmation of supervision from the professor before submitting your application."
     ],
-    keyToolsOrKeywords: ["Prospective Supervisor Agreement", "Admissions Committee Review", "Expression of Interest (EOI)"]
+    keyToolsOrKeywords: ["Supervisor Agreement", "Centralized Admissions", "Expression of Interest"]
   },
   {
     number: 11,
-    title: "Distinguish Official Opportunities from Fraudulent Traps",
+    title: "Spot and Avoid Fraudulent Offers",
     category: "Safety",
-    summary: "Identify and avoid fraudulent scholarship schemes, fake admissions agents, and misleading commercial aggregator sites.",
+    summary: "Protect yourself from scholarship scams, fake agents, and deceptive commercial sites.",
     actionableInstructions: [
-      "Rule 1: Legitimate university scholarships NEVER charge an 'award claim fee', 'scholarship processing fee', or 'guaranteed placement charge'.",
-      "Rule 2: Never trust scholarship information on commercial blog aggregators without verifying it directly on the university's official domain (.edu, .ac.uk, .ca, etc.).",
-      "Rule 3: Official correspondence always originates from official institutional email domains (@university.edu, @daad.de), never from generic webmail accounts (@gmail.com, @yahoo.com).",
-      "Rule 4: Avoid any service that guarantees 100% scholarship success in exchange for an upfront payment; admissions and funding are determined solely by academic committees."
+      "Legitimate scholarships NEVER charge 'award processing' or 'claim' fees to release money.",
+      "Always verify that email messages originate from university (.edu, .ac.uk) or government domains, not Gmail or Yahoo.",
+      "No agency can guarantee admission or scholarships; decisions rest entirely with university faculty panels."
     ],
-    keyToolsOrKeywords: ["Fraud Detection", "Official Domain Verification", "No Upfront Award Fees"]
+    keyToolsOrKeywords: ["Zero Upfront Fees", "Official Email Domains", "Scam Protection"]
   }
 ];
 
