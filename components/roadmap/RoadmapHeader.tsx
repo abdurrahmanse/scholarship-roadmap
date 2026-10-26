@@ -3,9 +3,22 @@
 import React from "react";
 import { Compass, Sparkles, ListOrdered, GraduationCap, ShieldCheck } from "lucide-react";
 import { roadmapControlsData } from "@/data/roadmapPhasesData";
+import { roadmapUiData, RoadmapHeaderChip } from "@/data/roadmapUiData";
+
+function renderChipIcon(iconName: RoadmapHeaderChip["iconName"]) {
+  switch (iconName) {
+    case "ListOrdered":
+      return <ListOrdered className="w-3.5 h-3.5 text-teal-400 shrink-0" />;
+    case "GraduationCap":
+      return <GraduationCap className="w-3.5 h-3.5 text-indigo-400 shrink-0" />;
+    case "Sparkles":
+      return <Sparkles className="w-3.5 h-3.5 text-cyan-400 shrink-0" />;
+  }
+}
 
 export function RoadmapHeader() {
   const { badge, title, subtitle } = roadmapControlsData.header;
+  const { standardBadge, chips } = roadmapUiData.header;
 
   return (
     <div className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#0f1422] to-[#090d16] border border-white/10 p-6 sm:p-8 md:p-10 shadow-2xl">
@@ -35,7 +48,7 @@ export function RoadmapHeader() {
 
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-slate-300 text-xs font-mono">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>100% Fully Funded Standard</span>
+              <span>{standardBadge}</span>
             </span>
           </div>
 
@@ -52,18 +65,15 @@ export function RoadmapHeader() {
 
         {/* Intelligence Feature Chips */}
         <div className="flex flex-wrap md:flex-col gap-2 shrink-0">
-          <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 text-xs font-mono text-slate-300">
-            <ListOrdered className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-            <span>13 Sequenced Phases</span>
-          </div>
-          <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 text-xs font-mono text-slate-300">
-            <GraduationCap className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
-            <span>Master&apos;s & PhD Pathways</span>
-          </div>
-          <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 text-xs font-mono text-slate-300">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-            <span>WHAT • WHY • HOW • WHERE</span>
-          </div>
+          {chips.map((chip, idx) => (
+            <div
+              key={idx}
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.03] border border-white/10 text-xs font-mono text-slate-300"
+            >
+              {renderChipIcon(chip.iconName)}
+              <span>{chip.label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

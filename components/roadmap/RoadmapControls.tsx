@@ -3,6 +3,7 @@
 import React from "react";
 import { GraduationCap, Award, Compass, Search, X } from "lucide-react";
 import { roadmapControlsData } from "@/data/roadmapPhasesData";
+import { roadmapUiData } from "@/data/roadmapUiData";
 
 export interface RoadmapControlsProps {
   filterDegree: "all" | "masters" | "phd";
@@ -22,6 +23,7 @@ export function RoadmapControls({
   filteredCount,
 }: RoadmapControlsProps) {
   const { filters, searchPlaceholder } = roadmapControlsData;
+  const { scopeLabel, clearSearchLabel, ofSeparator, countSuffix } = roadmapUiData.controls;
 
   return (
     <div className="p-4 sm:p-5 rounded-2xl bg-[#0f1422]/90 border border-white/10 backdrop-blur-xl shadow-2xl space-y-4">
@@ -42,7 +44,7 @@ export function RoadmapControls({
             <button
               onClick={() => onSearchQueryChange("")}
               className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-white cursor-pointer"
-              title="Clear search"
+              title={clearSearchLabel}
             >
               <X className="w-3.5 h-3.5" />
             </button>
@@ -52,7 +54,7 @@ export function RoadmapControls({
         {/* Pathway Filter Chips */}
         <div className="flex items-center gap-2 flex-wrap">
           <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 mr-1 hidden sm:inline">
-            Scope:
+            {scopeLabel}
           </span>
 
           <button
@@ -94,7 +96,7 @@ export function RoadmapControls({
           {/* Result Counter Badge */}
           <div className="ml-auto lg:ml-2 pl-3 lg:border-l border-white/10">
             <span className="text-xs font-mono font-medium px-2.5 py-1 rounded-lg bg-white/5 text-slate-300 border border-white/5">
-              {filteredCount} of {totalCount} Phases
+              {filteredCount} {ofSeparator} {totalCount} {countSuffix}
             </span>
           </div>
         </div>
