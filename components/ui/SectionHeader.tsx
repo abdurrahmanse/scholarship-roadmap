@@ -1,7 +1,17 @@
 "use client";
 
 import React from "react";
+import { Sparkles, Compass, ShieldCheck, Award, GraduationCap, Globe2 } from "lucide-react";
 import { Badge, BadgeVariant } from "./Badge";
+
+const DEFAULT_BADGE_ICONS: Record<string, React.ReactNode> = {
+  indigo: <Sparkles className="w-3.5 h-3.5" />,
+  teal: <Compass className="w-3.5 h-3.5" />,
+  cyan: <Globe2 className="w-3.5 h-3.5" />,
+  emerald: <ShieldCheck className="w-3.5 h-3.5" />,
+  amber: <Award className="w-3.5 h-3.5" />,
+  purple: <GraduationCap className="w-3.5 h-3.5" />
+};
 
 export interface SectionHeaderProps {
   title: React.ReactNode;
@@ -50,6 +60,7 @@ export function SectionHeader({
     : "text-left items-start";
 
   const titleSize = TITLE_SIZES[size] || TITLE_SIZES.lg;
+  const effectiveBadgeIcon = badgeIcon ?? DEFAULT_BADGE_ICONS[badgeVariant];
 
   return (
     <div
@@ -71,7 +82,7 @@ export function SectionHeader({
                 typeof badge === "string" ? (
                   <Badge
                     variant={badgeVariant}
-                    icon={badgeIcon}
+                    icon={effectiveBadgeIcon}
                     size="md"
                     pulsingDot={pulsingBadge}
                     shimmer

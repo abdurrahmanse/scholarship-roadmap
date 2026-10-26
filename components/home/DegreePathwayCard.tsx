@@ -90,18 +90,22 @@ export function DegreePathwayCard({
         {pathway.description}
       </p>
 
-      <div className="space-y-3 mb-6 text-xs text-slate-300">
+      <div className="space-y-2.5 mb-6 text-xs text-slate-300">
         {pathway.features.map((feat, idx) => {
           const FeatIcon = ICON_MAP[feat.iconName as keyof typeof ICON_MAP] || BookOpen;
           return (
-            <div key={idx} className="flex items-start gap-2.5">
-              <FeatIcon
-                className={`w-4 h-4 shrink-0 mt-0.5 ${
-                  isMasters ? "text-teal-400" : "text-indigo-400"
+            <div key={idx} className="flex items-start gap-3 p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] transition-colors">
+              <span
+                className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 shadow-sm ${
+                  isMasters
+                    ? "bg-teal-500/15 text-teal-300 border border-teal-500/30"
+                    : "bg-indigo-500/15 text-indigo-300 border border-indigo-500/30"
                 }`}
-              />
-              <div className="leading-relaxed">
-                <strong className="text-white">{feat.label}:</strong> {feat.detail}
+              >
+                <FeatIcon className="w-3.5 h-3.5" />
+              </span>
+              <div className="leading-relaxed text-xs sm:text-[13px]">
+                <strong className="text-white font-bold">{feat.label}:</strong> {feat.detail}
               </div>
             </div>
           );
