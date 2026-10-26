@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Cpu, ExternalLink, ShieldCheck } from "lucide-react";
+import { GraduationCap, ExternalLink, ShieldCheck } from "lucide-react";
 import { footerData } from "@/data/navigationData";
 
 export default function Footer() {
@@ -12,8 +12,8 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="md:col-span-1 space-y-4">
             <div className="flex items-center gap-2.5 text-white font-bold text-sm">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25">
-                <Cpu className="w-4 h-4" />
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-teal-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25">
+                <GraduationCap className="w-4 h-4" />
               </div>
               <span className="font-heading font-extrabold text-base tracking-tight">{footerData.brand.name}</span>
             </div>

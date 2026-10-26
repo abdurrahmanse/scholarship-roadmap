@@ -65,7 +65,7 @@ export const COMMON_ICONS: Record<string, LucideIcon> = {
  * Eliminates duplicate switch-statement helpers across heroes, navbars, and cards.
  */
 export function getIconComponent(iconName: string): LucideIcon {
-  return COMMON_ICONS[iconName] || Cpu;
+  return COMMON_ICONS[iconName] || GraduationCap;
 }
 
 export function renderCommonIcon(
@@ -77,5 +77,5 @@ export function renderCommonIcon(
   if (IconComp) {
     return <IconComp className={className} />;
   }
-  return fallback || <Cpu className={className} />;
+  return fallback || <GraduationCap className={className} />;
 }

@@ -14,86 +14,86 @@ export interface StatusTickerItem {
 export const liveStatusTickerData: StatusTickerItem[] = [
   {
     id: "funding-standard",
-    badge: "100% Full-Ride",
-    text: "Full Tuition Remission + Monthly Living Stipend ($30k–$85k) Standard",
+    badge: "Full-Ride Standard",
+    text: "100% Tuition Remission + Livable Monthly Stipends ($1,200–$3,800/mo) Standard",
     variant: "emerald"
   },
   {
-    id: "compute-baseline",
-    badge: "Compute Infrastructure",
-    text: "Dedicated Multi-A100 / H100 SXM5 GPU Lab Nodes Included",
+    id: "european-phd-contracts",
+    badge: "European Employment",
+    text: "Salaried Doctoral Positions (Sweden, Netherlands, Norway, Denmark, Switzerland)",
     variant: "cyan"
   },
   {
     id: "cgs-charter",
     badge: "CGS Resolution",
-    text: "April 15 Binding Acceptance Window Enforced Across 400+ Institutions",
+    text: "April 15 Binding Offer Acceptance Window Enforced Across 400+ North American Institutions",
     variant: "indigo"
   },
   {
-    id: "visa-tal",
-    badge: "TAL Protocol",
-    text: "Technology Alert List Consular Defense & Advisor Open-Science Protocols",
-    variant: "amber"
+    id: "verified-countries",
+    badge: "Global Roadmap",
+    text: "20 Country Guides Across Europe, North America, Asia & Oceania with Official Portals",
+    variant: "purple"
   },
   {
-    id: "peer-review",
-    badge: "Top-Tier Venues",
-    text: "Targeting NeurIPS, ICML, ICLR, CVPR & Flagship Workshops",
-    variant: "purple"
+    id: "open-access",
+    badge: "100% Free & Open",
+    text: "No Login, No Account, No Fees: A Pure Educational Roadmap for Scholars Worldwide",
+    variant: "amber"
   }
 ];
 
 export const liveIndicatorData = {
   status: "ONLINE",
-  label: "100% Fully Funded",
-  detail: "2026–2027 Admissions Cycle Open",
-  activePillText: "Fully Funded Research Only"
+  label: "Fully Funded Guide",
+  detail: "2026–2027 International Admissions Open",
+  activePillText: "Fully Funded Graduate Roadmap"
 };
 
 export const navLinksData: NavLinkItem[] = [
-  { href: "/", label: "Home", iconName: "Cpu" },
-  { href: "/roadmap", label: "Roadmap", iconName: "Map" },
-  { href: "/programs", label: "Programs", iconName: "GraduationCap" },
-  { href: "/toolkit", label: "Toolkit", iconName: "Wrench" },
-  { href: "/interviews", label: "Interviews", iconName: "ShieldAlert" },
+  { href: "/", label: "Home", iconName: "BookOpen" },
+  { href: "/roadmap", label: "Complete Roadmap", iconName: "Map" },
+  { href: "/countries", label: "Explore Countries", iconName: "Globe2" },
+  { href: "/scholarships", label: "Find Scholarships", iconName: "Search" },
+  { href: "/professors", label: "Find Professors", iconName: "Users" },
+  { href: "/documents", label: "Required Documents", iconName: "FileCheck" },
   { href: "/faqs", label: "FAQs", iconName: "HelpCircle" }
 ];
 
 export const footerData = {
   brand: {
-    name: "Scholarship AI Roadmap",
-    tagline: "The canonical open-access blueprint for Computer Science and Artificial Intelligence researchers securing 100% fully funded graduate positions abroad.",
-    badge: "100% Full-Ride Standard"
+    name: "Scholarship Roadmap",
+    tagline: "The comprehensive, open-access educational roadmap guiding international students to fully funded Master's and PhD scholarships worldwide.",
+    badge: "100% Fully Funded Standard"
   },
   roadmapNavigation: [
-    { href: "/roadmap", label: "5-Level Roadmap Overview" },
-    { href: "/roadmap/level-1", label: "Level 1: Math & Systems" },
-    { href: "/roadmap/level-2", label: "Level 2: Artifacts & Workshops" },
-    { href: "/roadmap/level-3", label: "Level 3: Lab Targeting & Outreach" },
-    { href: "/roadmap/level-4", label: "Level 4: Dossier & SOP" },
-    { href: "/roadmap/level-5", label: "Level 5: Interviews & Offers" }
+    { href: "/roadmap", label: "Complete 13-Phase Roadmap" },
+    { href: "/roadmap?degree=masters", label: "Master's Scholarship Pathway" },
+    { href: "/roadmap?degree=phd", label: "PhD Funding Pathway" },
+    { href: "/roadmap#phase-01", label: "Phase 01: Profile Audit" },
+    { href: "/roadmap#phase-05", label: "Phase 05: Professor Outreach" },
+    { href: "/roadmap#phase-11", label: "Phase 11: Funding Offer Audit" }
   ],
   directoryAndTools: [
-    { href: "/programs", label: "Funded AI Programs & Labs" },
-    { href: "/toolkit#interactive-email-builder", label: "Cold Email Generator" },
-    { href: "/toolkit#sop-blueprint", label: "Technical SOP Blueprint" },
-    { href: "/interviews", label: "STAR-L Technical Defense" },
-    { href: "/interviews#visa-tal-checker", label: "Technology Alert List (TAL) Guide" }
+    { href: "/countries", label: "20 Country Funding Guides" },
+    { href: "/scholarships", label: "11-Step Scholarship Finder" },
+    { href: "/professors", label: "Professor Cold Email Generator" },
+    { href: "/documents", label: "Required Documents & SOP Blueprint" },
+    { href: "/faqs", label: "Admissions & Funding FAQs" }
   ],
   keyDatabases: [
-    { href: "https://csrankings.org", label: "CSRankings.org", external: true },
-    { href: "https://arxiv.org/corr", label: "arXiv Computer Science", external: true },
-    { href: "https://openreview.net", label: "OpenReview.net", external: true },
-    { href: "https://huggingface.co/spaces", label: "Hugging Face Spaces", external: true },
-    { href: "/faqs", label: "Admissions FAQ & Knowledge Base", external: false }
+    { href: "https://euraxess.ec.europa.eu/jobs", label: "EURAXESS European Research Jobs", external: true },
+    { href: "https://www.daad.de/en/", label: "DAAD German Exchange Service", external: true },
+    { href: "https://www.campusfrance.org/en", label: "Campus France Bourses", external: true },
+    { href: "https://foreign.fulbrightonline.org/", label: "Fulbright Foreign Student Program", external: true },
+    { href: "https://www.chevening.org/", label: "UK Chevening Scholarships", external: true }
   ],
   sections: {
-    roadmap: "Roadmap Navigation",
-    tools: "Programs & Toolkits",
-    databases: "Key Databases"
+    roadmap: "Roadmap Pathways",
+    tools: "Guides & Toolkits",
+    databases: "Official Portals"
   },
-  subtext: "Crafted for ambitious AI & ML researchers worldwide",
-  copyright: "© 2026 Scholarship AI Roadmap. Open-access public good licensed under CC BY-SA 4.0 & MIT."
+  subtext: "Crafted for ambitious Master's & PhD scholars worldwide",
+  copyright: "© 2026 Scholarship Roadmap. Free, open-access educational resource. Not affiliated with any commercial agency."
 };
-

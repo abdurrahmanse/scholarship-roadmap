@@ -1,42 +1,35 @@
 import type { Metadata } from "next";
-import { roadmapLevelsData } from "./levelsData";
-import {
-  homePageData,
-  roadmapPageData,
-  programsPageData,
-  toolkitPageData,
-  interviewsPageData,
-  faqsPageData,
-} from "./pagesData";
 
 // ========================================================
 // Canonical Global Site Metadata Configuration
 // ========================================================
 
 export const siteMetadata = {
-  siteName: "Scholarship AI Roadmap",
+  siteName: "Scholarship Roadmap",
   siteUrl: "https://scholarship-roadmap.vercel.app",
-  defaultTitle: "100% Fully Funded AI & Machine Learning Postgraduate Roadmap",
-  titleTemplate: "%s | Fully Funded AI & CS Roadmap",
+  defaultTitle: "Scholarship Roadmap — Step-by-Step to a Fully Funded Master's or PhD",
+  titleTemplate: "%s | Scholarship Roadmap",
   defaultDescription:
-    "The canonical zero-to-landing blueprint for Computer Science, AI, and Machine Learning students securing 100% fully funded PhD and Master's research assistantships abroad.",
+    "From finding the right country and scholarship to contacting professors, preparing documents, and submitting applications—follow a clear, 13-phase roadmap to navigate the entire international postgraduate scholarship process.",
   locale: "en_US",
   keywords: [
-    "Fully Funded PhD Computer Science",
-    "MS Thesis AI Funding",
+    "Fully Funded Scholarships",
+    "Fully Funded Master's Scholarships",
+    "PhD Funding Roadmap",
+    "Doctoral Assistantships",
+    "DAAD Scholarship Germany",
+    "Fulbright Foreign Student Program",
+    "Chevening Scholarship UK",
     "Graduate Research Assistantship",
-    "GRA Stipend",
-    "Machine Learning Scholarship Roadmap",
-    "CSRankings Guide",
     "Cold Email Professor Template",
-    "NeurIPS Workshop",
-    "Technology Alert List TAL",
-    "Fully Funded CS Labs",
-    "AI Graduate Admissions",
+    "Statement of Purpose Blueprint",
+    "European Salaried PhD",
+    "Research Training Program RTP Australia",
+    "International Graduate Admissions"
   ],
-  authors: [{ name: "Scholarship AI Roadmap Open Source Initiative" }],
-  creator: "Scholarship AI Roadmap Team",
-  publisher: "Scholarship AI Roadmap",
+  authors: [{ name: "Scholarship Roadmap Educational Initiative" }],
+  creator: "Scholarship Roadmap Team",
+  publisher: "Scholarship Roadmap",
   themeColor: "#090d16",
 };
 
@@ -64,7 +57,7 @@ export function constructMetadata({
 }: ConstructMetadataOptions = {}): Metadata {
   const url = `${siteMetadata.siteUrl}${path}`;
   const formattedTitle = title
-    ? `${title} | Fully Funded AI & CS Roadmap`
+    ? `${title} | Scholarship Roadmap`
     : siteMetadata.defaultTitle;
 
   return {
@@ -145,74 +138,89 @@ export const rootMetadata: Metadata = {
  * Home Page (/) Metadata
  */
 export const homeMetadata: Metadata = constructMetadata({
-  title: homePageData.title,
-  description: homePageData.metaDescription,
+  title: "Your Step-by-Step Roadmap to a Fully Funded Master's or PhD",
+  description:
+    "From finding the right country and scholarship to contacting professors, preparing documents, and submitting applications—follow a clear roadmap to navigate the entire process.",
   path: "/",
 });
 
 /**
- * 5-Level Strategic Roadmap (/roadmap) Metadata
+ * Complete 13-Phase Roadmap (/roadmap) Metadata
  */
 export const roadmapMetadata: Metadata = constructMetadata({
-  title: "5-Level Strategic Research Roadmap",
-  description: roadmapPageData.metaDescription,
+  title: "The Complete Scholarship Roadmap (13 Phases)",
+  description:
+    "A systematic, 13-phase roadmap from profile audit and country selection to professor outreach, document preparation, and funding offer evaluation.",
   path: "/roadmap",
 });
 
 /**
- * Funded Programs & Labs Directory (/programs) Metadata
+ * Explore Countries (/countries) Metadata
  */
-export const programsMetadata: Metadata = constructMetadata({
-  title: "Fully Funded AI & CS Graduate Programs Directory",
-  description: programsPageData.metaDescription,
-  path: "/programs",
+export const countriesMetadata: Metadata = constructMetadata({
+  title: "Explore 20 Global Scholarship Destinations",
+  description:
+    "Comprehensive country guides across Europe, North America, Asia, and Oceania with funding models, government awards, and official portals.",
+  path: "/countries",
 });
 
 /**
- * Application Toolkit & Cold Email Generator (/toolkit) Metadata
+ * Find Scholarships & Universities (/scholarships) Metadata
  */
-export const toolkitMetadata: Metadata = constructMetadata({
-  title: "AI Application Toolkit: SOP, CV & Cold Email",
-  description: toolkitPageData.metaDescription,
-  path: "/toolkit",
+export const scholarshipsMetadata: Metadata = constructMetadata({
+  title: "Find Scholarships and Universities — 11-Step Search Guide",
+  description:
+    "Master systematic search strategies across institutional databases, government repositories, copyable search queries, and official portals.",
+  path: "/scholarships",
 });
 
 /**
- * Interviews, 5-Slide Deck & Defense Simulator (/interviews) Metadata
+ * Find and Contact Professors (/professors) Metadata
  */
-export const interviewsMetadata: Metadata = constructMetadata({
-  title: "Professor Interviews & STAR-L Defense",
-  description: interviewsPageData.metaDescription,
-  path: "/interviews",
+export const professorsMetadata: Metadata = constructMetadata({
+  title: "Find and Contact Professors — Outreach Guide & Email Generator",
+  description:
+    "Academic supervisor outreach protocol: research compatibility audit, cold email blueprint generator, follow-up etiquette, and supervisor necessity by country.",
+  path: "/professors",
 });
 
 /**
- * Frequently Asked Questions & Knowledge Base (/faqs) Metadata
+ * Required Documents Guide (/documents) Metadata
+ */
+export const documentsMetadata: Metadata = constructMetadata({
+  title: "Required Documents Guide: CV, SOP, Proposal & LORs",
+  description:
+    "Comprehensive dossier preparation guide for Academic CV, 5-part Statement of Purpose, Research Proposal, Recommendation Letters, and interactive checklists.",
+  path: "/documents",
+});
+
+/**
+ * Frequently Asked Questions (/faqs) Metadata
  */
 export const faqsMetadata: Metadata = constructMetadata({
-  title: "Admissions FAQs & Pre-Flight Checklist",
-  description: faqsPageData.metaDescription,
+  title: "Frequently Asked Questions — International Scholarship Admissions",
+  description:
+    "Practical, nuanced answers to the 12 most critical scholarship questions: IELTS requirements, GPA importance, supervisor outreach, tuition waivers, and reapplication.",
   path: "/faqs",
 });
 
 /**
- * Dynamic Level Deep-Dive Page (/roadmap/[level]) Metadata Resolver
+ * Legacy / Complementary Route Metadata
  */
-export function getLevelMetadata(levelSlug: string): Metadata {
-  const level = roadmapLevelsData.find((l) => l.slug === levelSlug);
+export const programsMetadata: Metadata = constructMetadata({
+  title: "Funded Programs & Country Guide Directory",
+  description: "Browse fully funded Master's and PhD programs across 20 countries.",
+  path: "/programs",
+});
 
-  if (!level) {
-    return constructMetadata({
-      title: "Roadmap Level Not Found",
-      description: "The requested roadmap level could not be found.",
-      path: `/roadmap/${levelSlug}`,
-      noIndex: true,
-    });
-  }
+export const toolkitMetadata: Metadata = constructMetadata({
+  title: "Application Toolkit: Documents, Checklists & Templates",
+  description: "Interactive tools, copyable email templates, and document blueprints.",
+  path: "/toolkit",
+});
 
-  return constructMetadata({
-    title: `Level ${level.levelNumber}: ${level.shortTitle}`,
-    description: level.tagline,
-    path: `/roadmap/${level.slug}`,
-  });
-}
+export const interviewsMetadata: Metadata = constructMetadata({
+  title: "Phase 10: Interviews & Selection Preparation Guide",
+  description: "Comprehensive preparation guide for academic interviews, technical walkthroughs, and supervisor selection.",
+  path: "/interviews",
+});

@@ -14,6 +14,13 @@ export * from "./levelsData";
 export * from "./navigationData";
 export * from "./metadata";
 
+// New Comprehensive Roadmap Datasets
+export * from "./roadmapPhasesData";
+export * from "./countryGuidesData";
+export * from "./documentsData";
+export * from "./professorsData";
+export * from "./scholarshipsSearchData";
+
 // Modular Section Datasets
 export * from "./homeData";
 export * from "./roadmapSectionData";
@@ -23,33 +30,28 @@ export * from "./interviewsSectionData";
 export * from "./faqsSectionData";
 export * from "./stepWidgetsData";
 
-import { phasesData } from "./phases";
-import { stepsData } from "./steps";
-import { fundedProgramsData } from "./programs";
-import { emailTemplatesData } from "./templates";
-import { interviewCasesData } from "./interviews";
+import { roadmapPhasesData } from "./roadmapPhasesData";
+import { countryGuidesData } from "./countryGuidesData";
+import { documentsData } from "./documentsData";
+import { coldEmailTemplates } from "./professorsData";
 import { faqsData } from "./faqs";
-import { roadmapLevelsData } from "./levelsData";
 
-export const roadmapMasterData = {
-  phases: phasesData,
-  levels: roadmapLevelsData,
-  steps: stepsData,
-  programs: fundedProgramsData,
-  templates: emailTemplatesData,
-  interviewCases: interviewCasesData,
+export const scholarshipRoadmapMasterData = {
+  phases: roadmapPhasesData,
+  countries: countryGuidesData,
+  documents: documentsData,
+  emailTemplates: coldEmailTemplates,
   faqs: faqsData,
   metadata: {
-    title: "The 100% Fully Funded AI & Machine Learning Postgraduate Roadmap",
-    targetAudience: "Computer Science (AI/ML) Master's and PhD Candidates",
+    title: "Scholarship Roadmap — Step-by-Step to a Fully Funded Master's or PhD",
+    targetAudience: "Prospective International Master's & PhD Scholarship Candidates",
     lastUpdated: "2026-10-26",
-    totalPhases: phasesData.length,
-    totalLevels: roadmapLevelsData.length,
-    totalSteps: stepsData.length,
-    totalPrograms: fundedProgramsData.length,
-    totalTemplates: emailTemplatesData.length,
+    totalPhases: roadmapPhasesData.length,
+    totalCountries: countryGuidesData.length,
+    totalDocuments: documentsData.length,
+    totalTemplates: coldEmailTemplates.length,
     totalFaqs: faqsData.length
   }
 };
 
-export default roadmapMasterData;
+export default scholarshipRoadmapMasterData;
