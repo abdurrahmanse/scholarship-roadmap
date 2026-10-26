@@ -1,7 +1,7 @@
 import React from "react";
 import { SectionHeader, SectionHeaderProps } from "./SectionHeader";
 
-export interface SectionHeadingProps extends SectionHeaderProps {}
+export type SectionHeadingProps = SectionHeaderProps;
 
 /**
  * Standardized SectionHeading component delegating to SectionHeader.

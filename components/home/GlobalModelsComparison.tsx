@@ -8,7 +8,6 @@ import {
 } from "lucide-react";
 import { SectionCard } from "@/components/ui/SectionCard";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { renderCommonIcon } from "@/components/ui/iconUtils";
 import { globalFundingModelsData } from "@/data/homeData";

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Search, DollarSign, RotateCcw, SlidersHorizontal, MapPin } from "lucide-react";
+import { Search, DollarSign, RotateCcw, MapPin } from "lucide-react";
 import { programsRegionOptions, programsStipendSliderConfig, programsNavAnchors } from "@/data/programsSectionData";
 import { QuickScrollNavigator } from "@/components/ui/QuickScrollNavigator";
 import { Button } from "@/components/ui/Button";

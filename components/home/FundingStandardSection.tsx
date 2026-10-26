@@ -7,7 +7,6 @@ import {
   AlertTriangle
 } from "lucide-react";
 import { SectionCard } from "@/components/ui/SectionCard";
-import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { renderCommonIcon } from "@/components/ui/iconUtils";
 import { fundingPillarsData, fundingWarningData } from "@/data/homeData";

@@ -2,11 +2,6 @@
 
 import React from "react";
 import {
-  Cpu,
-  Sparkles,
-  Target,
-  FileCheck,
-  ShieldCheck,
   ArrowRight,
   Clock,
   Award,

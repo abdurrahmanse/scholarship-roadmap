@@ -5,13 +5,6 @@ import Link from "next/link";
 import {
   ChevronLeft,
   Clock,
-  CheckCircle2,
-  Cpu,
-  Sparkles,
-  Target,
-  FileCheck,
-  ShieldCheck,
-  Award,
   Quote
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";

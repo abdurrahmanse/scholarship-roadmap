@@ -3,7 +3,6 @@
 import React from "react";
 import { Compass } from "lucide-react";
 import { SectionCard } from "@/components/ui/SectionCard";
-import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { renderCommonIcon } from "@/components/ui/iconUtils";
 import { faqCategoryCardsData } from "@/data/faqsSectionData";

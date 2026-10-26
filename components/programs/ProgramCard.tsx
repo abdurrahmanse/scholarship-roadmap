@@ -4,8 +4,7 @@ import React from "react";
 import {
   ExternalLink,
   Cpu,
-  Users,
-  Sparkles
+  Users
 } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
