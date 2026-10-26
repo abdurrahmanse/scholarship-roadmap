@@ -24,7 +24,6 @@ export interface DegreePathwayCardProps {
 export function DegreePathwayCard({ pathway, isActive, onSelect }: DegreePathwayCardProps) {
   const isMasters = pathway.id === "masters";
   const HeaderIcon = isMasters ? GraduationCap : Award;
-  const activeColor = isMasters ? "teal" : "indigo";
 
   return (
     <div

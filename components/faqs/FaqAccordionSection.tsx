@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { TabsContainer, TabItem } from "@/components/ui/Tabs";
 import { FaqAccordionItem } from "@/components/faqs/FaqAccordionItem";
-import { faqsData } from "@/data/faqs";
+import { faqsData, faqsHeaderData } from "@/data/faqs";
 
 interface FaqAccordionSectionProps {
   selectedCategory?: string;
@@ -30,7 +30,7 @@ export function FaqAccordionSection({
     }
   };
 
-  const categories = ["All", ...Array.from(new Set(faqsData.map((f) => f.category)))];
+  const categories = faqsHeaderData.categories;
 
   const filteredFaqs = faqsData.filter((faq) => {
     const matchesCategory = activeCategory === "All" || faq.category === activeCategory;
@@ -51,12 +51,12 @@ export function FaqAccordionSection({
     <section id="faq-list" className="py-20 border-b border-white/5 bg-[#090d16]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Verified Answers"
+          badge={faqsHeaderData.badge}
           badgeVariant="cyan"
           badgeIcon={<HelpCircle className="w-3.5 h-3.5 text-cyan-400" />}
-          title="Comprehensive Answers to Critical Admissions Inquiries"
-          subtitle="Authoritative answers backed by institutional policies across North America, Europe, and Asia."
-          counter={`${filteredFaqs.length} of ${faqsData.length} Answers`}
+          title={faqsHeaderData.title}
+          subtitle={faqsHeaderData.subtitle}
+          counter={`${filteredFaqs.length} of ${faqsData.length} Questions`}
           align="center"
         />
 
@@ -65,7 +65,7 @@ export function FaqAccordionSection({
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
           <input
             type="text"
-            placeholder="Search by keyword (e.g., 'direct PhD', 'low GPA', 'H100', 'GRE', 'TAL')..."
+            placeholder={faqsHeaderData.searchPlaceholder}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-[#0f1422] border border-white/10 focus:border-cyan-500 text-slate-100 placeholder-slate-500 text-xs sm:text-sm outline-none transition-all shadow-inner"

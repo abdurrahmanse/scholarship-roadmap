@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Clock, ArrowRight, CheckCircle2, ChevronRight, Compass } from "lucide-react";
+import { Clock, ArrowRight } from "lucide-react";
 import { RoadmapPhase } from "@/data/roadmapPhasesData";
 
 export interface TimelinePhasePreviewProps {
