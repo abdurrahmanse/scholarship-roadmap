@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { RoadmapLevel } from "@/data/types";
+import { levelDetailUiData } from "@/data/levelDetailUiData";
 import { getLevelIcon, getLevelDifficultyVariant } from "./roadmapConstants";
 
 interface LevelHeroProps {
@@ -16,6 +17,7 @@ interface LevelHeroProps {
 }
 
 export function LevelHero({ level }: LevelHeroProps) {
+  const { hero } = levelDetailUiData;
 
   return (
     <section className="relative overflow-hidden pt-28 pb-16 border-b border-white/[0.06] bg-[#090d16]">
@@ -27,7 +29,7 @@ export function LevelHero({ level }: LevelHeroProps) {
             className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-slate-400 hover:text-white transition-colors group cursor-pointer"
           >
             <ChevronLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
-            <span>All 5 Levels Overview</span>
+            <span>{hero.breadcrumbOverview}</span>
             <span className="text-slate-600">/</span>
             <span className="text-indigo-400 font-bold">Level 0{level.levelNumber}</span>
           </Link>
@@ -45,12 +47,12 @@ export function LevelHero({ level }: LevelHeroProps) {
           </div>
 
           <Badge variant={getLevelDifficultyVariant(level.difficulty)} size="sm">
-            {level.difficulty} Difficulty
+            {level.difficulty} {hero.difficultySuffix}
           </Badge>
 
           <span className="text-xs font-mono text-slate-400 flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/5">
             <Clock className="w-3.5 h-3.5 text-slate-400" />
-            {level.timeline}
+            <span>{level.timeline}</span>
           </span>
         </div>
 
@@ -105,7 +107,7 @@ export function LevelHero({ level }: LevelHeroProps) {
 
           <div className="p-4 rounded-xl bg-[#0f1422] border border-white/10">
             <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-1">
-              Tangible Proof-of-Work
+              {hero.deliverableLabel}
             </span>
             <div className="text-xs font-bold text-emerald-400 font-sans leading-snug line-clamp-2">
               {level.keyDeliverable}
@@ -130,3 +132,5 @@ export function LevelHero({ level }: LevelHeroProps) {
     </section>
   );
 }
+
+export default LevelHero;

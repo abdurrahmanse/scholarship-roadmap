@@ -1,6 +1,7 @@
 import React from "react";
 import { Check } from "lucide-react";
 import { PhaseChecklistItem as PhaseChecklistItemType } from "@/data/roadmapPhasesData";
+import { phaseDetailUiData } from "@/data/phaseDetailUiData";
 
 interface PhaseChecklistItemProps {
   item: PhaseChecklistItemType;
@@ -13,6 +14,8 @@ export function PhaseChecklistItem({
   isChecked,
   onToggle,
 }: PhaseChecklistItemProps) {
+  const { checklist } = phaseDetailUiData;
+
   return (
     <label
       onClick={() => onToggle(item.id)}
@@ -43,7 +46,7 @@ export function PhaseChecklistItem({
         </span>
         {item.tip && (
           <p className="text-[11px] sm:text-xs text-slate-400 font-mono">
-            Pro-Tip: {item.tip}
+            {checklist.proTipPrefix} {item.tip}
           </p>
         )}
       </div>
