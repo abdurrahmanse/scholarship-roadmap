@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight, Users, Award, Briefcase, Globe2, BookOpen, Coins } from "lucide-react";
 import { CountryGuide } from "@/data/countryGuidesData";
 
 export interface CountryCardProps {
@@ -33,8 +33,9 @@ export function CountryCard({ country }: CountryCardProps) {
             <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
               {country.name}
             </h3>
-            <span className="text-xs font-mono font-medium px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-slate-300">
-              {country.region} · {country.code}
+            <span className="inline-flex items-center gap-1 text-xs font-mono font-medium px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-slate-300">
+              <Globe2 className="w-3 h-3 text-teal-400/80" />
+              <span>{country.region} · {country.code}</span>
             </span>
           </div>
 
@@ -48,9 +49,10 @@ export function CountryCard({ country }: CountryCardProps) {
             {country.commonFundingRoutes.slice(0, 3).map((route, idx) => (
               <span
                 key={idx}
-                className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-slate-800/80 border border-white/5 text-slate-400 truncate max-w-[220px]"
+                className="inline-flex items-center gap-1 text-[11px] font-mono px-2.5 py-1 rounded-lg bg-slate-800/80 border border-white/5 text-slate-300 truncate max-w-[220px]"
               >
-                {route.length > 45 ? route.slice(0, 45) + "…" : route}
+                <Coins className="w-2.5 h-2.5 text-teal-400 shrink-0" />
+                <span>{route.length > 45 ? route.slice(0, 45) + "…" : route}</span>
               </span>
             ))}
             {country.commonFundingRoutes.length > 3 && (
@@ -63,18 +65,21 @@ export function CountryCard({ country }: CountryCardProps) {
           {/* Stats row */}
           <div className="flex flex-wrap items-center gap-3 pt-1">
             <span
-              className={`inline-flex items-center text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full border ${supervisorColor}`}
+              className={`inline-flex items-center gap-1 text-[10px] font-mono font-semibold px-2.5 py-0.5 rounded-full border ${supervisorColor}`}
             >
-              {country.supervisorContactRequirement}
+              <Users className="w-3 h-3 shrink-0" />
+              <span>{country.supervisorContactRequirement}</span>
             </span>
             {country.governmentScholarships.length > 0 && (
-              <span className="text-[10px] font-mono text-slate-400">
-                {country.governmentScholarships.length} gov&apos;t scholarship{country.governmentScholarships.length !== 1 ? "s" : ""}
+              <span className="inline-flex items-center gap-1 text-[10px] font-mono text-slate-400">
+                <Award className="w-3 h-3 text-amber-400 shrink-0" />
+                <span>{country.governmentScholarships.length} gov&apos;t scholarship{country.governmentScholarships.length !== 1 ? "s" : ""}</span>
               </span>
             )}
             {country.assistantshipsAvailable && (
-              <span className="text-[10px] font-mono text-emerald-400">
-                ✓ Assistantships
+              <span className="inline-flex items-center gap-1 text-[10px] font-mono text-emerald-400 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                <Briefcase className="w-3 h-3 shrink-0" />
+                <span>Assistantships Available</span>
               </span>
             )}
           </div>
@@ -84,8 +89,9 @@ export function CountryCard({ country }: CountryCardProps) {
         <div className="flex flex-col gap-3 shrink-0 self-start md:self-center items-end">
           <Link
             href={`/countries/${country.id}`}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold transition-colors group/btn"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold transition-colors group/btn shadow-md"
           >
+            <BookOpen className="w-3.5 h-3.5" />
             <span>Full Guide</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
           </Link>
