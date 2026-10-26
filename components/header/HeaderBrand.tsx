@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { GraduationCap } from "lucide-react";
-import { liveIndicatorData } from "@/data/navigationData";
+import { headerData } from "@/data/navigationData";
 
 export function HeaderBrand() {
   return (
@@ -14,14 +14,14 @@ export function HeaderBrand() {
       </div>
       <div>
         <div className="font-heading font-extrabold text-sm sm:text-base tracking-tight flex items-center gap-1 sm:gap-1.5">
-          <span className="text-white">Scholarship</span>
+          <span className="text-white">{headerData.brand.primary}</span>
           <span className="bg-gradient-to-r from-indigo-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
-            Roadmap
+            {headerData.brand.secondary}
           </span>
         </div>
         <div className="flex items-center gap-1.5 -mt-0.5">
           <span className="text-[10px] text-slate-400 font-mono tracking-wide hidden sm:inline">
-            {liveIndicatorData.activePillText}
+            {headerData.brand.badge}
           </span>
         </div>
       </div>

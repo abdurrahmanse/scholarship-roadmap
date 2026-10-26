@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Menu, X } from "lucide-react";
-import { liveIndicatorData } from "@/data/navigationData";
+import { headerData } from "@/data/navigationData";
 import { Button } from "@/components/ui/Button";
 
 interface HeaderActionsProps {
@@ -22,24 +22,24 @@ export function HeaderActions({
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
         </span>
-        <span>{liveIndicatorData.label}</span>
+        <span>{headerData.actions.statusBadge}</span>
       </div>
 
       {/* Primary Action Button */}
       <Button
-        href="/roadmap"
+        href={headerData.actions.ctaButton.href}
         variant="primary"
         size="sm"
         className="hidden sm:inline-flex"
       >
-        Start Roadmap
+        {headerData.actions.ctaButton.label}
       </Button>
 
       {/* Mobile Menu Hamburger Button */}
       <button
         onClick={onToggleMobileMenu}
         className="lg:hidden p-2 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-white focus:outline-none cursor-pointer"
-        aria-label="Toggle navigation menu"
+        aria-label={headerData.actions.menuAriaLabel}
         aria-expanded={mobileMenuOpen}
       >
         {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

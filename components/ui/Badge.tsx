@@ -1,6 +1,6 @@
 import React from "react";
 
-export type BadgeVariant = "indigo" | "cyan" | "emerald" | "amber" | "purple" | "rose" | "slate";
+export type BadgeVariant = "indigo" | "cyan" | "teal" | "emerald" | "amber" | "purple" | "rose" | "slate";
 
 export interface BadgeProps {
   children: React.ReactNode;
@@ -24,6 +24,7 @@ export function Badge({
   const variantStyles = {
     indigo: "bg-indigo-950/70 text-indigo-300 border-indigo-700/60 shadow-indigo-950/50",
     cyan: "bg-cyan-950/70 text-cyan-300 border-cyan-700/60 shadow-cyan-950/50",
+    teal: "bg-teal-950/70 text-teal-300 border-teal-700/60 shadow-teal-950/50",
     emerald: "bg-emerald-950/70 text-emerald-300 border-emerald-700/60 shadow-emerald-950/50",
     amber: "bg-amber-950/70 text-amber-300 border-amber-700/60 shadow-amber-950/50",
     purple: "bg-purple-950/70 text-purple-300 border-purple-700/60 shadow-purple-950/50",
@@ -34,6 +35,7 @@ export function Badge({
   const dotColors = {
     indigo: "bg-indigo-400",
     cyan: "bg-cyan-400",
+    teal: "bg-teal-400",
     emerald: "bg-emerald-400",
     amber: "bg-amber-400",
     purple: "bg-purple-400",

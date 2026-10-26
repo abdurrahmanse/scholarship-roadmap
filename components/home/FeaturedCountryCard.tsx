@@ -1,0 +1,62 @@
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { CountryGuide } from "@/data/countryGuidesData";
+
+export interface FeaturedCountryCardProps {
+  country: CountryGuide;
+}
+
+export function FeaturedCountryCard({ country }: FeaturedCountryCardProps) {
+  const isStrictSupervisor = country.supervisorContactRequirement.includes("Strictly");
+
+  return (
+    <Link
+      href={`/countries#${country.id}`}
+      className="p-6 rounded-2xl bg-slate-900/60 border border-white/[0.08] hover:border-teal-500/40 hover:bg-slate-900/90 transition-all duration-200 flex flex-col justify-between group shadow-lg"
+    >
+      <div>
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2.5">
+            <span className="text-2xl">{country.flag}</span>
+            <div>
+              <h3 className="text-lg font-bold text-white group-hover:text-teal-300 transition-colors">
+                {country.name}
+              </h3>
+              <span className="text-[11px] font-mono text-slate-400">{country.region}</span>
+            </div>
+          </div>
+          <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-slate-300">
+            {country.code}
+          </span>
+        </div>
+
+        <p className="text-xs text-slate-300 leading-relaxed mb-4 line-clamp-2">
+          {country.headline}
+        </p>
+
+        <div className="space-y-1.5 text-[11px] text-slate-400 mb-4 pt-3 border-t border-white/5">
+          <div className="flex items-center gap-2">
+            <strong className="text-slate-300">Supervisor:</strong>
+            <span className={isStrictSupervisor ? "text-amber-400" : "text-teal-400"}>
+              {country.supervisorContactRequirement}
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <strong className="text-slate-300">PhD Model:</strong>
+            <span className="text-slate-400 truncate">{country.phdFundingModel.split(".")[0]}</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between pt-3 border-t border-white/5 text-xs text-teal-400 font-semibold group-hover:text-teal-300">
+        <span>View Country Guide</span>
+        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+      </div>
+    </Link>
+  );
+}
+
+export default FeaturedCountryCard;
