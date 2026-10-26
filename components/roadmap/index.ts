@@ -9,5 +9,6 @@ export * from "./GpuComputeBlueprint";
 export * from "./DeliverablesAuditWidget";
 export * from "./PhaseNavigationTabs";
 export * from "./StepCard";
+export * from "./LevelTasksSection";
 export * from "./roadmapConstants";
 export * from "./widgets";

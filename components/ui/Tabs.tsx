@@ -8,6 +8,8 @@ export type TabVariant = "pills" | "cards" | "segmented" | "minimal";
 export interface TabsContainerProps {
   children: React.ReactNode;
   variant?: TabVariant;
+  theme?: TabTheme | string;
+  size?: "xs" | "sm" | "md" | "lg";
   fullWidth?: boolean;
   className?: string;
   columns?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
@@ -54,6 +56,7 @@ export interface TabItemProps {
   onClick: () => void;
   title?: React.ReactNode;
   label?: React.ReactNode;
+  children?: React.ReactNode;
   subtitle?: React.ReactNode;
   badge?: React.ReactNode;
   icon?: React.ReactNode;
@@ -84,6 +87,7 @@ export function TabItem({
   onClick,
   title,
   label,
+  children,
   subtitle,
   badge,
   icon,
@@ -94,7 +98,7 @@ export function TabItem({
   className = "",
   disabled = false
 }: TabItemProps) {
-  const effectiveTitle = title || label;
+  const effectiveTitle = children !== undefined ? children : (title || label);
   const effectiveThemeKey = (colorTheme || theme || "indigo") as TabTheme;
   const activeClass = active
     ? ACTIVE_THEMES[effectiveThemeKey] || ACTIVE_THEMES.indigo
