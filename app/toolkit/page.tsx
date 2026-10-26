@@ -1,6 +1,5 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import { ToolkitHero } from "@/components/toolkit/ToolkitHero";
 import { SopBlueprintSection } from "@/components/toolkit/SopBlueprintSection";
 import { LatexCvStandardsSection } from "@/components/toolkit/LatexCvStandardsSection";
@@ -8,6 +7,12 @@ import { InteractiveEmailBuilder } from "@/components/toolkit/InteractiveEmailBu
 import { ResearchProposalSection } from "@/components/toolkit/ResearchProposalSection";
 import { QuickScrollNavigator } from "@/components/ui/QuickScrollNavigator";
 import { toolkitNavAnchors } from "@/data/toolkitSectionData";
+
+export const metadata: Metadata = {
+  title: "AI Researcher Application Toolkit | SOP, CV & Cold Email Generator",
+  description:
+    "Open-access templates for 5-movement Statement of Purpose (SOP), academic LaTeX CV with Google XYZ metrics, interactive cold outreach email builder, and research proposals.",
+};
 
 export default function ToolkitPage() {
   return (

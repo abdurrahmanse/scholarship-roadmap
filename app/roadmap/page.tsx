@@ -1,6 +1,5 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import { RoadmapHero } from "@/components/roadmap/RoadmapHero";
 import { LevelsOverviewSection } from "@/components/roadmap/LevelsOverviewSection";
 import { LevelsComparisonMatrix } from "@/components/roadmap/LevelsComparisonMatrix";
@@ -8,6 +7,12 @@ import { GpuComputeBlueprint } from "@/components/roadmap/GpuComputeBlueprint";
 import { DeliverablesAuditWidget } from "@/components/roadmap/DeliverablesAuditWidget";
 import { QuickScrollNavigator } from "@/components/ui/QuickScrollNavigator";
 import { roadmapNavAnchors } from "@/data/roadmapSectionData";
+
+export const metadata: Metadata = {
+  title: "5-Level Strategic Research Roadmap | PhD & MS Thesis",
+  description:
+    "Structured 5-level roadmap from mathematical foundations to conference workshops, professor outreach, statement of purpose, and funded lab onboarding.",
+};
 
 export default function RoadmapPage() {
   return (

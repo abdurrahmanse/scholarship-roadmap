@@ -120,6 +120,8 @@ export function TabItem({
     return (
       <button
         type="button"
+        role="tab"
+        aria-selected={active}
         onClick={onClick}
         disabled={disabled}
         className={`p-3.5 rounded-xl border text-left transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${activeClass} ${className}`}
@@ -137,6 +139,8 @@ export function TabItem({
   return (
     <button
       type="button"
+      role="tab"
+      aria-selected={active}
       onClick={onClick}
       disabled={disabled}
       className={`${sizeClass} rounded-xl font-semibold whitespace-nowrap transition-all duration-200 flex items-center gap-2 border cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${activeClass} ${className}`}

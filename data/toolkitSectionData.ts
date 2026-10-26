@@ -80,7 +80,8 @@ export const emailPresetsData = [
     limitation: "high autoregressive decoding latency (800ms) under multi-camera visual inputs",
     myWeaponry: "distilled speculative draft networks with FlashAttention-2 kernels cutting latency to 84ms",
     githubUrl: "https://github.com/my-username/vla-fast-inference",
-    subjectPrefix: "Prospective PhD Applicant (Fall 2026)"
+    subjectPrefix: "Prospective PhD Applicant (Fall 2026)",
+    researchField: "scalable robot learning and foundation model inference"
   },
   {
     id: "ablation-fix",
@@ -92,7 +93,8 @@ export const emailPresetsData = [
     limitation: "severe value function collapse under extreme out-of-distribution state transitions",
     myWeaponry: "energy-bounded Dirichlet regularized policy operators improving OOD safety margins by 24.8%",
     githubUrl: "https://github.com/my-username/safe-offline-cql",
-    subjectPrefix: "Research Feedback & Prospective PhD Applicant"
+    subjectPrefix: "Research Feedback & Prospective PhD Applicant",
+    researchField: "offline reinforcement learning and safe policy optimization"
   },
   {
     id: "polite-bump",
@@ -104,7 +106,8 @@ export const emailPresetsData = [
     limitation: "computational intractability of certified convex relaxation bounds beyond 4 layers",
     myWeaponry: "sparse low-rank semidefinite relaxations reducing verification time by 6.2x",
     githubUrl: "https://github.com/my-username/certified-sparse-sdp",
-    subjectPrefix: "Brief Follow-Up: Prospective Graduate Research"
+    subjectPrefix: "Brief Follow-Up: Prospective Graduate Research",
+    researchField: "provable robustness and certified neural network verification"
   }
 ];
 

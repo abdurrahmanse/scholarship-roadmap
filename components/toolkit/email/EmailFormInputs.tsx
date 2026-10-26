@@ -15,6 +15,8 @@ export interface EmailFormInputsProps {
   setMyWeaponry: (val: string) => void;
   githubUrl: string;
   setGithubUrl: (val: string) => void;
+  researchField: string;
+  setResearchField: (val: string) => void;
 }
 
 /**
@@ -33,6 +35,8 @@ export function EmailFormInputs({
   setMyWeaponry,
   githubUrl,
   setGithubUrl,
+  researchField,
+  setResearchField,
 }: EmailFormInputsProps) {
   return (
     <div className="space-y-3 pt-2 border-t border-white/5">
@@ -59,6 +63,19 @@ export function EmailFormInputs({
           onChange={(e) => setInstitution(e.target.value)}
           className="w-full px-3 py-2 rounded-xl bg-[#090d16] border border-white/10 focus:border-indigo-500 text-xs text-white outline-none"
           placeholder="e.g. Stanford University (SAIL)"
+        />
+      </div>
+
+      <div>
+        <label className="block text-[11px] font-semibold text-slate-400 mb-1">
+          Your Specific Research Interests:
+        </label>
+        <input
+          type="text"
+          value={researchField}
+          onChange={(e) => setResearchField(e.target.value)}
+          className="w-full px-3 py-2 rounded-xl bg-[#090d16] border border-white/10 focus:border-indigo-500 text-xs text-white outline-none"
+          placeholder="e.g. scalable robot learning and foundation models"
         />
       </div>
 

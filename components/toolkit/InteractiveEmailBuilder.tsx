@@ -21,6 +21,7 @@ export function InteractiveEmailBuilder() {
   const [limitation, setLimitation] = useState(emailPresetsData[0].limitation);
   const [myWeaponry, setMyWeaponry] = useState(emailPresetsData[0].myWeaponry);
   const [githubUrl, setGithubUrl] = useState(emailPresetsData[0].githubUrl);
+  const [researchField, setResearchField] = useState(emailPresetsData[0].researchField);
   const [copied, setCopied] = useState(false);
 
   const sectionMeta = toolkitPageData.sections[2];
@@ -33,12 +34,34 @@ export function InteractiveEmailBuilder() {
     setLimitation(preset.limitation);
     setMyWeaponry(preset.myWeaponry);
     setGithubUrl(preset.githubUrl);
+    setResearchField(preset.researchField);
   };
 
   const currentPreset = emailPresetsData.find((p) => p.id === selectedPresetId) || emailPresetsData[0];
   const generatedSubject = `${currentPreset.subjectPrefix} – Inquiry regarding ${paperTitle.slice(0, 32)}...`;
 
-  const generatedBody = `Dear ${profName || "[Professor's Last Name]"},
+  const isFollowUp = selectedPresetId === "polite-bump";
+
+  const generatedBody = isFollowUp
+    ? `Dear ${profName || "[Professor's Last Name]"},
+
+I am writing to gently follow up on my note from last week regarding prospective PhD / MS Thesis research openings in your group at ${institution || "[Institution]"} for Fall 2026.
+
+I recognize that faculty receive an overwhelming volume of emails during the peak conference and admissions cycle. To briefly recap: I was fascinated by your recent work on "${paperTitle || "[Recent Paper Title]"}" and your analysis of ${limitation || "[Specific limitation or open research question]"}. In my recent project, I developed ${myWeaponry || "[Your technical solution & quantitative benchmark result]"}.
+
+The reproducible PyTorch implementation and benchmark weights are openly available on GitHub at:
+${githubUrl || "[GitHub Repository Link]"}
+
+My core background in ${researchField || "[your specific research focus]"} aligns directly with your lab's ongoing research programs. If your schedule permits 10–15 minutes in the coming weeks, I would welcome the opportunity for a brief conversation regarding potential openings.
+
+Thank you once again for your time, consideration, and leadership in the field.
+
+Sincerely,
+[Your Full Name]
+B.S. / M.S. in Computer Science
+[Your Current University]
+[Link to Personal Website / Google Scholar Profile]`
+    : `Dear ${profName || "[Professor's Last Name]"},
 
 I have been following your lab's work at ${institution || "[Institution]"} with great admiration, particularly your recent paper "${paperTitle || "[Recent Paper Title]"}".
 
@@ -47,7 +70,7 @@ While studying your benchmark results, I was especially intrigued by your ablati
 I have open-sourced the reproducible PyTorch codebase and validation weights on GitHub at:
 ${githubUrl || "[GitHub Repository Link]"}
 
-I am applying for fully funded PhD / MS Thesis graduate positions for Fall 2026, and my research interests in scalable robot learning and foundation models align closely with your lab's current grants. 
+I am applying for fully funded PhD / MS Thesis graduate positions for Fall 2026, and my research interests in ${researchField || "[your research field]"} align closely with your lab's current grants. 
 
 Would you have 15 minutes in the coming weeks for a brief Zoom conversation to discuss your lab's upcoming research directions and potential graduate openings?
 
@@ -98,6 +121,8 @@ B.S. / M.S. in Computer Science
                 setMyWeaponry={setMyWeaponry}
                 githubUrl={githubUrl}
                 setGithubUrl={setGithubUrl}
+                researchField={researchField}
+                setResearchField={setResearchField}
               />
             </GlassCard>
 

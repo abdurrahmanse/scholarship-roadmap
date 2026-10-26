@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import { HeroSection } from "@/components/home/HeroSection";
 import { InteractiveTimelineSlider } from "@/components/home/InteractiveTimelineSlider";
 import { CsProfileRequirementsSection } from "@/components/home/CsProfileRequirementsSection";
@@ -7,6 +8,12 @@ import { InteractiveProfileDiagnostic } from "@/components/home/InteractiveProfi
 import { RoadmapPipelinePreview } from "@/components/home/RoadmapPipelinePreview";
 import { GlobalModelsComparison } from "@/components/home/GlobalModelsComparison";
 import { InteractiveStipendCalculator } from "@/components/home/InteractiveStipendCalculator";
+
+export const metadata: Metadata = {
+  title: "100% Fully Funded AI & Machine Learning Postgraduate Roadmap",
+  description:
+    "The canonical zero-to-landing blueprint for Computer Science, AI, and Machine Learning students securing 100% fully funded PhD and Master's research assistantships abroad.",
+};
 
 export default function HomePage() {
   return (

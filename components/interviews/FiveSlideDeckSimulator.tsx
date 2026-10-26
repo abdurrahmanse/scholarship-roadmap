@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Presentation } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -26,6 +26,26 @@ export function FiveSlideDeckSimulator() {
   const handleNext = () => {
     setCurrentSlideIndex((prev) => Math.min(fiveSlideDeckData.length - 1, prev + 1));
   };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Don't trigger if user is typing into an input/textarea
+      if (
+        document.activeElement?.tagName === "INPUT" ||
+        document.activeElement?.tagName === "TEXTAREA"
+      ) {
+        return;
+      }
+      if (e.key === "ArrowLeft") {
+        setCurrentSlideIndex((prev) => Math.max(0, prev - 1));
+      } else if (e.key === "ArrowRight") {
+        setCurrentSlideIndex((prev) => Math.min(fiveSlideDeckData.length - 1, prev + 1));
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <section id="five-slide-simulator" className="py-20 border-b border-white/10 bg-[#090d16]">
