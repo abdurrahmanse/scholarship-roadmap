@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { roadmapPhasesData, getPhaseBySlug } from "@/data/roadmapPhasesData";
-import { PhaseDetailPage } from "@/components/roadmap/phases/PhaseDetailPage";
+import { PhaseDetailPage } from "@/components/roadmap/phases";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -35,5 +35,19 @@ export default async function PhaseDetailRoute({ params }: Props) {
     notFound();
   }
 
-  return <PhaseDetailPage phase={phase} />;
+  const currentIndex = roadmapPhasesData.findIndex((p) => p.slug === slug);
+  const prevPhase =
+    currentIndex > 0 ? roadmapPhasesData[currentIndex - 1] : null;
+  const nextPhase =
+    currentIndex < roadmapPhasesData.length - 1
+      ? roadmapPhasesData[currentIndex + 1]
+      : null;
+
+  return (
+    <PhaseDetailPage
+      phase={phase}
+      prevPhase={prevPhase}
+      nextPhase={nextPhase}
+    />
+  );
 }
