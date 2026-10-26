@@ -1,11 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { countryGuidesData, CountryGuide } from "@/data/countryGuidesData";
+import { countryGuidesData } from "@/data/countryGuidesData";
 import {
-  Globe2,
   Search,
-  Filter,
   ExternalLink,
   ShieldCheck,
   AlertTriangle,

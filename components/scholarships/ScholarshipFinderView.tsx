@@ -7,15 +7,11 @@ import {
   verifiedScholarshipPortals
 } from "@/data/scholarshipsSearchData";
 import {
-  Search,
   Copy,
   Check,
   ExternalLink,
   ShieldAlert,
-  ShieldCheck,
-  Lightbulb,
-  Terminal,
-  Globe2
+  Terminal
 } from "lucide-react";
 
 export function ScholarshipFinderView() {

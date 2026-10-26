@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { ArrowRight, Globe2, Compass, ShieldCheck, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, Globe2, Compass, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 export function HomeHero() {

@@ -1,14 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
+import { roadmapPhasesData } from "@/data/roadmapPhasesData";
 import {
-  roadmapPhasesData,
-  RoadmapPhase,
-  PhaseChecklistItem
-} from "@/data/roadmapPhasesData";
-import {
-  Compass,
   CheckCircle2,
   Clock,
   ExternalLink,
@@ -20,9 +14,7 @@ import {
   ArrowLeft,
   GraduationCap,
   Award,
-  Filter,
-  Search,
-  RotateCcw
+  Search
 } from "lucide-react";
 
 export function CompleteRoadmapView() {

@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { countryGuidesData } from "@/data/countryGuidesData";
-import { Globe2, ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { Globe2, ArrowRight } from "lucide-react";
 
 export function FeaturedCountriesSection() {
   // Select 6 premier featured countries across different regions

@@ -224,3 +224,14 @@ export const interviewsMetadata: Metadata = constructMetadata({
   description: "Comprehensive preparation guide for academic interviews, technical walkthroughs, and supervisor selection.",
   path: "/interviews",
 });
+
+/**
+ * Dynamic Level Page (/roadmap/[level]) Metadata Resolver
+ */
+export function getLevelMetadata(levelSlug: string): Metadata {
+  return constructMetadata({
+    title: `Roadmap Level: ${levelSlug}`,
+    description: "Detailed roadmap level milestones, tasks, and deliverables.",
+    path: `/roadmap/${levelSlug}`,
+  });
+}

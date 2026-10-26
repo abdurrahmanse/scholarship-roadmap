@@ -727,13 +727,13 @@ export const interviewsPageData: MultiPageData = {
 export const faqsPageData: MultiPageData = {
   pageId: "faqs",
   slug: "/faqs",
-  title: "AI/ML Scholarship FAQs & Knowledge Base",
-  metaDescription: "Frequently asked questions covering direct PhD entry from bachelor's, low GPAs, compute allocation, visa defense, and summer industry research internships.",
+  title: "Scholarship Admissions FAQs & Knowledge Base",
+  metaDescription: "Practical, nuanced answers to the 12 most critical international scholarship questions: IELTS requirements, GPA importance, supervisor outreach, tuition waivers, and reapplication.",
   hero: {
-    badge: "Computer Science Admissions Intelligence",
-    title: "Computer Science Full-Ride FAQs &",
+    badge: "International Admissions Intelligence",
+    title: "Postgraduate Scholarship FAQs &",
     highlightWord: "Admissions Knowledgebase",
-    subtitle: "Clear, authoritative answers to the most critical Computer Science dilemmas: offsetting low GPAs with first-author preprints, direct PhD from Bachelor's, faculty grant funding cycles, and preflight application verification.",
+    subtitle: "Clear, authoritative answers to the most critical international postgraduate dilemmas: obtaining scholarships without IELTS, mitigating average GPAs, contacting professors, tuition waivers vs full funding, and reapplication strategies.",
     primaryCta: { label: "Pre-Flight Checklist", href: "#readiness-checklist" },
     secondaryCta: { label: "Search Questions", href: "#faq-list" }
   },
@@ -743,36 +743,36 @@ export const faqsPageData: MultiPageData = {
       sectionNumber: 1,
       badge: "Topic Breakdown",
       title: "Explore FAQs by Core Category",
-      subtitle: "Filter queries across funding realities, admissions strategy, research publications, testing, and visa clearance",
+      subtitle: "Filter queries across eligibility & tests, supervisor outreach, funding realities, and strategy",
       content: "Navigate our comprehensive knowledge base organized into key operational domains.",
       cards: [
         {
-          title: "Admissions & Strategy",
-          description: "Direct PhD from Bachelor's, mitigating sub-3.5 GPAs, and junior vs senior faculty targeting.",
-          tag: "Strategy",
+          title: "Eligibility & Tests",
+          description: "English test waivers (IELTS/TOEFL/MOI), GPA cutoffs and mitigation, and publications requirements.",
+          tag: "Eligibility",
           icon: "Compass",
-          bulletPoints: ["Direct PhD vs MS", "Low GPA mitigation", "Advisor selection", "Timing of cold outreach"]
+          bulletPoints: ["IELTS exemptions & MOI", "Low GPA compensation", "Applying without papers", "Direct PhD eligibility"]
         },
         {
-          title: "Research & Publications",
-          description: "Do you need a first-author NeurIPS paper? Leveraging conference workshops, preprints, and open science.",
-          tag: "Publications",
-          icon: "FileCode",
-          bulletPoints: ["NeurIPS expectations", "Workshop papers", "arXiv preprints", "OpenReview dynamics"]
+          title: "Outreach & Supervisors",
+          description: "When contacting professors is mandatory, cold email etiquette, follow-ups, and handling non-replies.",
+          tag: "Supervisors",
+          icon: "Users",
+          bulletPoints: ["Supervisor necessity rules", "Email response protocols", "Canadian/Australian rules", "US rotation systems"]
         },
         {
-          title: "Funding & Compute Resources",
-          description: "How lab GPU clusters work, deciphering gross vs net stipends, and $10k–$15k/month summer internships.",
-          tag: "Money & Compute",
+          title: "Funding & Finance",
+          description: "Tuition waiver vs fully funded packages, living stipends, salaried contracts, and fraud detection.",
+          tag: "Funding",
           icon: "DollarSign",
-          bulletPoints: ["GPU allocation", "Net stipend math", "Summer internships", "Departmental fee waivers"]
+          bulletPoints: ["Full-ride vs partial waiver", "Stipend sufficiency", "Anti-fraud verification", "Doctoral salaries"]
         },
         {
-          title: "Testing & Visa Clearance",
-          description: "Why the GRE is largely dead for CS, mandatory TA spoken English cutoffs, and Technology Alert List (TAL) defense.",
-          tag: "Testing & Visas",
+          title: "Strategy & Preparation",
+          description: "Optimal preparation timelines, applying to multiple countries, and recovering from rejection.",
+          tag: "Strategy",
           icon: "ShieldCheck",
-          bulletPoints: ["GRE test-blind policies", "TOEFL 26+ / IELTS 8.0 for TA", "TAL 221(g) avoidance", "Advisor open-science letters"]
+          bulletPoints: ["12-18 month timeline", "Multiple country portfolio", "Fresh graduate rules", "Reapplication post-mortem"]
         }
       ]
     },

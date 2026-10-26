@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { roadmapPhasesData, RoadmapPhase } from "@/data/roadmapPhasesData";
-import { ArrowRight, ChevronRight, Clock, CheckCircle2, Compass, Layers } from "lucide-react";
+import { ArrowRight, ChevronRight, Clock, CheckCircle2, Compass } from "lucide-react";
 
 export function RoadmapTimelineOverview() {
   const [selectedPhase, setSelectedPhase] = useState<RoadmapPhase>(roadmapPhasesData[0]);
