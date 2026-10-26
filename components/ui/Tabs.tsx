@@ -45,7 +45,10 @@ export function TabsContainer({
   const colClass = columns ? COLUMN_CLASSES[columns] || "" : "";
   const widthClass = fullWidth ? "w-full" : "";
   return (
-    <div className={`${CONTAINER_VARIANTS[variant]} ${colClass} ${widthClass} ${className}`}>
+    <div
+      role="tablist"
+      className={`${CONTAINER_VARIANTS[variant]} ${colClass} ${widthClass} ${className}`}
+    >
       {children}
     </div>
   );

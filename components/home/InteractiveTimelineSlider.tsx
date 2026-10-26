@@ -12,6 +12,7 @@ import {
   TimelineActionTasks,
   TimelineDeliverableBanner,
 } from "./timeline";
+import { getPhaseLevelHref } from "@/components/roadmap/roadmapConstants";
 
 export function InteractiveTimelineSlider() {
   const [phaseIndex, setPhaseIndex] = useState(0);
@@ -74,7 +75,7 @@ export function InteractiveTimelineSlider() {
                 Step {phaseIndex + 1} of {timelineSliderData.length} in Postgraduate Pipeline
               </span>
               <Button
-                href={`/roadmap#phase-${activePhase.phaseNumber}`}
+                href={getPhaseLevelHref(activePhase.phaseNumber)}
                 variant="ghost"
                 size="sm"
                 className="text-indigo-400 hover:text-indigo-300"

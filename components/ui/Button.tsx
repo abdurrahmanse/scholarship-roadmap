@@ -110,8 +110,9 @@ export function Button({
 
   if ("href" in props && props.href) {
     const { href, target, rel } = props;
+    const computedRel = rel || (target === "_blank" ? "noopener noreferrer" : undefined);
     return (
-      <Link href={href} target={target} rel={rel} className={combinedClasses}>
+      <Link href={href} target={target} rel={computedRel} className={combinedClasses}>
         {content}
       </Link>
     );

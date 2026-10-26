@@ -67,11 +67,12 @@ export const footerData = {
     badge: "100% Full-Ride Standard"
   },
   roadmapNavigation: [
-    { href: "/", label: "Home" },
-    { href: "/roadmap", label: "7-Phase Roadmap" },
-    { href: "/roadmap#phase-0", label: "Phase 0: Math & Compute" },
-    { href: "/roadmap#phase-1", label: "Phase 1: Workshops & arXiv" },
-    { href: "/roadmap#phase-2", label: "Phase 2: CSRankings & Outreach" }
+    { href: "/roadmap", label: "5-Level Roadmap Overview" },
+    { href: "/roadmap/level-1", label: "Level 1: Math & Systems" },
+    { href: "/roadmap/level-2", label: "Level 2: Artifacts & Workshops" },
+    { href: "/roadmap/level-3", label: "Level 3: Lab Targeting & Outreach" },
+    { href: "/roadmap/level-4", label: "Level 4: Dossier & SOP" },
+    { href: "/roadmap/level-5", label: "Level 5: Interviews & Offers" }
   ],
   directoryAndTools: [
     { href: "/programs", label: "Funded AI Programs & Labs" },

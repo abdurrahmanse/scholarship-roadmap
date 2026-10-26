@@ -49,16 +49,16 @@ export function InteractiveProfileDiagnostic() {
     let target = "Mila, Vector Institute, UT Austin, UW Madison, ETH Zurich AI";
     let safe = "Singapore SINGA (NUS/NTU), Max Planck IMPRS, CSIRO Data61, RIKEN AIP";
     let priorityAction = "Draft your 5-point cold email scripts and target faculty in September.";
-    let recommendedPhase = "/roadmap#phase-2";
-    let phaseName = "Phase 2: CSRankings & PI Outreach";
+    let recommendedPhase = "/roadmap/level-3";
+    let phaseName = "Level 3: Faculty Mapping & Outreach";
 
     if (score < 75) {
       reach = "Mila, University of Toronto, Georgia Tech, TU Munich";
       target = "SINGA Singapore, RIKEN AIP Japan, Alberta AMII, Edinburgh AI";
       safe = "European TV-L E13 Projects, Australian CSIRO, KAIST AI";
       priorityAction = "Fast-track an empirical NeurIPS/ICLR workshop paper or citable arXiv preprint to solidify research capital.";
-      recommendedPhase = "/roadmap#phase-1";
-      phaseName = "Phase 1: Workshops & arXiv Fast-Track";
+      recommendedPhase = "/roadmap/level-2";
+      phaseName = "Level 2: Publications & Open-Source";
     }
 
     if (gpa === "low" || gpa === "medium") {
