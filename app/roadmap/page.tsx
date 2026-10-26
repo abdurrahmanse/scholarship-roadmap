@@ -7,12 +7,9 @@ import { GpuComputeBlueprint } from "@/components/roadmap/GpuComputeBlueprint";
 import { DeliverablesAuditWidget } from "@/components/roadmap/DeliverablesAuditWidget";
 import { QuickScrollNavigator } from "@/components/ui/QuickScrollNavigator";
 import { roadmapNavAnchors } from "@/data/roadmapSectionData";
+import { roadmapMetadata } from "@/data/metadata";
 
-export const metadata: Metadata = {
-  title: "5-Level Strategic Research Roadmap | PhD & MS Thesis",
-  description:
-    "Structured 5-level roadmap from mathematical foundations to conference workshops, professor outreach, statement of purpose, and funded lab onboarding.",
-};
+export const metadata: Metadata = roadmapMetadata;
 
 export default function RoadmapPage() {
   return (

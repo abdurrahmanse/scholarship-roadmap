@@ -23,21 +23,11 @@ export async function generateStaticParams() {
   }));
 }
 
+import { getLevelMetadata } from "@/data/metadata";
+
 export async function generateMetadata({ params }: LevelPageProps): Promise<Metadata> {
   const { level: levelSlug } = await params;
-  const level = roadmapLevelsData.find((l) => l.slug === levelSlug);
-
-  if (!level) {
-    return {
-      title: "Roadmap Level Not Found",
-      description: "The requested roadmap level could not be found.",
-    };
-  }
-
-  return {
-    title: `Level ${level.levelNumber}: ${level.shortTitle}`,
-    description: level.tagline,
-  };
+  return getLevelMetadata(levelSlug);
 }
 
 export default async function LevelDetailPage({ params }: LevelPageProps) {
