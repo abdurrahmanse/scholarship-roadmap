@@ -27,6 +27,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AmbientBackground } from "@/components/ui/AmbientBackground";
 
+import { rootMetadata } from "@/data/metadata";
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -34,45 +36,7 @@ export const viewport: Viewport = {
   themeColor: "#090d16"
 };
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://scholarship-roadmap.vercel.app"),
-  title: {
-    default: "100% Fully Funded AI & Machine Learning Postgraduate Roadmap",
-    template: "%s | Fully Funded AI & CS Roadmap",
-  },
-  description:
-    "The canonical zero-to-landing blueprint for Computer Science, AI, and Machine Learning students securing 100% fully funded PhD and Master's research assistantships abroad.",
-  keywords: [
-    "Fully Funded PhD Computer Science",
-    "MS Thesis AI Funding",
-    "Graduate Research Assistantship",
-    "GRA Stipend",
-    "Machine Learning Scholarship Roadmap",
-    "CSRankings Guide",
-    "Cold Email Professor Template",
-    "NeurIPS Workshop",
-    "Technology Alert List TAL",
-  ],
-  authors: [{ name: "Scholarship AI Roadmap Open Source Initiative" }],
-  openGraph: {
-    title: "100% Fully Funded AI & Machine Learning Postgraduate Roadmap",
-    description:
-      "The canonical zero-to-landing blueprint for Computer Science, AI, and Machine Learning students securing 100% fully funded PhD and Master's research assistantships abroad.",
-    type: "website",
-    locale: "en_US",
-    siteName: "Scholarship AI Roadmap",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "100% Fully Funded AI & Machine Learning Postgraduate Roadmap",
-    description:
-      "The canonical zero-to-landing blueprint for Computer Science, AI, and Machine Learning students securing 100% fully funded PhD and Master's research assistantships abroad.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export const metadata: Metadata = rootMetadata;
 
 export default function RootLayout({
   children,

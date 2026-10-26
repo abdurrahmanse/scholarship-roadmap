@@ -12,6 +12,7 @@ export * from "./faqs";
 export * from "./pagesData";
 export * from "./levelsData";
 export * from "./navigationData";
+export * from "./metadata";
 
 // Modular Section Datasets
 export * from "./homeData";

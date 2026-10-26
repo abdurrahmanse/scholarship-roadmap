@@ -8,12 +8,9 @@ import { InteractiveProfileDiagnostic } from "@/components/home/InteractiveProfi
 import { RoadmapPipelinePreview } from "@/components/home/RoadmapPipelinePreview";
 import { GlobalModelsComparison } from "@/components/home/GlobalModelsComparison";
 import { InteractiveStipendCalculator } from "@/components/home/InteractiveStipendCalculator";
+import { homeMetadata } from "@/data/metadata";
 
-export const metadata: Metadata = {
-  title: "100% Fully Funded AI & Machine Learning Postgraduate Roadmap",
-  description:
-    "The canonical zero-to-landing blueprint for Computer Science, AI, and Machine Learning students securing 100% fully funded PhD and Master's research assistantships abroad.",
-};
+export const metadata: Metadata = homeMetadata;
 
 export default function HomePage() {
   return (
