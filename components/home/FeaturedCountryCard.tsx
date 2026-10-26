@@ -14,7 +14,7 @@ export function FeaturedCountryCard({ country }: FeaturedCountryCardProps) {
 
   return (
     <Link
-      href={`/countries#${country.id}`}
+      href={`/countries/${country.id}`}
       className="p-6 rounded-2xl bg-slate-900/60 border border-white/[0.08] hover:border-teal-500/40 hover:bg-slate-900/90 transition-all duration-200 flex flex-col justify-between group shadow-lg"
     >
       <div>
