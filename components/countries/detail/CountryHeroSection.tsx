@@ -13,15 +13,34 @@ interface CountryHeroSectionProps {
 
 export function CountryHeroSection({ country }: CountryHeroSectionProps) {
   return (
-    <section className="relative overflow-hidden border-b border-white/[0.07]">
-      {/* Background ambient lighting */}
+    <section className="relative overflow-hidden border-b border-white/[0.08] bg-[#060913]">
+      {/* 1. Overhead Radial Spotlight Beam */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute top-0 inset-x-0 h-[500px] pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% -10%, rgba(99,102,241,0.18) 0%, transparent 70%)",
+            "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(99, 102, 241, 0.3) 0%, rgba(20, 184, 166, 0.18) 45%, transparent 75%)",
         }}
       />
+
+      {/* 2. Delicate Micro-Grid Pattern with Radial Mask Fade */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-25"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 65% 55% at 50% 20%, #000 30%, transparent 85%)",
+          maskImage:
+            "radial-gradient(ellipse 65% 55% at 50% 20%, #000 30%, transparent 85%)",
+        }}
+      />
+
+      {/* 3. Floating Aurora Ambient Glow Orbs */}
+      <div className="absolute top-1/4 -left-16 w-80 sm:w-[420px] h-80 sm:h-[420px] bg-indigo-600/20 blur-[100px] pointer-events-none rounded-full" />
+      <div className="absolute top-8 -right-16 w-96 sm:w-[480px] h-96 sm:h-[480px] bg-teal-500/18 blur-[110px] pointer-events-none rounded-full" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(650px,90vw)] h-[220px] bg-cyan-400/10 blur-[85px] pointer-events-none rounded-full" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 md:py-20 relative z-10">
         {/* Back Link */}
         <Link
