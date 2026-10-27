@@ -15,6 +15,14 @@
   --color-accent-cyan: #38bdf8;
   --color-accent-emerald: #10b981;
   --color-accent-amber: #f59e0b;
+
+  /* Slightly scaled down heading & title font size tokens */
+  --text-2xl: 1.35rem;
+  --text-3xl: 1.65rem;
+  --text-4xl: 2rem;
+  --text-5xl: 2.6rem;
+  --text-6xl: 3.25rem;
+  --text-7xl: 3.85rem;
 }
 
 :root {
@@ -29,22 +37,23 @@
    Global Typography Rules:
    - Entire website uses Rajdhani font family globally (600, 700)
    - All titles strictly use 700 weight
+   - Proportional typography scaling across breakpoints
    ─────────────────────────────────────────────────────────── */
-/* Responsive root font size to scale up entire website typography prominently */
+/* Responsive root font size slightly decreased for balanced, elegant typography */
 html {
-  font-size: 19px;
+  font-size: 17px;
   scroll-behavior: smooth;
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
 @media (min-width: 1280px) {
   html {
-    font-size: 21px;
+    font-size: 19px;
   }
 }
 
@@ -59,9 +68,9 @@ body,
 body {
   background-color: #090d16;
   color: #f1f5f9;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
-  line-height: 1.64;
+  line-height: 1.6;
   letter-spacing: 0.02em;
   overflow-x: hidden;
   max-width: 100vw;
@@ -73,16 +82,16 @@ body {
 
 /* Enhance micro-labels for comfortable, clear legibility */
 .text-\[9px\] {
-  font-size: 12px !important;
+  font-size: 11px !important;
 }
 .text-\[10px\] {
-  font-size: 13px !important;
+  font-size: 12px !important;
 }
 .text-\[11px\] {
-  font-size: 14px !important;
+  font-size: 13px !important;
 }
 .text-\[12px\] {
-  font-size: 14.5px !important;
+  font-size: 13.5px !important;
 }
 
 /* All titles and headings strictly use weight 700 */

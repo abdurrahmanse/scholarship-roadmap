@@ -9,10 +9,34 @@ export function HomeHero() {
   const { badge, title, titleGradient, description, primaryCta, secondaryCta, valueBadges } = homeHeroData;
 
   return (
-    <section className="relative pt-10 pb-16 sm:pt-14 sm:pb-20 md:pt-20 md:pb-28 overflow-hidden border-b border-white/[0.06]">
-      {/* Ambient gradients */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(700px,90vw)] h-[300px] sm:h-[400px] bg-gradient-to-tr from-indigo-600/15 via-teal-500/10 to-transparent blur-3xl pointer-events-none rounded-full" />
-      <div className="absolute -top-12 right-0 sm:right-10 w-64 h-64 sm:w-96 sm:h-96 bg-cyan-500/10 blur-3xl pointer-events-none rounded-full" />
+    <section className="relative pt-12 pb-16 sm:pt-16 sm:pb-20 md:pt-24 md:pb-28 overflow-hidden border-b border-white/[0.08] bg-[#060913]">
+      {/* 1. Overhead Radial Spotlight Beam */}
+      <div
+        className="absolute top-0 inset-x-0 h-[560px] pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(99, 102, 241, 0.3) 0%, rgba(20, 184, 166, 0.18) 45%, transparent 75%)",
+        }}
+      />
+
+      {/* 2. Delicate Micro-Grid Pattern with Radial Mask Fade */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-25"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 65% 55% at 50% 20%, #000 30%, transparent 85%)",
+          maskImage:
+            "radial-gradient(ellipse 65% 55% at 50% 20%, #000 30%, transparent 85%)",
+        }}
+      />
+
+      {/* 3. Floating Aurora Ambient Glow Orbs */}
+      <div className="absolute top-1/4 -left-16 w-80 sm:w-[420px] h-80 sm:h-[420px] bg-indigo-600/20 blur-[100px] pointer-events-none rounded-full" />
+      <div className="absolute top-8 -right-16 w-96 sm:w-[480px] h-96 sm:h-[480px] bg-teal-500/18 blur-[110px] pointer-events-none rounded-full" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(650px,90vw)] h-[220px] bg-cyan-400/10 blur-[85px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6">
