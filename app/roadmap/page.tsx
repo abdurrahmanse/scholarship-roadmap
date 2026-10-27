@@ -27,6 +27,9 @@ export default function RoadmapPage() {
     <main className="min-h-screen bg-[#090d16] text-slate-100 pb-20">
       {/* Dynamic Ambient Background Glow */}
       <div className="relative overflow-hidden pt-28 pb-14 border-b border-white/[0.08] bg-[#060913]">
+        {/* 0. Top Glowing Horizon Line */}
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent pointer-events-none" />
+
         {/* 1. Overhead Radial Spotlight Beam */}
         <div
           className="absolute top-0 inset-x-0 h-[500px] pointer-events-none"
@@ -58,12 +61,12 @@ export default function RoadmapPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
           {/* Top Pill Badges */}
           <div className="flex flex-wrap items-center gap-2.5">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-indigo-950/80 border border-indigo-500/40 text-indigo-300 text-xs font-mono font-bold shadow-lg">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-indigo-500/40 text-indigo-300 text-xs font-mono font-bold shadow-[0_0_20px_-3px_rgba(99,102,241,0.35)] backdrop-blur-md">
               <Sparkles className="w-3.5 h-3.5 text-teal-400" />
               <span>{pageHero.badge}</span>
             </span>
 
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-slate-300 text-xs font-mono">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-slate-300 text-xs font-mono backdrop-blur-md">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
               <span>{pageHero.standardBadge}</span>
             </span>
@@ -86,14 +89,21 @@ export default function RoadmapPage() {
           {/* 4 Metric Feature Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 pt-4 max-w-5xl">
             {pageHero.metrics.map((metric, idx) => (
-              <div key={idx} className="p-4 rounded-2xl bg-[#0f1422]/90 border border-white/10 shadow-lg">
-                <div className="flex items-center gap-2 mb-1">
-                  {renderHeroMetricIcon(metric.iconName)}
+              <div
+                key={idx}
+                className="group relative p-4 rounded-2xl bg-gradient-to-b from-white/[0.07] to-white/[0.015] border border-white/10 hover:border-white/20 backdrop-blur-md shadow-lg shadow-black/25 hover:shadow-indigo-500/10 hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-6 h-6 rounded-lg bg-white/[0.06] border border-white/10 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                    {renderHeroMetricIcon(metric.iconName)}
+                  </div>
                   <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
                     {metric.category}
                   </span>
                 </div>
-                <div className={`text-2xl font-bold font-heading ${metric.accentColor === "emerald" ? "text-emerald-400" : "text-white"}`}>
+                <div
+                  className={`text-2xl font-bold font-heading ${metric.accentColor === "emerald" ? "text-emerald-400" : "text-white"}`}
+                >
                   {metric.value}
                 </div>
                 <p className="text-[11px] text-slate-400 mt-0.5 font-sans">

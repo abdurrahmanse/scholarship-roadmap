@@ -138,6 +138,9 @@ export function PageHero({
 
   return (
     <section className="relative overflow-hidden pt-12 sm:pt-16 md:pt-20 pb-12 sm:pb-16 border-b border-white/[0.08] bg-[#060913]">
+      {/* 0. Top Glowing Horizon Line */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent pointer-events-none" />
+
       {/* 1. Overhead Radial Spotlight Beam */}
       <div
         className="absolute top-0 inset-x-0 h-[500px] pointer-events-none"
@@ -172,7 +175,7 @@ export function PageHero({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Radar Badge Ribbon */}
         <div
-          className={`inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 rounded-full border text-xs font-semibold uppercase tracking-wider mb-5 sm:mb-6 shadow-xl backdrop-blur-md max-w-[calc(100vw-32px)] ${styles.badgeContainer} ${styles.badgeText}`}
+          className={`inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 rounded-full border text-xs font-semibold uppercase tracking-wider mb-5 sm:mb-6 shadow-[0_0_24px_-4px_rgba(99,102,241,0.35)] backdrop-blur-xl max-w-[calc(100vw-32px)] hover:border-white/30 transition-all duration-200 ${styles.badgeContainer} ${styles.badgeText}`}
         >
           <span className="relative flex h-2 w-2 shrink-0">
             <span
@@ -181,7 +184,7 @@ export function PageHero({
             <span className={`relative inline-flex rounded-full h-2 w-2 ${styles.radarDot}`} />
           </span>
           {iconElement}
-          <span className="font-mono text-[10px] sm:text-[11px] truncate">{badge}</span>
+          <span className="font-mono text-[10px] sm:text-[11px] truncate tracking-wide">{badge}</span>
         </div>
 
         {/* Hero Title with Gradient Text Accent */}
@@ -217,10 +220,12 @@ export function PageHero({
               return (
                 <div
                   key={h.label}
-                  className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-xl bg-[#0f1422] border border-white/10 text-slate-300 font-mono text-[10px] sm:text-[11px]"
+                  className="group flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl bg-gradient-to-b from-white/[0.08] to-white/[0.02] border border-white/10 hover:border-white/20 backdrop-blur-md text-slate-200 hover:text-white font-mono text-[11px] sm:text-xs shadow-md shadow-black/25 hover:shadow-indigo-500/10 hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  {hIcon}
-                  <span>{h.label}</span>
+                  <span className="w-5 h-5 rounded-md bg-white/[0.06] border border-white/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                    {hIcon}
+                  </span>
+                  <span className="tracking-wide font-medium">{h.label}</span>
                 </div>
               );
             })}

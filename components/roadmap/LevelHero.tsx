@@ -21,6 +21,9 @@ export function LevelHero({ level }: LevelHeroProps) {
 
   return (
     <section className="relative overflow-hidden pt-28 pb-16 border-b border-white/[0.08] bg-[#060913]">
+      {/* 0. Top Glowing Horizon Line */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent pointer-events-none" />
+
       {/* 1. Overhead Radial Spotlight Beam */}
       <div
         className="absolute top-0 inset-x-0 h-[500px] pointer-events-none"
@@ -54,9 +57,9 @@ export function LevelHero({ level }: LevelHeroProps) {
         <div className="mb-6">
           <Link
             href="/roadmap"
-            className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-slate-400 hover:text-white transition-colors group cursor-pointer"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-white/10 hover:border-indigo-400/50 text-xs font-mono font-medium text-slate-300 hover:text-white transition-all backdrop-blur-md shadow-md group cursor-pointer"
           >
-            <ChevronLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
+            <ChevronLeft className="w-4 h-4 text-indigo-400 group-hover:-translate-x-0.5 transition-transform" />
             <span>{hero.breadcrumbOverview}</span>
             <span className="text-slate-600">/</span>
             <span className="text-indigo-400 font-bold">Level 0{level.levelNumber}</span>
@@ -65,7 +68,7 @@ export function LevelHero({ level }: LevelHeroProps) {
 
         {/* Level Badge, Timeline, Difficulty */}
         <div className="flex flex-wrap items-center gap-3 mb-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0f1422] border border-white/10 text-white text-xs font-mono font-bold shadow-xl">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-indigo-500/40 text-white text-xs font-mono font-bold shadow-[0_0_20px_-3px_rgba(99,102,241,0.35)] backdrop-blur-md">
             <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-radar-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
@@ -78,7 +81,7 @@ export function LevelHero({ level }: LevelHeroProps) {
             {level.difficulty} {hero.difficultySuffix}
           </Badge>
 
-          <span className="text-xs font-mono text-slate-400 flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/5">
+          <span className="text-xs font-mono text-slate-300 flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-sm">
             <Clock className="w-3.5 h-3.5 text-slate-400" />
             <span>{level.timeline}</span>
           </span>
@@ -98,9 +101,10 @@ export function LevelHero({ level }: LevelHeroProps) {
         </p>
 
         {/* Primary Objective Banner */}
-        <div className="p-4 sm:p-5 rounded-2xl bg-[#0f1422] border border-white/10 mb-8 max-w-4xl shadow-xl">
-          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-400 block mb-1">
-            Level 0{level.levelNumber} Primary Objective:
+        <div className="relative p-5 rounded-2xl bg-gradient-to-r from-indigo-950/40 via-slate-900/60 to-slate-900/40 border-y border-r border-white/10 border-l-4 border-l-indigo-500 mb-8 max-w-4xl shadow-xl backdrop-blur-md">
+          <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-indigo-400 block mb-1.5 flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
+            Level 0{level.levelNumber} Primary Objective
           </span>
           <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans">
             {level.objective}
@@ -109,7 +113,7 @@ export function LevelHero({ level }: LevelHeroProps) {
 
         {/* 3 Metric Pills */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl">
-          <div className="p-4 rounded-xl bg-[#0f1422] border border-white/10">
+          <div className="group relative p-4 rounded-2xl bg-gradient-to-b from-white/[0.07] to-white/[0.015] border border-white/10 hover:border-white/20 backdrop-blur-md shadow-lg shadow-black/25 hover:shadow-indigo-500/10 hover:-translate-y-1 transition-all duration-300">
             <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-1">
               Curriculum Scope
             </span>
@@ -121,7 +125,7 @@ export function LevelHero({ level }: LevelHeroProps) {
             </span>
           </div>
 
-          <div className="p-4 rounded-xl bg-[#0f1422] border border-white/10">
+          <div className="group relative p-4 rounded-2xl bg-gradient-to-b from-white/[0.07] to-white/[0.015] border border-white/10 hover:border-white/20 backdrop-blur-md shadow-lg shadow-black/25 hover:shadow-cyan-500/10 hover:-translate-y-1 transition-all duration-300">
             <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-1">
               Time Commitment
             </span>
@@ -133,7 +137,7 @@ export function LevelHero({ level }: LevelHeroProps) {
             </span>
           </div>
 
-          <div className="p-4 rounded-xl bg-[#0f1422] border border-white/10">
+          <div className="group relative p-4 rounded-2xl bg-gradient-to-b from-white/[0.07] to-white/[0.015] border border-white/10 hover:border-white/20 backdrop-blur-md shadow-lg shadow-black/25 hover:shadow-emerald-500/10 hover:-translate-y-1 transition-all duration-300">
             <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-1">
               {hero.deliverableLabel}
             </span>

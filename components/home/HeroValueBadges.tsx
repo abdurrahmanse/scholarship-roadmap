@@ -32,11 +32,17 @@ export function HeroValueBadges({ badges }: HeroValueBadgesProps) {
         return (
           <div
             key={idx}
-            className="p-3.5 rounded-xl bg-slate-900/60 border border-white/[0.07] backdrop-blur-sm hover:border-white/20 transition-all duration-200"
+            className="group relative p-4 rounded-2xl bg-gradient-to-b from-white/[0.07] to-white/[0.015] border border-white/10 hover:border-white/20 backdrop-blur-md shadow-lg shadow-black/30 hover:shadow-indigo-500/10 hover:-translate-y-1 transition-all duration-300"
           >
-            <div className={`flex items-center gap-2 text-xs font-mono font-bold mb-1 ${colorClass.split(" ")[0]}`}>
-              <Icon className="w-3.5 h-3.5 shrink-0" />
-              <span>{badge.title}</span>
+            <div className="flex items-center gap-2.5 mb-2">
+              <div
+                className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 bg-slate-800/80 border border-white/10 shadow-inner group-hover:scale-105 transition-transform ${colorClass.split(" ")[0]}`}
+              >
+                <Icon className="w-3.5 h-3.5" />
+              </div>
+              <span className={`text-xs font-mono font-bold ${colorClass.split(" ")[0]}`}>
+                {badge.title}
+              </span>
             </div>
             <p className="text-xs text-slate-300 leading-snug">{badge.description}</p>
           </div>

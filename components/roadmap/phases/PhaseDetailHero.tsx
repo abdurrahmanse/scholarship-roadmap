@@ -13,6 +13,9 @@ export interface PhaseDetailHeroProps {
 export function PhaseDetailHero({ phase }: PhaseDetailHeroProps) {
   return (
     <section className="relative overflow-hidden pt-28 pb-14 border-b border-white/[0.08] bg-[#060913]">
+      {/* 0. Top Glowing Horizon Line */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent pointer-events-none" />
+
       {/* 1. Overhead Radial Spotlight Beam */}
       <div
         className="absolute top-0 inset-x-0 h-[500px] pointer-events-none"

@@ -14,6 +14,9 @@ interface CountryHeroSectionProps {
 export function CountryHeroSection({ country }: CountryHeroSectionProps) {
   return (
     <section className="relative overflow-hidden border-b border-white/[0.08] bg-[#060913]">
+      {/* 0. Top Glowing Horizon Line */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent pointer-events-none" />
+
       {/* 1. Overhead Radial Spotlight Beam */}
       <div
         className="absolute top-0 inset-x-0 h-[500px] pointer-events-none"
@@ -45,16 +48,16 @@ export function CountryHeroSection({ country }: CountryHeroSectionProps) {
         {/* Back Link */}
         <Link
           href="/countries"
-          className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400 hover:text-teal-300 transition-colors mb-6 sm:mb-8 group"
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-white/10 hover:border-teal-400/50 text-xs font-mono text-slate-300 hover:text-white transition-all mb-6 sm:mb-8 backdrop-blur-md shadow-md group"
         >
-          <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" />
-          Back to All Destinations
+          <ArrowLeft className="w-3.5 h-3.5 text-teal-400 group-hover:-translate-x-0.5 transition-transform" />
+          <span>Back to All Destinations</span>
         </Link>
 
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8">
           <div className="flex-1 space-y-4 sm:space-y-5">
             {/* Region & Code Pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-indigo-500/30 text-indigo-300 text-[11px] font-mono font-medium">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-indigo-500/40 text-indigo-300 text-[11px] font-mono font-medium shadow-[0_0_20px_-3px_rgba(99,102,241,0.35)] backdrop-blur-md">
               <MapPin className="w-3 h-3 text-indigo-400" />
               <span>
                 {country.region} · {country.code}
@@ -64,7 +67,7 @@ export function CountryHeroSection({ country }: CountryHeroSectionProps) {
             {/* Country Title + Flag */}
             <div className="flex items-center gap-4 sm:gap-5">
               <span
-                className="text-5xl sm:text-6xl md:text-7xl shrink-0 p-3 rounded-2xl bg-slate-900 border border-white/10 shadow-xl"
+                className="text-5xl sm:text-6xl md:text-7xl shrink-0 p-3.5 rounded-2xl bg-gradient-to-br from-white/[0.1] to-white/[0.02] border border-white/15 backdrop-blur-xl shadow-2xl shadow-black/40"
                 aria-label={`${country.name} flag`}
               >
                 {country.flag}
@@ -93,20 +96,20 @@ export function CountryHeroSection({ country }: CountryHeroSectionProps) {
             {/* Highlights Ribbons */}
             <div className="flex flex-wrap gap-2.5 sm:gap-3 pt-2">
               {country.assistantshipsAvailable && (
-                <div className="flex items-center gap-1.5 text-xs text-emerald-300 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-lg font-mono">
-                  <Briefcase className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-2 text-xs text-emerald-300 bg-gradient-to-b from-emerald-500/15 to-emerald-500/5 border border-emerald-500/25 px-3.5 py-2 rounded-xl font-mono backdrop-blur-sm shadow-md">
+                  <Briefcase className="w-3.5 h-3.5 text-emerald-400" />
                   <span>Assistantships Available</span>
                 </div>
               )}
-              <div className="flex items-center gap-1.5 text-xs text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 px-3 py-1.5 rounded-lg font-mono">
-                <Award className="w-3.5 h-3.5" />
+              <div className="flex items-center gap-2 text-xs text-indigo-300 bg-gradient-to-b from-indigo-500/15 to-indigo-500/5 border border-indigo-500/25 px-3.5 py-2 rounded-xl font-mono backdrop-blur-sm shadow-md">
+                <Award className="w-3.5 h-3.5 text-indigo-400" />
                 <span>
                   {country.governmentScholarships.length} Gov&apos;t Scholarship
                   {country.governmentScholarships.length !== 1 ? "s" : ""}
                 </span>
               </div>
-              <div className="flex items-center gap-1.5 text-xs text-teal-300 bg-teal-500/10 border border-teal-500/20 px-3 py-1.5 rounded-lg font-mono">
-                <Globe className="w-3.5 h-3.5" />
+              <div className="flex items-center gap-2 text-xs text-teal-300 bg-gradient-to-b from-teal-500/15 to-teal-500/5 border border-teal-500/25 px-3.5 py-2 rounded-xl font-mono backdrop-blur-sm shadow-md">
+                <Globe className="w-3.5 h-3.5 text-teal-400" />
                 <span>
                   {country.officialPortals.length} Official Portal
                   {country.officialPortals.length !== 1 ? "s" : ""}
